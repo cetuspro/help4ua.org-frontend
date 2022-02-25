@@ -3,6 +3,8 @@ import { useQueryContext } from '@/app/context/queries/QueryProvider'
 import { useNavigate } from 'react-router-dom'
 import usePagination from '@/app/hooks/usePagination'
 import dayjs from 'dayjs'
+import { route } from '@/app/router/urls/routes'
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -53,32 +55,35 @@ const ExpandedComponent = ({data: {
   withMeals,
   withTransport,
   location,
+  id
 }}) => {
   return (
-    <div className="border-b p-4 text-sm bg-[#fafafa] flex flex-col md:flex-row">
-      <div className="flex-1">
-        <Item label="Opis:" value={description}/>
-        <Item label="Adres:" value={
-          <a
-            href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
-            title="Zobacz na mapie"
-            className="flex flex-col"
-          >
-            <span>{city}, {province}</span>
-            <span>{address}</span>
-          </a>}
-        />
-        <Item label="Liczba łóżek:" value={bedCount}/>
-        <Item label="Na okres:" value={period}/>
+    <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex-1">
+          <Item label="Opis:" value={description}/>
+          <Item label="Adres:" value={
+            <a
+              href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
+              title="Zobacz na mapie"
+              className="flex flex-col"
+            >
+              <span>{city}, {province}</span>
+              <span>{address}</span>
+            </a>}
+          />
+          <Item label="Liczba łóżek:" value={bedCount}/>
+          <Item label="Na okres:" value={period}/>
+        </div>
+        <div className="flex-1">
+          <Item label="Przyjmę z małym dzieckiem:" value={allowToddlers ? 'TAK' : 'NIE'}/>
+          <Item label="Przyjmę ze zwierzętami:" value={allowAnimals ? 'TAK' : 'NIE'}/>
+          <Item label="Dostęp do pralki:" value={accessToWashingMachine ? 'TAK' : 'NIE'}/>
+          <Item label="Zapewniam wyżywienie:" value={withMeals ? 'TAK' : 'NIE'}/>
+          <Item label="Zapewniam transport:" value={withTransport ? 'TAK' : 'NIE'}/>
+        </div>
       </div>
-      <div className="flex-1">
-        <Item label="Przyjmę z małym dzieckiem:" value={allowToddlers ? 'TAK' : 'NIE'}/>
-        <Item label="Przyjmę ze zwierzętami:" value={allowAnimals ? 'TAK' : 'NIE'}/>
-        <Item label="Dostęp do pralki:" value={accessToWashingMachine ? 'TAK' : 'NIE'}/>
-        <Item label="Zapewniam wyżywienie:" value={withMeals ? 'TAK' : 'NIE'}/>
-      <Item label="Zapewniam transport:" value={withTransport ? 'TAK' : 'NIE'}/>
-      </div>
-      
+      <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block">Zobacz szczegóły</Link>
     </div>
   )
 }

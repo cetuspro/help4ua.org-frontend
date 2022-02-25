@@ -14,7 +14,7 @@ const schema = yup.object().shape({
   reportType: yup.number().nullable(),
 })
 
-const NoticiesFilter = () => {
+const NoticesFilter = () => {
   const { methods, handleSubmit } = useFilterForm({ schema })
 
   return (
@@ -64,4 +64,4 @@ const NoticiesFilter = () => {
   )
 }
 
-export default NoticiesFilter
+export default NoticesFilter

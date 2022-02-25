@@ -5,7 +5,7 @@ import { QueryProvider } from '@/app/context/queries/QueryProvider';
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotices } from '../../../app/CRUD/notices/getNotices';
 import NoticesDataTable from './dataTable/DataTable_Notices';
-import NoticiesFilter from './filters/Filters_Noticies';
+import NoticesFilter from './filters/Filters_Notices';
 
 const breadcrumbItems = [
   {
@@ -20,7 +20,7 @@ const ViewNotices = () => {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <NoticiesFilter />
+      <NoticesFilter />
       <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start">
         <QueryProvider {...query}>
           <QueryHasNoResults>
