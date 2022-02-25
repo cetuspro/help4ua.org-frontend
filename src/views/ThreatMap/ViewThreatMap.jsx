@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, LayersControl } from 'react-leaflet'
 import Sidebar from './components/Sidebar'
-import { useGetReportsMap } from '@/CRUD/reports/getReports'
+import { useGetReportsMap } from '@/app/CRUD/reports/getReports'
 import { QueryProvider } from '@/app/context/queries/QueryProvider'
 import Helmet from 'react-helmet'
 import ReportMarkers from './components/ReportMarkers'
@@ -8,6 +8,7 @@ import { MapProvider } from '@/app/context/MapContext'
 import { Suspense, useEffect } from 'react'
 import { useSidebar } from '@/app/hooks/useSidebar'
 import { withFilters } from '@/app/context/queries/Filters'
+
 import Header from '@/components/common/Header'
 import Spinner from '@/components/common/Spinner'
 
