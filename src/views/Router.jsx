@@ -8,6 +8,7 @@ import ThreatMapRoutes from './ThreatMap/@Routes'
 import PublicRoutes from './public/@Routes'
 import UserRoutes from './user/@Routes'
 import AccountRoutes from './account/@Routes'
+import NoticesRoutes from './notices/@Routes'
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,8 @@ const AppRouter = () => {
         {PublicRoutes}
 
         {AccountRoutes}
+        
+        {NoticesRoutes}
 
         <Route path={route['auth.unauthorized']} element={<Lazy401 />} />
         <Route path="*" element={<Lazy404 />} />

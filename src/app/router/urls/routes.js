@@ -2,6 +2,7 @@ import { BASE_URL } from '../../config/env'
 import { accountRoutes } from './account'
 import { adminRoutes } from './admin'
 import { authRoutes } from './common/auth'
+import { noticesRoutes } from './notices/notices'
 import { reportsRoutes } from './reports'
 import { threatMapRoutes } from './threatMap'
 import { userRoutes } from './user'
@@ -14,4 +15,5 @@ export const route = {
   ...userRoutes,
   ...accountRoutes,
   ...reportsRoutes,
+  ...noticesRoutes,
 }
