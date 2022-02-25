@@ -4,13 +4,14 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Toaster } from 'react-hot-toast'
 import { me } from './app/CRUD/auth/me'
 import { refreshUserToken } from './app/CRUD/auth/refreshUserToken'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { actionMe, actionLogout } from './store/auth/authActions'
 import Spinner from './components/common/Spinner'
 import { useAuth } from '@/app/hooks/useAuth'
-import { I18nextProvider } from 'react-i18next'
+import { I18nextProvider, useTranslation } from 'react-i18next'
 import i18next from 'i18next'
-import "./i18nInit"
+import { i18nInit } from './i18nInit'
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -25,7 +26,13 @@ export default function App() {
   const dispatch = useDispatch()
   const { accessToken, refreshToken } = useAuth()
   const [isLoading, setIsLoading] = useState(true)
-
+  const [translationLoaded, setTranslationLoaded] = useState(false)
+  const {i18n} = useTranslation();
+  const { language } = useSelector(state => state?.language)
+  useEffect(() => {
+    i18nInit(language).then(() => setTranslationLoaded(true))
+  }, [])
+  
   useEffect(() => {
     if (!accessToken) return
 
@@ -48,7 +55,7 @@ export default function App() {
   }, [accessToken])
 
   if (isLoading && accessToken) return <Spinner />
-
+  if (!translationLoaded) return <Spinner />
   return (
     <I18nextProvider i18n={i18next}>
       <QueryClientProvider client={queryClient}>

@@ -15,16 +15,16 @@ import {
 import { FiMapPin } from 'react-icons/fi'
 import { CgProfile } from 'react-icons/cg'
 
-export const horizontalNavigationConfig = [
+export const horizontalNavigationConfig = t => [
   {
     id: 'map',
-    label: 'Mapa',
+    label: t("header.map"),
     route: route['map'],
     icon: FiMapPin,
   },
   {
     id: 'reports',
-    label: 'Ogłoszenia',
+    label: t("header.notices"),
     route: route['notices.list'],
     icon: MdOutlineListAlt,
   },
