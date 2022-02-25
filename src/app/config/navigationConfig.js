@@ -25,7 +25,7 @@ export const horizontalNavigationConfig = t => [
   {
     id: 'reports',
     label: t("header.notices"),
-    route: route['reports.list'],
+    route: route['notices.list'],
     icon: MdOutlineListAlt,
   },
 ]
