@@ -31,7 +31,6 @@ const ViewThreatMap = () => {
         <title>Mapa zagrożeń |  UA Pomoc</title>
       </Helmet>
       <Header />
-      <div>{t("test")}</div>
       <Suspense fallback={<Spinner />}>
         <MapProvider {...sidebarControl}>
           <Helmet>
