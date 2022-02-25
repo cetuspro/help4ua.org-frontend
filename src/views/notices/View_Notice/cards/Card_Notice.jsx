@@ -26,7 +26,7 @@ const NoticeCard = () => {
               title="Zobacz na mapie"
               className="flex flex-col"
             >
-              <span>{data.city}, {data.province}</span>
+              <span>{data.cityName}, {data.region}</span>
               <span>{data.address}</span>
             </a>}
           />
@@ -34,11 +34,11 @@ const NoticeCard = () => {
           <Item label="Na okres:" value={data.period}/>
         </div>
         <div className="flex-1">
-          <Item label="Przyjmę z małym dzieckiem:" value={data.allowToddlers ? 'TAK' : 'NIE'}/>
-          <Item label="Przyjmę ze zwierzętami:" value={data.allowAnimals ? 'TAK' : 'NIE'}/>
-          <Item label="Dostęp do pralki:" value={data.accessToWashingMachine ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam wyżywienie:" value={data.withMeals ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam transport:" value={data.withTransport ? 'TAK' : 'NIE'}/>
+          <Item label="Przyjmę z małym dzieckiem:" value={data.isAcceptedChild ? 'TAK' : 'NIE'}/>
+          <Item label="Przyjmę ze zwierzętami:" value={data.isAcceptedAnimal ? 'TAK' : 'NIE'}/>
+          <Item label="Dostęp do pralki:" value={data.hasWashingMachine ? 'TAK' : 'NIE'}/>
+          <Item label="Zapewniam wyżywienie:" value={data.isCatering ? 'TAK' : 'NIE'}/>
+          <Item label="Zapewniam transport:" value={data.isDelivery ? 'TAK' : 'NIE'}/>
         </div>
       </div>
       <Button to={route['notices.list']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>

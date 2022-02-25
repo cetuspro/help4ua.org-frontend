@@ -9,11 +9,11 @@ import { Link } from 'react-router-dom'
 const columns = [
   {
     name: 'Miasto',
-    selector: ({ city }) => city,
+    selector: ({ cityName }) => cityName,
   },
   {
     name: 'Ilość miejsc',
-    selector: ({ numberOfPlaces }) => numberOfPlaces,
+    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
   },
   {
     name: 'Imię i nazwisko',
@@ -44,22 +44,22 @@ const Item = ({label, value}) => {
 
 const ExpandedComponent = ({data: {
   description,
-  city,
-  province,
+  cityName,
+  region,
   address,
   bedCount,
-  allowToddlers,
-  allowAnimals,
-  accessToWashingMachine,
+  isAcceptedChild,
+  isAcceptedAnimal,
+  hasWashingMachine,
   period,
-  withMeals,
-  withTransport,
+  isCatering,
+  isDelivery,
   location,
   id
 }}) => {
   return (
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row gap-5">
         <div className="flex-1">
           <Item label="Opis:" value={description}/>
           <Item label="Adres:" value={
@@ -68,19 +68,20 @@ const ExpandedComponent = ({data: {
               title="Zobacz na mapie"
               className="flex flex-col"
             >
-              <span>{city}, {province}</span>
+              <span>{cityName}, {region}</span>
               <span>{address}</span>
             </a>}
           />
           <Item label="Liczba łóżek:" value={bedCount}/>
           <Item label="Na okres:" value={period}/>
+          <Item label="Identyfikator:" value={id}/>
         </div>
         <div className="flex-1">
-          <Item label="Przyjmę z małym dzieckiem:" value={allowToddlers ? 'TAK' : 'NIE'}/>
-          <Item label="Przyjmę ze zwierzętami:" value={allowAnimals ? 'TAK' : 'NIE'}/>
-          <Item label="Dostęp do pralki:" value={accessToWashingMachine ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam wyżywienie:" value={withMeals ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam transport:" value={withTransport ? 'TAK' : 'NIE'}/>
+          <Item label="Przyjmę z małym dzieckiem:" value={isAcceptedChild ? 'TAK' : 'NIE'}/>
+          <Item label="Przyjmę ze zwierzętami:" value={isAcceptedAnimal ? 'TAK' : 'NIE'}/>
+          <Item label="Dostęp do pralki:" value={hasWashingMachine ? 'TAK' : 'NIE'}/>
+          <Item label="Zapewniam wyżywienie:" value={isCatering ? 'TAK' : 'NIE'}/>
+          <Item label="Zapewniam transport:" value={isDelivery ? 'TAK' : 'NIE'}/>
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block">Zobacz szczegóły</Link>

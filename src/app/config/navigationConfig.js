@@ -24,8 +24,8 @@ export const horizontalNavigationConfig = [
   },
   {
     id: 'reports',
-    label: 'Zgłoszenia',
-    route: route['reports.list'],
+    label: 'Ogłoszenia',
+    route: route['notices.list'],
     icon: MdOutlineListAlt,
   },
 ]

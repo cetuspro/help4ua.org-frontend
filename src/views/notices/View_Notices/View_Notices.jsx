@@ -15,7 +15,6 @@ const breadcrumbItems = [
 
 const ViewNotices = () => {
   const query = useGetNotices()
-  console.log(query.data);
 
   return (
     <>
@@ -40,5 +39,5 @@ const ViewNotices = () => {
 }
 
 export default withFilters(ViewNotices, {
-  params: ['SearchPhrase, PageNumber, PageSize, Province, City, NumberOfPlaces'],
+  params: ['SearchPhrase, PageNumber, PageSize, region, City, accommodationPlacesCount'],
 })
