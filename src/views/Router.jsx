@@ -17,7 +17,7 @@ const AppRouter = () => {
         
         {/*{UserRoutes}*/}
         
-        {/*{PublicRoutes}*/}
+        {PublicRoutes}
         
         {/*{AccountRoutes}*/}
         
