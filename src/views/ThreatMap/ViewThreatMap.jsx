@@ -11,6 +11,7 @@ import { withFilters } from '@/app/context/queries/Filters'
 
 import Header from '@/components/common/Header'
 import Spinner from '@/components/common/Spinner'
+import { useTranslation } from 'react-i18next'
 
 const ViewThreatMap = () => {
   const reportsData = useGetReportsMap()
@@ -23,13 +24,14 @@ const ViewThreatMap = () => {
       }
     })
   }, [])
-
+  const {t} = useTranslation()
   return (
     <>
       <Helmet>
         <title>Mapa zagrożeń |  UA Pomoc</title>
       </Helmet>
       <Header />
+      <div>{t("test")}</div>
       <Suspense fallback={<Spinner />}>
         <MapProvider {...sidebarControl}>
           <Helmet>

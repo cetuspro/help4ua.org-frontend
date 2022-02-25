@@ -14,6 +14,7 @@ specifiers:
   dayjs: ^1.10.7
   eslint: ^7.32.0
   eslint-plugin-react: ^7.26.1
+  i18next: ^21.6.12
   leaflet: ^1.7.1
   leaflet.heat: ^0.2.0
   leaflet.markercluster: ^1.5.3
@@ -27,6 +28,7 @@ specifiers:
   react-helmet: ^6.1.0
   react-hook-form: ^7.20.5
   react-hot-toast: ^2.1.1
+  react-i18next: ^11.15.5
   react-icons: ^4.2.0
   react-infinite-scroll-component: ^6.1.0
   react-input-mask: ^2.0.4
@@ -58,6 +60,7 @@ dependencies:
   axios: 0.24.0
   axios-mock-adapter: 1.20.0_axios@0.24.0
   dayjs: 1.10.7
+  i18next: 21.6.12
   leaflet: 1.7.1
   leaflet.heat: 0.2.0
   leaflet.markercluster: 1.5.3_leaflet@1.7.1
@@ -70,6 +73,7 @@ dependencies:
   react-helmet: 6.1.0_react@17.0.2
   react-hook-form: 7.22.5_react@17.0.2
   react-hot-toast: 2.1.1_6bba596ee6fb84e656d75c53902ecf01
+  react-i18next: 11.15.5_2c37a602a29bb6bd53f3de707a8cfcc5
   react-icons: 4.3.1_react@17.0.2
   react-infinite-scroll-component: 6.1.0_react@17.0.2
   react-input-mask: 2.0.4_react-dom@17.0.2+react@17.0.2
@@ -1642,6 +1646,22 @@ packages:
       react-is: 16.13.1
     dev: false
 
+  /html-escaper/2.0.2:
+    resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
+    dev: false
+
+  /html-parse-stringify/3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+    dev: false
+
+  /i18next/21.6.12:
+    resolution: {integrity: sha512-xlGTPdu2g5PZEUIE6TA1mQ9EIAAv9nMFONzgwAIrKL/KTmYYWufQNGgOmp5Og1PvgUji+6i1whz0rMdsz1qaKw==}
+    dependencies:
+      '@babel/runtime': 7.16.5
+    dev: false
+
   /ignore/4.0.6:
     resolution: {integrity: sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==}
     engines: {node: '>= 4'}
@@ -2332,6 +2352,27 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     transitivePeerDependencies:
       - csstype
+    dev: false
+
+  /react-i18next/11.15.5_2c37a602a29bb6bd53f3de707a8cfcc5:
+    resolution: {integrity: sha512-vBWuVEQgrhZrGKpyv8FmJ7Zs5jRQWl794Tte7yzJ0okZqqi3jd6j2pLYNg441WcREsbIOvWdiDXbY7W6E93p1A==}
+    peerDependencies:
+      i18next: '>= 19.0.0'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.16.5
+      html-escaper: 2.0.2
+      html-parse-stringify: 3.0.1
+      i18next: 21.6.12
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react-icons/4.3.1_react@17.0.2:
@@ -3036,6 +3077,11 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /void-elements/3.1.0:
+    resolution: {integrity: sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /warning/4.0.3:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
