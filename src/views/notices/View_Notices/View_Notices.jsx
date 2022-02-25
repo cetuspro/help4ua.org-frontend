@@ -1,9 +1,11 @@
+import { withFilters } from '@/app/context/queries/Filters';
 import { QueryHasNoResults } from '@/app/context/queries/QueryHasNoResults';
 import { QueryHasResults } from '@/app/context/queries/QueryHasResults';
 import { QueryProvider } from '@/app/context/queries/QueryProvider';
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotices } from '../../../app/CRUD/notices/getNotices';
 import NoticesDataTable from './dataTable/DataTable_Notices';
+import NoticiesFilter from './filters/Filters_Noticies';
 
 const breadcrumbItems = [
   {
@@ -18,9 +20,8 @@ const ViewNotices = () => {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      {/* <UserReportsFilter /> */}
+      <NoticiesFilter />
       <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start">
-        {/* <UserSidebarMenu /> */}
         <QueryProvider {...query}>
           <QueryHasNoResults>
             <div className="bg-white p-8 rounded-xl grow">
@@ -38,7 +39,6 @@ const ViewNotices = () => {
   )
 }
 
-export default ViewNotices
-// export default withFilters(ViewNotices, {
-//   params: ['SearchPhrase, PageNumber, PageSize, ReportType'],
-// })
+export default withFilters(ViewNotices, {
+  params: ['SearchPhrase, PageNumber, PageSize, Province, City, NumberOfPlaces'],
+})

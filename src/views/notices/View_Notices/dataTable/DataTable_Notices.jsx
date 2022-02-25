@@ -55,7 +55,7 @@ const ExpandedComponent = ({data: {
   location,
 }}) => {
   return (
-    <div className="border-b p-4 text-sm bg-[#fafafa] flex">
+    <div className="border-b p-4 text-sm bg-[#fafafa] flex flex-col md:flex-row">
       <div className="flex-1">
         <Item label="Opis:" value={description}/>
         <Item label="Adres:" value={
@@ -64,7 +64,7 @@ const ExpandedComponent = ({data: {
             title="Zobacz na mapie"
             className="flex flex-col"
           >
-            <span>{city} {province}</span>
+            <span>{city}, {province}</span>
             <span>{address}</span>
           </a>}
         />
