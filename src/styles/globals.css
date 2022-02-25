@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    @apply h-full w-full;
+  }
+
+  *,
+  *::before,
+  *::after {
+    @apply box-border font-sans;
+  }
+
+  body {
+    @apply overflow-x-hidden antialiased bg-gray-100 dark:bg-gray-900 w-screen h-full;
+  }
+
+  body > #root {
+    @apply h-full w-full flex flex-col;
+  }
+
+  #main-footer {
+    @apply mt-auto;
+  }
+
+  :focus-visible {
+    @apply outline-none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    /*.main-nav {
+      @apply absolute top-0 left-0 transform -translate-x-full transition-transform duration-200 bg-white min-w-max h-screen  flex flex-col gap-4 pt-20 py-4 px-16 shadow-xl text-lg;
+    }
+    .main-nav.active {
+      @apply translate-x-0;
+    }
+
+    .main-nav .nav-link {
+      @apply w-full text-left bg-gray-200;
+    }*/
+
+    .side-nav {
+      @apply fixed top-0 h-full left-0;
+    }
+  }
+
+  .badge {
+    @apply bg-slate-200 text-slate-500 rounded-full px-2 py-1 text-xs select-none dark:text-white font-bold;
+  }
+
+  .badge-danger {
+    @apply badge bg-rose-200 text-rose-600;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-200 text-amber-600;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-200 text-emerald-600;
+  }
+
+  .fade-transition {
+    transition: 'visibility 0s, opacity 5s linear';
+  }
+
+  .threat-map .leaflet-container a {
+    @apply text-white;
+  }
+
+  .report-popup .leaflet-popup-content-wrapper {
+    background: none;
+    @apply bg-none border-0 shadow-none min-w-max;
+  }
+
+  .report-popup .leaflet-popup-content {
+    @apply my-0 -mx-32 w-screen md:min-w-max md:w-auto;
+  }
+
+  .report-popup .leaflet-popup-tip-container {
+    @apply hidden;
+  }
+
+  .report-popup a,
+  .report-card a {
+    @apply text-white;
+  }
+
+  .report-popup.leaflet-popup {
+    @apply transition-none;
+  }
+
+  .report-popup a.leaflet-popup-close-button {
+    @apply -right-32;
+  }
+  .custom-select .react-select__control--is-focused {
+    @apply border-primary !important;
+  }
+
+  .custom-select .react-select__control {
+    @apply py-0.5 bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+  }
+
+  .main-sidebar .simplebar-content {
+    @apply flex flex-col gap-1;
+  }
+
+  .is-edit-mode .threat-map {
+    @apply cursor-crosshair;
+  }
+  .clamped-ellipsis {
+    @apply overflow-hidden text-ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .break-words2 {
+    @apply inline-block break-words;
+    word-break: break-word;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.leaflet-container a {
+  color: inherit;
+}
+
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all 250ms ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all 250ms ease;
+}
+
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all 250ms ease;
+}
+.menu-secondary-exit {
+}
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all 250ms ease;
+}
+
+.animate-slebew {
+  animation: slebew 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+}
+
+@keyframes slebew {
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(200%);
+  }
+}
