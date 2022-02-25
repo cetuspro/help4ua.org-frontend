@@ -8,7 +8,7 @@ const MapLayout = () => {
   return (
     <>
       <Helmet>
-        <title>Mapa zagrożeń | Connected City</title>
+        <title>Mapa zagrożeń |  UA Pomoc</title>
       </Helmet>
       <Header />
       <Suspense fallback={<Spinner />}>

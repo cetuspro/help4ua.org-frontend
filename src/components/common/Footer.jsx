@@ -15,7 +15,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="border-t text-gray-400 text-sm text-center py-8">
-          © 2021 - Connected City
+          © 2021 -  UAPomoc.pl
         </div>
       </div>
     </footer>

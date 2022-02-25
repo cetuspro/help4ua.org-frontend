@@ -20,7 +20,7 @@ export default function Home() {
             <div className="xl:w-4/12 flex flex-col justify-center">
               <div className="sm:text-center lg:text-left lg:py-12 xl:py-24">
                 <p className="text-yellow-400 md:text-lg xl:text-xl font-semibold mb-4 md:mb-6">
-                  Connected City
+                   UA Pomoc
                 </p>
 
                 <h1 className="text-black-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
@@ -63,7 +63,7 @@ export default function Home() {
             </h2>
 
             <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
-              Connected City to jeden ekosystem miejski, dzięki któremu współpraca mieszkańców i
+               UA Pomoc to jeden ekosystem miejski, dzięki któremu współpraca mieszkańców i
               technologii pozwala miastu stać się bezpiecznym i przyjaznym miejscem do życia.
             </p>
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
           </h2>
 
           <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto mb-8 md:mb-14">
-            Miasta w których został został wdrożony system Connected City.
+            Miasta w których został został wdrożony system  UA Pomoc.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">

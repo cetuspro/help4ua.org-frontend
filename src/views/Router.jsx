@@ -13,15 +13,15 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        {ThreatMapRoutes}
-
-        {UserRoutes}
-
-        {PublicRoutes}
-
-        {AccountRoutes}
-
-        <Route path={route['auth.unauthorized']} element={<Lazy401 />} />
+        {/*{ThreatMapRoutes}*/}
+        
+        {/*{UserRoutes}*/}
+        
+        {/*{PublicRoutes}*/}
+        
+        {/*{AccountRoutes}*/}
+        
+        {/*<Route path={route['auth.unauthorized']} element={<Lazy401 />} />*/}
         <Route path="*" element={<Lazy404 />} />
       </Routes>
     </Router>

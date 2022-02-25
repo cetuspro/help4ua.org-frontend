@@ -14,7 +14,7 @@ const AdminLayout = () => {
   return (
     <>
       <Helmet>
-        <title>Panel miasta | Connected City</title>
+        <title>Panel miasta |  UA Pomoc</title>
       </Helmet>
       <div className="flex flex-1 h-screen dark:bg-gray-800">
         <SideNavigation hidden={isNavHidden} toggleNav={toggleNav} />

@@ -27,13 +27,13 @@ const ViewThreatMap = () => {
   return (
     <>
       <Helmet>
-        <title>Mapa zagrożeń | Connected City</title>
+        <title>Mapa zagrożeń |  UA Pomoc</title>
       </Helmet>
       <Header />
       <Suspense fallback={<Spinner />}>
         <MapProvider {...sidebarControl}>
           <Helmet>
-            <title>Mapa zagrożeń | Connected City</title>
+            <title>Mapa zagrożeń |  UA Pomoc</title>
             {sidebarControl.isAddMode && <body className="is-edit-mode" />}
           </Helmet>
           <MapContainer
