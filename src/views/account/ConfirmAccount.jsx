@@ -3,7 +3,7 @@ import { confirmAccount } from "../../app/CRUD/account/confirmAccount";
 import { useEffect, useState } from "react";
 import { BiLoaderCircle } from "react-icons/bi";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import logo from '../../assets/img/city-200.png'
+import logo from '../../assets/img/UAPOMOC.png'
 import cityLife from '../../assets/img/undraw_city_life.png'
 import { route } from "@/app/router/urls/routes";
 

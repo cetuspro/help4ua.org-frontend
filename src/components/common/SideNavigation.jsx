@@ -1,7 +1,7 @@
 import { sideNavigationConfig } from '@/app/config/navigationConfig'
 import { route } from '@/app/router/urls/routes'
 import { Link, NavLink } from 'react-router-dom'
-import logo from '../../assets/img/city-200.png'
+import logo from '../../assets/img/UAPOMOC.png'
 
 const SideNavigation = ({hidden = false, toggleNav}) => {
 

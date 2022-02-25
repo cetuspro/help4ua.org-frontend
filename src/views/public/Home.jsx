@@ -16,11 +16,11 @@ export default function Home() {
             <div className="xl:w-4/12 flex flex-col justify-center">
               <div className="sm:text-center lg:text-left lg:py-12 xl:py-24">
                 <p className="text-yellow-400 md:text-lg xl:text-xl font-semibold mb-4 md:mb-6">
-                   UA Pomoc
+                   Pomoc dla Ukrainy
                 </p>
 
                 <h1 className="text-black-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
-                  Razem budujemy lepsze miasto
+                  Schronienie dla potrzebujących
                 </h1>
 
                 <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
@@ -54,99 +54,13 @@ export default function Home() {
       <div id="features" className="bg-gray-100 dark:bg-gray-900 py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="mb-10 md:mb-16">
-            <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
-              Miasto jako jeden ekosystem
-            </h2>
-
             <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
-               UA Pomoc to jeden ekosystem miejski, dzięki któremu współpraca mieszkańców i
-              technologii pozwala miastu stać się bezpiecznym i przyjaznym miejscem do życia.
+              To strona oddolnej akcji społecznej dla tych którzy chcą pomóc i dla tych którzy szukają pomocy! Łączymy ludzi dobrego serca z tymi którzy potrzebują pomocy!
+              Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!
+              Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych!
+              Jeśli chciałbyś pomóc,  zostać wolontariuszem itp. każdy może pomóc!
             </p>
           </div>
-          {/* FEATURES */}
-          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16">
-            <div className="flex flex-col items-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiMap size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">Mapa zagrożeń</h3>
-              <p className="text-gray-500 text-center mb-2">
-                Jedna mapa, na której widoczne są wszystkie zagrożenia/problemy/zgłoszenia.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <MdOutlinePeopleAlt size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Zgłaszanie zagrożeń
-              </h3>
-              <p className="text-gray-500 text-center mb-2">
-                Mieszkańcy za pomocą intuicyjnej aplikacji mogą raportować zagrożenia w mieście.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <MdSensors size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">Dane z sensorów</h3>
-              <p className="text-gray-500 text-center mb-2">
-                Dzięki zebraniu danych ze wszystkich sensorów możliwa jest ich zaawansowana analiza.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <BiBrain size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Prognozowanie zagrożeń
-              </h3>
-              <p className="text-gray-500 text-center mb-2">
-                Dzięki dużej ilości danych na podstawie danych historycznych prognozowane są
-                zagrożenia.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <AiOutlineTrophy color="currentColor" size={100} />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">System nagród</h3>
-              <p className="text-gray-500 text-center mb-2">
-                System nagradzania aktywnych mieszkańców miasta w postaci biletów i voucherów.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <CgInfinity color="currentColor" size={100} />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Kompletna platforma
-              </h3>
-              <p className="text-gray-500 text-center mb-2">
-                Zapewniamy możliwość integracji platformy ConnectedCity z innymi zewnętrznymi
-                systemami, danymi lub rozwiązaniami IoT.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-100 dark:bg-gray-900 py-6 sm:py-8 lg:py-12">
-        <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-          <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center md:mb-6 mb-4">
-            Miasta
-          </h2>
         </div>
       </div>
     </>
