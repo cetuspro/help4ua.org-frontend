@@ -1,8 +1,4 @@
 import heroImg from '../../assets/img/hero_2.png'
-import rzeszow from '../../assets/img/rzeszów.jpg'
-import wroclaw from '../../assets/img/wrocław.jpg'
-import gniezno from '../../assets/img/gniezno.jpg'
-import rybnik from '../../assets/img/rybnik.jpg'
 import { Link } from 'react-router-dom'
 import { FiMap } from 'react-icons/fi'
 import { MdOutlinePeopleAlt, MdSensors } from 'react-icons/md'
@@ -151,78 +147,6 @@ export default function Home() {
           <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center md:mb-6 mb-4">
             Miasta
           </h2>
-
-          <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto mb-8 md:mb-14">
-            Miasta w których został został wdrożony system  UA Pomoc.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-            <div>
-              <Link
-                to={route['map']}
-                className="group h-96 flex items-end bg-gray-100 rounded-lg overflow-hidden shadow-lg relative p-4">
-                <img
-                  src={rzeszow}
-                  loading="lazy"
-                  alt="Photo by Austin Wade"
-                  className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200"
-                />
-
-                <div className="w-full flex flex-col bg-white text-center rounded-lg relative p-4">
-                  <span className="text-gray-500">Aktywne</span>
-                  <span className="text-gray-800 text-lg lg:text-xl font-bold">Rzeszów</span>
-                </div>
-              </Link>
-            </div>
-
-            <div>
-              <div className="group h-96 flex items-end bg-gray-100 rounded-lg overflow-hidden shadow-lg relative p-4 grayscale">
-                <img
-                  src={rybnik}
-                  loading="lazy"
-                  alt="Photo by engin akyurt"
-                  className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200"
-                />
-
-                <div className="w-full flex flex-col bg-white text-center rounded-lg relative p-4">
-                  <span className="text-gray-500">W trakcie wdrażania</span>
-                  <span className="text-gray-800 text-lg lg:text-xl font-bold">Rybnik</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="group h-96 flex items-end bg-gray-100 rounded-lg overflow-hidden shadow-lg relative p-4 grayscale">
-                <img
-                  src={gniezno}
-                  loading="lazy"
-                  alt="Photo by Austin Wade"
-                  className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200"
-                />
-
-                <div className="w-full flex flex-col bg-white text-center rounded-lg relative p-4">
-                  <span className="text-gray-500">W trakcie wdrażania</span>
-                  <span className="text-gray-800 text-lg lg:text-xl font-bold">Gniezno</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="group h-96 flex items-end bg-gray-100 rounded-lg overflow-hidden shadow-lg relative p-4 grayscale">
-                <img
-                  src={wroclaw}
-                  loading="lazy"
-                  alt="Photo by Austin Wade"
-                  className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200"
-                />
-
-                <div className="w-full flex flex-col bg-white text-center rounded-lg relative p-4">
-                  <span className="text-gray-500">W trakcie wdrażania</span>
-                  <span className="text-gray-800 text-lg lg:text-xl font-bold">Wrocław</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </>

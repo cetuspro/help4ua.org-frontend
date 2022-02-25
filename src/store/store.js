@@ -10,10 +10,12 @@ import {
 } from "redux-persist";
 
 import { persistedAuthReducer } from "./auth/authReducer";
+import { persistedLngReducer } from './language/languageReducer'
 
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
+    language: persistedLngReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

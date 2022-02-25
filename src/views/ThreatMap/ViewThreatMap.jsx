@@ -11,6 +11,7 @@ import { withFilters } from '@/app/context/queries/Filters'
 
 import Header from '@/components/common/Header'
 import Spinner from '@/components/common/Spinner'
+import { useTranslation } from 'react-i18next'
 
 const ViewThreatMap = () => {
   const reportsData = useGetReportsMap()
@@ -23,7 +24,7 @@ const ViewThreatMap = () => {
       }
     })
   }, [])
-
+  const {t} = useTranslation()
   return (
     <>
       <Helmet>
