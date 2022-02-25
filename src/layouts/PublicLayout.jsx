@@ -9,7 +9,7 @@ const PublicLayout = () => {
   return (
     <>
       <Helmet>
-        <title>Strona główna | Connected City</title>
+        <title>Strona główna |  UA Pomoc</title>
       </Helmet>
       <Header />
       <Suspense fallback={<Spinner />}>

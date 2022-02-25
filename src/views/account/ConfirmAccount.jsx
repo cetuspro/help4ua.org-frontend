@@ -3,7 +3,7 @@ import { confirmAccount } from "../../app/CRUD/account/confirmAccount";
 import { useEffect, useState } from "react";
 import { BiLoaderCircle } from "react-icons/bi";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import logo from '../../assets/img/city-200.png'
+import logo from '../../assets/img/UAPOMOC.png'
 import cityLife from '../../assets/img/undraw_city_life.png'
 import { route } from "@/app/router/urls/routes";
 
@@ -24,7 +24,7 @@ const ConfirmAccount = () => {
 
   return (
     <div className="flex flex-col flex-1 justify-center items-center bg-gray-100 gap-6">
-      <img src={logo} alt="Connected City" className="h-[8vh]"/>
+      <img src={logo} alt=" UA Pomoc" className="h-[8vh]"/>
       <div className="bg-white w-3/4 lg:w-1/2 p-6 flex flex-col items-center rounded">
         {!userId || !token ? (
           <div>Nieprawidłowy link</div>

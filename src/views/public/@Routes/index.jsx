@@ -16,43 +16,43 @@ const LazyReport = lazy(() => import('@/views/public/reports/View_Report/ViewRep
 const PublicRoutes = [
   <Route key={route['index']} path={route['index']} element={<PublicLayout />}>
     <Route index element={<LazyHome />} />
-    <Route
-      path={route['auth.login']}
-      element={
-        <RequireGuest>
-          <LazyLogin />
-        </RequireGuest>
-      }
-    />
-    <Route
-      path={route['auth.register']}
-      element={
-        <RequireGuest>
-          <LazyRegister />
-        </RequireGuest>
-      }
-    />
-    <Route
-      path={route['auth.password.forgot']}
-      element={
-        <RequireGuest>
-          <LazyForgotPass />
-        </RequireGuest>
-      }
-    />
-    <Route
-      path={route['auth.password.reset']}
-      element={
-        <RequireGuest>
-          <LazyResetPass />
-        </RequireGuest>
-      } 
-    />
+    {/*<Route*/}
+    {/*  path={route['auth.login']}*/}
+    {/*  element={*/}
+    {/*    <RequireGuest>*/}
+    {/*      <LazyLogin />*/}
+    {/*    </RequireGuest>*/}
+    {/*  }*/}
+    {/*/>*/}
+    {/*<Route*/}
+    {/*  path={route['auth.register']}*/}
+    {/*  element={*/}
+    {/*    <RequireGuest>*/}
+    {/*      <LazyRegister />*/}
+    {/*    </RequireGuest>*/}
+    {/*  }*/}
+    {/*/>*/}
+    {/*<Route*/}
+    {/*  path={route['auth.password.forgot']}*/}
+    {/*  element={*/}
+    {/*    <RequireGuest>*/}
+    {/*      <LazyForgotPass />*/}
+    {/*    </RequireGuest>*/}
+    {/*  }*/}
+    {/*/>*/}
+    {/*<Route*/}
+    {/*  path={route['auth.password.reset']}*/}
+    {/*  element={*/}
+    {/*    <RequireGuest>*/}
+    {/*      <LazyResetPass />*/}
+    {/*    </RequireGuest>*/}
+    {/*  } */}
+    {/*/>*/}
   </Route>,
-  <Route key={route['reports.list']} path={route['reports.list']} element={<UserLayout />}>
-    <Route index element={<LazyReports />} />
-    <Route path={route['reports.view']()} element={<LazyReport />} />
-  </Route>,
+  // <Route key={route['reports.list']} path={route['reports.list']} element={<UserLayout />}>
+  //   <Route index element={<LazyReports />} />
+  //   <Route path={route['reports.view']()} element={<LazyReport />} />
+  // </Route>,
 ]
 
 export default PublicRoutes

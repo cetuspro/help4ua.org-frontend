@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, LayersControl } from 'react-leaflet'
 import Sidebar from './components/Sidebar'
-import { useGetReportsMap } from '@/CRUD/reports/getReports'
+import { useGetReportsMap } from '@/app/CRUD/reports/getReports'
 import { QueryProvider } from '@/app/context/queries/QueryProvider'
 import Helmet from 'react-helmet'
 import ReportMarkers from './components/ReportMarkers'
@@ -8,8 +8,10 @@ import { MapProvider } from '@/app/context/MapContext'
 import { Suspense, useEffect } from 'react'
 import { useSidebar } from '@/app/hooks/useSidebar'
 import { withFilters } from '@/app/context/queries/Filters'
+
 import Header from '@/components/common/Header'
 import Spinner from '@/components/common/Spinner'
+import { useTranslation } from 'react-i18next'
 
 const ViewThreatMap = () => {
   const reportsData = useGetReportsMap()
@@ -22,17 +24,17 @@ const ViewThreatMap = () => {
       }
     })
   }, [])
-
+  const {t} = useTranslation()
   return (
     <>
       <Helmet>
-        <title>Mapa zagrożeń | Connected City</title>
+        <title>Mapa zagrożeń |  UA Pomoc</title>
       </Helmet>
       <Header />
       <Suspense fallback={<Spinner />}>
         <MapProvider {...sidebarControl}>
           <Helmet>
-            <title>Mapa zagrożeń | Connected City</title>
+            <title>Mapa zagrożeń |  UA Pomoc</title>
             {sidebarControl.isAddMode && <body className="is-edit-mode" />}
           </Helmet>
           <MapContainer

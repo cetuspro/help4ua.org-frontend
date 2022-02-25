@@ -6,6 +6,7 @@ import UserDropdown from './UserDropdown'
 
 import NavItem from './NavItem'
 import Button from './Button'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const HorizontalNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,6 +28,7 @@ const HorizontalNavigation = () => {
             <NavItem key={item.id} to={item.route} label={item.label} icon={item.icon} />
           ))}
         <UserDropdown />
+        <LanguageSwitcher/>
       </nav>
     </>
   )

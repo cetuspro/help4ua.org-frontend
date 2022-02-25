@@ -31,7 +31,7 @@ const SingleSensorView = () => {
         {(data) => (
           <>
             <Helmet>
-              <title>{data?.name} | Connected City</title>
+              <title>{data?.name} |  UA Pomoc</title>
             </Helmet>
             <div className="h-full flex flex-col gap-2 w-full p-4 pt-0">
               <div className="flex justify-between items-center mb-2 overflow-hidden text-ellipsis">

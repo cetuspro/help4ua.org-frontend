@@ -1,4 +1,4 @@
-# Connected City React Application
+#  UA Pomoc React Application
 
 ## Environment Variables
 

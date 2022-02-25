@@ -31,7 +31,7 @@ export const Breadcrumb = ({ items = [], children }) => {
     <>
       {title && (
         <Helmet>
-          <title>{title} | Connected City</title>
+          <title>{title} | UA Pomoc</title>
         </Helmet>
       )}
       <div className="flex justify-between items-center">

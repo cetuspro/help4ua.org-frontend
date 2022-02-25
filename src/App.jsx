@@ -8,7 +8,9 @@ import { useDispatch } from 'react-redux'
 import { actionMe, actionLogout } from './store/auth/authActions'
 import Spinner from './components/common/Spinner'
 import { useAuth } from '@/app/hooks/useAuth'
-
+import { I18nextProvider } from 'react-i18next'
+import i18next from 'i18next'
+import "./i18nInit"
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -48,9 +50,11 @@ export default function App() {
   if (isLoading && accessToken) return <Spinner />
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <AppRouter />
-      <Toaster />
-    </QueryClientProvider>
+    <I18nextProvider i18n={i18next}>
+      <QueryClientProvider client={queryClient}>
+        <AppRouter />
+        <Toaster />
+      </QueryClientProvider>
+    </I18nextProvider>
   )
 }
