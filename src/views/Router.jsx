@@ -6,7 +6,6 @@ const Lazy404 = lazy(() => import('@/views/error/View404'))
 const Lazy401 = lazy(() => import('@/views/error/View401'))
 import ThreatMapRoutes from './ThreatMap/@Routes'
 import PublicRoutes from './public/@Routes'
-import AdminRoutes from './admin/@Routes'
 import UserRoutes from './user/@Routes'
 import AccountRoutes from './account/@Routes'
 
@@ -15,8 +14,6 @@ const AppRouter = () => {
     <Router>
       <Routes>
         {ThreatMapRoutes}
-
-        {AdminRoutes}
 
         {UserRoutes}
 

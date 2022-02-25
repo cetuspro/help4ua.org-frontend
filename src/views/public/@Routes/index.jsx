@@ -46,7 +46,7 @@ const PublicRoutes = [
         <RequireGuest>
           <LazyResetPass />
         </RequireGuest>
-      }
+      } 
     />
   </Route>,
   <Route key={route['reports.list']} path={route['reports.list']} element={<UserLayout />}>

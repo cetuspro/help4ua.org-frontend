@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom'
 import { MENU_REPORT_LIST } from '@/app/config/sidebarMenus'
 import { useGetSensor } from '@/app/CRUD/sensors/getSensor'
 import SensorDustItem from '@/components/map/SensorDustItem'
-import PMChart from './PMChart'
 import { useNavigate } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { getSensorIcon, getSensorName } from '@/app/utils/getSensorIcon'
@@ -103,7 +102,6 @@ const SingleSensorView = () => {
                           />
                         ))}
                       </div>
-                      <PMChart data={data?.indicators?.dust} />
                     </>
                   )}
                 </div>
