@@ -9,6 +9,7 @@ import { isBool } from '@/app/utils/isBool'
 import { periodsEnum } from '@/app/config/enum/periods'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { useTranslation } from 'react-i18next'
+import { useSearchParams } from 'react-router-dom'
 
 const columns = [
   {
@@ -124,6 +125,7 @@ const ExpandedComponent = ({data: {
 const NoticesDataTable = () => {
   const { data } = useQueryContext()
   const pagination = usePagination()
+  const [searchParams] = useSearchParams();
 
   return (
     <Datatable
@@ -132,6 +134,10 @@ const NoticesDataTable = () => {
       pointerOnHover
       highlightOnHover
       pagination={pagination}
+      paginationPerPage={searchParams.get('pageSize') || '50'}
+      paginationComponentOptions={{
+        noRowsPerPage: true,
+      }}
       expandableRows
       expandableRowsComponent={ExpandedComponent}
       expandOnRowClicked
@@ -141,6 +147,7 @@ const NoticesDataTable = () => {
 export const NoticesDataTable2 = ({columns, expandableRowsComponent}) => {
   const { data } = useQueryContext()
   const pagination = usePagination()
+  const [searchParams] = useSearchParams();
 
   return (
     <Datatable
@@ -149,6 +156,10 @@ export const NoticesDataTable2 = ({columns, expandableRowsComponent}) => {
       pointerOnHover={!!expandableRowsComponent}
       highlightOnHover
       pagination={pagination}
+      paginationPerPage={searchParams.get('pageSize') || '50'}
+      paginationComponentOptions={{
+        noRowsPerPage: true,
+      }}
       expandableRows={!!expandableRowsComponent}
       expandableRowsComponent={expandableRowsComponent}
       expandOnRowClicked={!!expandableRowsComponent}

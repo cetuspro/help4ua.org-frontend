@@ -16,5 +16,5 @@ export const useGetNotices = (noticeType) =>
   usePaginatedQuery2({
     queryKey: ['app.notices'],
     queryFn: getNotices(noticeType),
-    perPage: 50,
+    defaultPageSize: 50,
   })
