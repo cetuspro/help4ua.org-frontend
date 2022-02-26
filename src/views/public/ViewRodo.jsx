@@ -1,63 +1,66 @@
+import { useTranslation } from 'react-i18next'
+
 const ViewRodo = () => {
+  const { t } = useTranslation()
   return (
-    <div className="container mx-auto p-5">
-      <h3 className="mb-5 size-xl">
-        INFORMACJA DOTYCZĄCA PRZETWARZANIA DANYCH OSOBOWYCH
+    <div className='container mx-auto p-5'>
+      <h3 className='mb-5 size-xl'>
+        {t('RODO.title')}
       </h3>
       <p>
-        Działając zgodnie z art. 13 Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (zwanego dalej: „RODO”) informujemy, że:
+        {t('RODO.subtitle')}
       </p>
-      <ol className="list-decimal pl-5">
-        <li className="mb-2">
-          Administratorem Twoich danych osobowych jest Cetuspro Sp. z o.o. z siedzibą w Rzeszowie, ul. Adama Matuszczaka 14 35-083 Rzeszów, Polska, adres e-mail do kontaktu: akcjauapomoc@gmail.com.
+      <ol className='list-decimal pl-5'>
+        <li className='mb-2'>
+          {t('RODO.p1')}
         </li>
-        <li className="mb-2">
-          Twoje dane osobowe będą przez nas przetwarzane na podstawie udzielonej przez Ciebie indywidulanej zgody na przetwarzanie danych osobowych w celu opublikowania Twoich ogłoszeń na portalu uapomoc.pl. Podstawą przetwarzania jest Twoja zgoda, zgodnie z art. 6 ust. 1 lit. a RODO. Zgodę na przetwarzanie danych możesz wycofać w każdym czasie poprzez kontakt z nami pod adresem: akcjauapomoc@gmail.com.
+        <li className='mb-2'>
+          {t('RODO.p2')}
         </li>
-        <li className="mb-2">
-          Dane podane przez Ciebie w formularzu ogłoszenia, zostaną opublikowane w portalu Pomocy Ukrainie na stronie internetowej www.uapomoc.pl. Będą one dostępne na Portalu również dla osób spoza terenu UE, szukających pomocy w Polsce.
+        <li className='mb-2'>
+          {t('RODO.p3')}
         </li>
-        <li className="mb-2">
-          Odbiorcami Twoich danych osobowych jest operator hostingu i podmioty współpracujące z Administratorem przy obsłudze portalu uapomoc.pl.
+        <li className='mb-2'>
+          {t('RODO.p4')}
         </li>
         <li>
-          W zakresie przetwarzania Twoich danych osobowych przysługują Ci:
-          <ol className="list-disc pl-5 mb-2">
+          {t('RODO.p5')}
+          <ol className='list-disc pl-5 mb-2'>
             <li>
-              prawo do żądania dostępu do Twoich danych osobowych,
+              {t('RODO.p5a')}
             </li>
             <li>
-              prawo do sprostowania, usunięcia lub ograniczenia przetwarzania Twoich danych osobowych,
+              {t('RODO.p5b')}
             </li>
             <li>
-              prawo do wniesienia sprzeciwu wobec przetwarzania Twoich danych osobowych,
+              {t('RODO.p5c')}
             </li>
             <li>
-              prawo do przenoszenia Twoich danych osobowych,
+              {t('RODO.p5d')}
             </li>
             <li>
-              prawo do cofnięcia zgody na przetwarzanie Twoich danych osobowych w dowolnym momencie.Wycofanie zgody nie wpływa jednakże na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej wycofaniem.
+              {t('RODO.p5e')}
             </li>
           </ol>
-          <div className="mb-2">
-            Z powyższych praw możesz skorzystać, kierując swój wniosek na adres poczty elektronicznej akcjauapomoc@gmail.com.
+          <div className='mb-2'>
+            {t('RODO.p5f')}
           </div>
         </li>
-        <li className="mb-2">
-          Przysługuje Ci prawo wniesienia skargi do organu nadzorczego.
+        <li className='mb-2'>
+          {t('RODO.p6')}
         </li>
-        <li className="mb-2">
-          Twoje dane osobowe nie będą wykorzystywane w celu automatycznego podejmowania decyzji, w tym profilowania, tzn. zautomatyzowanej analizy Twoich danych osobowych i dostosowywania preferencji.
+        <li className='mb-2'>
+          {t('RODO.p7')}
         </li>
-        <li className="mb-2">
-          Twoje dane będą przetwarzane do momentu aktualności Twojego ogłoszenia, najpóźniej do czasu zakończenia akcji pomocy dla Ukrainy poprzez portal uapomoc.pl. Po tym czasie zostaną usunięte.
+        <li className='mb-2'>
+          {t('RODO.p8')}
         </li>
-        <li className="mb-2">
-          Podanie przez Ciebie danych jest dobrowolne, lecz niezbędne do umieszczenia ich w portalu pomocy dla Ukrainy uapomoc.pl.
+        <li className='mb-2'>
+          {t('RODO.p9')}
         </li>
       </ol>
     </div>
   )
 }
 
-export default ViewRodo;
+export default ViewRodo

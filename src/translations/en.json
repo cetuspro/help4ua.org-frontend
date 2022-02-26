@@ -86,6 +86,27 @@
   "notice": {
     "markInactive": "Mark as inactive"
   },
+  "RODO": {
+    "label": "I agree to the processing of my data by Cetuspro Sp. z o.o. based in Rzeszow, in order to publish my data in an advertisement placed on the uapomoc.pl portal, addressed to people in need and providing help to Ukraine. <1>Clause</1>",
+    "title": "INFORMATION CONCERNING THE PROCESSING OF PERSONAL DATA",
+    "subtitle": "Acting in accordance with Article 13 of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (hereinafter: \"RODO\"), we inform you that:",
+    "p1": "The controller of your personal data is Cetuspro Ltd. based in Rzeszów, 14 Adama Matuszczaka Street 35-083 Rzeszów, Poland, contact e-mail address: akcjauapomoc@gmail.com.",
+    "p2": "Your personal data will be processed by us on the basis of your individual consent to process your personal data for the purpose of publishing your advertisements on uapomoc.pl. The basis for processing is your consent, in accordance with Article 6(1)(a) of the RODO. You can withdraw your consent to data processing at any time by contacting us at: akcjauapomoc@gmail.com.",
+    "p3": "The data provided by you in the announcement form, will be published in the Help Ukraine portal at www.uapomoc.pl. They will be available on the Portal also for non-EU persons seeking help in Poland.",
+    "p4": "The recipients of your personal data are the hosting operator and entities cooperating with the Administrator in the operation of the uapomoc.pl portal.",
+    "p5": "With regard to the processing of your personal data you are entitled to:",
+    "p5a": "the right to request access to your personal data,",
+    "p5b": "the right to rectification, erasure or restriction of the processing of your personal data,",
+    "p5c": "the right to object to the processing of your personal data,",
+    "p5d": "the right to portability of your personal data,",
+    "p5e": "the right to withdraw consent to the processing of your personal data at any time.However, withdrawal of consent does not affect the lawfulness of the processing that was carried out on the basis of consent before its withdrawal.",
+    "p5f": "You can exercise the above rights by directing your request to the email address akcjauapomoc@gmail.com.",
+    "p6": "You have the right to lodge a complaint with a supervisory authority.",
+    "p7": "Your personal data will not be used for automated decision-making, including profiling, i.e. automated analysis of your personal data and adjustment of your preferences.",
+    "p8": "Your data will be processed until the validity of your announcement, at the latest until the end of the campaign to help Ukraine through the uapomoc.pl portal. After this time they will be deleted.",
+    "p9": "The data you provide is voluntary, but necessary for posting on the portal of help for Ukraine uapomoc.pl."
+    
+  },
   "common": {
   }
 }
