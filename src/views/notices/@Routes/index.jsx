@@ -7,6 +7,7 @@ const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddFindShelter = lazy(() => import('../../../ua/Form_AddFindShelter'))
 const LazyAddShelterOffer = lazy(() => import('../../../ua/Form_AddShelterOffer'))
 const LazyAddTransportOffer = lazy(() => import('../../../ua/Form_AddTransportOffer'))
+const LazyAddFindTransportOffer = lazy(() => import('../../../ua/Form_AddFindTransportOffer'))
 const LazyAddHelpOffer = lazy(() => import('../../../ua/Form_AddHelpOffer'))
 const LazyAddSuccess = lazy(() => import('../../../ua/NoticeCreateSuccess'))
 
@@ -25,6 +26,7 @@ const NoticeRoutes = [
     <Route path={route['notices.addFindShelter']} element={<LazyAddFindShelter />} />
     <Route path={route['notices.addTransportOffer']} element={<LazyAddTransportOffer />} />
     <Route path={route['notices.addHelpOffer']} element={<LazyAddHelpOffer />} />
+    <Route path={route['notices.addFindTransportOffer']} element={<LazyAddFindTransportOffer />} />
     <Route path={route['notices.success']} element={<LazyAddSuccess />} />
   </Route>
 ]

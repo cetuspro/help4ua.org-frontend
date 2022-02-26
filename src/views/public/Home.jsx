@@ -107,27 +107,6 @@ export default function Home() {
               </div>
             </div>
             
-          </div>
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-12 xl:gap-16 md:px-10 py-2">
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiEdit size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.translations")}</h3>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Link
-                  to={route['notices.addHelpOffer']}
-                  className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
-                  {t("frontpage.addNotice")}
-                </Link>
-                <Link
-                  to={route['notices.list5']}
-                  className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
-                  {t("frontpage.seeNotices")}
-                </Link>
-              </div>
-            </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
                 <FiTruck size={100} color="currentColor" />
@@ -142,6 +121,44 @@ export default function Home() {
                 </Link>
                 <Link
                   to={route['notices.list4']}
+                  className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+                  {t("frontpage.seeNotices")}
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FiTruck size={100} color="currentColor" />
+              </div>
+
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.lfTransport")}</h3>
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Link
+                  to={route['notices.addFindTransportOffer']}
+                  className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+                  {t("frontpage.addNotice")}
+                </Link>
+                <Link
+                  to={route['notices.list4']}
+                  className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+                  {t("frontpage.seeNotices")}
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FiEdit size={100} color="currentColor" />
+              </div>
+
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.translations")}</h3>
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Link
+                  to={route['notices.addHelpOffer']}
+                  className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+                  {t("frontpage.addNotice")}
+                </Link>
+                <Link
+                  to={route['notices.list5']}
                   className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.seeNotices")}
                 </Link>
