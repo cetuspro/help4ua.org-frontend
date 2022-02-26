@@ -6,7 +6,9 @@ const getRegions = () =>
   axios({
     method: 'GET',
     url: `${API_URL}/enums/region`,
-  }).then(({ data }) => data)
+  }).then(({ data }) => {
+    return data.filter(e=>e.id!==0);
+  })
 
 export const getRegionsHelper = {
   queryKey: ['helper.regions'],
