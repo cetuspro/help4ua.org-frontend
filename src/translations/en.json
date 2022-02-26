@@ -5,10 +5,18 @@
     "account": "Your account",
     "contact": "Contact" 
   },
+  "tiles": {
+    "shelter": "Offering shelter?",
+    "lfShelter": "Looking for shelter?",
+    "translations": "Offering translation assistance?",
+    "transport": "Offering transportation?",
+    "help": "Offering help?"
+  },
   "frontpage": {
     "help": "Help for Ukraine",
     "title": "Shelter for those in need",
     "addNotice": "Add notice",
+    "seeNotices": "See notices",
     "info-1": "This is a grassroots social action site for those who want to help and for those who are looking for help!",
     "info-2": "We connect people of good heart with those who need help!",
     "info-3": "If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up!",
