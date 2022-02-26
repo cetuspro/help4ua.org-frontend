@@ -31,17 +31,17 @@ const NoticesFilter = () => {
           onSubmit={handleSubmit}
           className="flex flex-col lg:flex-row gap-2 lg:gap-8 lg:items-center">
           <InputText name="searchPhrase" label="Wyszukaj" icon={FaSearch} isLabelVisible={false} />
-          <InputAsyncSelect
-            {...getCitiesHelper}
-            name="City"
-            icon={FaCity}
-            label={'Wybierz miasto'}
-            isLabelVisible={false}
-            transform={({ id, name }) => ({
-              value: id,
-              label: name,
-            })}
-          />
+          {/*<InputAsyncSelect*/}
+          {/*  {...getCitiesHelper}*/}
+          {/*  name="City"*/}
+          {/*  icon={FaCity}*/}
+          {/*  label={'Wybierz miasto'}*/}
+          {/*  isLabelVisible={false}*/}
+          {/*  transform={({ id, name }) => ({*/}
+          {/*    value: id,*/}
+          {/*    label: name,*/}
+          {/*  })}*/}
+          {/*/>*/}
           <InputAsyncSelect
             {...getRegionsHelper}
             name="Region"

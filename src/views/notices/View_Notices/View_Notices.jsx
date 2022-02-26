@@ -4,7 +4,7 @@ import { QueryHasResults } from '@/app/context/queries/QueryHasResults';
 import { QueryProvider } from '@/app/context/queries/QueryProvider';
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotices } from '../../../app/CRUD/notices/getNotices';
-import NoticesDataTable from './dataTable/DataTable_Notices';
+import NoticesDataTable, { NoticesDataTable2 } from './dataTable/DataTable_Notices'
 import NoticesFilter from './filters/Filters_Notices';
 
 const breadcrumbItems = [
@@ -13,7 +13,7 @@ const breadcrumbItems = [
   },
 ]
 
-const ViewNotices = () => {
+const ViewNotices = ({columns, expandableRowsComponent}) => {
   const query = useGetNotices()
 
   return (
@@ -29,7 +29,14 @@ const ViewNotices = () => {
           </QueryHasNoResults>
           <QueryHasResults>
             <div className="bg-white p-4 rounded-lg overflow-x-auto w-full">
-              <NoticesDataTable />
+              {columns && expandableRowsComponent ? (
+                <NoticesDataTable2
+                  columns={columns}
+                  expandableRowsComponent={expandableRowsComponent}
+                />
+              ) : (
+                <NoticesDataTable />
+              )}
             </div>
           </QueryHasResults>
         </QueryProvider>

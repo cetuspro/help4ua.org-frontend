@@ -22,12 +22,12 @@ export const horizontalNavigationConfig = t => [
   //   route: route['map'],
   //   icon: FiMapPin,
   // },
-  {
-    id: 'reports',
-    label: t("header.notices"),
-    route: route['notices.list'],
-    icon: MdOutlineListAlt,
-  },
+  // {
+  //   id: 'reports',
+  //   label: t("header.notices"),
+  //   route: route['notices.list'],
+  //   icon: MdOutlineListAlt,
+  // },
   // {
   //   id: 'contact',
   //   label: t("header.contact"),

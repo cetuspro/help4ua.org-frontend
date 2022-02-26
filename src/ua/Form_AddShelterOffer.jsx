@@ -90,6 +90,7 @@ const FormAddShelterOffer = () => {
                     name="name"
                     label={mt('Imię i Nazwisko')}
                     icon={FaUser}
+                    required
                   />
                 </div>
                 <div>
@@ -97,6 +98,7 @@ const FormAddShelterOffer = () => {
                     name="phoneNumber"
                     label={mt('Numer telefonu')}
                     icon={FaPhone}
+                    required
                   />
                 </div>
                 <div>
@@ -104,6 +106,7 @@ const FormAddShelterOffer = () => {
                     name="email"
                     label={mt('Adres email')}
                     icon={FaEnvelope}
+                    required
                   />
                 </div>
                 <div>
@@ -111,6 +114,7 @@ const FormAddShelterOffer = () => {
                     name="region"
                     label="Województwo"
                     options={voivodeshipsEnum(mt)}
+                    required
                   />
                 </div>
                 <div>
@@ -118,6 +122,7 @@ const FormAddShelterOffer = () => {
                     name="cityName"
                     label={mt('Miejscowość')}
                     icon={FaMapPin}
+                    required
                   />
                 </div>
               </div>
@@ -146,6 +151,7 @@ const FormAddShelterOffer = () => {
                     type="number"
                     label={mt('Max liczba osób')}
                     icon={FaUsers}
+                    required
                   />
                 </div>
                 <div>
@@ -154,6 +160,7 @@ const FormAddShelterOffer = () => {
                     label={mt('Na jak długo')}
                     icon={FaClock}
                     options={periodsEnum}
+                    required
                   />
                 </div>
               </div>

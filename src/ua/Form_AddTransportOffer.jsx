@@ -30,7 +30,7 @@ import { route } from '@/app/router/urls/routes'
 const schema = yup.object().shape({
   name: yup.string().required(),
   description: yup.string(),
-  cityName: yup.string().required(),
+  // cityName: yup.string().required(),
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
   type: yup.number().default(20),
@@ -76,6 +76,7 @@ const FormAddFindTransportOffer = () => {
                     name="name"
                     label={mt('Imię i Nazwisko')}
                     icon={FaUser}
+                    required
                   />
                 </div>
                 <div>
@@ -83,6 +84,7 @@ const FormAddFindTransportOffer = () => {
                     name="phoneNumber"
                     label={mt('Numer telefonu')}
                     icon={FaPhone}
+                    required
                   />
                 </div>
                 <div>
@@ -92,13 +94,13 @@ const FormAddFindTransportOffer = () => {
                     icon={FaEnvelope}
                   />
                 </div>
-                <div>
-                  <InputText
-                    name="cityName"
-                    label={mt('Miejscowość')}
-                    icon={FaMapPin}
-                  />
-                </div>
+                {/*<div>*/}
+                {/*  <InputText*/}
+                {/*    name="cityName"*/}
+                {/*    label={mt('Miejscowość')}*/}
+                {/*    icon={FaMapPin}*/}
+                {/*  />*/}
+                {/*</div>*/}
               </div>
               <div>
                 <InputTextarea
