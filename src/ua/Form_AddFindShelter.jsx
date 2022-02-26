@@ -85,6 +85,7 @@ const FormAddFindShelter = () => {
                     name="name"
                     label={mt('Imię i Nazwisko')}
                     icon={FaUser}
+                    required
                   />
                 </div>
                 <div>
@@ -92,6 +93,7 @@ const FormAddFindShelter = () => {
                     name="phoneNumber"
                     label={mt('Numer telefonu')}
                     icon={FaPhone}
+                    required
                   />
                 </div>
                 <div>
@@ -99,6 +101,7 @@ const FormAddFindShelter = () => {
                     name="email"
                     label={mt('Adres email')}
                     icon={FaEnvelope}
+                    required
                   />
                 </div>
                 <div>
@@ -106,6 +109,7 @@ const FormAddFindShelter = () => {
                     name="cityName"
                     label={mt('Miejscowość')}
                     icon={FaMapPin}
+                    required
                   />
                 </div>
               </div>
@@ -118,6 +122,7 @@ const FormAddFindShelter = () => {
                     type="number"
                     label={mt('Liczba osób')}
                     icon={FaUsers}
+                    required
                   />
                 </div>
                 <div>
@@ -135,6 +140,7 @@ const FormAddFindShelter = () => {
                       {value: 15, label: '3 miesiące'},
                       {value: 60, label: 'Dłużej niż 3 miesiące'},
                     ]}
+                    required
                   />
                 </div>
               </div>
