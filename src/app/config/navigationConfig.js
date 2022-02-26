@@ -16,12 +16,12 @@ import { FiMapPin } from 'react-icons/fi'
 import { CgProfile } from 'react-icons/cg'
 
 export const horizontalNavigationConfig = t => [
-  {
-    id: 'map',
-    label: t("header.map"),
-    route: route['map'],
-    icon: FiMapPin,
-  },
+  // {
+  //   id: 'map',
+  //   label: t("header.map"),
+  //   route: route['map'],
+  //   icon: FiMapPin,
+  // },
   {
     id: 'reports',
     label: t("header.notices"),

@@ -28,7 +28,7 @@ const HorizontalNavigation = () => {
           .map((item) => (
             <NavItem key={item.id} to={item.route} label={item.label} icon={item.icon} />
           ))}
-        <UserDropdown />
+        {/*<UserDropdown />*/}
         <LanguageSwitcher/>
       </nav>
     </>
