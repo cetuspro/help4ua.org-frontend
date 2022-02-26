@@ -25,25 +25,21 @@ import { InputSubmit } from '../components/form/Input_Submit'
 import { HookFormError } from '../components/form/HookFormError'
 import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
-import { periodsEnum } from '@/app/config/enum/periods'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
 
 const schema = yup.object().shape({
   name: yup.string().required(),
   description: yup.string(),
-  region: yup.number().required(),
   cityName: yup.string().required(),
   phoneNumber: yup.string().required(),
   email: yup.string().email().required(),
-  roomCount: yup.string().nullable(),
-  bedCount: yup.string().nullable(),
   accommodationPlacesCount: yup.string().required(),
   isAcceptedChild: yup.string(),
   isAcceptedAnimal: yup.string(),
   hasWashingMachine: yup.string(),
   isCatering: yup.string(),
   isDelivery: yup.string(),
+  type: yup.number().default(10),
   
   // address: yup.string().required(),
   period: yup.string().required(), //
@@ -58,7 +54,7 @@ const query = (data) => {
 }
 const mt = (a) => a;
 
-export const FormAddAdv = () => {
+const FormAddFindShelter = () => {
   
   const methods = useForm({
     resolver: yupResolver(schema),
@@ -68,13 +64,14 @@ export const FormAddAdv = () => {
   // console.log(methods.formState.errors)
   const handleSuccess = ({ data }) => {
     // data = id
-    navigate(route.successNotice);
+    navigate(route['notices.success']);
   }
   
   const mutation = useHookFormMutation(methods, query, {handleSuccess});
   
   return (
     <div className="container mx-auto py-8">
+      <h2 className="font-bold mb-4 ml-2 text-2xl">Szukam schronienia</h2>
       <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
@@ -105,13 +102,6 @@ export const FormAddAdv = () => {
                   />
                 </div>
                 <div>
-                  <InputSelect
-                    name="region"
-                    label="Województwo"
-                    options={voivodeshipsEnum(mt)}
-                  />
-                </div>
-                <div>
                   <InputText
                     name="cityName"
                     label={mt('Miejscowość')}
@@ -124,25 +114,9 @@ export const FormAddAdv = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
                   <InputText
-                    name="roomCount"
-                    type="number"
-                    label={mt('Liczba pokoi')}
-                    icon={FaDoorClosed}
-                  />
-                </div>
-                <div>
-                  <InputText
-                    name="bedCount"
-                    type="number"
-                    label={mt('Liczba łóżek')}
-                    icon={FaBed}
-                  />
-                </div>
-                <div>
-                  <InputText
                     name="accommodationPlacesCount"
                     type="number"
-                    label={mt('Max liczba osób')}
+                    label={mt('Liczba osób')}
                     icon={FaUsers}
                   />
                 </div>
@@ -151,7 +125,16 @@ export const FormAddAdv = () => {
                     name="period"
                     label={mt('Na jak długo')}
                     icon={FaClock}
-                    options={periodsEnum}
+                    options={[
+                      {value: 1, label: 'Do ustalenia'},
+                      {value: 10, label: '1 tydzień'},
+                      {value: 11, label: '2 tygodnie'},
+                      {value: 12, label: '3 tygodnie'},
+                      {value: 13, label: '1 miesiąc'},
+                      {value: 14, label: '2 miesiące'},
+                      {value: 15, label: '3 miesiące'},
+                      {value: 60, label: 'Dłużej niż 3 miesiące'},
+                    ]}
                   />
                 </div>
               </div>
@@ -161,31 +144,25 @@ export const FormAddAdv = () => {
                 <div>
                   <InputCheckbox
                     name="isAcceptedChild"
-                    label={mt('Przyjmę z małym dzieckiem')}
+                    label={mt('Jestem z małym dzieckiem')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isAcceptedAnimal"
-                    label={mt('Przyjmę ze zwierzakiem')}
+                    label={mt('Jestem ze zwierzakiem')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isCatering"
-                    label={mt('Zapewniam wyżywienie')}
+                    label={mt('Potrzebuję wyżywienia')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isDelivery"
-                    label={mt('Mogę przyjechać po osoby')}
-                  />
-                </div>
-                <div>
-                  <InputCheckbox
-                    name="hasWashingMachine"
-                    label={mt('Udostępnię dostęp do pralki')}
+                    label={mt('Potrzebuję transportu')}
                   />
                 </div>
               </div>
@@ -211,3 +188,5 @@ export const FormAddAdv = () => {
     </div>
   );
 };
+
+export default FormAddFindShelter;

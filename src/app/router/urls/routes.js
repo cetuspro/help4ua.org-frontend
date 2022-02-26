@@ -10,8 +10,8 @@ import { contactRoutes } from '@/app/router/urls/public/public'
 
 export const route = {
   index: `${BASE_URL}/`,
-  createNotice: `${BASE_URL}/dodaj-ogloszenie`,
-  successNotice: `${BASE_URL}/dodaj-ogloszenie/success`,
+  // createNotice: `${BASE_URL}/dodaj-ogloszenie`,
+  // successNotice: `${BASE_URL}/dodaj-ogloszenie/success`,
   ...authRoutes,
   ...threatMapRoutes,
   ...adminRoutes,

@@ -76,12 +76,12 @@ export default function Home() {
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.shelter")}</h3>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.addShelterOffer']}
                   className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.addNotice")}
                 </Link>
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.list3']}
                   className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.seeNotices")}
                 </Link>
@@ -95,12 +95,12 @@ export default function Home() {
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.lfShelter")}</h3>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.addFindShelter']}
                   className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.addNotice")}
                 </Link>
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.list2']}
                   className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.seeNotices")}
                 </Link>
@@ -117,12 +117,12 @@ export default function Home() {
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.translations")}</h3>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.addHelpOffer']}
                   className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.addNotice")}
                 </Link>
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.list5']}
                   className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.seeNotices")}
                 </Link>
@@ -136,12 +136,12 @@ export default function Home() {
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.transport")}</h3>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.addTransportOffer']}
                   className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.addNotice")}
                 </Link>
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.list4']}
                   className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.seeNotices")}
                 </Link>
@@ -155,12 +155,12 @@ export default function Home() {
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.help")}</h3>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.addHelpOffer']}
                   className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.addNotice")}
                 </Link>
                 <Link
-                  to={route.createNotice}
+                  to={route['notices.list5']}
                   className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-yellow-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                   {t("frontpage.seeNotices")}
                 </Link>
