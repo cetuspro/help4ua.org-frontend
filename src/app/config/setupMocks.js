@@ -19,6 +19,16 @@ export const setupMocks = () => {
   //   return notice ? [200, notice] : [404]
   // })
 
+  // mock.onGet(`${API_URL}/notices`).reply(config => {
+  //   return [200, {
+  //     items: notices.slice((config?.params?.PageNumber-1)*config?.params?.PageSize, config?.params?.PageNumber*config?.params?.PageSize),
+  //     pageIndex: config?.params?.PageNumber,
+  //     totalPages: 16/config?.params?.PageSize,
+  //     totalCount: 16,
+  //     hasPreviousPage: config?.params?.PageNumber > 1,
+  //     hasNextPage: config?.params?.PageNumber < 16/config?.params?.PageSize,
+  //   }]
+  // })
   // mock.onGet(`${API_URL}/notices`).reply(202, {
   //   items: notices
   // })

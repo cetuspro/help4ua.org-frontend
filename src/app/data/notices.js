@@ -22,7 +22,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby do dwu osobowych pokoi, zapewniam posiłki',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 1,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -55,7 +55,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby do dwu osobowych pokoi, zapewniam posiłki',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 2,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -88,7 +88,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby do dwu osobowych pokoi, zapewniam posiłki',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 3,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -154,7 +154,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby do dwu osobowych pokoi, zapewniam posiłki',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 5,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -186,7 +186,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 6,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -218,7 +218,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 7,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -250,7 +250,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 8,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -282,7 +282,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 9,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -314,7 +314,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 10,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -346,7 +346,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 11,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -378,7 +378,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 12,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -410,7 +410,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 13,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -441,7 +441,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 14,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -473,7 +473,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 15,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
@@ -505,7 +505,7 @@ export default [
       name: 'Aktualne'
     },
     description: 'Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole. Przyjmę 4 osoby, najlepiej studentów, zapewniam posiłki i dostęp do internetu i możliwość zatrudnienia w młodym dynamicznym zespole',
-    accommodationPlacesCount: 4,
+    accommodationPlacesCount: 16,
     region: 'Podkarpackie',
     cityName: 'Rzeszów',
     address: 'Matuszczaka 14',
