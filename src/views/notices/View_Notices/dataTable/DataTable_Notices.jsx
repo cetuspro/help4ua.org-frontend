@@ -21,7 +21,7 @@ const columns = [
     selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
   },
   {
-    name: 'Imię i nazwisko',
+    name: 'Imię',
     selector: ({ name }) => name,
   },
   {
@@ -59,7 +59,7 @@ export const getValue = val => isBool(val) ? (
   "Brak danych"
 )
 
-export const getPeriod = val => periodsEnum.find(item => item.value === val)?.label ?? "Brak danych";
+export const getPeriod = (t, val) => periodsEnum(t).find(item => item.value === val)?.label ?? "Brak danych";
 
 
 const ExpandedComponent = ({data: {
@@ -101,9 +101,9 @@ const ExpandedComponent = ({data: {
               <span>{address}</span>
             </a>}
           />
-          {!!name && <Item label="Imię i nazwisko:" value={name}/>}
+          {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
-          {!! period &&<Item label="Na okres:" value={getPeriod(parseInt(period))}/>}
+          {!! period &&<Item label="Na okres:" value={getPeriod(t, parseInt(period))}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label="Identyfikator:" value={id}/>}
         </div>
@@ -153,16 +153,16 @@ export const NoticesDataTable2 = ({columns, expandableRowsComponent}) => {
     <Datatable
       columns={columns}
       data={data}
-      pointerOnHover
+      pointerOnHover={!!expandableRowsComponent}
       highlightOnHover
       pagination={pagination}
       paginationPerPage={searchParams.get('pageSize') || '50'}
       paginationComponentOptions={{
         noRowsPerPage: true,
       }}
-      expandableRows
+      expandableRows={!!expandableRowsComponent}
       expandableRowsComponent={expandableRowsComponent}
-      expandOnRowClicked
+      expandOnRowClicked={!!expandableRowsComponent}
     />
   )
 }

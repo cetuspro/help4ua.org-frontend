@@ -13,6 +13,35 @@
     "lfTransport": "Szukasz transportu",
     "help": "Oferujesz pomoc?"
   },
+  "periods": {
+    "negotiable": "Do ustalenia",
+    "oneWeek": "1 tydzień",
+    "twoWeeks": "2 tygodnie",
+    "threeWeeks": "3 tygodnie",
+    "oneMonth": "1 miesiąc",
+    "twoMonths": "2 miesiące",
+    "threeMonths": "3 miesiące",
+    "over3Months": "Dłużej niż 3 miesiące"
+  },
+  "form": {
+    "findShelter": "Szukam schornienia",
+    "personalInfo": "Dane osobowe",
+    "name": "Imię",
+    "phoneNumber": "Numer telefonu",
+    "email": "Adres email",
+    "cityName": "Miejscowość",
+    "accommodation": "Zakwaterowanie",
+    "accommodationPlacesCount": "Liczba osób",
+    "period": "Na jak długo",
+    "details": "Szczegóły",
+    "isAcceptedChild": "Jestem z małym dzieckiem",
+    "isAcceptedAnimal": "Jestem ze zwierzakiem",
+    "isCatering": "Potrzebuję wyżywienia",
+    "isDelivery": "Potrzebuję transportu",
+    "extraInfo": "Dodatkowe informacje",
+    "description": "Opis",
+    "send": "Wyślij"
+  },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
     "title": "Schronienie dla potrzebujących",

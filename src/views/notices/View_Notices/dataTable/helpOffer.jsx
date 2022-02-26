@@ -1,10 +1,9 @@
 import dayjs from 'dayjs'
-import { isBool } from '@/app/utils/isBool'
-import { periodsEnum } from '@/app/config/enum/periods'
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
+import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
 export const helpOfferColumnsColumns = [
   {
@@ -12,11 +11,7 @@ export const helpOfferColumnsColumns = [
     selector: ({ cityName }) => cityName,
   },
   {
-    name: 'Ilość miejsc',
-    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
-  },
-  {
-    name: 'Imię i nazwisko',
+    name: 'Imię',
     selector: ({ name }) => name,
   },
   {
@@ -46,14 +41,6 @@ const Item = ({label, value}) => {
     </div>
   )
 }
-
-export const getValue = val => isBool(val) ? (
-  val ? 'TAK' : 'NIE'
-) : (
-  "Brak danych"
-)
-
-export const getPeriod = val => periodsEnum.find(item => item.value === val)?.label ?? "Brak danych";
 
 
 export const HelpOfferExpandedComponent = ({data: {
@@ -95,20 +82,10 @@ export const HelpOfferExpandedComponent = ({data: {
               <span>{address}</span>
             </a>}
           />
-          {!!name && <Item label="Imię i nazwisko:" value={name}/>}
+          {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
-          {!! period &&<Item label="Na okres:" value={getPeriod(parseInt(period))}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label="Identyfikator:" value={id}/>}
-        </div>
-        <div className="flex-1">
-          {!!accommodationPlacesCount && <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>}
-          {!!bedCount && <Item label="Liczba łóżek:" value={bedCount}/>}
-          <Item label="Przyjmę z małym dzieckiem:" value={getValue(isAcceptedChild)}/>
-          <Item label="Przyjmę ze zwierzętami:" value={getValue(isAcceptedAnimal)}/>
-          <Item label="Dostęp do pralki:" value={getValue(hasWashingMachine)}/>
-          <Item label="Zapewniam wyżywienie:" value={getValue(isCatering)}/>
-          <Item label="Zapewniam transport:" value={getValue(isDelivery)}/>
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>

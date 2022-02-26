@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-export const transportOfferColumns = [
+export const transportSearchColumns = [
   {
     name: 'Ilość miejsc',
     selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
@@ -19,5 +19,4 @@ export const transportOfferColumns = [
   },
 ];
 
-
-export const TransportOfferExpandedComponent = null;
+export const TransportSearchExpandedComponent = null

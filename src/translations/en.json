@@ -5,6 +5,35 @@
     "account": "Your account",
     "contact": "Contact" 
   },
+  "periods": {
+    "negotiable": "To be determined",
+    "oneWeek": "1 week",
+    "twoWeeks": "2 weeks",
+    "threeWeeks": "3 weeks",
+    "oneMonth": "1 month",
+    "twoMonths": "2 month",
+    "threeMonths": "3 month",
+    "over3Months": "Longer than 3 months"
+  },
+  "form": {
+    "findShelter": "Find shelter",
+    "personalInfo": "Personal information",
+    "name": "First name",
+    "phoneNumber": "Phone number",
+    "email": "Email address",
+    "cityName": "City",
+    "accommodation": "Accommodation",
+    "accommodationPlacesCount": "Number of people",
+    "period": "For how long",
+    "details": "Details",
+    "isAcceptedChild": "I'm with a small child",
+    "isAcceptedAnimal": "I'm with a pet",
+    "isCatering": "I need food",
+    "isDelivery": "I need transport",
+    "extraInfo": "Additional information",
+    "description": "Description",
+    "send": "Send"
+  },
   "tiles": {
     "shelter": "Offering shelter?",
     "lfShelter": "Looking for shelter?",

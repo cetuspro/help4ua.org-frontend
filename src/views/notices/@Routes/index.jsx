@@ -12,6 +12,10 @@ import {
   shelterSearchColumns,
   ShelterSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/shelterSearch'
+import {
+  transportSearchColumns,
+  TransportSearchExpandedComponent,
+} from '@/views/notices/View_Notices/dataTable/transportSearch'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddFindShelter = lazy(() => import('../../../ua/Form_AddFindShelter'))
@@ -30,6 +34,7 @@ const NoticeRoutes = [
         title="Schronienie - osoby potrzebujące"
         columns={shelterSearchColumns}
         expandableRowsComponent={ShelterSearchExpandedComponent}
+        noticeType={10}
       />}
     />
     <Route
@@ -38,6 +43,7 @@ const NoticeRoutes = [
         title="Schronienie - oferty pomocy"
         columns={shelterOfferColumns}
         expandableRowsComponent={ShelterOfferExpandedComponent}
+        noticeType={1}
       />}
     />
     <Route
@@ -46,6 +52,7 @@ const NoticeRoutes = [
         title="Transport - oferty pomocy"
         columns={transportOfferColumns}
         expandableRowsComponent={TransportOfferExpandedComponent}
+        noticeType={20}
       />}
     />
     <Route
@@ -54,6 +61,16 @@ const NoticeRoutes = [
         title="Inne oferty pomocy"
         columns={helpOfferColumnsColumns}
         expandableRowsComponent={HelpOfferExpandedComponent}
+        noticeType={50}
+      />}
+    />
+    <Route
+      path={route['notices.list6']}
+      element={<LazyNotices
+        title="Transport - osoby potrzebujące"
+        columns={transportSearchColumns}
+        expandableRowsComponent={TransportSearchExpandedComponent}
+        noticeType={50}
       />}
     />
     <Route path={route['notices.view']()} element={<LazyNotice/>} />
