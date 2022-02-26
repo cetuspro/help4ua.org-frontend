@@ -5,6 +5,8 @@ import usePagination from '@/app/hooks/usePagination'
 import dayjs from 'dayjs'
 import { route } from '@/app/router/urls/routes'
 import { Link } from 'react-router-dom'
+import { isBool } from '@/app/utils/isBool'
+import { periodsEnum } from '@/app/config/enum/periods'
 
 const columns = [
   {
@@ -48,6 +50,14 @@ const Item = ({label, value}) => {
   )
 }
 
+const getValue = val => isBool(val) ? (
+  val ? 'TAK' : 'NIE'
+) : (
+  "Brak danych"
+)
+
+const getPeriod = val => periodsEnum.find(item => item.value === val)?.label ?? "Brak danych";
+
 const ExpandedComponent = ({data: {
   description,
   cityName,
@@ -67,14 +77,17 @@ const ExpandedComponent = ({data: {
   phoneNumber,
   createdAt,
 }}) => {
+  const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${region??''}+${address??''}`
   return (
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
       <div className="flex gap-5">
         <div className="flex-1">
-          <Item label="Opis:" value={description}/>
+          {!!description && <Item label="Opis:" value={description}/>}
           <Item label="Adres:" value={
             <a
-              href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
+              href={href}
+              target={'_blank'}
+              rel={'noreferrer'}
               title="Zobacz na mapie"
               className="flex flex-col text-blue-700 hover:text-blue-500 items-start"
             >
@@ -82,20 +95,20 @@ const ExpandedComponent = ({data: {
               <span>{address}</span>
             </a>}
           />
-          <Item label="Imię i nazwisko:" value={name}/>
-          <Item label="Telefon:" value={phoneNumber}/>
-          <Item label="Na okres:" value={period}/>
-          <Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>
-          <Item label="Identyfikator:" value={id}/>
+          {!!name && <Item label="Imię i nazwisko:" value={name}/>}
+          {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
+          {!! period &&<Item label="Na okres:" value={getPeriod(parseInt(period))}/>}
+          {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!! id &&<Item label="Identyfikator:" value={id}/>}
         </div>
         <div className="flex-1">
-          <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>
-          <Item label="Liczba łóżek:" value={bedCount}/>
-          <Item label="Przyjmę z małym dzieckiem:" value={isAcceptedChild ? 'TAK' : 'NIE'}/>
-          <Item label="Przyjmę ze zwierzętami:" value={isAcceptedAnimal ? 'TAK' : 'NIE'}/>
-          <Item label="Dostęp do pralki:" value={hasWashingMachine ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam wyżywienie:" value={isCatering ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam transport:" value={isDelivery ? 'TAK' : 'NIE'}/>
+          {!!accommodationPlacesCount && <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>}
+          {!!bedCount && <Item label="Liczba łóżek:" value={bedCount}/>}
+          <Item label="Przyjmę z małym dzieckiem:" value={getValue(isAcceptedChild)}/>
+          <Item label="Przyjmę ze zwierzętami:" value={getValue(isAcceptedAnimal)}/>
+          <Item label="Dostęp do pralki:" value={getValue(hasWashingMachine)}/>
+          <Item label="Zapewniam wyżywienie:" value={getValue(isCatering)}/>
+          <Item label="Zapewniam transport:" value={getValue(isDelivery)}/>
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block">Zobacz szczegóły</Link>
