@@ -28,6 +28,12 @@ export const horizontalNavigationConfig = t => [
     route: route['notices.list'],
     icon: MdOutlineListAlt,
   },
+  // {
+  //   id: 'contact',
+  //   label: t("header.contact"),
+  //   route: route['contact'],
+  //   icon: MdOutlineListAlt,
+  // },
 ]
 
 export const sideNavigationConfig = [

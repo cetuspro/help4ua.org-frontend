@@ -1,4 +1,4 @@
-import heroImg from '../../assets/img/hero_2.png'
+import heroImg from '../../assets/img/hero.jpg'
 import { Link } from 'react-router-dom'
 import { FiMap } from 'react-icons/fi'
 import { MdOutlinePeopleAlt, MdSensors } from 'react-icons/md'
@@ -17,7 +17,7 @@ export default function Home() {
           <section className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
             <div className="xl:w-4/12 flex flex-col justify-center">
               <div className="sm:text-center lg:text-left lg:py-12 xl:py-24">
-                <p className="text-yellow-400 md:text-lg xl:text-xl font-semibold mb-4 md:mb-6">
+                <p className="text-yellow-400 text-xl xl:text-xl font-semibold mb-4 md:mb-6">
                   {t("frontpage.help")}
                 </p>
 
@@ -35,12 +35,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="xl:w-8/12 h-48 lg:h-auto bg-gray-100 overflow-hidden">
+            <div className="xl:w-7/12 h-48 h-auto bg-gray-100 flex items-center overflow-hidden">
               <img
                 src={heroImg}
                 loading="lazy"
                 alt="Laptop z otworzoną aplikacja"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto resize object-center"
               />
             </div>
           </section>
@@ -50,8 +50,20 @@ export default function Home() {
       <div id="features" className="bg-gray-100 dark:bg-gray-900 py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
           <div className="mb-10 md:mb-16">
-            <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
-              {t("frontpage.info")}
+            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto ">
+              {t("frontpage.info-1")}
+            </p>
+            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
+              {t("frontpage.info-2")}
+            </p>
+            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
+              {t("frontpage.info-3")}
+            </p>
+            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
+              {t("frontpage.info-4")}
+            </p>
+            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
+              {t("frontpage.info-5")}
             </p>
           </div>
         </div>
