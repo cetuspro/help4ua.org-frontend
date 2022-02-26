@@ -17,7 +17,7 @@ const AppRouter = () => {
         {/*{ThreatMapRoutes}*/}
         
         {/*{UserRoutes}*/}
-        <Route index element={<Test/>}/>
+        {/*<Route index element={<Test/>}/>*/}
         
         {PublicRoutes}
         
