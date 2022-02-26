@@ -8,7 +8,11 @@
     "help": "Pomoc dla Ukrainy",
     "title": "Schronienie dla potrzebujących",
     "addNotice": "Dodaj ogłoszenie",
-    "info": "To strona oddolnej akcji społecznej dla tych którzy chcą pomóc i dla tych którzy szukają pomocy! Łączymy ludzi dobrego serca z tymi którzy potrzebują pomocy! Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się! Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych! Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!"
+    "info-1": "To strona oddolnej akcji społecznej dla tych którzy chcą pomóc i dla tych którzy szukają pomocy!",
+    "info-2": "Łączymy ludzi dobrego serca z tymi którzy potrzebują pomocy!",
+    "info-3": "Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!",
+    "info-4": "Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych!",
+    "info-5": "Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!"
   },
   "common": {
   }
