@@ -13,8 +13,8 @@ const breadcrumbItems = [
   },
 ]
 
-const ViewNotices = ({columns, expandableRowsComponent, title}) => {
-  const query = useGetNotices()
+const ViewNotices = ({columns, expandableRowsComponent, title, noticeType}) => {
+  const query = useGetNotices(noticeType)
 
   return (
     <>

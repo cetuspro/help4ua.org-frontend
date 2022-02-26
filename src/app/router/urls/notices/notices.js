@@ -6,6 +6,7 @@ export const noticesRoutes = {
   'notices.list3': `${BASE_URL}/ogloszenia/oferuje-schronienie`,
   'notices.list4': `${BASE_URL}/ogloszenia/oferuje-transport`,
   'notices.list5': `${BASE_URL}/ogloszenia/oferuje-pomoc`,
+  'notices.list6': `${BASE_URL}/ogloszenia/szukam-transportu`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
   'notices.add': `${BASE_URL}/dodaj-ogloszenie`,
   'notices.addShelterOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-schronienie`,
