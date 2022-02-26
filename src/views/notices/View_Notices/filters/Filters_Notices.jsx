@@ -11,6 +11,7 @@ import { getRegionsHelper } from '../../../../app/CRUD/region/getRegions'
 import { BiMapPin } from 'react-icons/bi'
 import { ImSortNumbericDesc } from 'react-icons/im'
 import { InputSelect } from '@/components/form/Input_Select'
+import { mt } from '../../../../ua/mt'
 
 const schema = yup.object().shape({
   searchPhrase: yup.string().nullable(),
@@ -30,7 +31,7 @@ const NoticesFilter = () => {
         <form
           onSubmit={handleSubmit}
           className="flex flex-col lg:flex-row gap-2 lg:gap-8 lg:items-center">
-          <InputText name="searchPhrase" label="Wyszukaj" icon={FaSearch} isLabelVisible={false} />
+          <InputText name="searchPhrase" label={mt('Wyszukaj...')} icon={FaSearch} isLabelVisible={false} />
           {/*<InputAsyncSelect*/}
           {/*  {...getCitiesHelper}*/}
           {/*  name="City"*/}
