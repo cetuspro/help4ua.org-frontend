@@ -46,6 +46,7 @@
     "react-leaflet-markercluster": "^3.0.0-rc1",
     "react-query": "^3.34.0",
     "react-redux": "^7.2.6",
+    "react-router": "^6.2.1",
     "react-router-dom": "6",
     "react-select": "^5.2.1",
     "react-switch": "^6.0.0",

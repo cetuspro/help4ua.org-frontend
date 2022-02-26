@@ -22,6 +22,9 @@ import { useHookFormMutation } from '../app/hooks/useHookFormMutation'
 import axios from 'axios'
 import { API_URL } from '@/app/config/env'
 import { InputSubmit } from '../components/form/Input_Submit'
+import { HookFormError } from '../components/form/HookFormError'
+import { useNavigate } from "react-router-dom";
+import { route } from '@/app/router/urls/routes'
 
 
 const schema = yup.object().shape({
@@ -58,10 +61,15 @@ export const FormAddAdv = () => {
   const methods = useForm({
     resolver: yupResolver(schema),
   });
+  let navigate = useNavigate();
 
   // console.log(methods.formState.errors)
+  const handleSuccess = ({ data }) => {
+    // data = id
+    navigate(route.successNotice);
+  }
   
-  const mutation = useHookFormMutation(methods, query);
+  const mutation = useHookFormMutation(methods, query, {handleSuccess});
   
   return (
     <div className="container mx-auto py-8">
@@ -69,6 +77,7 @@ export const FormAddAdv = () => {
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
             <form onSubmit={mutation.mutate}>
+              <HookFormError/>
               <h4 className="font-bold">Dane osobowe</h4>
               <div className="flex-grow border-t border-gray-300 mb-4"/>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
