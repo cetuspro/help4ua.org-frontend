@@ -164,7 +164,7 @@ const FormAddShelterOffer = () => {
                     name="period"
                     label={t("form.period")}
                     icon={FaClock}
-                    options={periodsEnum}
+                    options={periodsEnum(t)}
                     required
                   />
                 </div>

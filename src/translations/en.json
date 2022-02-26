@@ -7,6 +7,9 @@
   },
   "periods": {
     "negotiable": "To be determined",
+    "lessThanThreeDays": "Less than 3 days",
+    "threeDays": "3 days",
+    "fiveDays": "5 days",
     "oneWeek": "1 week",
     "twoWeeks": "2 weeks",
     "threeWeeks": "3 weeks",

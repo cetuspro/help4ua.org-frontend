@@ -8,6 +8,9 @@
 
   "periods": {
     "negotiable": "Щоб визначити",
+    "lessThanThreeDays": "Менше 3 днів",
+    "threeDays": "3 дні",
+    "fiveDays": "5 днів ",
     "oneWeek": "1 тиждень",
     "twoWeeks": "2 тижні",
     "threeWeeks": "3 тижні",

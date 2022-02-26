@@ -15,6 +15,9 @@
   },
   "periods": {
     "negotiable": "Do ustalenia",
+    "lessThanThreeDays": "Poniżej 3 dni",
+    "threeDays": "3 dni",
+    "fiveDays": "5 dni",
     "oneWeek": "1 tydzień",
     "twoWeeks": "2 tygodnie",
     "threeWeeks": "3 tygodnie",
