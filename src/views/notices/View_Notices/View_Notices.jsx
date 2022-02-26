@@ -24,7 +24,6 @@ const ViewNotices = ({columns, expandableRowsComponent, title}) => {
       </h1>
       <NoticesFilter />
       <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start">
-        
         <QueryProvider {...query}>
           <QueryHasNoResults>
             <div className="bg-white p-8 rounded-xl grow">
