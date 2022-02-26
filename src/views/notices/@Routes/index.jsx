@@ -2,6 +2,16 @@ import { lazy } from 'react'
 import { Route } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import UserLayout from '@/layouts/UserLayout'
+import { shelterOfferColumns, ShelterOfferExpandedComponent } from '@/views/notices/View_Notices/dataTable/shelterOffer'
+import { helpOfferColumnsColumns, HelpOfferExpandedComponent } from '@/views/notices/View_Notices/dataTable/helpOffer'
+import {
+  transportOfferColumns,
+  TransportOfferExpandedComponent,
+} from '@/views/notices/View_Notices/dataTable/transportOffer'
+import {
+  shelterSearchColumns,
+  ShelterSearchExpandedComponent,
+} from '@/views/notices/View_Notices/dataTable/shelterSearch'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddFindShelter = lazy(() => import('../../../ua/Form_AddFindShelter'))
@@ -13,11 +23,40 @@ const LazyAddSuccess = lazy(() => import('../../../ua/NoticeCreateSuccess'))
 const NoticeRoutes = [
   <Route key={route['notices.list']} path={route['notices.list']} element={<UserLayout />}>
     <Route index element={<LazyNotices />} />
-    <Route path={route['notices.list2']} element={<LazyNotices />} />
-    <Route path={route['notices.list3']} element={<LazyNotices />} />
-    <Route path={route['notices.list4']} element={<LazyNotices />} />
-    <Route path={route['notices.list5']} element={<LazyNotices />} />
-    <Route path={route['notices.view']()} element={<LazyNotice />} />
+    <Route
+      path={route['notices.list2']}
+      element={<LazyNotices
+        title=""
+        columns={shelterSearchColumns}
+        expandableRowsComponent={ShelterSearchExpandedComponent}
+        
+      />}
+    />
+    <Route
+      path={route['notices.list3']}
+      element={<LazyNotices
+        title=""
+        columns={shelterOfferColumns}
+        expandableRowsComponent={ShelterOfferExpandedComponent}
+      />}
+    />
+    <Route
+      path={route['notices.list4']}
+      element={<LazyNotices
+        title=""
+        columns={transportOfferColumns}
+        expandableRowsComponent={TransportOfferExpandedComponent}
+      />}
+    />
+    <Route
+      path={route['notices.list5']}
+      element={<LazyNotices
+        title=""
+        columns={helpOfferColumnsColumns}
+        expandableRowsComponent={HelpOfferExpandedComponent}
+      />}
+    />
+    <Route path={route['notices.view']()} element={<LazyNotice/>} />
   </Route>,
   <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
     <Route index element={<LazyAddShelterOffer />} />

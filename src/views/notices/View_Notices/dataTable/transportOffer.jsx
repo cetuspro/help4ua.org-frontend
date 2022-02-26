@@ -1,16 +1,12 @@
-import Datatable from '@/components/common/Datatable'
-import { useQueryContext } from '@/app/context/queries/QueryProvider'
-import { useNavigate } from 'react-router-dom'
-import usePagination from '@/app/hooks/usePagination'
 import dayjs from 'dayjs'
-import { route } from '@/app/router/urls/routes'
-import { Link } from 'react-router-dom'
 import { isBool } from '@/app/utils/isBool'
 import { periodsEnum } from '@/app/config/enum/periods'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { useTranslation } from 'react-i18next'
+import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
+import { Link } from 'react-router-dom'
+import { route } from '@/app/router/urls/routes'
 
-const columns = [
+export const transportOfferColumns = [
   {
     name: 'Miasto',
     selector: ({ cityName }) => cityName,
@@ -42,7 +38,6 @@ const columns = [
     selector: ({ createdAt }) => dayjs(createdAt).format('DD.MM.YYYY HH:mm'),
   },
 ]
-
 const Item = ({label, value}) => {
   return (
     <div className="py-2 flex gap-2">
@@ -61,7 +56,7 @@ export const getValue = val => isBool(val) ? (
 export const getPeriod = val => periodsEnum.find(item => item.value === val)?.label ?? "Brak danych";
 
 
-const ExpandedComponent = ({data: {
+export const TransportOfferExpandedComponent = ({data: {
   description,
   cityName,
   region,
@@ -120,40 +115,3 @@ const ExpandedComponent = ({data: {
     </div>
   )
 }
-
-const NoticesDataTable = () => {
-  const { data } = useQueryContext()
-  const pagination = usePagination()
-
-  return (
-    <Datatable
-      columns={columns}
-      data={data}
-      pointerOnHover
-      highlightOnHover
-      pagination={pagination}
-      expandableRows
-      expandableRowsComponent={ExpandedComponent}
-      expandOnRowClicked
-    />
-  )
-}
-export const NoticesDataTable2 = ({columns, expandableRowsComponent}) => {
-  const { data } = useQueryContext()
-  const pagination = usePagination()
-
-  return (
-    <Datatable
-      columns={columns}
-      data={data}
-      pointerOnHover
-      highlightOnHover
-      pagination={pagination}
-      expandableRows
-      expandableRowsComponent={expandableRowsComponent}
-      expandOnRowClicked
-    />
-  )
-}
-
-export default NoticesDataTable
