@@ -158,12 +158,13 @@ export const FormAddAdv = () => {
                     label={mt('Na jak długo')}
                     icon={FaClock}
                     options={[
-                      {value: 1, label: '1 tydzień'},
-                      {value: 2, label: '2 tygodnie'},
-                      {value: 3, label: '3 tygodnie'},
-                      {value: 4, label: '1 miesiąc'},
-                      {value: 5, label: '2 miesiące'},
-                      {value: 6, label: '3 miesiące'},
+                      {value: 1, label: 'Do ustalenia'},
+                      {value: 10, label: '1 tydzień'},
+                      {value: 11, label: '2 tygodnie'},
+                      {value: 12, label: '3 tygodnie'},
+                      {value: 13, label: '1 miesiąc'},
+                      {value: 14, label: '2 miesiące'},
+                      {value: 15, label: '3 miesiące'},
                       {value: 60, label: 'Dłużej niż 3 miesiące'},
                     ]}
                   />
