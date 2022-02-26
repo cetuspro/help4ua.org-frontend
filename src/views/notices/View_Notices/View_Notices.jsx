@@ -13,14 +13,18 @@ const breadcrumbItems = [
   },
 ]
 
-const ViewNotices = ({columns, expandableRowsComponent}) => {
+const ViewNotices = ({columns, expandableRowsComponent, title}) => {
   const query = useGetNotices()
 
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
+      <h1 className="text-black-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
+        {title}
+      </h1>
       <NoticesFilter />
       <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start">
+        
         <QueryProvider {...query}>
           <QueryHasNoResults>
             <div className="bg-white p-8 rounded-xl grow">

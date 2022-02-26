@@ -26,16 +26,15 @@ const NoticeRoutes = [
     <Route
       path={route['notices.list2']}
       element={<LazyNotices
-        title=""
+        title="Schronienie - osoby potrzebujące"
         columns={shelterSearchColumns}
         expandableRowsComponent={ShelterSearchExpandedComponent}
-        
       />}
     />
     <Route
       path={route['notices.list3']}
       element={<LazyNotices
-        title=""
+        title="Schronienie - oferty pomocy"
         columns={shelterOfferColumns}
         expandableRowsComponent={ShelterOfferExpandedComponent}
       />}
@@ -43,7 +42,7 @@ const NoticeRoutes = [
     <Route
       path={route['notices.list4']}
       element={<LazyNotices
-        title=""
+        title="Transport - oferty pomocy"
         columns={transportOfferColumns}
         expandableRowsComponent={TransportOfferExpandedComponent}
       />}
@@ -51,7 +50,7 @@ const NoticeRoutes = [
     <Route
       path={route['notices.list5']}
       element={<LazyNotices
-        title=""
+        title="Inne oferty pomocy"
         columns={helpOfferColumnsColumns}
         expandableRowsComponent={HelpOfferExpandedComponent}
       />}
