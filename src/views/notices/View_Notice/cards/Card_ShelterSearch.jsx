@@ -16,7 +16,7 @@ const Item = ({label, value}) => {
   )
 }
 
-const NoticeCard = () => {
+const ShelterSearchCard = () => {
   const { data: {
     description,
     cityName,
@@ -79,9 +79,9 @@ const NoticeCard = () => {
           <Item label="Język angielski:" value={getValue(germanyLang)}/>
         </div>
       </div>
-      <Button to={route['notices.list']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>
+      <Button to={route['notices.list2']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>
     </Card>
   )
 }
 
-export default NoticeCard
+export default ShelterSearchCard
