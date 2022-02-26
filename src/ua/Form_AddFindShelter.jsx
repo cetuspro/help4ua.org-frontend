@@ -30,18 +30,16 @@ import { route } from '@/app/router/urls/routes'
 const schema = yup.object().shape({
   name: yup.string().required(),
   description: yup.string(),
-  region: yup.number().required(),
   cityName: yup.string().required(),
   phoneNumber: yup.string().required(),
   email: yup.string().email().required(),
-  roomCount: yup.string().nullable(),
-  bedCount: yup.string().nullable(),
   accommodationPlacesCount: yup.string().required(),
   isAcceptedChild: yup.string(),
   isAcceptedAnimal: yup.string(),
   hasWashingMachine: yup.string(),
   isCatering: yup.string(),
   isDelivery: yup.string(),
+  type: yup.number().default(10),
   
   // address: yup.string().required(),
   period: yup.string().required(), //
@@ -56,7 +54,7 @@ const query = (data) => {
 }
 const mt = (a) => a;
 
-export const FormAddAdv = () => {
+const FormAddFindShelter = () => {
   
   const methods = useForm({
     resolver: yupResolver(schema),
@@ -66,13 +64,14 @@ export const FormAddAdv = () => {
   // console.log(methods.formState.errors)
   const handleSuccess = ({ data }) => {
     // data = id
-    navigate(route.successNotice);
+    navigate(route['notices.success']);
   }
   
   const mutation = useHookFormMutation(methods, query, {handleSuccess});
   
   return (
     <div className="container mx-auto py-8">
+      <h2 className="font-bold mb-4 ml-2 text-2xl">Szukam schronienia</h2>
       <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
@@ -103,30 +102,6 @@ export const FormAddAdv = () => {
                   />
                 </div>
                 <div>
-                  <InputSelect
-                    name="region"
-                    label="Województwo"
-                    options={[
-                      { value: 1, label: mt('dolnośląskie') },
-                      { value: 2, label: mt('kujawsko-pomorskie') },
-                      { value: 3, label: mt('lubelskie') },
-                      { value: 4, label: mt('lubuskie') },
-                      { value: 5, label: mt('łódzkie') },
-                      { value: 6, label: mt('małopolskie') },
-                      { value: 7, label: mt('mazowieckie') },
-                      { value: 8, label: mt('opolskie') },
-                      { value: 9, label: mt('podkarpackie') },
-                      { value: 10, label: mt('podlaskie') },
-                      { value: 11, label: mt('pomorskie') },
-                      { value: 12, label: mt('śląskie') },
-                      { value: 13, label: mt('świętokrzyskie') },
-                      { value: 14, label: mt('warmińsko-mazurskie') },
-                      { value: 15, label: mt('wielkopolskie') },
-                      { value: 16, label: mt('zachodniopomorskie') },
-                    ]}
-                  />
-                </div>
-                <div>
                   <InputText
                     name="cityName"
                     label={mt('Miejscowość')}
@@ -139,25 +114,9 @@ export const FormAddAdv = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
                   <InputText
-                    name="roomCount"
-                    type="number"
-                    label={mt('Liczba pokoi')}
-                    icon={FaDoorClosed}
-                  />
-                </div>
-                <div>
-                  <InputText
-                    name="bedCount"
-                    type="number"
-                    label={mt('Liczba łóżek')}
-                    icon={FaBed}
-                  />
-                </div>
-                <div>
-                  <InputText
                     name="accommodationPlacesCount"
                     type="number"
-                    label={mt('Max liczba osób')}
+                    label={mt('Liczba osób')}
                     icon={FaUsers}
                   />
                 </div>
@@ -185,31 +144,25 @@ export const FormAddAdv = () => {
                 <div>
                   <InputCheckbox
                     name="isAcceptedChild"
-                    label={mt('Przyjmę z małym dzieckiem')}
+                    label={mt('Jestem z małym dzieckiem')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isAcceptedAnimal"
-                    label={mt('Przyjmę ze zwierzakiem')}
+                    label={mt('Jestem ze zwierzakiem')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isCatering"
-                    label={mt('Zapewniam wyżywienie')}
+                    label={mt('Potrzebuję wyżywienia')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isDelivery"
-                    label={mt('Mogę przyjechać po osoby')}
-                  />
-                </div>
-                <div>
-                  <InputCheckbox
-                    name="hasWashingMachine"
-                    label={mt('Udostępnię dostęp do pralki')}
+                    label={mt('Potrzebuję transportu')}
                   />
                 </div>
               </div>
@@ -235,3 +188,5 @@ export const FormAddAdv = () => {
     </div>
   );
 };
+
+export default FormAddFindShelter;

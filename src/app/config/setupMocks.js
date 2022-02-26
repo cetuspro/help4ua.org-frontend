@@ -22,4 +22,9 @@ export const setupMocks = () => {
   // mock.onGet(`${API_URL}/notices`).reply(202, {
   //   items: notices
   // })
+
+  // mock.onPost(`${API_URL}/notices/create`).reply(config => {
+  //   console.log(JSON.parse(config.data));
+  //   return [200]
+  // })
 }

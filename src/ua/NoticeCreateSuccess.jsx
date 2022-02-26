@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { FaCheckCircle } from 'react-icons/all'
 
-export const NoticeCreateSuccess = () => {
+const NoticeCreateSuccess = () => {
   return (
     <div>
       <div className="w-9/12 m-auto py-16 min-h-screen flex items-center justify-center">
@@ -25,3 +25,5 @@ export const NoticeCreateSuccess = () => {
     </div>
   )
 }
+
+export default NoticeCreateSuccess
