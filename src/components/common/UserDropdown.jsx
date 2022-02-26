@@ -7,16 +7,17 @@ import { Link } from 'react-router-dom'
 import LogoutButton from './LogoutButton'
 import { dropdownNavigationConfig } from '@/app/config/navigationConfig'
 import { route } from '@/app/router/urls/routes'
+import { useTranslation } from 'react-i18next'
 
 const UserDropdown = () => {
   const { email, roles, isAuthenticated } = useAuth()
-
+  const {t} = useTranslation();
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="bg-gray-200 hover:bg-gray-300 text-gray-500 active:text-gray-700 flex items-center gap-4 ring-offset-4 focus:ring ring-primary-dark text-sm font-semibold text-center rounded-lg outline-none transition-all duration-200 px-4 py-2">
           <div className="hidden lg:flex items-center gap-4">
-            {email ?? 'Twoje konto'}
+            <AiOutlineUser size={24} />
             <HiChevronDown size={22} aria-hidden="true" />
           </div>
           <div className="block lg:hidden">

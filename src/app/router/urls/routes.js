@@ -5,6 +5,7 @@ import { authRoutes } from './common/auth'
 import { reportsRoutes } from './reports'
 import { threatMapRoutes } from './threatMap'
 import { userRoutes } from './user'
+import { contactRoutes } from '@/app/router/urls/public/public'
 
 export const route = {
   index: `${BASE_URL}/`,
@@ -14,4 +15,5 @@ export const route = {
   ...userRoutes,
   ...accountRoutes,
   ...reportsRoutes,
+  ...contactRoutes,
 }

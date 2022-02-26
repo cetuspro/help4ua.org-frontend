@@ -1,4 +1,4 @@
-import heroImg from '../../assets/img/hero_2.png'
+import heroImg from '../../assets/img/hero.jpg'
 import { Link } from 'react-router-dom'
 import { FiMap } from 'react-icons/fi'
 import { MdOutlinePeopleAlt, MdSensors } from 'react-icons/md'

@@ -2,7 +2,8 @@
   "header": {
     "map": "Map",
     "notices": "Notices",
-    "account": "Your account"
+    "account": "Your account",
+    "contact": "Contact" 
   },
   "frontpage": {
     "help": "Help for Ukraine",
