@@ -1,23 +1,28 @@
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { FaCheckCircle } from 'react-icons/all'
+import { useTranslation } from 'react-i18next'
 
 const NoticeCreateSuccess = () => {
+  const {t} = useTranslation();
+  
   return (
     <div>
       <div className="w-9/12 m-auto py-16 min-h-screen flex items-center justify-center">
         <div className="bg-white shadow overflow-hidden sm:rounded-lg pb-8">
           <div className="border-t border-gray-200 text-center pt-8">
             <FaCheckCircle className="text-9xl mx-auto text-green-400"/>
-            <h1 className="text-6xl font-medium py-8">Udało się!</h1>
+            <h1 className="text-6xl font-medium py-8">{t("success.title")}</h1>
+            <p className="text-2xl px-12 font-medium">
+              {t("success.content-1")}
+              </p>
             <p className="text-2xl pb-8 px-12 font-medium">
-              Zgłoszenie zostało dodane i teraz czeka na weryfikację przez naszych wolontariuszy.
-              W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.
+              {t("success.content-2")}
             </p>
             <Link
               to={route['index']}
-              className="bg-gradient-to-r from-green-400 to-green-600 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-6 py-3 rounded-md mr-6">
-              HOME
+              className="inline-block bg-yellow-400 hover:bg-yellow-600 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+              {t("success.home")}
             </Link>
           </div>
         </div>

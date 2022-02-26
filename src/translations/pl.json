@@ -24,7 +24,11 @@
     "over3Months": "Dłużej niż 3 miesiące"
   },
   "form": {
-    "findShelter": "Szukam schornienia",
+    "findShelter": "Szukam schronienia",
+    "findTransport": "Szukam transportu",
+    "offerHelp": "Oferuję pomoc",
+    "offerShelter": "Oferuję schronienie",
+    "offerTransport": "Oferuję transport",
     "personalInfo": "Dane osobowe",
     "name": "Imię",
     "phoneNumber": "Numer telefonu",
@@ -38,9 +42,31 @@
     "isAcceptedAnimal": "Jestem ze zwierzakiem",
     "isCatering": "Potrzebuję wyżywienia",
     "isDelivery": "Potrzebuję transportu",
+    "roomCount": "Liczba pokoi",
+    "bedCount": "Liczba łóżek",
+    "hasAcceptedChild": "Przyjmę z małym dzieckiem",
+    "hasAcceptedAnimal": "Przyjmę ze zwierzakiem",
+    "hasCatering": "Zapewniam wyżywienie",
+    "hasDelivery": "Mogę przyjechać po osoby",
+    "hasWashingMachine": "Udostępnię dostęp do pralki",
     "extraInfo": "Dodatkowe informacje",
     "description": "Opis",
+    "voivodeship": "Województwo",
     "send": "Wyślij"
+  },
+  "success": {
+    "title": "Udało się!",
+    "content-1": "Zgłoszenie zostało dodane i teraz czeka na weryfikację przez naszych wolontariuszy.",
+    "content-2": "W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.",
+    "home": "Strona główna"
+  },
+  "formDescription" : {
+    "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
+    "findShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz miejsca gdzie możesz się zatrzymać z bliskimi. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "translations": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz wesprzeć tłumaczenie pl-ua. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "offerTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz przetransportować potrzebujących. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "findTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz transportu. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",

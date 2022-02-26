@@ -25,6 +25,7 @@ import { InputSubmit } from '../components/form/Input_Submit'
 import { HookFormError } from '../components/form/HookFormError'
 import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
+import { useTranslation } from 'react-i18next'
 
 
 const schema = yup.object().shape({
@@ -57,45 +58,48 @@ const FormAddHelpOffer = () => {
     // data = id
     navigate(route['notices.success']);
   }
+
+  const {t} = useTranslation();
   
   const mutation = useHookFormMutation(methods, query, {handleSuccess});
   
   return (
     <div className="container mx-auto py-8">
-      <h2 className="font-bold mb-4 ml-2 text-2xl">Oferuję pomoc</h2>
+      <h2 className="font-bold mb-2 ml-2 text-2xl">{t("form.offerHelp")}</h2>
+      <p className="mb-4 ml-2 text-gray-500">{t("formDescription.offerHelp")}</p>
       <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
             <form onSubmit={mutation.mutate}>
               <HookFormError/>
-              <h4 className="font-bold">Dane osobowe</h4>
+              <h4 className="font-bold">{t('form.personalInfo')}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4"/>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
                   <InputText
                     name="name"
-                    label={mt('Imię')}
+                    label={t("form.name")}
                     icon={FaUser}
                   />
                 </div>
                 <div>
                   <InputText
                     name="phoneNumber"
-                    label={mt('Numer telefonu')}
+                    label={t("form.phoneNumber")}
                     icon={FaPhone}
                   />
                 </div>
                 <div>
                   <InputText
                     name="email"
-                    label={mt('Adres email')}
+                    label={t("form.email")}
                     icon={FaEnvelope}
                   />
                 </div>
                 <div>
                   <InputText
                     name="cityName"
-                    label={mt('Miejscowość')}
+                    label={t("form.cityName")}
                     icon={FaMapPin}
                   />
                 </div>
@@ -103,14 +107,14 @@ const FormAddHelpOffer = () => {
               <div>
                 <InputTextarea
                   name="description"
-                  label={mt('Opis')}
+                  label={t("form.description")}
                   icon={FaComment}
                 />
               </div>
               <div className="flex justify-end pt-5">
                 <InputSubmit
                   icon={<FaCheck/>}
-                  value={mt('Wyślij')}
+                  value={t("form.send")}
                 />
               </div>
             </form>
