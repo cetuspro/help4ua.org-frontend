@@ -26,6 +26,7 @@ import { HookFormError } from '../components/form/HookFormError'
 import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
+import { InputRodo } from '../components/form/Input_RODO'
 
 
 const schema = yup.object().shape({
@@ -35,6 +36,7 @@ const schema = yup.object().shape({
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
   type: yup.number().default(50),
+  acceptTerms: yup.string().required(),
 });
 
 const query = (data) => {
@@ -110,6 +112,11 @@ const FormAddHelpOffer = () => {
                   label={t("form.description")}
                   icon={FaComment}
                 />
+              </div>
+              <div className="flex justify-end">
+                <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+                  <InputRodo/>
+                </div>
               </div>
               <div className="flex justify-end pt-5">
                 <InputSubmit

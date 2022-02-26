@@ -27,6 +27,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { periodsEnum } from '@/app/config/enum/periods'
+import { InputRodo } from '../components/form/Input_RODO'
 
 
 const schema = yup.object().shape({
@@ -42,6 +43,7 @@ const schema = yup.object().shape({
   isCatering: yup.string(),
   isDelivery: yup.string(),
   type: yup.number().default(10),
+  acceptTerms: yup.string().required(),
   
   // address: yup.string().required(),
   period: yup.string().required(), //
@@ -168,13 +170,10 @@ const FormAddFindShelter = () => {
                   icon={FaComment}
                 />
               </div>
-              <div>
-                <InputCheckbox
-                  name="acceptTerms"
-                  label={<>
-                    Wyrażam zgodę na przetwarzanie moich danych przez Cetuspro Sp. z o.o. z siedzibą w Rzeszowie w celu opublikowania moich danych w ogłoszeniu umieszczonym na portalu uapomoc.pl, skierowanym do osób potrzebujących i udzielającym pomocy Ukrainie. <Link to={route.rodo}>Klauzula</Link>
-                  </>}
-                />
+              <div className="flex justify-end">
+                <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+                  <InputRodo/>
+                </div>
               </div>
               <div className="flex justify-end pt-5">
                 <InputSubmit

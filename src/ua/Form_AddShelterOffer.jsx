@@ -28,6 +28,7 @@ import { route } from '@/app/router/urls/routes'
 import { periodsEnum } from '@/app/config/enum/periods'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { useTranslation } from 'react-i18next'
+import { InputRodo } from '../components/form/Input_RODO'
 
 
 const schema = yup.object().shape({
@@ -46,6 +47,7 @@ const schema = yup.object().shape({
   isCatering: yup.string(),
   isDelivery: yup.string(),
   type: yup.number().default(1),
+  acceptTerms: yup.string().required(),
   
   // address: yup.string().required(),
   period: yup.string().required(), //
@@ -209,6 +211,11 @@ const FormAddShelterOffer = () => {
                   label={t("form.description")}
                   icon={FaComment}
                 />
+              </div>
+              <div className="flex justify-end">
+                <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+                  <InputRodo/>
+                </div>
               </div>
               <div className="flex justify-end pt-5">
                 <InputSubmit
