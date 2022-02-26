@@ -52,7 +52,7 @@ const NoticeRoutes = [
         title="Transport - oferty pomocy"
         columns={transportOfferColumns}
         expandableRowsComponent={TransportOfferExpandedComponent}
-        // noticeType={20}
+        noticeType={20}
       />}
     />
     <Route

@@ -11,10 +11,6 @@ export const helpOfferColumnsColumns = [
     selector: ({ cityName }) => cityName,
   },
   {
-    name: 'Ilość miejsc',
-    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
-  },
-  {
     name: 'Imię',
     selector: ({ name }) => name,
   },
@@ -88,18 +84,8 @@ export const HelpOfferExpandedComponent = ({data: {
           />
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
-          {!! period &&<Item label="Na okres:" value={getPeriod(t, parseInt(period))}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label="Identyfikator:" value={id}/>}
-        </div>
-        <div className="flex-1">
-          {!!accommodationPlacesCount && <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>}
-          {!!bedCount && <Item label="Liczba łóżek:" value={bedCount}/>}
-          <Item label="Przyjmę z małym dzieckiem:" value={getValue(isAcceptedChild)}/>
-          <Item label="Przyjmę ze zwierzętami:" value={getValue(isAcceptedAnimal)}/>
-          <Item label="Dostęp do pralki:" value={getValue(hasWashingMachine)}/>
-          <Item label="Zapewniam wyżywienie:" value={getValue(isCatering)}/>
-          <Item label="Zapewniam transport:" value={getValue(isDelivery)}/>
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>
