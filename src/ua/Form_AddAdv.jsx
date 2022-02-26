@@ -26,6 +26,7 @@ import { HookFormError } from '../components/form/HookFormError'
 import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
 import { periodsEnum } from '@/app/config/enum/periods'
+import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
 
 const schema = yup.object().shape({
@@ -107,24 +108,7 @@ export const FormAddAdv = () => {
                   <InputSelect
                     name="region"
                     label="Województwo"
-                    options={[
-                      { value: 1, label: mt('dolnośląskie') },
-                      { value: 2, label: mt('kujawsko-pomorskie') },
-                      { value: 3, label: mt('lubelskie') },
-                      { value: 4, label: mt('lubuskie') },
-                      { value: 5, label: mt('łódzkie') },
-                      { value: 6, label: mt('małopolskie') },
-                      { value: 7, label: mt('mazowieckie') },
-                      { value: 8, label: mt('opolskie') },
-                      { value: 9, label: mt('podkarpackie') },
-                      { value: 10, label: mt('podlaskie') },
-                      { value: 11, label: mt('pomorskie') },
-                      { value: 12, label: mt('śląskie') },
-                      { value: 13, label: mt('świętokrzyskie') },
-                      { value: 14, label: mt('warmińsko-mazurskie') },
-                      { value: 15, label: mt('wielkopolskie') },
-                      { value: 16, label: mt('zachodniopomorskie') },
-                    ]}
+                    options={voivodeshipsEnum(mt)}
                   />
                 </div>
                 <div>

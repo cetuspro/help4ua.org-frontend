@@ -7,6 +7,8 @@ import { route } from '@/app/router/urls/routes'
 import { Link } from 'react-router-dom'
 import { isBool } from '@/app/utils/isBool'
 import { periodsEnum } from '@/app/config/enum/periods'
+import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
+import { useTranslation } from 'react-i18next'
 
 const columns = [
   {
@@ -50,13 +52,14 @@ const Item = ({label, value}) => {
   )
 }
 
-const getValue = val => isBool(val) ? (
+export const getValue = val => isBool(val) ? (
   val ? 'TAK' : 'NIE'
 ) : (
   "Brak danych"
 )
 
-const getPeriod = val => periodsEnum.find(item => item.value === val)?.label ?? "Brak danych";
+export const getPeriod = val => periodsEnum.find(item => item.value === val)?.label ?? "Brak danych";
+
 
 const ExpandedComponent = ({data: {
   description,
@@ -77,7 +80,9 @@ const ExpandedComponent = ({data: {
   phoneNumber,
   createdAt,
 }}) => {
-  const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${region??''}+${address??''}`
+  const { t } = useTranslation();
+  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "Brak danych";
+  const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}+${address??''}`
   return (
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
       <div className="flex gap-5">
@@ -91,7 +96,7 @@ const ExpandedComponent = ({data: {
               title="Zobacz na mapie"
               className="flex flex-col text-blue-700 hover:text-blue-500 items-start"
             >
-              <span>{cityName}, {region}</span>
+              <span>{cityName}, {getRegion(region)}</span>
               <span>{address}</span>
             </a>}
           />
@@ -111,7 +116,7 @@ const ExpandedComponent = ({data: {
           <Item label="Zapewniam transport:" value={getValue(isDelivery)}/>
         </div>
       </div>
-      <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block">Zobacz szczegóły</Link>
+      <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>
     </div>
   )
 }

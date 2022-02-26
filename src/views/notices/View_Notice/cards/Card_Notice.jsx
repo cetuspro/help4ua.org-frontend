@@ -3,6 +3,9 @@ import { route } from '@/app/router/urls/routes'
 import Card from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
+import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { useTranslation } from 'react-i18next'
+import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
 const Item = ({label, value}) => {
   return (
@@ -36,39 +39,44 @@ const NoticeCard = () => {
     englishLang,
     germanyLang,
   } } = useQueryContext()
+  const { t } = useTranslation();
+  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "Brak danych";
+  const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}+${address??''}`
 
   return (
     <Card>
       <div className="flex flex-col md:flex-row">
         <div className="flex-1">
-          <Item label="Opis:" value={description}/>
+          {!!description && <Item label="Opis:" value={description}/>}
           <Item label="Adres:" value={
             <a
-              href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
+              href={href}
+              target={'_blank'}
+              rel={'noreferrer'}
               title="Zobacz na mapie"
-              className="flex flex-col text-blue-500 hover:text-blue-300"
+              className="flex flex-col text-blue-700 hover:text-blue-500 items-start"
             >
-              <span>{cityName}, {region}</span>
+              <span>{cityName}, {getRegion(region)}</span>
               <span>{address}</span>
             </a>}
           />
-          <Item label="Imię i nazwisko:" value={name}/>
-          <Item label="Telefon:" value={phoneNumber}/>
-          <Item label="Na okres:" value={period}/>
-          <Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>
-          <Item label="Identyfikator:" value={id}/>
+          {!!name && <Item label="Imię i nazwisko:" value={name}/>}
+          {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
+          {!! period &&<Item label="Na okres:" value={getPeriod(parseInt(period))}/>}
+          {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!! id &&<Item label="Identyfikator:" value={id}/>}
         </div>
         <div className="flex-1">
-          <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>
-          <Item label="Liczba łóżek:" value={bedCount}/>
-          <Item label="Przyjmę z małym dzieckiem:" value={isAcceptedChild ? 'TAK' : 'NIE'}/>
-          <Item label="Przyjmę ze zwierzętami:" value={isAcceptedAnimal ? 'TAK' : 'NIE'}/>
-          <Item label="Dostęp do pralki:" value={hasWashingMachine ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam wyżywienie:" value={isCatering ? 'TAK' : 'NIE'}/>
-          <Item label="Zapewniam transport:" value={isDelivery ? 'TAK' : 'NIE'}/>
-          <Item label="Język ukraiński:" value={ukraineLang ? 'TAK' : 'NIE'}/>
-          <Item label="Język niemiecki:" value={englishLang ? 'TAK' : 'NIE'}/>
-          <Item label="Język angielski:" value={germanyLang ? 'TAK' : 'NIE'}/>
+          {!!accommodationPlacesCount && <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>}
+          {!!bedCount && <Item label="Liczba łóżek:" value={bedCount}/>}
+          <Item label="Przyjmę z małym dzieckiem:" value={getValue(isAcceptedChild)}/>
+          <Item label="Przyjmę ze zwierzętami:" value={getValue(isAcceptedAnimal)}/>
+          <Item label="Dostęp do pralki:" value={getValue(hasWashingMachine)}/>
+          <Item label="Zapewniam wyżywienie:" value={getValue(isCatering)}/>
+          <Item label="Zapewniam transport:" value={getValue(isDelivery)}/>
+          <Item label="Język ukraiński:" value={getValue(ukraineLang)}/>
+          <Item label="Język niemiecki:" value={getValue(englishLang)}/>
+          <Item label="Język angielski:" value={getValue(germanyLang)}/>
         </div>
       </div>
       <Button to={route['notices.list']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>
