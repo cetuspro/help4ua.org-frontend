@@ -22,7 +22,7 @@ const NoticeCard = () => {
           <Item label="Opis:" value={data.description}/>
           <Item label="Adres:" value={
             <a
-              href={`http://www.google.com/maps/place/${data.location?.lat},${data.ocation?.long}`}
+              href={`http://www.google.com/maps/place/${data?.location?.lat},${data?.location?.long}`}
               title="Zobacz na mapie"
               className="flex flex-col"
             >
