@@ -17,11 +17,17 @@ const columns = [
   },
   {
     name: 'Imię i nazwisko',
-    selector: ({ firstName, lastName }) => `${firstName || ''} ${lastName || ''}`,
+    selector: ({ name }) => name,
   },
   {
     name: 'Adres',
-    cell: ({ address, location }) => <a href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`} className="text-blue-400 hover:text-blue-600">{address}</a>,
+    cell: ({ address, location }) => <a
+      href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
+      className="text-blue-400 hover:text-blue-600"
+      target="_blank"
+      rel="noreferrer"
+      title="Zobacz na mapie"
+    >{address}</a>,
   },
   {
     name: 'Telefon',
@@ -55,28 +61,36 @@ const ExpandedComponent = ({data: {
   isCatering,
   isDelivery,
   location,
-  id
+  id,
+  name,
+  accommodationPlacesCount,
+  phoneNumber,
+  createdAt,
 }}) => {
   return (
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
-      <div className="flex flex-col md:flex-row gap-5">
+      <div className="flex gap-5">
         <div className="flex-1">
           <Item label="Opis:" value={description}/>
           <Item label="Adres:" value={
             <a
               href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
               title="Zobacz na mapie"
-              className="flex flex-col"
+              className="flex flex-col text-blue-700 hover:text-blue-500 items-start"
             >
               <span>{cityName}, {region}</span>
               <span>{address}</span>
             </a>}
           />
-          <Item label="Liczba łóżek:" value={bedCount}/>
+          <Item label="Imię i nazwisko:" value={name}/>
+          <Item label="Telefon:" value={phoneNumber}/>
           <Item label="Na okres:" value={period}/>
+          <Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>
           <Item label="Identyfikator:" value={id}/>
         </div>
         <div className="flex-1">
+          <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>
+          <Item label="Liczba łóżek:" value={bedCount}/>
           <Item label="Przyjmę z małym dzieckiem:" value={isAcceptedChild ? 'TAK' : 'NIE'}/>
           <Item label="Przyjmę ze zwierzętami:" value={isAcceptedAnimal ? 'TAK' : 'NIE'}/>
           <Item label="Dostęp do pralki:" value={hasWashingMachine ? 'TAK' : 'NIE'}/>
@@ -103,6 +117,7 @@ const NoticesDataTable = () => {
       pagination={pagination}
       expandableRows
       expandableRowsComponent={ExpandedComponent}
+      expandOnRowClicked
     />
   )
 }

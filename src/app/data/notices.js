@@ -1,8 +1,7 @@
 export default [
   {
     id: 1,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     roles: ['User'],
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
@@ -35,8 +34,7 @@ export default [
   },
   {
     id: 2,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     roles: ['User'],
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
@@ -69,8 +67,7 @@ export default [
   },
   {
     id: 3,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     roles: ['User'],
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
@@ -103,8 +100,7 @@ export default [
   },
   {
     id: 4,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     roles: ['User'],
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
@@ -137,8 +133,7 @@ export default [
   },
   {
     id: 5,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     roles: ['User'],
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
@@ -171,8 +166,7 @@ export default [
   },
   {
     id: 6,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -204,8 +198,7 @@ export default [
   },
   {
     id: 7,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -237,8 +230,7 @@ export default [
   },
   {
     id: 8,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -270,8 +262,7 @@ export default [
   },
   {
     id: 9,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -303,8 +294,7 @@ export default [
   },
   {
     id: 10,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -336,8 +326,7 @@ export default [
   },
   {
     id: 11,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -369,8 +358,7 @@ export default [
   },
   {
     id: 12,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -402,8 +390,7 @@ export default [
   },
   {
     id: 13,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -435,8 +422,6 @@ export default [
   },
   {
     id: 14,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -468,8 +453,7 @@ export default [
   },
   {
     id: 15,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
@@ -501,8 +485,7 @@ export default [
   },
   {
     id: 16,
-    firstName: 'Jan',
-    lastName: 'Kowalski',
+    name: 'Jan Kowalski',
     phoneNumber: '123456789',
     email: 'jankowalski@gmail.com',
     roomCount: 2,
