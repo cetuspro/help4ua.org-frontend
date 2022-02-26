@@ -12,6 +12,7 @@ const LazyRegister = lazy(() => import('@/views/public/auth/Register'))
 const LazyForgotPass = lazy(() => import('@/views/public/auth/PasswordForgot'))
 const LazyResetPass = lazy(() => import('@/views/public/auth/PasswordReset'))
 const LazyHome = lazy(() => import('@/views/public/Home'))
+const LazyContact = lazy(() => import('@/views/public/contact/Contact'))
 const LazyReports = lazy(() => import('@/views/public/reports/View_ReportList/ViewReportList'))
 const LazyReport = lazy(() => import('@/views/public/reports/View_Report/ViewReport'))
 
@@ -28,6 +29,12 @@ const PublicRoutes = [
     {/*    </RequireGuest>*/}
     {/*  }*/}
     {/*/>*/}
+    <Route
+      path={route['contact']}
+      element={
+          <LazyContact />
+      }
+    />
     {/*<Route*/}
     {/*  path={route['auth.register']}*/}
     {/*  element={*/}

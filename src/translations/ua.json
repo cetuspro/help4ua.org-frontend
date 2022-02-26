@@ -2,13 +2,18 @@
   "header": {
     "map": "Map",
     "notices": "Notices",
-    "account": "Your account"
+    "account": "Your account",
+    "contact": "Контакти"
   },
   "frontpage": {
     "help": "Help for Ukraine",
     "title": "Shelter for those in need",
     "addNotice": "Add notice",
-    "info": "This is a grassroots social action site for those who want to help and for those who are looking for help! We connect people of good heart with those who need help! If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up! If you came from Ukraine and are looking for a place where you could stay with your family, search our database! If you would like to help, become a volunteer, etc. anyone can help!"
+    "info-1": "Це сторінка суспільної акції для тих, хто хоче допомогти і для тих, хто потребує допомоги! ",
+    "info-2": "Ми єднаємо добрих людей з тими, хто потребує допомоги!",
+    "info-3": "Якщо ви маєте місце і ви готові прийняти жителів України, які шукають безпечну домівку, дайте нам знати!",
+    "info-4": "Якщо ви прибули з України та шукаєте місця, де можете зупинитись з родиною, ознайомтесь з нашою базою даних!",
+    "info-5": "Якщо хочеш допомогти, стати волонтером і т.д. - допомогти може кожен!"
   },
   "common": {
   }
