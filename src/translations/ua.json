@@ -5,6 +5,36 @@
     "account": "Your account",
     "contact": "Контакти"
   },
+
+  "periods": {
+    "negotiable": "Щоб визначити",
+    "oneWeek": "1 тиждень",
+    "twoWeeks": "2 тижні",
+    "threeWeeks": "3 тижні",
+    "oneMonth": "1 місяць",
+    "twoMonths": "2 місяці",
+    "threeMonths": "3 місяці",
+    "over3Months": "Більше 3 місяців"
+  },
+  "form": {
+    "findShelter": "Шукаю притулок",
+    "personalInfo": "Персональні дані",
+    "name": "Ім’я та прізвище",
+    "phoneNumber": "Телефонний номер",
+    "email": "Електронна пошта",
+    "cityName": "Місто",
+    "accommodation": "Проживання",
+    "accommodationPlacesCount": "кількість людей",
+    "period": "Як довго",
+    "details": "Деталі",
+    "isAcceptedChild": "Я з маленькою дитиною",
+    "isAcceptedAnimal": "Я з домашнім улюбленцем",
+    "isCatering": "мені потрібна їжа",
+    "isDelivery": "Мені потрібен транспорт",
+    "extraInfo": "Додаткова інформація",
+    "description": "Опис",
+    "send": "Надіслати"
+  },
   "tiles": {
     "shelter": "Ви пропонуєте притулок?",
     "lfShelter": "Ви шукаєте притулок?",

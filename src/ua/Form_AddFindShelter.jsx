@@ -25,6 +25,8 @@ import { InputSubmit } from '../components/form/Input_Submit'
 import { HookFormError } from '../components/form/HookFormError'
 import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
+import { useTranslation } from 'react-i18next'
+import { periodsEnum } from '@/app/config/enum/periods'
 
 
 const schema = yup.object().shape({
@@ -52,8 +54,6 @@ const query = (data) => {
     data,
   });
 }
-const mt = (a) => a;
-
 const FormAddFindShelter = () => {
   
   const methods = useForm({
@@ -67,23 +67,25 @@ const FormAddFindShelter = () => {
     navigate(route['notices.success']);
   }
   
+  const {t} = useTranslation();
+  
   const mutation = useHookFormMutation(methods, query, {handleSuccess});
   
   return (
     <div className="container mx-auto py-8">
-      <h2 className="font-bold mb-4 ml-2 text-2xl">Szukam schronienia</h2>
+      <h2 className="font-bold mb-4 ml-2 text-2xl">{t("form.findShelter")}</h2>
       <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
             <form onSubmit={mutation.mutate}>
               <HookFormError/>
-              <h4 className="font-bold">Dane osobowe</h4>
+              <h4 className="font-bold">{t("form.personalInfo")}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4"/>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
                   <InputText
                     name="name"
-                    label={mt('Imię i Nazwisko')}
+                    label={t('form.name')}
                     icon={FaUser}
                     required
                   />
@@ -91,7 +93,7 @@ const FormAddFindShelter = () => {
                 <div>
                   <InputText
                     name="phoneNumber"
-                    label={mt('Numer telefonu')}
+                    label={t('form.phoneNumber')}
                     icon={FaPhone}
                     required
                   />
@@ -99,7 +101,7 @@ const FormAddFindShelter = () => {
                 <div>
                   <InputText
                     name="email"
-                    label={mt('Adres email')}
+                    label={t('form.email')}
                     icon={FaEnvelope}
                     required
                   />
@@ -107,20 +109,20 @@ const FormAddFindShelter = () => {
                 <div>
                   <InputText
                     name="cityName"
-                    label={mt('Miejscowość')}
+                    label={t('form.cityName')}
                     icon={FaMapPin}
                     required
                   />
                 </div>
               </div>
-              <h4 className="font-bold mt-8">Zakwaterowanie</h4>
+              <h4 className="font-bold mt-8">{t("form.accommodation")}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4"/>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
                   <InputText
                     name="accommodationPlacesCount"
                     type="number"
-                    label={mt('Liczba osób')}
+                    label={t('form.accommodationPlacesCount')}
                     icon={FaUsers}
                     required
                   />
@@ -128,63 +130,54 @@ const FormAddFindShelter = () => {
                 <div>
                   <InputSelect
                     name="period"
-                    label={mt('Na jak długo')}
+                    label={t('form.period')}
                     icon={FaClock}
-                    options={[
-                      {value: 1, label: 'Do ustalenia'},
-                      {value: 10, label: '1 tydzień'},
-                      {value: 11, label: '2 tygodnie'},
-                      {value: 12, label: '3 tygodnie'},
-                      {value: 13, label: '1 miesiąc'},
-                      {value: 14, label: '2 miesiące'},
-                      {value: 15, label: '3 miesiące'},
-                      {value: 60, label: 'Dłużej niż 3 miesiące'},
-                    ]}
+                    options={periodsEnum(t)}
                     required
                   />
                 </div>
               </div>
-              <h4 className="font-bold mt-8">Szczegóły</h4>
+              <h4 className="font-bold mt-8">{t("form.details")}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4"/>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
                   <InputCheckbox
                     name="isAcceptedChild"
-                    label={mt('Jestem z małym dzieckiem')}
+                    label={t('form.isAcceptedChild')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isAcceptedAnimal"
-                    label={mt('Jestem ze zwierzakiem')}
+                    label={t('form.isAcceptedAnimal')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isCatering"
-                    label={mt('Potrzebuję wyżywienia')}
+                    label={t('form.isCatering')}
                   />
                 </div>
                 <div>
                   <InputCheckbox
                     name="isDelivery"
-                    label={mt('Potrzebuję transportu')}
+                    label={t('form.isDelivery')}
                   />
                 </div>
               </div>
-              <h4 className="font-bold mt-8">Dodatkowe informacje</h4>
+              <h4 className="font-bold mt-8">{t("form.extraInfo")}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4"/>
               <div>
                 <InputTextarea
                   name="description"
-                  label={mt('Opis')}
+                  label={t('form.description')}
                   icon={FaComment}
                 />
               </div>
               <div className="flex justify-end pt-5">
                 <InputSubmit
                   icon={<FaCheck/>}
-                  value={mt('Wyślij')}
+                  value={t('form.send')}
                 />
               </div>
             </form>
