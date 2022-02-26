@@ -38,8 +38,8 @@ const schema = yup.object().shape({
   cityName: yup.string().required(),
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
-  roomCount: yup.string().nullable(),
-  bedCount: yup.string().nullable(),
+  roomCount: yup.number().min(0).max(2000).nullable(),
+  bedCount: yup.string().min(0).max(2000).nullable(),
   accommodationPlacesCount: yup.string().required(),
   isAcceptedChild: yup.string(),
   isAcceptedAnimal: yup.string(),
@@ -138,6 +138,7 @@ const FormAddShelterOffer = () => {
                   <InputText
                     name="roomCount"
                     type="number"
+                    min={0}
                     label={t("form.roomCount")}
                     icon={FaDoorClosed}
                   />
@@ -146,6 +147,7 @@ const FormAddShelterOffer = () => {
                   <InputText
                     name="bedCount"
                     type="number"
+                    min={0}
                     label={t("form.bedCount")}
                     icon={FaBed}
                   />
@@ -154,6 +156,7 @@ const FormAddShelterOffer = () => {
                   <InputText
                     name="accommodationPlacesCount"
                     type="number"
+                    min={0}
                     label={t("form.accommodationPlacesCount")}
                     icon={FaUsers}
                     required

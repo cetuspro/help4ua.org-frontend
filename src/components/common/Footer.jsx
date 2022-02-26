@@ -9,8 +9,14 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="text-gray-500 border-t text-center py-2">
           <Link
+            className="mx-2"
             to={route['contact']}>
             {t("header.contact")}
+          </Link>
+          <Link
+            className="mx-2"
+            to={route['rodo']}>
+            {t("header.rodo")}
           </Link>
         </div>
         <div className="text-gray-400 text-sm text-center">

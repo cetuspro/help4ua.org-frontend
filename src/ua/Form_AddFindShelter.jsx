@@ -124,6 +124,7 @@ const FormAddFindShelter = () => {
                   <InputText
                     name="accommodationPlacesCount"
                     type="number"
+                    min={0}
                     label={t('form.accommodationPlacesCount')}
                     icon={FaUsers}
                     required

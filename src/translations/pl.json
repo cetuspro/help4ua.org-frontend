@@ -3,7 +3,8 @@
     "map": "Mapa",
     "notices": "Zgłoszenia",
     "account": "Twoje konto",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "rodo": "Rodo"
   },
   "tiles": {
     "shelter": "Oferujesz schronienie?",
