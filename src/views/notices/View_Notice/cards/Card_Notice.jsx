@@ -62,7 +62,7 @@ const NoticeCard = () => {
           />
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
-          {!! period &&<Item label="Na okres:" value={getPeriod(parseInt(period))}/>}
+          {!! period &&<Item label="Na okres:" value={getPeriod(t, parseInt(period))}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label="Identyfikator:" value={id}/>}
         </div>

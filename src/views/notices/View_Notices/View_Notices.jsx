@@ -32,7 +32,7 @@ const ViewNotices = ({columns, expandableRowsComponent, title, noticeType}) => {
           </QueryHasNoResults>
           <QueryHasResults>
             <div className="bg-white p-4 rounded-lg overflow-x-auto w-full">
-              {columns && expandableRowsComponent ? (
+              {columns?.map && typeof expandableRowsComponent !== 'undefined' ? (
                 <NoticesDataTable2
                   columns={columns}
                   expandableRowsComponent={expandableRowsComponent}
