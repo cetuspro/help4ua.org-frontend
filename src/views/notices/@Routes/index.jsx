@@ -8,6 +8,10 @@ const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const PublicRoutes = [
   <Route key={route['notices.list']} path={route['notices.list']} element={<UserLayout />}>
     <Route index element={<LazyNotices />} />
+    <Route path={route['notices.list2']} element={<LazyNotices />} />
+    <Route path={route['notices.list3']} element={<LazyNotices />} />
+    <Route path={route['notices.list4']} element={<LazyNotices />} />
+    <Route path={route['notices.list5']} element={<LazyNotices />} />
     <Route path={route['notices.view']()} element={<LazyNotice />} />
   </Route>,
 ]
