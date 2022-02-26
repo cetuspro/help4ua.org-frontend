@@ -17,6 +17,7 @@ const AppRouter = () => {
         {/*{ThreatMapRoutes}*/}
         
         {/*{UserRoutes}*/}
+        <Route index element={<Test/>}/>
         
         {PublicRoutes}
         
@@ -28,6 +29,14 @@ const AppRouter = () => {
         <Route path="*" element={<Lazy404 />} />
       </Routes>
     </Router>
+  )
+}
+
+const Test = () => {
+  return (
+    <div>
+      <h1>Przerwa techniczna</h1>
+    </div>
   )
 }
 

@@ -23,7 +23,7 @@ import axios from 'axios'
 import { API_URL } from '@/app/config/env'
 import { InputSubmit } from '../components/form/Input_Submit'
 import { HookFormError } from '../components/form/HookFormError'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { periodsEnum } from '@/app/config/enum/periods'
@@ -158,12 +158,6 @@ const FormAddFindShelter = () => {
                     label={t('form.isCatering')}
                   />
                 </div>
-                <div>
-                  <InputCheckbox
-                    name="isDelivery"
-                    label={t('form.isDelivery')}
-                  />
-                </div>
               </div>
               <h4 className="font-bold mt-8">{t("form.extraInfo")}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4"/>
@@ -172,6 +166,14 @@ const FormAddFindShelter = () => {
                   name="description"
                   label={t('form.description')}
                   icon={FaComment}
+                />
+              </div>
+              <div>
+                <InputCheckbox
+                  name="acceptTerms"
+                  label={<>
+                    Wyrażam zgodę na przetwarzanie moich danych przez Cetuspro Sp. z o.o. z siedzibą w Rzeszowie w celu opublikowania moich danych w ogłoszeniu umieszczonym na portalu uapomoc.pl, skierowanym do osób potrzebujących i udzielającym pomocy Ukrainie. <Link to={route.rodo}>Klauzula</Link>
+                  </>}
                 />
               </div>
               <div className="flex justify-end pt-5">

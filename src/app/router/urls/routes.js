@@ -12,6 +12,7 @@ export const route = {
   index: `${BASE_URL}/`,
   // createNotice: `${BASE_URL}/dodaj-ogloszenie`,
   // successNotice: `${BASE_URL}/dodaj-ogloszenie/success`,
+  rodo: `${BASE_URL}/rodo`,
   ...authRoutes,
   ...threatMapRoutes,
   ...adminRoutes,
