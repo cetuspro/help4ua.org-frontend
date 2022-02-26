@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Navigate } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import UserLayout from '@/layouts/UserLayout'
 import { shelterOfferColumns, ShelterOfferExpandedComponent } from '@/views/notices/View_Notices/dataTable/shelterOffer'
@@ -28,7 +28,7 @@ const LazyAddSuccess = lazy(() => import('../../../ua/NoticeCreateSuccess'))
 
 const NoticeRoutes = [
   <Route key={route['notices.list']} path={route['notices.list']} element={<UserLayout />}>
-    <Route index element={<LazyNotices />} />
+    <Route index element={<Navigate to={route['index']} />}/>
     <Route
       path={route['notices.list2']}
       element={<LazyNotices
