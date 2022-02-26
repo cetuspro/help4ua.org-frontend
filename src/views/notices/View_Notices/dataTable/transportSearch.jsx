@@ -21,6 +21,15 @@ export const transportSearchColumns = [
   },
 ];
 
+const Item = ({label, value}) => {
+  return (
+    <div className="py-2 flex gap-2">
+      <span className="">{label}</span>
+      <span className="font-bold">{value}</span>
+    </div>
+  )
+}
+
 export const TransportSearchExpandedComponent = ({data: {
   description,
   cityName,

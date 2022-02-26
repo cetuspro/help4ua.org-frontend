@@ -16,6 +16,7 @@ import {
   transportSearchColumns,
   TransportSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/transportSearch'
+import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddFindShelter = lazy(() => import('../../../ua/Form_AddFindShelter'))
@@ -35,6 +36,7 @@ const NoticeRoutes = [
         columns={shelterSearchColumns}
         expandableRowsComponent={ShelterSearchExpandedComponent}
         noticeType={10}
+        filters={NoticesFilter}
       />}
     />
     <Route
@@ -44,6 +46,7 @@ const NoticeRoutes = [
         columns={shelterOfferColumns}
         expandableRowsComponent={ShelterOfferExpandedComponent}
         noticeType={1}
+        filters={NoticesFilter}
       />}
     />
     <Route
@@ -53,6 +56,7 @@ const NoticeRoutes = [
         columns={transportOfferColumns}
         expandableRowsComponent={TransportOfferExpandedComponent}
         noticeType={20}
+        filters={NoticesFilter}
       />}
     />
     <Route
@@ -62,6 +66,7 @@ const NoticeRoutes = [
         columns={helpOfferColumnsColumns}
         expandableRowsComponent={HelpOfferExpandedComponent}
         noticeType={50}
+        filters={NoticesFilter}
       />}
     />
     <Route
@@ -71,6 +76,7 @@ const NoticeRoutes = [
         columns={transportSearchColumns}
         expandableRowsComponent={TransportSearchExpandedComponent}
         noticeType={50}
+        filters={NoticesFilter}
       />}
     />
     <Route path={route['notices.view']()} element={<LazyNotice/>} />
