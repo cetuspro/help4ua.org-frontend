@@ -35,12 +35,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="xl:w-8/12 h-48 lg:h-auto bg-gray-100 overflow-hidden">
+            <div className="xl:w-7/12 h-48 h-auto bg-gray-100 flex items-center overflow-hidden">
               <img
                 src={heroImg}
                 loading="lazy"
                 alt="Laptop z otworzoną aplikacja"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto resize object-center"
               />
             </div>
           </section>
