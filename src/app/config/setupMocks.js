@@ -19,7 +19,7 @@ export const setupMocks = () => {
   //   return notice ? [200, notice] : [404]
   // })
 
-  // mock.onGet(`${API_URL}/notices`).reply(202, {
-  //   items: notices
-  // })
+  mock.onGet(`${API_URL}/notices`).reply(202, {
+    items: notices
+  })
 }
