@@ -1,10 +1,8 @@
 import dayjs from 'dayjs'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export const transportSearchColumns = [
-  {
-    name: 'Ilość miejsc',
-    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
-  },
   {
     name: 'Imię',
     selector: ({ name }) => name,
@@ -14,9 +12,47 @@ export const transportSearchColumns = [
     selector: ({ phoneNumber }) => phoneNumber,
   },
   {
+    name: 'Ilość miejsc',
+    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
+  },
+  {
     name: 'Data dodania',
     selector: ({ createdAt }) => dayjs(createdAt).format('DD.MM.YYYY HH:mm'),
   },
 ];
 
-export const TransportSearchExpandedComponent = null
+export const TransportSearchExpandedComponent = ({data: {
+  description,
+  cityName,
+  region,
+  address,
+  bedCount,
+  isAcceptedChild,
+  isAcceptedAnimal,
+  hasWashingMachine,
+  period,
+  isCatering,
+  isDelivery,
+  location,
+  id,
+  name,
+  accommodationPlacesCount,
+  phoneNumber,
+  createdAt,
+}}) => {
+  const { t } = useTranslation();
+  return (
+    <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
+      <div className="flex gap-5">
+        <div className="flex-1">
+          {!!description && <Item label="Opis:" value={description}/>}
+          {!!name && <Item label="Imię:" value={name}/>}
+          {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
+          {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!! id &&<Item label="Identyfikator:" value={id}/>}
+        </div>
+      </div>
+      <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>
+    </div>
+  )
+}
