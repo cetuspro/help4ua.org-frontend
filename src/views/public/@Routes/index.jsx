@@ -5,6 +5,7 @@ import RequireGuest from '@/app/router/components/RequireGuest'
 
 import PublicLayout from '@/layouts/PublicLayout'
 import UserLayout from '@/layouts/UserLayout'
+import { FormAddAdv } from '../../../ua/Form_AddAdv'
 const LazyLogin = lazy(() => import('@/views/public/auth/Login'))
 const LazyRegister = lazy(() => import('@/views/public/auth/Register'))
 const LazyForgotPass = lazy(() => import('@/views/public/auth/PasswordForgot'))
@@ -16,6 +17,7 @@ const LazyReport = lazy(() => import('@/views/public/reports/View_Report/ViewRep
 const PublicRoutes = [
   <Route key={route['index']} path={route['index']} element={<PublicLayout />}>
     <Route index element={<LazyHome />} />
+    <Route path={route.createNotice} element={<FormAddAdv />} />
     {/*<Route*/}
     {/*  path={route['auth.login']}*/}
     {/*  element={*/}

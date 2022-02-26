@@ -23,14 +23,14 @@ export const InputSelectPure = ({
   const placeholder = `${passedPlaceholder ?? label ?? ''}${required ? '*' : ''}`
 
   return (
-    <div className={`flex flex-col text-left custom-select ${className}`}>
+    <div className={`relative my-1 text-left custom-select ${className}`}>
       {(label || required) && isLabelVisible && (
         <label className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm mb-2">
           {label}
           {required && <span className="text-red-600">*</span>}
         </label>
       )}
-      <div className="relative">
+      <div className="relative pt-1">
         <Select
           menuPortalTarget={document.body}
           styles={customStyles({ hasIcon: !!Icon })}

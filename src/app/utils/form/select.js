@@ -29,6 +29,7 @@ export const customStyles = ({ hasIcon = true, customFontSize = '0.96rem' } = {}
     ...provided,
     boxShadow: isFocused ? '0 3px 10px 0 rgba(0, 0, 0, 0.15)' : 'none',
     borderColor: isFocused ? '#b33b43 !important' : provided.borderColor,
+    borderRadius: '0.5rem',
     borderWidth: '1px !important',
     outline: 'none',
   }),

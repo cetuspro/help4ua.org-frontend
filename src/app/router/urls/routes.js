@@ -9,6 +9,7 @@ import { userRoutes } from './user'
 
 export const route = {
   index: `${BASE_URL}/`,
+  createNotice: `${BASE_URL}/create-notice`,
   ...authRoutes,
   ...threatMapRoutes,
   ...adminRoutes,

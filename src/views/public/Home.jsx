@@ -27,7 +27,7 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                   <Link
-                    to={route['auth.register']}
+                    to={route.createNotice}
                     className="inline-block bg-yellow-400 hover:bg-yellow-600 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                     {t("frontpage.addNotice")}
                   </Link>
