@@ -5,18 +5,12 @@ import { FormProvider } from 'react-hook-form'
 import {
   FaUser,
   FaPhone,
-  FaBed,
-  FaSquare,
-  FaClock,
   FaComment,
-  FaUsers,
   FaEnvelope,
   FaMapPin,
-  FaDoorClosed, FaCheck,
+  FaDoorClosed, FaCheck, FaUsers,
 } from 'react-icons/fa'
 import { InputText } from '../components/form/Input_Text'
-import { InputCheckbox } from '../components/form/Input_Checkbox'
-import { InputSelect } from '../components/form/Input_Select'
 import { InputTextarea } from '../components/form/Input_Textarea'
 import { useHookFormMutation } from '../app/hooks/useHookFormMutation'
 import axios from 'axios'
@@ -30,10 +24,10 @@ import { route } from '@/app/router/urls/routes'
 const schema = yup.object().shape({
   name: yup.string().required(),
   description: yup.string(),
-  // cityName: yup.string().required(),
+  accommodationPlacesCount: yup.string().required(),
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
-  type: yup.number().default(20),
+  type: yup.number().default(22),
 });
 
 const query = (data) => {
@@ -45,7 +39,7 @@ const query = (data) => {
 }
 const mt = (a) => a;
 
-const FormAddFindTransportOffer = () => {
+const FormAddTransportOffer = () => {
   
   const methods = useForm({
     resolver: yupResolver(schema),
@@ -62,7 +56,7 @@ const FormAddFindTransportOffer = () => {
   
   return (
     <div className="container mx-auto py-8">
-      <h2 className="font-bold mb-4 ml-2 text-2xl">Oferuję transport</h2>
+      <h2 className="font-bold mb-4 ml-2 text-2xl">Szukam transportu</h2>
       <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
@@ -76,7 +70,6 @@ const FormAddFindTransportOffer = () => {
                     name="name"
                     label={mt('Imię i Nazwisko')}
                     icon={FaUser}
-                    required
                   />
                 </div>
                 <div>
@@ -84,7 +77,6 @@ const FormAddFindTransportOffer = () => {
                     name="phoneNumber"
                     label={mt('Numer telefonu')}
                     icon={FaPhone}
-                    required
                   />
                 </div>
                 <div>
@@ -94,13 +86,14 @@ const FormAddFindTransportOffer = () => {
                     icon={FaEnvelope}
                   />
                 </div>
-                {/*<div>*/}
-                {/*  <InputText*/}
-                {/*    name="cityName"*/}
-                {/*    label={mt('Miejscowość')}*/}
-                {/*    icon={FaMapPin}*/}
-                {/*  />*/}
-                {/*</div>*/}
+                <div>
+                  <InputText
+                    name="accommodationPlacesCount"
+                    type="number"
+                    label={mt('Liczba osób')}
+                    icon={FaUsers}
+                  />
+                </div>
               </div>
               <div>
                 <InputTextarea
@@ -123,4 +116,4 @@ const FormAddFindTransportOffer = () => {
   );
 };
 
-export default FormAddFindTransportOffer;
+export default FormAddTransportOffer;
