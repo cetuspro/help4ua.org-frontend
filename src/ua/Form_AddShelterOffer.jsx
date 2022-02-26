@@ -25,6 +25,8 @@ import { InputSubmit } from '../components/form/Input_Submit'
 import { HookFormError } from '../components/form/HookFormError'
 import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
+import { periodsEnum } from '@/app/config/enum/periods'
+import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
 
 const schema = yup.object().shape({
@@ -108,24 +110,7 @@ const FormAddShelterOffer = () => {
                   <InputSelect
                     name="region"
                     label="Województwo"
-                    options={[
-                      { value: 1, label: mt('dolnośląskie') },
-                      { value: 2, label: mt('kujawsko-pomorskie') },
-                      { value: 3, label: mt('lubelskie') },
-                      { value: 4, label: mt('lubuskie') },
-                      { value: 5, label: mt('łódzkie') },
-                      { value: 6, label: mt('małopolskie') },
-                      { value: 7, label: mt('mazowieckie') },
-                      { value: 8, label: mt('opolskie') },
-                      { value: 9, label: mt('podkarpackie') },
-                      { value: 10, label: mt('podlaskie') },
-                      { value: 11, label: mt('pomorskie') },
-                      { value: 12, label: mt('śląskie') },
-                      { value: 13, label: mt('świętokrzyskie') },
-                      { value: 14, label: mt('warmińsko-mazurskie') },
-                      { value: 15, label: mt('wielkopolskie') },
-                      { value: 16, label: mt('zachodniopomorskie') },
-                    ]}
+                    options={voivodeshipsEnum(mt)}
                   />
                 </div>
                 <div>
@@ -168,16 +153,7 @@ const FormAddShelterOffer = () => {
                     name="period"
                     label={mt('Na jak długo')}
                     icon={FaClock}
-                    options={[
-                      {value: 1, label: 'Do ustalenia'},
-                      {value: 10, label: '1 tydzień'},
-                      {value: 11, label: '2 tygodnie'},
-                      {value: 12, label: '3 tygodnie'},
-                      {value: 13, label: '1 miesiąc'},
-                      {value: 14, label: '2 miesiące'},
-                      {value: 15, label: '3 miesiące'},
-                      {value: 60, label: 'Dłużej niż 3 miesiące'},
-                    ]}
+                    options={periodsEnum}
                   />
                 </div>
               </div>
