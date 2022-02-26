@@ -34,7 +34,7 @@ const schema = yup.object().shape({
   description: yup.string(),
   cityName: yup.string().required(),
   phoneNumber: yup.string().required(),
-  email: yup.string().email().required(),
+  email: yup.string().email().nullable(),
   accommodationPlacesCount: yup.string().required(),
   isAcceptedChild: yup.string(),
   isAcceptedAnimal: yup.string(),
@@ -103,7 +103,6 @@ const FormAddFindShelter = () => {
                     name="email"
                     label={t('form.email')}
                     icon={FaEnvelope}
-                    required
                   />
                 </div>
                 <div>
