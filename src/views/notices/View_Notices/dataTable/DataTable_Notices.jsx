@@ -20,7 +20,7 @@ const columns = [
     selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
   },
   {
-    name: 'Imię i nazwisko',
+    name: 'Imię',
     selector: ({ name }) => name,
   },
   {
@@ -100,7 +100,7 @@ const ExpandedComponent = ({data: {
               <span>{address}</span>
             </a>}
           />
-          {!!name && <Item label="Imię i nazwisko:" value={name}/>}
+          {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
           {!! period &&<Item label="Na okres:" value={getPeriod(parseInt(period))}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}

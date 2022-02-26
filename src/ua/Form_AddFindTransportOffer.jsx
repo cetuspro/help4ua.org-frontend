@@ -68,7 +68,7 @@ const FormAddTransportOffer = () => {
                 <div>
                   <InputText
                     name="name"
-                    label={mt('Imię i Nazwisko')}
+                    label={mt('Imię')}
                     icon={FaUser}
                   />
                 </div>
