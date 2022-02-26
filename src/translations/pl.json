@@ -55,6 +55,7 @@
     "extraInfo": "Dodatkowe informacje",
     "description": "Opis",
     "voivodeship": "Województwo",
+    "reason": "Przyczyna",
     "send": "Wyślij"
   },
   "success": {
@@ -81,6 +82,9 @@
     "info-3": "Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!",
     "info-4": "Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych!",
     "info-5": "Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!"
+  },
+  "notice": {
+    "markInactive": "Oznacz jako nieaktywne"
   },
   "common": {
   }

@@ -4,6 +4,10 @@ import { route } from '@/app/router/urls/routes'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useParams } from 'react-router-dom'
 import { useGetNotice } from '../../../app/CRUD/notices/getNotice'
+import { useModal } from '@/app/hooks/useModal'
+import Button from '../../../components/common/Button'
+import MarkInactiveModal from '@/views/notices/View_Notice/modal/markaAsInactive'
+import { useTranslation } from 'react-i18next'
 import HelpOfferCard from './cards/Card_HelpOffer'
 import ShelterOfferCard from './cards/Card_ShelterOffer'
 import ShelterSearchCard from './cards/Card_ShelterSearch'
@@ -31,6 +35,8 @@ const breadcrumbItems = (title) => [
 const ViewNotice = () => {
   const { noticeId } = useParams()
   const query = useGetNotice(noticeId)
+  const {isOpen, open, close} = useModal();
+  const {t} = useTranslation();
   const CardComponent = query?.data?.type in noticeTypes ? noticeTypes[query?.data?.type] : noticeTypes[1]
 
   return (
@@ -39,7 +45,13 @@ const ViewNotice = () => {
         <QueryIsSuccess>
           {(data) => (
             <>
-              <Breadcrumb items={breadcrumbItems(query?.data?.address)}/>
+              <Breadcrumb items={breadcrumbItems(query?.data?.address)}>
+                {/*//TODO: uncomment after completing the endpoint*/}
+                {/*<Button onClick={open} size="small" className="m-2">*/}
+                {/*  {t("notice.markInactive")}*/}
+                {/*</Button>*/}
+                {/*<MarkInactiveModal open={isOpen} onClose={close} title={t("notice.markInactive")} noticeId={noticeId}/>*/}
+              </Breadcrumb>
               <div className="grid gap-8">
                 <CardComponent/>
               </div>

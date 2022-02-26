@@ -47,6 +47,7 @@
     "extraInfo": "Additional information",
     "description": "Description",
     "voivodeship": "Voivodeship",
+    "reason": "Reason",
     "send": "Send"
   },
   "success": {
@@ -81,6 +82,9 @@
     "info-3": "If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up!",
     "info-4": "If you came from Ukraine and are looking for a place where you could stay with your family, search our database!",
     "info-5": "If you would like to help, become a volunteer, etc. anyone can help!"
+  },
+  "notice": {
+    "markInactive": "Mark as inactive"
   },
   "common": {
   }
