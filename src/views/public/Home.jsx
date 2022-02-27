@@ -126,7 +126,7 @@ export default function Home() {
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t("formDescription.translations")}
+                {t("formDescription.offerTransport")}
               </p>
             </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
@@ -146,7 +146,7 @@ export default function Home() {
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t("formDescription.offerTransport")}
+                {t("formDescription.findTransport")}
               </p>
             </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
@@ -166,7 +166,7 @@ export default function Home() {
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t("formDescription.findTransport")}
+                {t("formDescription.translations")}
               </p>
             </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
