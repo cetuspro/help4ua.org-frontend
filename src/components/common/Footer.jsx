@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
+import { FaHeart } from 'react-icons/all'
 
 const Footer = () => {
   const {t} = useTranslation();
@@ -18,9 +19,16 @@ const Footer = () => {
             to={route['rodo']}>
             {t("header.rodo")}
           </Link>
+          
         </div>
-        <div className="text-gray-400 text-sm text-center">
-          © 2021 - UAPomoc.pl
+        <div className="text-gray-400 text-sm text-center flex justify-center py-2">
+          <div>© 2022 - UAPomoc.pl</div>
+          <div className='mx-2 flex justify-center content-center'>
+            <span>Made with</span>
+            <FaHeart className="mx-1 mt-0.5 text-sm"/>
+            <span>by</span>
+            <a className="mx-1" target="_blank" href="https://cetuspro.com">cetuspro.com</a>
+          </div>
         </div>
       </div>
     </footer>

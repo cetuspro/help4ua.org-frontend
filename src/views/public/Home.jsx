@@ -9,6 +9,7 @@ import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import { FaMapMarkerAlt } from 'react-icons/fa'
+import { FaHeart } from 'react-icons/all'
 
 export default function Home() {
   const {t} = useTranslation();
