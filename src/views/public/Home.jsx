@@ -21,7 +21,7 @@ export default function Home() {
                   {t("frontpage.help")}
                 </p>
 
-                <h1 className="text-black-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
+                <h1 className="text-black-800 dark:text-gray-100 text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12">
                   {t("frontpage.title")}
                 </h1>
 
@@ -84,6 +84,9 @@ export default function Home() {
                   label={t("frontpage.seeNotices")}
                 />
               </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t("formDescription.offerShelter")}
+              </p>
             </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
@@ -101,6 +104,9 @@ export default function Home() {
                   label={t("frontpage.seeNotices")}
                 />
               </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t("formDescription.findShelter")}
+              </p>
             </div>
             
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
@@ -119,6 +125,9 @@ export default function Home() {
                   label={t("frontpage.seeNotices")}
                 />
               </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t("formDescription.translations")}
+              </p>
             </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
@@ -136,6 +145,9 @@ export default function Home() {
                   label={t("frontpage.seeNotices")}
                 />
               </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t("formDescription.offerTransport")}
+              </p>
             </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
@@ -153,6 +165,9 @@ export default function Home() {
                   label={t("frontpage.seeNotices")}
                 />
               </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t("formDescription.findTransport")}
+              </p>
             </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
@@ -170,6 +185,9 @@ export default function Home() {
                   label={t("frontpage.seeNotices")}
                 />
               </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t("formDescription.offerHelp")}
+              </p>
             </div>
           </div>
         </div>
