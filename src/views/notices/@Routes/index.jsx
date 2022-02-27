@@ -39,7 +39,7 @@ const NoticeRoutes = () => {
           path={route['notices.list2']}
           element={<LazyNotices
             title={t('tiles.shelter2')}
-            columns={shelterSearchColumns}
+            columns={shelterSearchColumns()}
             expandableRowsComponent={ShelterSearchExpandedComponent}
             noticeType={10}
             filters={NoticesFilter}
@@ -59,7 +59,7 @@ const NoticeRoutes = () => {
           path={route['notices.list4']}
           element={<LazyNotices
             title={t('tiles.transport2')}
-            columns={transportOfferColumns}
+            columns={transportOfferColumns()}
             expandableRowsComponent={TransportOfferExpandedComponent}
             noticeType={20}
             filters={NoticesFilter}
@@ -69,7 +69,7 @@ const NoticeRoutes = () => {
           path={route['notices.list5']}
           element={<LazyNotices
             title={t('tiles.help2')}
-            columns={helpOfferColumnsColumns}
+            columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={50}
             filters={NoticesFilter}
@@ -79,7 +79,7 @@ const NoticeRoutes = () => {
           path={route['notices.list6']}
           element={<LazyNotices
             title={t('tiles.transport3')}
-            columns={transportSearchColumns}
+            columns={transportSearchColumns()}
             expandableRowsComponent={TransportSearchExpandedComponent}
             noticeType={22}
             filters={NoticesFilter}
@@ -89,7 +89,7 @@ const NoticeRoutes = () => {
           path={route['notices.list7']}
           element={<LazyNotices
             title={t('tiles.translations2')}
-            columns={translationOfferColumns}
+            columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={30}
             filters={NoticesFilter}

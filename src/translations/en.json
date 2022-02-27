@@ -141,6 +141,11 @@
     "miasto": "City",
     "szukaj": "Search...",
     "wojewodztwo": "Choose a province",
-    "wybierzLiczbeOsob": "Choose the number of people"
+    "wybierzLiczbeOsob": "Choose the number of people",
+    "ogloszenia": "Announcements",
+    "nazwa": "Name",
+    "lokalizacja": "Localization",
+    "stronaglowna": "Home page",
+    "punktypomocy": "Help points"
   }
 }

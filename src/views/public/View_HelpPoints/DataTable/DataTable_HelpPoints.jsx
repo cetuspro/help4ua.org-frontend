@@ -2,35 +2,39 @@ import { useQueryContext } from "@/app/context/queries/QueryProvider"
 import Datatable from "@/components/common/Datatable"
 import usePagination from "../../../../app/hooks/usePagination"
 import { useSearchParams } from "react-router-dom"
+import { useTranslation } from 'react-i18next'
 
-const columns = [
-  {
-    name: 'Nazwa',
-    selector: ({ name }) => name,
-  },
-  {
-    name: 'Opis',
-    selector: ({ description }) => description,
-    wrap: true,
-  },
-  {
-    name: 'Lokalizacja',
-    cell: ({ region, city, localization }) => <a
-      href={localization?.latitude && localization?.longitude ? `http://www.google.com/maps/place/${localization?.latitude},${localization?.longitude}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}`}
-      className="text-blue-400 hover:text-blue-600"
-      target="_blank"
-      rel="noreferrer"
-      title="Zobacz na mapie"
-    >{city}, {region?.value} </a>,
-    grow: 0,
-    minWidth: '250px',
-  },
-  {
-    name: 'Telefon',
-    selector: ({ phoneNumber }) => phoneNumber,
-    grow: 0,
-  }
-]
+const columns = () => {
+  const {t} = useTranslation()
+  return [
+    {
+      name: t('common.nazwa'),
+      selector: ({ name }) => name,
+    },
+    {
+      name: t('common.opis'),
+      selector: ({ description }) => description,
+      wrap: true,
+    },
+    {
+      name: t('common.lokalizacja'),
+      cell: ({ region, city, localization }) => <a
+        href={localization?.latitude && localization?.longitude ? `http://www.google.com/maps/place/${localization?.latitude},${localization?.longitude}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}`}
+        className="text-blue-400 hover:text-blue-600"
+        target="_blank"
+        rel="noreferrer"
+        title="Zobacz na mapie"
+      >{city}, {region?.value} </a>,
+      grow: 0,
+      minWidth: '250px',
+    },
+    {
+      name: t('common.telefon'),
+      selector: ({ phoneNumber }) => phoneNumber,
+      grow: 0,
+    }
+  ]
+} 
 
 const Item = ({label, value}) => {
   return (
@@ -54,7 +58,7 @@ const HelpPointsDataTable = () => {
 
   return (
     <Datatable
-      columns={columns}
+      columns={columns()}
       data={data}
       pagination={pagination}
       paginationPerPage={searchParams.get('pageSize') || '50'}
