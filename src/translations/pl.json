@@ -12,7 +12,8 @@
     "translations": "Oferujesz pomoc w tłumaczeniach?",
     "transport": "Oferujesz pomoc w transporcie?",
     "lfTransport": "Szukasz transportu",
-    "help": "Oferujesz pomoc?"
+    "help": "Oferujesz pomoc?",
+    "helpPoints": "Punkty pomocy"
   },
   "periods": {
     "negotiable": "Do ustalenia",
@@ -72,7 +73,8 @@
     "translations": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz wesprzeć tłumaczenie pl-ua. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "offerTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz przetransportować potrzebujących. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "findTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz transportu. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
+    "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc."
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
@@ -83,7 +85,8 @@
     "info-2": "Łączymy ludzi dobrego serca z tymi którzy potrzebują pomocy!",
     "info-3": "Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!",
     "info-4": "Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych!",
-    "info-5": "Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!"
+    "info-5": "Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!",
+    "helpPoints": "Zobacz punkty pomocy"
   },
   "notice": {
     "markInactive": "Oznacz jako nieaktywne"
