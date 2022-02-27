@@ -157,11 +157,11 @@ export default function Home() {
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.translations")}</h3>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
-                  to={route['notices.addHelpOffer']}
+                  to={route['notices.addTranslationOffer']}
                   label={t("frontpage.addNotice")}
                 />
                 <Button2
-                  to={route['notices.list5']}
+                  to={route['notices.list7']}
                   label={t("frontpage.seeNotices")}
                 />
               </div>

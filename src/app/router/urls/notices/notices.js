@@ -7,6 +7,7 @@ export const noticesRoutes = {
   'notices.list4': `${BASE_URL}/ogloszenia/oferuje-transport`,
   'notices.list5': `${BASE_URL}/ogloszenia/oferuje-pomoc`,
   'notices.list6': `${BASE_URL}/ogloszenia/szukam-transportu`,
+  'notices.list7': `${BASE_URL}/ogloszenia/oferuje-tlumaczenia`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
   'notices.add': `${BASE_URL}/dodaj-ogloszenie`,
   'notices.addShelterOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-schronienie`,
@@ -14,5 +15,6 @@ export const noticesRoutes = {
   'notices.addTransportOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-transport`,
   'notices.addFindTransportOffer': `${BASE_URL}/dodaj-ogloszenie/szukam-transportu`,
   'notices.addHelpOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-pomoc`,
+  'notices.addTranslationOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-tlumaczenia`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
 }
