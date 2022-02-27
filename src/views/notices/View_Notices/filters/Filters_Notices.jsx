@@ -12,6 +12,7 @@ import { BiMapPin } from 'react-icons/bi'
 import { ImSortNumbericDesc } from 'react-icons/im'
 import { InputSelect } from '@/components/form/Input_Select'
 import { mt } from '../../../../ua/mt'
+import { useTranslation } from 'react-i18next'
 
 const schema = yup.object().shape({
   searchPhrase: yup.string().nullable(),
@@ -24,14 +25,14 @@ const accommodationPlacesCountOptions = [1,2,3,4,5,6,7,8,9,10].map(x => ({label:
 
 const NoticesFilter = () => {
   const { methods, handleSubmit } = useFilterForm({ schema })
-
+  const { t } = useTranslation()
   return (
     <Card className="p-3">
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col lg:flex-row gap-2 lg:gap-8 lg:items-center">
-          <InputText name="searchPhrase" label={mt('Wyszukaj...')} icon={FaSearch} isLabelVisible={false} />
+          <InputText name="searchPhrase" label={t('common.szukaj')} icon={FaSearch} isLabelVisible={false} />
           {/*<InputAsyncSelect*/}
           {/*  {...getCitiesHelper}*/}
           {/*  name="City"*/}
@@ -47,7 +48,7 @@ const NoticesFilter = () => {
             {...getRegionsHelper}
             name="Region"
             icon={BiMapPin}
-            label={'Wybierz województwo'}
+            label={t('common.wojewodztwo')}
             isLabelVisible={false}
             transform={({ id, name }) => ({
               value: id,
@@ -58,7 +59,7 @@ const NoticesFilter = () => {
             options={accommodationPlacesCountOptions}
             name="AccommodationPlacesCount"
             icon={ImSortNumbericDesc}
-            label={'Wybierz liczbę osób'}
+            label={t('common.wybierzLiczbeOsob')}
             isLabelVisible={false}
           />
           <AutoSubmit />

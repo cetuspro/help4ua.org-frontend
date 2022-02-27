@@ -21,7 +21,7 @@ const AppRouter = () => {
         
         {PublicRoutes}
         
-        {NoticesRoutes}
+        {NoticesRoutes()}
         
         {/*{AccountRoutes}*/}
         
