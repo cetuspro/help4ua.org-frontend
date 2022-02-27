@@ -77,7 +77,7 @@ export default function Home() {
               </div>
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.shelter")}</h3>
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data[1].statusAndAmount[2].amount}</p>
+              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[1]?.statusAndAmount[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addShelterOffer']}
@@ -99,7 +99,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.lfShelter")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data[2].statusAndAmount[2].amount}</p>
+              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[2]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addFindShelter']}
@@ -122,7 +122,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.transport")}</h3>
               
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data[3].statusAndAmount[2].amount}</p>
+              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[3]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addTransportOffer']}
@@ -144,7 +144,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.lfTransport")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data[4].statusAndAmount[2].amount}</p>
+              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[4]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addFindTransportOffer']}
@@ -166,7 +166,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.translations")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data[6].statusAndAmount[2].amount}</p>
+              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[6]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addTranslationOffer']}
@@ -188,7 +188,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.help")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data[5].statusAndAmount[2].amount}</p>
+              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[5]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addHelpOffer']}
