@@ -32,7 +32,7 @@ import { InputRodo } from '../components/form/Input_RODO'
 const schema = yup.object().shape({
   name: yup.string().required(),
   description: yup.string(),
-  // cityName: yup.string().required(),
+  accommodationPlacesCount: yup.number().default(0),
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
   type: yup.number().default(20),
@@ -108,13 +108,15 @@ const FormAddFindTransportOffer = () => {
                     icon={FaEnvelope}
                   />
                 </div>
-                {/*<div>*/}
-                {/*  <InputText*/}
-                {/*    name="cityName"*/}
-                {/*    label={mt('Miejscowość')}*/}
-                {/*    icon={FaMapPin}*/}
-                {/*  />*/}
-                {/*</div>*/}
+                <div>
+                  <InputText
+                    name="accommodationPlacesCount"
+                    type="number"
+                    min={0}
+                    label={t('form.accommodationPlacesCount')}
+                    icon={FaUsers}
+                  />
+                </div>
               </div>
               <div>
                 <InputTextarea
