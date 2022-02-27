@@ -68,3 +68,11 @@ export const TransportOfferExpandedComponent = ({data: {
     </div>
   )
 }
+
+export const TransportListItem = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
