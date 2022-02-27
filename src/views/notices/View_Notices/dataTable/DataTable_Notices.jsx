@@ -82,7 +82,7 @@ const ExpandedComponent = ({data: {
   createdAt,
 }}) => {
   const { t } = useTranslation();
-  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "Brak danych";
+  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
   const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}+${address??''}`
   return (
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
@@ -105,7 +105,7 @@ const ExpandedComponent = ({data: {
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
           {!! period &&<Item label="Na okres:" value={getPeriod(t, parseInt(period))}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator:" value={id}/>}
+          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
         </div>
         <div className="flex-1">
           {!!accommodationPlacesCount && <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>}
