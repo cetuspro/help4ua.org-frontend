@@ -17,8 +17,8 @@ export const transportSearchColumns = [
     selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
   },
   {
-    name: 'Data dodania',
-    selector: ({ createdAt }) => dayjs(createdAt).format('DD.MM.YYYY HH:mm'),
+    name: 'Opis',
+    selector: ({ description }) => description?.slice(0, 100)
   },
 ];
 
