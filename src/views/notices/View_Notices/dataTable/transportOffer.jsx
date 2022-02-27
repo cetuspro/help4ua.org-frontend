@@ -71,3 +71,36 @@ export const TransportOfferExpandedComponent = ({data: {
     </div>
   )
 }
+
+export const TransportOfferItem = ({
+  description,
+  cityName,
+  region,
+  address,
+  bedCount,
+  isAcceptedChild,
+  isAcceptedAnimal,
+  hasWashingMachine,
+  period,
+  isCatering,
+  isDelivery,
+  location,
+  id,
+  name,
+  accommodationPlacesCount,
+  phoneNumber,
+  createdAt,
+}) => {
+  return (
+    <div className="bg-white rounded-lg shadow-lg">
+      <div className="px-6 py-4 bg-gray-300 flex">
+        <div className='w-1/3'>
+          Miejsca: {accommodationPlacesCount}
+        </div>
+      </div>
+      <div className="p-6">
+        
+      </div>
+    </div>
+  )
+}
