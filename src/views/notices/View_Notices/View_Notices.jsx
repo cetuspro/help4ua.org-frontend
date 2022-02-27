@@ -5,16 +5,18 @@ import { QueryProvider } from '@/app/context/queries/QueryProvider';
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotices } from '../../../app/CRUD/notices/getNotices';
 import NoticesDataTable, { NoticesDataTable2 } from './dataTable/DataTable_Notices'
+import { useTranslation } from 'react-i18next'
 
-const breadcrumbItems = [
-  {
-    label: 'Ogłoszenia',
-  },
-]
+
 
 const ViewNotices = ({columns, expandableRowsComponent, title, noticeType, filters:Filters}) => {
   const query = useGetNotices(noticeType)
-
+  const {t} = useTranslation()
+  const breadcrumbItems = [
+    {
+      label: t('common.ogloszenia'),
+    },
+  ]
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
