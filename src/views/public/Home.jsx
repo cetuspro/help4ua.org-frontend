@@ -12,7 +12,6 @@ import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 export default function Home() {
   const {t} = useTranslation();
   const {data, isFetching} = useGetNoticesStats();
-  console.log(data)
   return (
     <>
       <div className="bg-gray-100 dark:bg-gray-900 pb-6 sm:pb-8 lg:pb-12 my-10">
@@ -85,7 +84,7 @@ export default function Home() {
                 />
                 <Button2
                   to={route['notices.list3']}
-                  label={`${t('frontpage.seeNotices')}`}
+                  label={`${t('frontpage.seeNotices')} (${!isFetching && data?.[1]?.statusAndAmount[2]?.amount})`}
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
@@ -103,11 +102,11 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addFindShelter']}
-                  label={t("frontpage.addNotice")}
+                  label={`${t("frontpage.addNotice")}`}
                 />
                 <Button2
                   to={route['notices.list2']}
-                  label={t("frontpage.seeNotices")}
+                  label={`${t("frontpage.seeNotices")} (${!isFetching && data?.[2]?.statusAndAmount?.[2]?.amount})`}
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
@@ -130,7 +129,7 @@ export default function Home() {
                 />
                 <Button2
                   to={route['notices.list4']}
-                  label={t("frontpage.seeNotices")}
+                  label={`${t("frontpage.seeNotices")} (${!isFetching && data?.[3]?.statusAndAmount?.[2]?.amount})`}
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
@@ -152,7 +151,7 @@ export default function Home() {
                 />
                 <Button2
                   to={route['notices.list6']}
-                  label={t("frontpage.seeNotices")}
+                  label={`${t("frontpage.seeNotices")} (${!isFetching && data?.[4]?.statusAndAmount?.[2]?.amount})`}
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
@@ -174,7 +173,7 @@ export default function Home() {
                 />
                 <Button2
                   to={route['notices.list7']}
-                  label={t("frontpage.seeNotices")}
+                  label={`${t("frontpage.seeNotices")} (${!isFetching && data?.[6]?.statusAndAmount?.[2]?.amount})`}
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
@@ -196,7 +195,7 @@ export default function Home() {
                 />
                 <Button2
                   to={route['notices.list5']}
-                  label={t("frontpage.seeNotices")}
+                  label={`${t("frontpage.seeNotices")} (${!isFetching && data?.[5]?.statusAndAmount?.[2]?.amount})`}
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
