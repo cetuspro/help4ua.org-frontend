@@ -13,6 +13,7 @@ export const route = {
   // createNotice: `${BASE_URL}/dodaj-ogloszenie`,
   // successNotice: `${BASE_URL}/dodaj-ogloszenie/success`,
   rodo: `${BASE_URL}/rodo`,
+  'helpPoints': `${BASE_URL}/punkty-pomocy`,
   ...authRoutes,
   ...threatMapRoutes,
   ...adminRoutes,

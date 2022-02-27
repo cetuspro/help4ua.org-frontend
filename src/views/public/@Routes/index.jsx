@@ -14,6 +14,7 @@ const LazyContact = lazy(() => import('@/views/public/contact/Contact'))
 const LazyReports = lazy(() => import('@/views/public/reports/View_ReportList/ViewReportList'))
 const LazyReport = lazy(() => import('@/views/public/reports/View_Report/ViewReport'))
 const LazyRodo = lazy(() => import('@/views/public/ViewRodo'))
+const LazyAidStations = lazy(() => import('@/views/public/View_HelpPoints/View_HelpPoints'))
 
 const PublicRoutes = [
   <Route key={route['index']} path={route['index']} element={<PublicLayout />}>
@@ -38,6 +39,12 @@ const PublicRoutes = [
       path={route.rodo}
       element={
           <LazyRodo />
+      }
+    />
+    <Route
+      path={route['helpPoints']}
+      element={
+        <LazyAidStations />
       }
     />
     {/*<Route*/}
