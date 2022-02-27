@@ -19,7 +19,7 @@ const noticeTypes = {
   10: ShelterSearchCard,
   20: TransportOfferCard,
   22: TransportSearchCard,
-  30: HelpOfferCard.apply,
+  30: HelpOfferCard,
   50: HelpOfferCard,
 }
 
