@@ -75,7 +75,7 @@ const NoticeRoutes = [
         title="Transport - osoby potrzebujące"
         columns={transportSearchColumns}
         expandableRowsComponent={TransportSearchExpandedComponent}
-        noticeType={50}
+        noticeType={22}
         filters={NoticesFilter}
       />}
     />
