@@ -6,21 +6,6 @@
     "contact": "Kontakt",
     "rodo": "Rodo"
   },
-  "tables:": {
-    "miast": "Miasto",
-    "miejsca": "Ilość miejsc",
-    "imie": "Imię",
-    "adres": "Adres",
-    "telefon": "Telefon",
-    "opis": "Opis",
-    "id": "Identyfikator",
-    "lozka": "Ilość łóżek",
-    "dzieci": "Przyjmę z małymi dziećmi",
-    "zwierzaki": "Przyjmę ze zwierzętami",
-    "pralka": "Dostęp do pralki",
-    "jedzenie": "Zapewniam wyżywienie",
-    "transport": "Zapewniam transport"
-  },
   "periods": {
     "negotiable": "Do ustalenia",
     "lessThanThreeDays": "Poniżej 3 dni",
@@ -135,6 +120,8 @@
   },
   "common": {
     "shelter": "Oferujesz schronienie?",
+    "miejsca": "Liczba miejsc",
+    "imie": "Imie",
     "lfShelter": "Szukasz schronienia?",
     "translations": "Oferujesz pomoc w tłumaczeniach?",
     "transport": "Oferujesz pomoc w transporcie?",
@@ -149,6 +136,20 @@
     "szukaj": "Wyszukaj...",
     "wojewodztwo": "Wybierz województwo",
     "wybierzLiczbeOsob": "Wybierz liczbę osób",
-    "ogloszenia": "Ogłoszenia"
+    "ogloszenia": "Ogłoszenia",
+    "miast": "Miasto",
+    "adres": "Adres",
+    "telefon": "Telefon",
+    "opis": "Opis",
+    "id": "Identyfikator",
+    "lozka": "Ilość łóżek",
+    "dzieci": "Przyjmę z małymi dziećmi",
+    "zwierzaki": "Przyjmę ze zwierzętami",
+    "pralka": "Dostęp do pralki",
+    "jedzenie": "Zapewniam wyżywienie",
+    "nazwa": "Nazwa",
+    "lokalizacja": "Lokalizacja",
+    "stronaglowna": "Strona główna",
+    "punktypomocy": "Punkty pomocy"
   }
 }

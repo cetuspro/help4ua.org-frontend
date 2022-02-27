@@ -4,24 +4,27 @@ import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 
-export const transportOfferColumns = [
-  {
-    name: 'Imię',
-    selector: ({ name }) => name,
-  },
-  {
-    name: 'Telefon',
-    selector: ({ phoneNumber }) => phoneNumber,
-  },
-  {
-    name: 'Ilość miejsc',
-    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
-  },
-  {
-    name: 'Opis',
-    selector: ({ description }) => description?.slice(0, 100)
-  },
-];
+export const transportOfferColumns = () => {
+  const {t} = useTranslation()
+  return [
+    {
+      name: t('common.imie'),
+      selector: ({ name }) => name,
+    },
+    {
+      name: t('common.telefon'),
+      selector: ({ phoneNumber }) => phoneNumber,
+    },
+    {
+      name: t('common.miejsca'),
+      selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
+    },
+    {
+      name: t('common.opis'),
+      selector: ({ description }) => description?.slice(0, 100)
+    },
+  ];
+} 
 
 const Item = ({label, value}) => {
   return (
@@ -57,11 +60,11 @@ export const TransportOfferExpandedComponent = ({data: {
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
       <div className="flex gap-5">
         <div className="flex-1">
-          {!!description && <Item label="Opis:" value={description}/>}
-          {!!name && <Item label="Imię:" value={name}/>}
-          {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
-          {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
+          {!!description && <Item label={t('common.opis')} value={description}/>}
+          {!!name && <Item label={t('common.imie')} value={name}/>}
+          {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
+          {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!! id &&<Item label={t('common.id')} value={id}/>}
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>
