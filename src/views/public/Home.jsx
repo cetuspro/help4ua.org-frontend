@@ -204,21 +204,22 @@ export default function Home() {
               </p>
             </div>
           </div>
+
           <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl w-1/2 mx-auto mt-10">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
                 <FaMapMarkerAlt size={100} color="currentColor" />
               </div>
 
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.help")}</h3>
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.helpPoints")}</h3>
 
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['helpPoints']}
-                  label={t("frontpage.addNotice")}
+                  label={t("frontpage.helpPoints")}
                 />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t("formDescription.offerHelp")}
+                {t("formDescription.helpPoints")}
               </p>
             </div>
         </div>
