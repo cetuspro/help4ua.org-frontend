@@ -55,14 +55,14 @@ export const TranslationOfferExpandedComponent = ({data: {
   createdAt,
 }}) => {
   const { t } = useTranslation();
-  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "Brak danych";
+  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
   const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}+${address??''}`
   return (
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
       <div className="flex gap-5">
         <div className="flex-1">
           {!!description && <Item label="Opis:" value={description}/>}
-          <Item label="Adres:" value={
+          <Item label="Adres:" value={!!(cityName || getRegion(region) || address) ? (
             <a
               href={href}
               target={'_blank'}
@@ -70,14 +70,15 @@ export const TranslationOfferExpandedComponent = ({data: {
               title="Zobacz na mapie"
               className="flex flex-col text-blue-700 hover:text-blue-500 items-start"
             >
-              <span>{cityName}, {getRegion(region)}</span>
+              {!!(cityName || getRegion(region)) ? <span>{cityName}, {getRegion(region)}</span> : ''}
               <span>{address}</span>
-            </a>}
+            </a>
+          ) : "Brak danych"}
           />
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator:" value={id}/>}
+          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>

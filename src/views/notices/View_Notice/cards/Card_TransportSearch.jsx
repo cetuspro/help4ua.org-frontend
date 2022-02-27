@@ -29,7 +29,7 @@ const TransportSearchCard = () => {
     createdAt,
   } } = useQueryContext()
   const { t } = useTranslation();
-  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "Brak danych";
+  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
   const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}+${address??''}`
 
   return (
@@ -40,7 +40,7 @@ const TransportSearchCard = () => {
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator:" value={id}/>}
+          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
         </div>
       </div>
       <Button to={route['notices.list6']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>

@@ -61,7 +61,7 @@ export const TransportOfferExpandedComponent = ({data: {
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator:" value={id}/>}
+          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>
