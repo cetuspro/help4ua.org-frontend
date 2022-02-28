@@ -38,7 +38,7 @@
     "isAcceptedChild": "I'm with a small child",
     "isAcceptedAnimal": "I'm with a pet",
     "isCatering": "I need food",
-    "isDelivery": "I need transport",    
+    "isDelivery": "I need transport",
     "roomCount": "Available rooms",
     "bedCount": "Available beds",
     "hasAcceptedChild": "I accept small children",
@@ -67,12 +67,12 @@
     "help": "Offering help?"
   },
   "formDescription" : {
-    "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
-    "findShelter": "Here you can place your ad that you are looking for a place to stay with your loved ones. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "translations": "Here you can place your announcement that you can support pl-ua translation. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "offerTransport": "This is where you can place your announcement to transport those in need. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "findTransport": "Here you can place your ad that you are looking for transportation. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "offerHelp": "This is where you can post your announcement that you would like to help in some way. Maybe you have some items to donate, maybe you can help with administrative tasks, or you want to get involved in some way. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!"
+    "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility..",
+    "findShelter": "Here you can place your ad that you are looking for a place to stay with your loved ones. Remember the request is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "translations": "Here you can place your ad that you can support pl-ua translation. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "offerTransport": "This is where you can place your offer of transport to those in need. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "findTransport": "Here you can place your ad that you are looking for transportation. Remember the request is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "offerHelp": "This is where you can post your ad that you would like to help in some way. Maybe you have some items to donate, maybe you can help with administrative tasks, or you want to get involved in some way. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible!"
   },
   "frontpage": {
     "help": "Help for Ukraine",
@@ -107,7 +107,7 @@
     "p7": "Your personal data will not be used for automated decision-making, including profiling, i.e. automated analysis of your personal data and adjustment of your preferences.",
     "p8": "Your data will be processed until the validity of your announcement, at the latest until the end of the campaign to help Ukraine through the uapomoc.pl portal. After this time they will be deleted.",
     "p9": "The data you provide is voluntary, but necessary for posting on the portal of help for Ukraine uapomoc.pl."
-    
+
   },
   "common": {
   }
