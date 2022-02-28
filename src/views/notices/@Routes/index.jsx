@@ -27,6 +27,7 @@ const LazyAddFindTransportOffer = lazy(() => import('../../../ua/Form_AddFindTra
 const LazyAddHelpOffer = lazy(() => import('../../../ua/Form_AddHelpOffer'))
 const LazyAddSuccess = lazy(() => import('../../../ua/NoticeCreateSuccess'))
 const LazyAddTranslationOffer = lazy(() => import('../../../ua/Form_AddTranslationOffer'))
+const LazyEditNotice = lazy(() => import('../View_EditNotice/View_EditNotice'))
 
 const NoticeRoutes = [
   <Route key={route['notices.list']} path={route['notices.list']} element={<UserLayout />}>
@@ -102,6 +103,9 @@ const NoticeRoutes = [
     <Route path={route['notices.addFindTransportOffer']} element={<LazyAddFindTransportOffer />} />
     <Route path={route['notices.addTranslationOffer']} element={<LazyAddTranslationOffer />} />
     <Route path={route['notices.success']} element={<LazyAddSuccess />} />
+  </Route>,
+  <Route key={route['index']} path={route['index']} element={<UserLayout />}>
+    <Route path={route['notices.edit']()} element={<LazyEditNotice />} />
   </Route>
 ]
 

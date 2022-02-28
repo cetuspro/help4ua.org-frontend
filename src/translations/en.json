@@ -50,7 +50,9 @@
     "description": "Description",
     "voivodeship": "Voivodeship",
     "reason": "Reason",
-    "send": "Send"
+    "send": "Send",
+    "editNotice": "Edit notice",
+    "pin": "PIN code"
   },
   "success": {
     "title": "Success!",
@@ -64,7 +66,8 @@
     "translations": "Offering translation assistance?",
     "transport": "Offering transportation?",
     "lfTransport": "Looking for transportation?",
-    "help": "Offering help?"
+    "help": "Offering help?",
+    "helpPoints": "Help points"
   },
   "formDescription" : {
     "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
@@ -72,7 +75,9 @@
     "translations": "Here you can place your announcement that you can support pl-ua translation. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "offerTransport": "This is where you can place your announcement to transport those in need. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "findTransport": "Here you can place your ad that you are looking for transportation. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "offerHelp": "This is where you can post your announcement that you would like to help in some way. Maybe you have some items to donate, maybe you can help with administrative tasks, or you want to get involved in some way. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!"
+    "offerHelp": "This is where you can post your announcement that you would like to help in some way. Maybe you have some items to donate, maybe you can help with administrative tasks, or you want to get involved in some way. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "helpPoints": "This is where you will find a list of all the locations where help is offered.",
+    "editNotice": "Enter the PIN code received in SMS to access the notice edition"
   },
   "frontpage": {
     "help": "Help for Ukraine",
@@ -83,7 +88,8 @@
     "info-2": "We connect people of good heart with those who need help!",
     "info-3": "If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up!",
     "info-4": "If you came from Ukraine and are looking for a place where you could stay with your family, search our database!",
-    "info-5": "If you would like to help, become a volunteer, etc. anyone can help!"
+    "info-5": "If you would like to help, become a volunteer, etc. anyone can help!",
+    "helpPoints": "See help points"
   },
   "notice": {
     "markInactive": "Mark as inactive"
