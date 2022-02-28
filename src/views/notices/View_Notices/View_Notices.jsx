@@ -6,10 +6,18 @@ import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotices } from '../../../app/CRUD/notices/getNotices';
 import NoticesDataTable, { NoticesDataTable2 } from './dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
+import usePagination from '@/app/hooks/usePagination'
 
 
 
-const ViewNotices = ({columns, expandableRowsComponent, title, noticeType, filters:Filters}) => {
+const ViewNotices = ({
+  columns,
+  expandableRowsComponent,
+  title,
+  noticeType,
+  filters:Filters,
+  itemComponent:ItemComponent,
+}) => {
   const query = useGetNotices(noticeType)
   const {t} = useTranslation()
   const breadcrumbItems = [
@@ -32,22 +40,48 @@ const ViewNotices = ({columns, expandableRowsComponent, title, noticeType, filte
             </div>
           </QueryHasNoResults>
           <QueryHasResults>
-            <div className="bg-white p-4 rounded-lg overflow-x-auto w-full">
-              {columns?.map && typeof expandableRowsComponent !== 'undefined' ? (
-                <NoticesDataTable2
-                  columns={columns}
-                  expandableRowsComponent={expandableRowsComponent}
-                />
-              ) : (
-                <NoticesDataTable />
+            <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start max-w-full">
+              {!ItemComponent && (
+                <div className="bg-white p-4 rounded-lg overflow-x-auto w-full">
+                  {columns?.map && typeof expandableRowsComponent !== 'undefined' ? (
+                    <NoticesDataTable2
+                      columns={columns}
+                      expandableRowsComponent={expandableRowsComponent}
+                    />
+                  ) : (
+                    <NoticesDataTable />
+                  )}
+                </div>
               )}
+              <div className="p-5">
+                {ItemComponent && (
+                  <>
+                    {query.data?.map && query.data.map(item => (
+                      <ItemComponent
+                        key={item.id}
+                        {...item}
+                      />
+                    ))}
+                    <ItemComponentPagination/>
+                  </>
+                )}
+              </div>
             </div>
           </QueryHasResults>
         </QueryProvider>
       </div>
     </>
-  )
-}
+  );
+};
+
+const ItemComponentPagination = () => {
+  const pagination = usePagination()
+  return (
+    <div>
+      
+    </div>
+  );
+};
 
 export default withFilters(ViewNotices, {
   params: ['SearchPhrase, PageNumber, PageSize, region, City, accommodationPlacesCount'],

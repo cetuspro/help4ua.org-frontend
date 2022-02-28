@@ -6,7 +6,7 @@ import { shelterOfferColumns, ShelterOfferExpandedComponent } from '@/views/noti
 import { helpOfferColumnsColumns, HelpOfferExpandedComponent } from '@/views/notices/View_Notices/dataTable/helpOffer'
 import {
   transportOfferColumns,
-  TransportOfferExpandedComponent,
+  TransportOfferExpandedComponent, TransportOfferItem,
 } from '@/views/notices/View_Notices/dataTable/transportOffer'
 import {
   shelterSearchColumns,
@@ -61,6 +61,7 @@ const NoticeRoutes = () => {
             title={t('tiles.transport2')}
             columns={transportOfferColumns()}
             expandableRowsComponent={TransportOfferExpandedComponent}
+            // itemComponent={TransportOfferItem}
             noticeType={20}
             filters={NoticesFilter}
           />}
