@@ -5,38 +5,41 @@ import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
-export const shelterSearchColumns = [
-  {
-    name: 'Miasto',
-    selector: ({ cityName }) => cityName,
-  },
-  {
-    name: 'Ilość miejsc',
-    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
-  },
-  {
-    name: 'Imię',
-    selector: ({ name }) => name,
-  },
-  {
-    name: 'Adres',
-    cell: ({ address, location }) => <a
-      href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
-      className="text-blue-400 hover:text-blue-600"
-      target="_blank"
-      rel="noreferrer"
-      title="Zobacz na mapie"
-    >{address}</a>,
-  },
-  {
-    name: 'Telefon',
-    selector: ({ phoneNumber }) => phoneNumber,
-  },
-  {
-    name: 'Opis',
-    selector: ({ description }) => description?.slice(0, 100)
-  },
-]
+export const shelterSearchColumns = () => {
+  const {t} = useTranslation();
+  return [
+    {
+      name: t('common.miasto'),
+      selector: ({ cityName }) => cityName,
+    },
+    {
+      name: t('common.miejsca'),
+      selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
+    },
+    {
+      name: t('common.imie'),
+      selector: ({ name }) => name,
+    },
+    {
+      name: t('common.adres'),
+      cell: ({ address, location }) => <a
+        href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
+        className="text-blue-400 hover:text-blue-600"
+        target="_blank"
+        rel="noreferrer"
+        title="Zobacz na mapie"
+      >{address}</a>,
+    },
+    {
+      name: t('common.telefon'),
+      selector: ({ phoneNumber }) => phoneNumber,
+    },
+    {
+      name: t('common.opis'),
+      selector: ({ description }) => description?.slice(0, 100)
+    },
+  ]
+}
 const Item = ({label, value}) => {
   return (
     <div className="py-2 flex gap-2">
@@ -73,8 +76,8 @@ export const ShelterSearchExpandedComponent = ({data: {
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
       <div className="flex gap-5">
         <div className="flex-1">
-          {!!description && <Item label="Opis:" value={description}/>}
-          <Item label="Adres:" value={!!(cityName || getRegion(region) || address) ? (
+          {!!description && <Item label={t('common.opis')} value={description}/>}
+          <Item label={t('common.adres')} value={!!(cityName || getRegion(region) || address) ? (
             <a
               href={href}
               target={'_blank'}
@@ -87,20 +90,20 @@ export const ShelterSearchExpandedComponent = ({data: {
             </a>
           ) : "Brak danych"}
           />
-          {!!name && <Item label="Imię:" value={name}/>}
-          {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
-          {!! period &&<Item label="Na okres:" value={getPeriod(t, parseInt(period))}/>}
-          {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
+          {!!name && <Item label={t('common.imie')} value={name}/>}
+          {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
+          {!! period &&<Item label={t('common.okres')} value={getPeriod(t, parseInt(period))}/>}
+          {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!! id &&<Item label={t('common.id')} value={id}/>}
         </div>
         <div className="flex-1">
-          {!!accommodationPlacesCount && <Item label="Liczba miejsc:" value={accommodationPlacesCount}/>}
-          {!!bedCount && <Item label="Liczba łóżek:" value={bedCount}/>}
-          <Item label="Przyjmę z małym dzieckiem:" value={getValue(isAcceptedChild)}/>
-          <Item label="Przyjmę ze zwierzętami:" value={getValue(isAcceptedAnimal)}/>
-          <Item label="Dostęp do pralki:" value={getValue(hasWashingMachine)}/>
-          <Item label="Zapewniam wyżywienie:" value={getValue(isCatering)}/>
-          <Item label="Zapewniam transport:" value={getValue(isDelivery)}/>
+          {!!accommodationPlacesCount && <Item label={t('common.miejsca')} value={accommodationPlacesCount}/>}
+          {!!bedCount && <Item label={t('common.lozka')} value={bedCount}/>}
+          <Item label={t('common.dzieci')} value={getValue(isAcceptedChild)}/>
+          <Item label={t('common.zwierzaki')} value={getValue(isAcceptedAnimal)}/>
+          <Item label={t('common.pralka')} value={getValue(hasWashingMachine)}/>
+          <Item label={t('common.jedzenie')} value={getValue(isCatering)}/>
+          <Item label={t('common.transport')} value={getValue(isDelivery)}/>
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>

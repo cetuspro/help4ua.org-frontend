@@ -22,9 +22,9 @@ const AppRouter = () => {
 
         {PublicRoutes}
 
-        {NoticesRoutes}
-
         {HelpPointsRoutes}
+
+        {NoticesRoutes()}
 
         {/*{AccountRoutes}*/}
 

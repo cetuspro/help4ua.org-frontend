@@ -53,11 +53,15 @@ const Item = ({label, value}) => {
   )
 }
 
-export const getValue = val => isBool(val) ? (
-  val ? 'TAK' : 'NIE'
-) : (
-  "Brak danych"
-)
+export const getValue = val => {
+  const {t} = useTranslation();
+  
+  return isBool(val) ? (
+    val ? t('common.tak') : t('common.nie')
+  ) : (
+    t('common.brakDanych')
+  )
+}
 
 export const getPeriod = (t, val) => periodsEnum(t).find(item => item.value === val)?.label ?? "Brak danych";
 

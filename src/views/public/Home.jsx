@@ -1,15 +1,10 @@
 import heroImg from '../../assets/img/hero.png'
 import { Link } from 'react-router-dom'
-import { FiMap, FiHome, FiEdit, FiTruck, FiGift } from 'react-icons/fi'
-import { MdOutlinePeopleAlt, MdSensors } from 'react-icons/md'
-import { BiBrain } from 'react-icons/bi'
-import { AiOutlineTrophy } from 'react-icons/ai'
-import { CgInfinity } from 'react-icons/cg'
+import { FiHome, FiEdit, FiTruck, FiGift } from 'react-icons/fi'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import { FaMapMarkerAlt } from 'react-icons/fa'
-import { FaHeart } from 'react-icons/all'
 
 export default function Home() {
   const { t } = useTranslation()
@@ -81,7 +76,7 @@ export default function Home() {
                 {t('tiles.shelter')}
               </h3>
               <p className={'italic mb-4'}>
-                Liczba aktywnych ogłoszeń: {!isFetching && data?.[1]?.statusAndAmount[2]?.amount}
+                {t('frontpage.activeAds')}: {!isFetching && data?.[1]?.statusAndAmount[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
@@ -109,7 +104,7 @@ export default function Home() {
               </h3>
 
               <p className={'italic mb-4'}>
-                Liczba aktywnych ogłoszeń: {!isFetching && data?.[2]?.statusAndAmount?.[2]?.amount}
+                {t('frontpage.activeAds')}: {!isFetching && data?.[2]?.statusAndAmount?.[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
@@ -138,7 +133,7 @@ export default function Home() {
               </h3>
 
               <p className={'italic mb-4'}>
-                Liczba aktywnych ogłoszeń: {!isFetching && data?.[3]?.statusAndAmount?.[2]?.amount}
+                {t('frontpage.activeAds')}: {!isFetching && data?.[3]?.statusAndAmount?.[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1 to={route['notices.addTransportOffer']} label={t('frontpage.addNotice')} />
@@ -163,7 +158,7 @@ export default function Home() {
               </h3>
 
               <p className={'italic mb-4'}>
-                Liczba aktywnych ogłoszeń: {!isFetching && data?.[4]?.statusAndAmount?.[2]?.amount}
+                {t('frontpage.activeAds')}: {!isFetching && data?.[4]?.statusAndAmount?.[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
@@ -191,7 +186,7 @@ export default function Home() {
               </h3>
 
               <p className={'italic mb-4'}>
-                Liczba aktywnych ogłoszeń: {!isFetching && data?.[6]?.statusAndAmount?.[2]?.amount}
+                {t('frontpage.activeAds')}: {!isFetching && data?.[6]?.statusAndAmount?.[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
@@ -219,7 +214,7 @@ export default function Home() {
               </h3>
 
               <p className={'italic mb-4'}>
-                Liczba aktywnych ogłoszeń: {!isFetching && data?.[5]?.statusAndAmount?.[2]?.amount}
+                {t('frontpage.activeAds')}: {!isFetching && data?.[5]?.statusAndAmount?.[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1 to={route['notices.addHelpOffer']} label={t('frontpage.addNotice')} />

@@ -23,15 +23,6 @@ const noticeTypes = {
   50: HelpOfferCard,
 }
 
-const breadcrumbItems = (title) => [
-  {
-    url: route['notices.list'],
-    label: 'Ogłoszenia',
-  },
-  {
-    label: title,
-  },
-]
 
 const ViewNotice = () => {
   const { noticeId } = useParams()
@@ -40,6 +31,15 @@ const ViewNotice = () => {
   const {t} = useTranslation();
   const CardComponent = query?.data?.type in noticeTypes ? noticeTypes[query?.data?.type] : noticeTypes[1]
 
+  const breadcrumbItems = (title) => [
+    {
+      url: route['notices.list'],
+      label: t('common.ogloszenia'),
+    },
+    {
+      label: title,
+    },
+  ]
   return (
     <>
       <QueryProvider {...query}>

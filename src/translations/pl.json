@@ -6,16 +6,6 @@
     "contact": "Kontakt",
     "rodo": "Rodo"
   },
-  "tiles": {
-    "shelter": "Oferujesz schronienie?",
-    "lfShelter": "Szukasz schronienia?",
-    "translations": "Oferujesz pomoc w tłumaczeniach?",
-    "transport": "Oferujesz pomoc w transporcie?",
-    "lfTransport": "Szukasz transportu",
-    "help": "Oferujesz pomoc?",
-    "helpPoints": "Punkty pomocy",
-    "seeMap": "Zobacz mapę"
-  },
   "periods": {
     "negotiable": "Do ustalenia",
     "lessThanThreeDays": "Poniżej 3 dni",
@@ -60,13 +50,31 @@
     "description": "Opis",
     "voivodeship": "Województwo",
     "reason": "Przyczyna",
-    "send": "Wyślij"
+    "send": "Wyślij",
+    "editNotice": "Edytuj ogłoszenie",
+    "pin": "Kod PIN"
   },
   "success": {
     "title": "Udało się!",
     "content-1": "Zgłoszenie zostało dodane i teraz czeka na weryfikację przez naszych wolontariuszy.",
     "content-2": "W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.",
     "home": "Strona główna"
+  },
+  "tiles": {
+    "shelter": "Oferujesz schronienie?",
+    "shelter2": "Schronienie - osoby potrzebujące",
+    "shelter3": "Schronienie - oferty pomocy",
+    "lfShelter": "Szukasz schronienia?",
+    "translations": "Oferujesz pomoc w tłumaczeniu?",
+    "translations2": "Tłumaczenie - oferty pomocy",
+    "transport": "Oferujesz transport?",
+    "transport2": "Transport - oferty pomocy",
+    "transport3": "Transport - osoby potrzebujące",
+    "lfTransport": "Szukasz transportu?",
+    "help": "Oferujesz pomoc?",
+    "help2": "Inne oferty pomocy",
+    "helpPoints": "Punkty pomocy",
+    "seeMap": "Zobacz mapę"
   },
   "formDescription": {
     "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
@@ -75,13 +83,15 @@
     "offerTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz przetransportować potrzebujących. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "findTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz transportu. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc."
+    "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc.",
+    "editNotice": "Podaj kod PIN otrzymany w SMS-ie aby uzyskać dostęp do edycji ogłoszenia"
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
     "title": "Solidarni z Ukrainą. Każda pomoc się liczy",
     "addNotice": "Dodaj ogłoszenie",
     "seeNotices": "Zobacz ogłoszenia",
+    "activeAds": "Liczba aktywnych ogłoszeń",
     "info-1": "To strona oddolnej akcji społecznej dla tych którzy chcą pomóc i dla tych którzy szukają pomocy!",
     "info-2": "Łączymy ludzi dobrego serca z tymi którzy potrzebują pomocy!",
     "info-3": "Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!",
@@ -112,5 +122,38 @@
     "p8": "Twoje dane będą przetwarzane do momentu aktualności Twojego ogłoszenia, najpóźniej do czasu zakończenia akcji pomocy dla Ukrainy poprzez portal uapomoc.pl. Po tym czasie zostaną usunięte.",
     "p9": "Podanie przez Ciebie danych jest dobrowolne, lecz niezbędne do umieszczenia ich w portalu pomocy dla Ukrainy uapomoc.pl."
   },
-  "common": {}
+  "common": {
+    "shelter": "Oferujesz schronienie?",
+    "miejsca": "Liczba miejsc",
+    "imie": "Imie",
+    "lfShelter": "Szukasz schronienia?",
+    "translations": "Oferujesz pomoc w tłumaczeniach?",
+    "transport": "Oferujesz pomoc w transporcie?",
+    "lfTransport": "Szukasz transportu",
+    "help": "Oferujesz pomoc?",
+    "helpPoints": "Punkty pomocy",
+    "data": "Data dodania",
+    "tak": "Tak",
+    "nie": "Nie",
+    "brakDanych": "Brak danych",
+    "miasto": "Miasto",
+    "szukaj": "Wyszukaj...",
+    "wojewodztwo": "Wybierz województwo",
+    "wybierzLiczbeOsob": "Wybierz liczbę osób",
+    "ogloszenia": "Ogłoszenia",
+    "miast": "Miasto",
+    "adres": "Adres",
+    "telefon": "Telefon",
+    "opis": "Opis",
+    "id": "Identyfikator",
+    "lozka": "Ilość łóżek",
+    "dzieci": "Przyjmę z małymi dziećmi",
+    "zwierzaki": "Przyjmę ze zwierzętami",
+    "pralka": "Dostęp do pralki",
+    "jedzenie": "Zapewniam wyżywienie",
+    "nazwa": "Nazwa",
+    "lokalizacja": "Lokalizacja",
+    "stronaglowna": "Strona główna",
+    "punktypomocy": "Punkty pomocy"
+  }
 }
