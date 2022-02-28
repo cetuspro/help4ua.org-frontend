@@ -6,6 +6,7 @@ import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetHelpPoints } from '../../../app/CRUD/helpPoints/getHelpPoints'
 import HelpPointsDataTable from './DataTable/DataTable_HelpPoints'
 import { useTranslation } from 'react-i18next'
+import Button from '@/components/common/Button'
 
 const ViewHelpPoints = () => {
   const query = useGetHelpPoints()
@@ -21,7 +22,9 @@ const ViewHelpPoints = () => {
   ]
   return (
     <div className="container mx-auto py-8">
-      <Breadcrumb items={breadcrumbItems} />
+      <Breadcrumb items={breadcrumbItems}>
+        <Button to={route['helpPoints.map']}>{t('tiles.seeMap')}</Button>
+      </Breadcrumb>
       <h1 className="text-black-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
         {t('tiles.helpPoints')}
       </h1>
