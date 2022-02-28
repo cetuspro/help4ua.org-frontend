@@ -231,7 +231,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl w-1/2 mx-auto mt-10">
+          <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl w-full md:w-1/2 mx-auto mt-10">
             <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
               <FaMapMarkerAlt size={100} color="currentColor" />
             </div>
