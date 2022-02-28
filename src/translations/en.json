@@ -140,6 +140,7 @@
     "adres": "Address",
     "telefon": "Phone",
     "opis": "Description",
+    "okres": "Duration of stay",
     "id": "ID",
     "lozka": "Number of beds",
     "dzieci": "I'll accept with small children",
