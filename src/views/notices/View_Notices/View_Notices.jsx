@@ -53,19 +53,17 @@ const ViewNotices = ({
                   )}
                 </div>
               )}
-              <div className="p-5">
-                {ItemComponent && (
-                  <>
-                    {query.data?.map && query.data.map(item => (
-                      <ItemComponent
-                        key={item.id}
-                        {...item}
-                      />
-                    ))}
-                    <ItemComponentPagination/>
-                  </>
-                )}
-              </div>
+              {ItemComponent && (
+                <div className="p-5">
+                  {query.data?.map && query.data.map(item => (
+                    <ItemComponent
+                      key={item.id}
+                      {...item}
+                    />
+                  ))}
+                  <ItemComponentPagination/>
+                </div>
+              )}
             </div>
           </QueryHasResults>
         </QueryProvider>
