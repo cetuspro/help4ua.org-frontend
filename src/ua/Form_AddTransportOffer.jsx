@@ -69,7 +69,7 @@ const FormAddFindTransportOffer = () => {
     <div className="container mx-auto py-8">
       <h2 className="font-bold mb-4 ml-2 text-2xl">{t('form.offerTransport')}</h2>
       <p className="mb-4 ml-2 text-gray-500">{t("formDescription.offerTransport")}</p>
-      <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
+      <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
             <form onSubmit={mutation.mutate}>

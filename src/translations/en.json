@@ -54,7 +54,9 @@
     "editNotice": "Edit notice",
     "pin": "PIN code",
     "alertTitle": "ATTENTION",
-    "alertContent": "All persons fleeing from Ukraine from armed conflict, DO NOT have to register at reception points or worry about formalities. All persons fleeing from Ukraine, seeking refuge in Poland, do not need to worry about the legality of their stay. In the coming days, there is also no need to submit any applications at the Office for Foreigners, voivodeship offices or Border Guard posts. The same applies to Ukrainian citizens who are in Poland, but whose residence documents have expired."
+    "alertContent": "All persons fleeing from Ukraine from armed conflict, DO NOT have to register at reception points or worry about formalities. All persons fleeing from Ukraine, seeking refuge in Poland, do not need to worry about the legality of their stay. In the coming days, there is also no need to submit any applications at the Office for Foreigners, voivodeship offices or Border Guard posts. The same applies to Ukrainian citizens who are in Poland, but whose residence documents have expired.",
+    "findHelp": "I'm looking for help",
+    "offerFindTranslations": "I am looking for help with translation"
   },
   "success": {
     "title": "Success!",
@@ -77,7 +79,11 @@
     "seeMap": "See map",
     "help2": "Other offers of help",
     "helpPoints": "Help points",
-    "ogloszenia": "Announcements"
+    "ogloszenia": "Announcements",
+    "lfHelp": "Looking for help?",
+    "lfHelp2": "Other help - people in need",
+    "lfTranslations": "Looking for help with translation?",
+    "lfTranslations2": "Translation - people in need"
   },
   "formDescription": {
     "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
@@ -87,7 +93,9 @@
     "findTransport": "Here you can place your ad that you are looking for transportation. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "offerHelp": "This is where you can post your announcement that you would like to help in some way. Maybe you have some items to donate, maybe you can help with administrative tasks, or you want to get involved in some way. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "helpPoints": "This is where you will find a list of all the locations where help is offered.",
-    "editNotice": "Enter the PIN code received in SMS to access the notice edition"
+    "editNotice": "Enter the PIN code received in SMS to access the notice edition",
+    "findHelp": "This is where you can post your announcement that you are looking for help. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "lfTranslations": "Here you can post your announcement that you need help with pl-ua translation. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!"
   },
   "frontpage": {
     "help": "Help for Ukraine",

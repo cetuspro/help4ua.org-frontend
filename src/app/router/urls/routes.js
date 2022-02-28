@@ -8,6 +8,7 @@ import { threatMapRoutes } from './threatMap'
 import { userRoutes } from './user'
 import { contactRoutes } from '@/app/router/urls/public/public'
 import { helpPointsRoutes } from './helpPoints'
+import { actionsRoutes } from './actions/actions'
 
 export const route = {
   index: `${BASE_URL}/`,
@@ -23,4 +24,5 @@ export const route = {
   ...noticesRoutes,
   ...contactRoutes,
   ...helpPointsRoutes,
+  ...actionsRoutes,
 }
