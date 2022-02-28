@@ -1,15 +1,10 @@
 import heroImg from '../../assets/img/hero.png'
 import { Link } from 'react-router-dom'
-import { FiMap, FiHome, FiEdit, FiTruck, FiGift } from 'react-icons/fi'
-import { MdOutlinePeopleAlt, MdSensors } from 'react-icons/md'
-import { BiBrain } from 'react-icons/bi'
-import { AiOutlineTrophy } from 'react-icons/ai'
-import { CgInfinity } from 'react-icons/cg'
+import { FiHome, FiEdit, FiTruck, FiGift } from 'react-icons/fi'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import { FaMapMarkerAlt } from 'react-icons/fa'
-import { FaHeart } from 'react-icons/all'
 
 export default function Home() {
   const {t} = useTranslation();
@@ -78,7 +73,7 @@ export default function Home() {
               </div>
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.shelter")}</h3>
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[1]?.statusAndAmount[2]?.amount}</p>
+              <p className={'italic mb-4'}>{t('frontpage.activeAds')}: {!isFetching && data?.[1]?.statusAndAmount[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addShelterOffer']}
@@ -100,7 +95,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.lfShelter")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[2]?.statusAndAmount?.[2]?.amount}</p>
+              <p className={'italic mb-4'}>{t('frontpage.activeAds')}: {!isFetching && data?.[2]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addFindShelter']}
@@ -123,7 +118,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.transport")}</h3>
               
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[3]?.statusAndAmount?.[2]?.amount}</p>
+              <p className={'italic mb-4'}>{t('frontpage.activeAds')}: {!isFetching && data?.[3]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addTransportOffer']}
@@ -145,7 +140,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.lfTransport")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[4]?.statusAndAmount?.[2]?.amount}</p>
+              <p className={'italic mb-4'}>{t('frontpage.activeAds')}: {!isFetching && data?.[4]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addFindTransportOffer']}
@@ -167,7 +162,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.translations")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[6]?.statusAndAmount?.[2]?.amount}</p>
+              <p className={'italic mb-4'}>{t('frontpage.activeAds')}: {!isFetching && data?.[6]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addTranslationOffer']}
@@ -189,7 +184,7 @@ export default function Home() {
 
               <h3 className="text-lg md:text-xl font-semibold text-center mb-2">{t("tiles.help")}</h3>
 
-              <p className={'italic mb-4'}>Liczba aktywnych ogłoszeń: {!isFetching && data?.[5]?.statusAndAmount?.[2]?.amount}</p>
+              <p className={'italic mb-4'}>{t('frontpage.activeAds')}: {!isFetching && data?.[5]?.statusAndAmount?.[2]?.amount}</p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
                   to={route['notices.addHelpOffer']}

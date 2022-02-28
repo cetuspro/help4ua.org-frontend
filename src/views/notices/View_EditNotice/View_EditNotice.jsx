@@ -90,7 +90,7 @@ const ViewEditNotice = () => {
     <>
       <div className="container mx-auto py-8">
       
-      <div className="flex justify-between items-start py-1">
+      <div className="flex flex-col sm:flex-row justify-between items-start pb-5 sm:py-1">
         <Breadcrumb items={breadcrumbItems(`Ogłoszenie nr ${noticeId}`)}/>
         {!!state.notice && <Button onClick={changeNoticeStatus} className="w-fit" size="small" color={state.notice?.status === 2 ? 'danger' : 'success'}>
           {state.notice?.status === 2 ? 'Oznacz jako nieaktualne' : 'Oznacz jako aktualne'}
