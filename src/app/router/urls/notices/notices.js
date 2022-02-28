@@ -17,4 +17,5 @@ export const noticesRoutes = {
   'notices.addHelpOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-pomoc`,
   'notices.addTranslationOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-tlumaczenia`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
+  'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
 }
