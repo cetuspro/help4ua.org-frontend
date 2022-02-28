@@ -13,7 +13,7 @@ const Item = ({label, value}) => {
   )
 }
 
-const TransportSearchForm = ({notice, changeNoticeStatus}) => {
+const TransportSearchForm = ({notice}) => {
   const {
     description,
     cityName,
@@ -23,8 +23,7 @@ const TransportSearchForm = ({notice, changeNoticeStatus}) => {
     id,
     name,
     phoneNumber,
-    createdAt,
-    type,
+    status,
   } = notice
   const { t } = useTranslation();
   const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
@@ -41,7 +40,6 @@ const TransportSearchForm = ({notice, changeNoticeStatus}) => {
           {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
         </div>
       </div>
-      <Button onClick={changeNoticeStatus} className="mt-10 mx-auto w-fit" size="small">{type === 2 ? 'Dezaktywuj zgłoszenie' : 'Aktywuj zgłoszenie'}</Button>
     </Card>
   )
 }

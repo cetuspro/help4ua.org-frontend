@@ -13,7 +13,7 @@ const Item = ({label, value}) => {
   )
 }
 
-const ShelterOfferForm = ({notice, changeNoticeStatus}) => {
+const ShelterOfferForm = ({notice}) => {
   const {
     description,
     cityName,
@@ -31,11 +31,10 @@ const ShelterOfferForm = ({notice, changeNoticeStatus}) => {
     name,
     accommodationPlacesCount,
     phoneNumber,
-    createdAt,
     ukraineLang,
     englishLang,
     germanyLang,
-    type,
+    status,
   } = notice
   const { t } = useTranslation();
   const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
@@ -78,7 +77,6 @@ const ShelterOfferForm = ({notice, changeNoticeStatus}) => {
           <Item label="Język angielski:" value={getValue(germanyLang)}/>
         </div>
       </div>
-      <Button onClick={changeNoticeStatus} className="mt-10 mx-auto w-fit" size="small">{type === 2 ? 'Dezaktywuj zgłoszenie' : 'Aktywuj zgłoszenie'}</Button>
     </Card>
   )
 }

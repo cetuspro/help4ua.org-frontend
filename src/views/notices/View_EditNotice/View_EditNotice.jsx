@@ -21,6 +21,7 @@ import useObjectState from '../../../app/hooks/useObjectState'
 import ShelterOfferForm from './forms/Form_ShelterOffer'
 import { getNoticeToEdit } from '../../../app/CRUD/notices/getNoticeToEdit'
 import { updateNoticeStatus } from '../../../app/CRUD/notices/updateNoticeStatus'
+import Button from '@/components/common/Button'
 
 const noticeTypes = {
   1: ShelterOfferForm,
@@ -61,23 +62,26 @@ const ViewEditNotice = () => {
   const handleGetNoticeSuccess = ({data, config: {params}}) => {
     setState({
       notice: data,
-      smsToken: params.smsToken
+      smsToken: params.smsToken,
+      error: null,
     })
   }
 
   const getNoticeMutation = useHookFormMutation(methods, getNoticeToEdit(noticeId, urlToken), {handleSuccess: handleGetNoticeSuccess});
 
   const updateSuccess = () => {
-    getNotice(noticeId, urlToken)(state.smsToken);
+    getNoticeToEdit(noticeId, urlToken)({smsToken: state.smsToken}).then(data => {
+      setState({notice: data.data});
+    })
   }
-
-  const changeStatusMutation = usePureMutation(updateNoticeStatus(noticeId, urlToken), {handleSuccess: updateSuccess});
+  
+  const changeStatusMutation = usePureMutation(updateNoticeStatus(noticeId, urlToken), {onSuccess: updateSuccess});
 
   const changeNoticeStatus = () => {
     changeStatusMutation.mutate({
       smsToken: state.smsToken,
       data: {
-        status: state.notice.status === 2 ? 0 : 2
+        status: state.notice.status === 2 ? 'OUTOFDATE' : 'VERIFIED'
       }
     })
   }
@@ -85,12 +89,16 @@ const ViewEditNotice = () => {
   return (
     <>
       <div className="container mx-auto py-8">
-      <Breadcrumb items={breadcrumbItems(`Ogłoszenie nr ${noticeId}`)}/>
-      <h2 className="font-bold mb-4 ml-2 text-2xl">{t('form.editNotice')}</h2>
+      
+      <div className="flex justify-between items-start py-1">
+        <Breadcrumb items={breadcrumbItems(`Ogłoszenie nr ${noticeId}`)}/>
+        {!!state.notice && <Button onClick={changeNoticeStatus} className="w-fit" size="small" color={state.notice?.status === 2 ? 'danger' : 'success'}>
+          {state.notice?.status === 2 ? 'Oznacz jako nieaktualne' : 'Oznacz jako aktualne'}
+        </Button>}
+      </div>
       {!!state.notice ? <>
         {!!CardComponent && <CardComponent
           notice={state.notice}
-          changeNoticeStatus={changeNoticeStatus}
         />}
       </> : <>
         <p className="mb-4 ml-2 text-gray-500">{t("formDescription.editNotice")}</p>
@@ -99,6 +107,7 @@ const ViewEditNotice = () => {
             <FormProvider {...methods}>
               <form onSubmit={getNoticeMutation.mutate}>
                 <HookFormError/>
+                {!!state.error && <div className="">{state.error}</div>}
                 <div>
                   <InputText
                     name="smsToken"
