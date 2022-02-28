@@ -88,6 +88,10 @@
     @apply text-white;
   }
 
+  .custom-popup .leaflet-popup-content p {
+    margin: 0.5em 0;
+  }
+
   .report-popup.leaflet-popup {
     @apply transition-none;
   }

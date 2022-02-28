@@ -1,7 +1,7 @@
-import { useQueryContext } from "@/app/context/queries/QueryProvider"
-import Datatable from "@/components/common/Datatable"
-import usePagination from "../../../../app/hooks/usePagination"
-import { useSearchParams } from "react-router-dom"
+import { useQueryContext } from '@/app/context/queries/QueryProvider'
+import Datatable from '@/components/common/Datatable'
+import usePagination from '../../../../app/hooks/usePagination'
+import { useSearchParams } from 'react-router-dom'
 
 const columns = [
   {
@@ -15,13 +15,20 @@ const columns = [
   },
   {
     name: 'Lokalizacja',
-    cell: ({ region, city, localization }) => <a
-      href={localization?.latitude && localization?.longitude ? `http://www.google.com/maps/place/${localization?.latitude},${localization?.longitude}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}`}
-      className="text-blue-400 hover:text-blue-600"
-      target="_blank"
-      rel="noreferrer"
-      title="Zobacz na mapie"
-    >{city}, {region?.value} </a>,
+    cell: ({ region, city, localization }) => (
+      <a
+        href={
+          localization?.latitude && localization?.longitude
+            ? `http://www.google.com/maps/place/${localization?.latitude},${localization?.longitude}`
+            : `https://www.google.com/maps/search/${cityName ?? ''}+${getRegion(region) ?? ''}`
+        }
+        className="text-blue-400 hover:text-blue-600"
+        target="_blank"
+        rel="noreferrer"
+        title="Zobacz na mapie">
+        {city}, {region?.value}{' '}
+      </a>
+    ),
     grow: 0,
     minWidth: '250px',
   },
@@ -29,10 +36,17 @@ const columns = [
     name: 'Telefon',
     selector: ({ phoneNumber }) => phoneNumber,
     grow: 0,
-  }
+  },
+  {
+    name: 'Typ punktu',
+    selector: ({ type }) => type?.name,
+    grow: 0,
+    minWidth: '200px',
+    wrap: true,
+  },
 ]
 
-const Item = ({label, value}) => {
+const Item = ({ label, value }) => {
   return (
     <div className="py-2 flex gap-2">
       <span className="">{label}</span>
@@ -41,16 +55,12 @@ const Item = ({label, value}) => {
   )
 }
 
-export const getValue = val => isBool(val) ? (
-  val ? 'TAK' : 'NIE'
-) : (
-  "Brak danych"
-)
+export const getValue = (val) => (isBool(val) ? (val ? 'TAK' : 'NIE') : 'Brak danych')
 
 const HelpPointsDataTable = () => {
   const { data } = useQueryContext()
   const pagination = usePagination()
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams()
 
   return (
     <Datatable
@@ -65,4 +75,4 @@ const HelpPointsDataTable = () => {
   )
 }
 
-export default HelpPointsDataTable;
+export default HelpPointsDataTable

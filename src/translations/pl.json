@@ -13,7 +13,8 @@
     "transport": "Oferujesz pomoc w transporcie?",
     "lfTransport": "Szukasz transportu",
     "help": "Oferujesz pomoc?",
-    "helpPoints": "Punkty pomocy"
+    "helpPoints": "Punkty pomocy",
+    "seeMap": "Zobacz mapę"
   },
   "periods": {
     "negotiable": "Do ustalenia",
@@ -111,6 +112,5 @@
     "p8": "Twoje dane będą przetwarzane do momentu aktualności Twojego ogłoszenia, najpóźniej do czasu zakończenia akcji pomocy dla Ukrainy poprzez portal uapomoc.pl. Po tym czasie zostaną usunięte.",
     "p9": "Podanie przez Ciebie danych jest dobrowolne, lecz niezbędne do umieszczenia ich w portalu pomocy dla Ukrainy uapomoc.pl."
   },
-  "common": {
-  }
+  "common": {}
 }

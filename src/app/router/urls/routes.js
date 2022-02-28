@@ -7,13 +7,13 @@ import { reportsRoutes } from './reports'
 import { threatMapRoutes } from './threatMap'
 import { userRoutes } from './user'
 import { contactRoutes } from '@/app/router/urls/public/public'
+import { helpPointsRoutes } from './helpPoints'
 
 export const route = {
   index: `${BASE_URL}/`,
   // createNotice: `${BASE_URL}/dodaj-ogloszenie`,
   // successNotice: `${BASE_URL}/dodaj-ogloszenie/success`,
   rodo: `${BASE_URL}/rodo`,
-  'helpPoints': `${BASE_URL}/punkty-pomocy`,
   ...authRoutes,
   ...threatMapRoutes,
   ...adminRoutes,
@@ -22,4 +22,5 @@ export const route = {
   ...reportsRoutes,
   ...noticesRoutes,
   ...contactRoutes,
+  ...helpPointsRoutes,
 }
