@@ -90,11 +90,17 @@ const ViewEditNotice = () => {
     <>
       <div className="container mx-auto py-8">
       
-      <div className="flex flex-col sm:flex-row justify-between items-start pb-5 sm:py-1">
+      <div className="flex flex-col sm:flex-row justify-between items-center pb-5 sm:py-1">
         <Breadcrumb items={breadcrumbItems(`Ogłoszenie nr ${noticeId}`)}/>
-        {!!state.notice && <Button onClick={changeNoticeStatus} className="w-fit" size="small" color={state.notice?.status === 2 ? 'danger' : 'success'}>
-          {state.notice?.status === 2 ? 'Oznacz jako nieaktualne' : 'Oznacz jako aktualne'}
-        </Button>}
+        {!!state.notice && (
+          [2, 20].includes(state.notice.status) ? (
+            <Button onClick={changeNoticeStatus} className="w-fit" size="small" color={state.notice?.status === 2 ? 'danger' : 'success'}>
+              {state.notice?.status === 2 ? 'Oznacz jako nieaktualne' : 'Oznacz jako aktualne'}
+            </Button>
+          ) : (
+            <div className="text-gray-400">Ogłoszenie oczekuje na akceptację</div>
+          )
+        )}
       </div>
       {!!state.notice ? <>
         {!!CardComponent && <CardComponent
