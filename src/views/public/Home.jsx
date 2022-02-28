@@ -176,34 +176,7 @@ export default function Home() {
                 {t('formDescription.findTransport')}
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiEdit size={100} color="currentColor" />
-              </div>
 
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.translations')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[6]?.statusAndAmount?.[2]?.amount}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addTranslationOffer']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list7']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[6]?.statusAndAmount?.[2]?.amount
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.translations')}
-              </p>
-            </div>
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
                 <FiGift size={100} color="currentColor" />
@@ -229,24 +202,108 @@ export default function Home() {
                 {t('formDescription.offerHelp')}
               </p>
             </div>
-          </div>
+            
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FiGift size={100} color="currentColor" />
+              </div>
 
-          <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl w-1/2 mx-auto mt-10">
-            <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-              <FaMapMarkerAlt size={100} color="currentColor" />
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
+                {t('tiles.lfHelp')}
+              </h3>
+
+              <p className={'italic mb-4'}>
+                {t('frontpage.activeAds')}: {!isFetching && (data?.[7]?.statusAndAmount?.[2]?.amount ?? '-')}
+              </p>
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1 to={route['notices.addFindHelp']} label={t('frontpage.addNotice')} />
+                <Button2
+                  to={route['notices.list8']}
+                  label={`${t('frontpage.seeNotices')} (${
+                    !isFetching && (data?.[7]?.statusAndAmount?.[2]?.amount ?? '-')
+                  })`}
+                />
+              </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.findHelp')}
+              </p>
             </div>
 
-            <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-              {t('tiles.helpPoints')}
-            </h3>
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FiEdit size={100} color="currentColor" />
+              </div>
 
-            <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-              <Button1 to={route['helpPoints']} label={t('frontpage.helpPoints')} />
-              <Button2 to={route['helpPoints.map']} label={t('tiles.seeMap')} />
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
+                {t('tiles.translations')}
+              </h3>
+
+              <p className={'italic mb-4'}>
+                {t('frontpage.activeAds')}: {!isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')}
+              </p>
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1
+                  to={route['notices.addTranslationOffer']}
+                  label={t('frontpage.addNotice')}
+                />
+                <Button2
+                  to={route['notices.list7']}
+                  label={`${t('frontpage.seeNotices')} (${
+                    !isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')
+                  })`}
+                />
+              </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.translations')}
+              </p>
             </div>
-            <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-              {t('formDescription.helpPoints')}
-            </p>
+            
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FiEdit size={100} color="currentColor" />
+              </div>
+
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
+                {t('tiles.lfTranslations')}
+              </h3>
+
+              <p className={'italic mb-4'}>
+                {t('frontpage.activeAds')}: {!isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')}
+              </p>
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1
+                  to={route['notices.addFindTranslationOffer']}
+                  label={t('frontpage.addNotice')}
+                />
+                <Button2
+                  to={route['notices.list9']}
+                  label={`${t('frontpage.seeNotices')} (${
+                    !isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')
+                  })`}
+                />
+              </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.lfTranslations')}
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FaMapMarkerAlt size={100} color="currentColor" />
+              </div>
+
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
+                {t('tiles.helpPoints')}
+              </h3>
+
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1 to={route['helpPoints']} label={t('frontpage.helpPoints')} />
+                <Button2 to={route['helpPoints.map']} label={t('tiles.seeMap')} />
+              </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.helpPoints')}
+              </p>
+            </div>
           </div>
         </div>
       </div>
