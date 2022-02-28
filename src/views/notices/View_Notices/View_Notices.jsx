@@ -32,7 +32,7 @@ const ViewNotices = ({
         {title}
       </h1>
       <Filters />
-      <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start">
+      <div >
         <QueryProvider {...query}>
           <QueryHasNoResults>
             <div className="bg-white p-8 rounded-xl grow">
