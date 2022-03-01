@@ -9,22 +9,25 @@ import PublicRoutes from './public/@Routes'
 import UserRoutes from './user/@Routes'
 import AccountRoutes from './account/@Routes'
 import NoticesRoutes from './notices/@Routes'
+import HelpPointsRoutes from './helpPoints/@Routes'
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
         {/*{ThreatMapRoutes}*/}
-        
+
         {/*{UserRoutes}*/}
         {/*<Route index element={<Test/>}/>*/}
-        
+
         {PublicRoutes}
-        
-        {NoticesRoutes}
-        
+
+        {HelpPointsRoutes}
+
+        {NoticesRoutes()}
+
         {/*{AccountRoutes}*/}
-        
+
         {/*<Route path={route['auth.unauthorized']} element={<Lazy401 />} />*/}
         <Route path="*" element={<Lazy404 />} />
       </Routes>

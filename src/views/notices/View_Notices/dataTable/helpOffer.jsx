@@ -5,34 +5,37 @@ import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
-export const helpOfferColumnsColumns = [
-  {
-    name: 'Miasto',
-    selector: ({ cityName }) => cityName,
-  },
-  {
-    name: 'Imię',
-    selector: ({ name }) => name,
-  },
-  {
-    name: 'Adres',
-    cell: ({ address, location }) => <a
-      href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
-      className="text-blue-400 hover:text-blue-600"
-      target="_blank"
-      rel="noreferrer"
-      title="Zobacz na mapie"
-    >{address}</a>,
-  },
-  {
-    name: 'Telefon',
-    selector: ({ phoneNumber }) => phoneNumber,
-  },
-  {
-    name: 'Opis',
-    selector: ({ description }) => description?.slice(0, 100)
-  },
-]
+export const helpOfferColumnsColumns = () => {
+  const {t} = useTranslation()
+  return [
+    {
+      name: t('common.miasto'),
+      selector: ({ cityName }) => cityName,
+    },
+    {
+      name: t('common.imie'),
+      selector: ({ name }) => name,
+    },
+    {
+      name: t('common.adres'),
+      cell: ({ address, location }) => <a
+        href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
+        className="text-blue-400 hover:text-blue-600"
+        target="_blank"
+        rel="noreferrer"
+        title="Zobacz na mapie"
+      >{address}</a>,
+    },
+    {
+      name: t('common.telefon'),
+      selector: ({ phoneNumber }) => phoneNumber,
+    },
+    {
+      name: t('common.opis'),
+      selector: ({ description }) => description?.slice(0, 100)
+    },
+  ]
+}
 const Item = ({label, value}) => {
   return (
     <div className="py-2 flex gap-2">
@@ -45,20 +48,13 @@ const Item = ({label, value}) => {
 
 export const HelpOfferExpandedComponent = ({data: {
   description,
+  descriptionUA,
   cityName,
   region,
   address,
-  bedCount,
-  isAcceptedChild,
-  isAcceptedAnimal,
-  hasWashingMachine,
-  period,
-  isCatering,
-  isDelivery,
   location,
   id,
   name,
-  accommodationPlacesCount,
   phoneNumber,
   createdAt,
 }}) => {
@@ -69,8 +65,9 @@ export const HelpOfferExpandedComponent = ({data: {
     <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
       <div className="flex gap-5">
         <div className="flex-1">
-          {!!description && <Item label="Opis:" value={description}/>}
-          <Item label="Adres:" value={!!(cityName || getRegion(region) || address) ? (
+          {!!description && <Item label={t('common.opis')} value={description}/>}
+          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
+          <Item label={t('common.adres')} value={!!(cityName || getRegion(region) || address) ? (
             <a
               href={href}
               target={'_blank'}
@@ -83,10 +80,10 @@ export const HelpOfferExpandedComponent = ({data: {
             </a>
           ) : "Brak danych"}
           />
-          {!!name && <Item label="Imię:" value={name}/>}
-          {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
-          {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
+          {!!name && <Item label={t('common.imie')} value={name}/>}
+          {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
+          {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!! id &&<Item label={t('common.id')} value={id}/>}
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>

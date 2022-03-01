@@ -1,19 +1,10 @@
 {
   "header": {
     "map": "Mapa",
-    "notices": "Zgłoszenia",
+    "notices": "Ogłoszenia",
     "account": "Twoje konto",
     "contact": "Kontakt",
     "rodo": "Rodo"
-  },
-  "tiles": {
-    "shelter": "Oferujesz schronienie?",
-    "lfShelter": "Szukasz schronienia?",
-    "translations": "Oferujesz pomoc w tłumaczeniach?",
-    "transport": "Oferujesz pomoc w transporcie?",
-    "lfTransport": "Szukasz transportu",
-    "help": "Oferujesz pomoc?",
-    "helpPoints": "Punkty pomocy"
   },
   "periods": {
     "negotiable": "Do ustalenia",
@@ -59,13 +50,41 @@
     "description": "Opis",
     "voivodeship": "Województwo",
     "reason": "Przyczyna",
-    "send": "Wyślij"
+    "send": "Wyślij",
+    "editNotice": "Edytuj ogłoszenie",
+    "pin": "Kod PIN",
+    "save": "Zapisz",
+    "alertTitle": "UWAGA",
+    "alertContent": "Wszystkie osoby uciekające z Ukrainy przed konfliktem zbrojnym, NIE MUSZĄ rejestrować się w punktach recepcyjnych ani martwić się o formalności. Wszystkie osoby uciekające z Ukrainy, szukające schronienia w Polsce, nie muszą obawiać się o legalność swojego pobytu. W najbliższych dniach nie trzeba też składać żadnych wniosków w Urzędzie do Spraw Cudzoziemców, urzędach wojewódzkich czy placówkach Straży Granicznej. To samo dotyczy obywateli Ukrainy, którzy są w Polsce, a ich dokumenty pobytowe utraciły ważność.",
+    "findHelp": "Szukam pomocy",
+    "offerFindTranslations": "Szukam pomocy w tłumaczeniu"
   },
   "success": {
     "title": "Udało się!",
     "content-1": "Zgłoszenie zostało dodane i teraz czeka na weryfikację przez naszych wolontariuszy.",
     "content-2": "W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.",
-    "home": "Strona główna"
+    "home": "Strona główna",
+    "saved": "Zapisano zmiany!"
+  },
+  "tiles": {
+    "shelter": "Oferujesz schronienie?",
+    "shelter2": "Schronienie - osoby potrzebujące",
+    "shelter3": "Schronienie - oferty pomocy",
+    "lfShelter": "Szukasz schronienia?",
+    "translations": "Oferujesz pomoc w tłumaczeniu?",
+    "translations2": "Tłumaczenie - oferty pomocy",
+    "transport": "Oferujesz transport?",
+    "transport2": "Transport - oferty pomocy",
+    "transport3": "Transport - osoby potrzebujące",
+    "lfTransport": "Szukasz transportu?",
+    "help": "Oferujesz pomoc?",
+    "help2": "Inne oferty pomocy",
+    "helpPoints": "Punkty pomocy",
+    "seeMap": "Zobacz mapę",
+    "lfHelp": "Szukasz pomocy?",
+    "lfHelp2": "Inna pomoc - osoby potrzebujące",
+    "lfTranslations": "Szukasz pomocy w tłumaczeniu?",
+    "lfTranslations2": "Tłumaczenie - osoby potrzebujące"
   },
   "formDescription": {
     "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
@@ -74,13 +93,17 @@
     "offerTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz przetransportować potrzebujących. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "findTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz transportu. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc."
+    "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc.",
+    "editNotice": "Podaj kod PIN otrzymany w SMS-ie aby uzyskać dostęp do edycji ogłoszenia",
+    "findHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "lfTranslations": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy w tłumaczeniu pl-ua. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
     "title": "Solidarni z Ukrainą. Każda pomoc się liczy",
     "addNotice": "Dodaj ogłoszenie",
     "seeNotices": "Zobacz ogłoszenia",
+    "activeAds": "Liczba aktywnych ogłoszeń",
     "info-1": "To strona oddolnej akcji społecznej dla tych którzy chcą pomóc i dla tych którzy szukają pomocy!",
     "info-2": "Łączymy ludzi dobrego serca z tymi którzy potrzebują pomocy!",
     "info-3": "Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!",
@@ -89,7 +112,9 @@
     "helpPoints": "Zobacz punkty pomocy"
   },
   "notice": {
-    "markInactive": "Oznacz jako nieaktywne"
+    "markActive": "Oznacz jako aktualne",
+    "markInactive": "Oznacz jako nieaktualne",
+    "waitingForApproval": "Ogłoszenie oczekuje na akceptację"
   },
   "RODO": {
     "label": "Wyrażam zgodę na przetwarzanie moich danych przez Cetuspro Sp. z o.o. z siedzibą w Rzeszowie w celu opublikowania moich danych w ogłoszeniu umieszczonym na portalu uapomoc.pl, skierowanym do osób potrzebujących i udzielającym pomocy Ukrainie. <1>Klauzula</1>\n",
@@ -112,5 +137,39 @@
     "p9": "Podanie przez Ciebie danych jest dobrowolne, lecz niezbędne do umieszczenia ich w portalu pomocy dla Ukrainy uapomoc.pl."
   },
   "common": {
+    "shelter": "Oferujesz schronienie?",
+    "miejsca": "Liczba miejsc",
+    "imie": "Imie",
+    "lfShelter": "Szukasz schronienia?",
+    "translations": "Oferujesz pomoc w tłumaczeniach?",
+    "transport": "Oferujesz pomoc w transporcie?",
+    "lfTransport": "Szukasz transportu",
+    "help": "Oferujesz pomoc?",
+    "helpPoints": "Punkty pomocy",
+    "data": "Data dodania",
+    "tak": "Tak",
+    "nie": "Nie",
+    "brakDanych": "Brak danych",
+    "miasto": "Miasto",
+    "szukaj": "Wyszukaj...",
+    "wojewodztwo": "Wybierz województwo",
+    "wybierzLiczbeOsob": "Wybierz liczbę osób",
+    "ogloszenia": "Ogłoszenia",
+    "miast": "Miasto",
+    "adres": "Adres",
+    "telefon": "Telefon",
+    "opis": "Opis",
+    "opisUA": "Opis UA",
+    "okres": "Okres",
+    "id": "Identyfikator",
+    "lozka": "Ilość łóżek",
+    "dzieci": "Przyjmę z małymi dziećmi",
+    "zwierzaki": "Przyjmę ze zwierzętami",
+    "pralka": "Dostęp do pralki",
+    "jedzenie": "Zapewniam wyżywienie",
+    "nazwa": "Nazwa",
+    "lokalizacja": "Lokalizacja",
+    "stronaglowna": "Strona główna",
+    "punktypomocy": "Punkty pomocy"
   }
 }

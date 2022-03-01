@@ -27,6 +27,7 @@ import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '../components/form/Input_RODO'
+import { useSelector } from 'react-redux'
 
 
 const schema = yup.object().shape({
@@ -37,6 +38,7 @@ const schema = yup.object().shape({
   email: yup.string().email().nullable(),
   type: yup.number().default(50),
   acceptTerms: yup.string().required(),
+  language: yup.string().nullable(),
 });
 
 const query = (data) => {
@@ -49,9 +51,13 @@ const query = (data) => {
 const mt = (a) => a;
 
 const FormAddHelpOffer = () => {
-  
+
+  const { language } = useSelector(state => state?.language)
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      language,
+    }
   });
   let navigate = useNavigate();
 
@@ -69,16 +75,14 @@ const FormAddHelpOffer = () => {
     <div className="container mx-auto py-8">
       <h2 className="font-bold mb-2 ml-2 text-2xl">{t("form.offerHelp")}</h2>
       <p className="mb-4 ml-2 text-gray-500">{t("formDescription.offerHelp")}</p>
-      <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
+      <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
             <form onSubmit={mutation.mutate}>
               <div>
                 <div className=" bg-blue-500 text-white text-sm font-bold px-4 py-3 mb-5 border-4 border-blue-600" role="alert">
-                  <p className="font-bold text-2xl">UWAGA</p>
-                  <p className="text-sm">
-                    Przypominamy, że obowiązkiem każdego obywatela Ukrainy jest zalegalizowanie swojego pobytu ciągu 15 dni od przekroczenia granicy!
-                  </p>
+                  <p className="font-bold text-2xl">{t('form.alertTitle')}</p>
+                  <p className="text-sm">{t('form.alertContent')}</p>
                 </div>
               </div>
               <HookFormError/>
