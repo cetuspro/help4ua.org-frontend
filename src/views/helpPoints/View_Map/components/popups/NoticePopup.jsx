@@ -1,7 +1,7 @@
 import { Popup } from 'react-leaflet'
 import ShelterOfferPopup from '../popups/Popup_ShelterOffer'
 import ShelterSearchPopup from '../popups/Popup_ShelterSearch'
-import TransportOfferPopup from '../popups/Popup_transportOffer'
+import TransportOfferPopup from '../popups/Popup_TransportOffer'
 import TransportSearchPopup from '../popups/Popup_TransportSearch'
 import HelpOfferPopup from '../popups/Popup_HelpOffer'
 import { useMemo } from 'react'
