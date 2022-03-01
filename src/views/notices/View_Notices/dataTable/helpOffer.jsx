@@ -48,20 +48,13 @@ const Item = ({label, value}) => {
 
 export const HelpOfferExpandedComponent = ({data: {
   description,
+  descriptionUA,
   cityName,
   region,
   address,
-  bedCount,
-  isAcceptedChild,
-  isAcceptedAnimal,
-  hasWashingMachine,
-  period,
-  isCatering,
-  isDelivery,
   location,
   id,
   name,
-  accommodationPlacesCount,
   phoneNumber,
   createdAt,
 }}) => {
@@ -73,6 +66,7 @@ export const HelpOfferExpandedComponent = ({data: {
       <div className="flex gap-5">
         <div className="flex-1">
           {!!description && <Item label={t('common.opis')} value={description}/>}
+          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           <Item label={t('common.adres')} value={!!(cityName || getRegion(region) || address) ? (
             <a
               href={href}

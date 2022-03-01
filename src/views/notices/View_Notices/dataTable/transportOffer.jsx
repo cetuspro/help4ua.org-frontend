@@ -41,20 +41,9 @@ const Item = ({label, value}) => {
 
 export const TransportOfferExpandedComponent = ({data: {
   description,
-  cityName,
-  region,
-  address,
-  bedCount,
-  isAcceptedChild,
-  isAcceptedAnimal,
-  hasWashingMachine,
-  period,
-  isCatering,
-  isDelivery,
-  location,
+  descriptionUA,
   id,
   name,
-  accommodationPlacesCount,
   phoneNumber,
   createdAt,
 }}) => {
@@ -64,6 +53,7 @@ export const TransportOfferExpandedComponent = ({data: {
       <div className="flex gap-5">
         <div className="flex-1">
           {!!description && <Item label={t('common.opis')} value={description}/>}
+          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           {!!name && <Item label={t('common.imie')} value={name}/>}
           {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
           {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}

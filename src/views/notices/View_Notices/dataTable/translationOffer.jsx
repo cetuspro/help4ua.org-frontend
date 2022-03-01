@@ -47,6 +47,7 @@ const Item = ({label, value}) => {
 
 export const TranslationOfferExpandedComponent = ({data: {
   description,
+  descriptionUA,
   cityName,
   region,
   address,
@@ -64,6 +65,7 @@ export const TranslationOfferExpandedComponent = ({data: {
       <div className="flex gap-5">
         <div className="flex-1">
           {!!description && <Item label={t('common.opis')} value={description}/>}
+          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           <Item label={t('common.adres')} value={!!(cityName || getRegion(region) || address) ? (
             <a
               href={href}

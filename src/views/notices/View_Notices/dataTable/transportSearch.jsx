@@ -36,20 +36,9 @@ const Item = ({label, value}) => {
 
 export const TransportSearchExpandedComponent = ({data: {
   description,
-  cityName,
-  region,
-  address,
-  bedCount,
-  isAcceptedChild,
-  isAcceptedAnimal,
-  hasWashingMachine,
-  period,
-  isCatering,
-  isDelivery,
-  location,
+  descriptionUA,
   id,
   name,
-  accommodationPlacesCount,
   phoneNumber,
   createdAt,
 }}) => {
@@ -59,6 +48,7 @@ export const TransportSearchExpandedComponent = ({data: {
       <div className="flex gap-5">
         <div className="flex-1">
           {!!description && <Item label="Opis:" value={description}/>}
+          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}

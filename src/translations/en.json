@@ -144,6 +144,7 @@
     "adres": "Address",
     "telefon": "Phone",
     "opis": "Description",
+    "opisUA": "Description UA",
     "okres": "Duration of stay",
     "id": "ID",
     "lozka": "Number of beds",
