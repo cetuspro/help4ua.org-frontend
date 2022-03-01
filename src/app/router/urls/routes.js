@@ -12,8 +12,7 @@ import { actionsRoutes } from './actions/actions'
 
 export const route = {
   index: `${BASE_URL}/`,
-  // createNotice: `${BASE_URL}/dodaj-ogloszenie`,
-  // successNotice: `${BASE_URL}/dodaj-ogloszenie/success`,
+  'homepage.notices': `${BASE_URL}/#zgloszenia`,
   rodo: `${BASE_URL}/rodo`,
   ...authRoutes,
   ...threatMapRoutes,

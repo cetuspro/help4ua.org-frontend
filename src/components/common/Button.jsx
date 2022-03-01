@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
-import { Link } from 'react-router-dom'
 import { forwardRef } from 'react'
+import { HashLink } from 'react-router-hash-link'
 
 const Button = forwardRef(
   ({ color = 'primary', size = 'normal', to, children, className, onClick, ...rest }, ref) => {
@@ -22,9 +22,9 @@ const Button = forwardRef(
 
     if (to)
       return (
-        <Link ref={ref} {...rest} to={to} className={buttonStyles}>
+        <HashLink ref={ref} {...rest} to={to} className={buttonStyles}>
           {children}
-        </Link>
+        </HashLink>
       )
     else
       return (

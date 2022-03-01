@@ -7,8 +7,9 @@ import { useGetNotices } from '../../../app/CRUD/notices/getNotices';
 import NoticesDataTable, { NoticesDataTable2 } from './dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
 import usePagination from '@/app/hooks/usePagination'
-
-
+import Button from '@/components/common/Button';
+import { MdArrowBackIosNew } from 'react-icons/md';
+import { route } from '@/app/router/urls/routes';
 
 const ViewNotices = ({
   columns,
@@ -27,6 +28,7 @@ const ViewNotices = ({
   ]
   return (
     <>
+      <Button size="small" className="gap-2 mb-2 inline-flex" to={route['homepage.notices']}><MdArrowBackIosNew/>Wróć</Button>
       <Breadcrumb items={breadcrumbItems} />
       <h1 className="text-black-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
         {title}
