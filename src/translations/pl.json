@@ -1,7 +1,7 @@
 {
   "header": {
     "map": "Mapa",
-    "notices": "Zgłoszenia",
+    "notices": "Ogłoszenia",
     "account": "Twoje konto",
     "contact": "Kontakt",
     "rodo": "Rodo"
@@ -63,7 +63,8 @@
     "title": "Udało się!",
     "content-1": "Zgłoszenie zostało dodane i teraz czeka na weryfikację przez naszych wolontariuszy.",
     "content-2": "W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.",
-    "home": "Strona główna"
+    "home": "Strona główna",
+    "saved": "Zapisano zmiany!"
   },
   "tiles": {
     "shelter": "Oferujesz schronienie?",
@@ -111,7 +112,9 @@
     "helpPoints": "Zobacz punkty pomocy"
   },
   "notice": {
-    "markInactive": "Oznacz jako nieaktywne"
+    "markActive": "Oznacz jako aktualne",
+    "markInactive": "Oznacz jako nieaktualne",
+    "waitingForApproval": "Ogłoszenie oczekuje na akceptację"
   },
   "RODO": {
     "label": "Wyrażam zgodę na przetwarzanie moich danych przez Cetuspro Sp. z o.o. z siedzibą w Rzeszowie w celu opublikowania moich danych w ogłoszeniu umieszczonym na portalu uapomoc.pl, skierowanym do osób potrzebujących i udzielającym pomocy Ukrainie. <1>Klauzula</1>\n",

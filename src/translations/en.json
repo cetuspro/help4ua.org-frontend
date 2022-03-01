@@ -63,7 +63,8 @@
     "title": "Success!",
     "content-1": "The submission has been added and is now waiting to be reviewed by our volunteers.",
     "content-2": "You will be contacted by someone by phone in the near future to confirm your application.",
-    "home": "Homepage"
+    "home": "Homepage",
+    "saved": "Saved!"
   },
   "tiles": {
     "shelter": "Offering shelter?",
@@ -112,7 +113,9 @@
     "helpPoints": "See help points"
   },
   "notice": {
-    "markInactive": "Mark as inactive"
+    "markActive": "Mark as active",
+    "markInactive": "Mark as inactive",
+    "waitingForApproval": "Notice pending approval"
   },
   "RODO": {
     "label": "I agree to the processing of my data by Cetuspro Sp. z o.o. based in Rzeszow, in order to publish my data in an advertisement placed on the uapomoc.pl portal, addressed to people in need and providing help to Ukraine. <1>Clause</1>",
