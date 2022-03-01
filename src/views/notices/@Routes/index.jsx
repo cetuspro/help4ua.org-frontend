@@ -19,16 +19,17 @@ import {
 import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
 import { translationOfferColumns, TranslationOfferExpandedComponent } from '../View_Notices/dataTable/translationOffer'
 import { useTranslation } from 'react-i18next'
+import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
+import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
+import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
+import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
+import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
-const LazyAddFindShelter = lazy(() => import('../../../ua/Form_AddFindShelter'))
-const LazyAddShelterOffer = lazy(() => import('../../../ua/Form_AddShelterOffer'))
-const LazyAddTransportOffer = lazy(() => import('../../../ua/Form_AddTransportOffer'))
-const LazyAddFindTransportOffer = lazy(() => import('../../../ua/Form_AddFindTransportOffer'))
+const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
 const LazyAddHelpOffer = lazy(() => import('../../../ua/Form_AddHelpOffer'))
 const LazyAddFindHelp = lazy(() => import('../../../ua/Form_AddFindHelp'))
 const LazyAddSuccess = lazy(() => import('../../../ua/NoticeCreateSuccess'))
-const LazyAddTranslationOffer = lazy(() => import('../../../ua/Form_AddTranslationOffer'))
 const LazyAddFindTranslationOffer = lazy(() => import('../../../ua/Form_AddFindTranslationOffer'))
 const LazyEditNotice = lazy(() => import('../../../views/notices/View_EditNotice/View_EditNotice'))
 
@@ -122,13 +123,48 @@ const NoticeRoutes = () => {
         <Route path={route['notices.view']()} element={<LazyNotice/>} />
       </Route>,
       <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
-        <Route index element={<LazyAddShelterOffer />} />
-        <Route path={route['notices.addShelterOffer']} element={<LazyAddShelterOffer />} />
-        <Route path={route['notices.addFindShelter']} element={<LazyAddFindShelter />} />
-        <Route path={route['notices.addTransportOffer']} element={<LazyAddTransportOffer />} />
+        <Route index element={<LazyAddNotice />} />
+        <Route
+          path={route['notices.addShelterOffer']}
+          element={<LazyAddNotice
+            title={t("form.offerShelter")}
+            description={t("formDescription.offerShelter")}
+            formComponent={FormAddShelterOffer}
+          />}
+          />
+          <Route
+            path={route['notices.addFindShelter']}
+            element={<LazyAddNotice
+              title={t("form.findShelter")}
+              description={t("formDescription.findShelter")}
+              formComponent={FormAddFindShelter}
+            />}
+          />
+          <Route
+            path={route['notices.addTranslationOffer']}
+            element={<LazyAddNotice
+              title={t("form.offerTranslations")}
+              description={t("formDescription.translations")}
+              formComponent={FormAddTranslationOffer}
+            />}
+          />
+          <Route
+            path={route['notices.addFindTransportOffer']}
+            element={<LazyAddNotice
+              title={t("form.findTransport")}
+              description={t("formDescription.findTransport")}
+              formComponent={FormAddFindTransportOffer}
+            />}
+          />
+          <Route
+            path={route['notices.addTransportOffer']}
+            element={<LazyAddNotice
+              title={t("form.offerTransport")}
+              description={t("formDescription.offerTransport")}
+              formComponent={FormAddTransportOffer}
+            />}
+          />
         <Route path={route['notices.addHelpOffer']} element={<LazyAddHelpOffer />} />
-        <Route path={route['notices.addFindTransportOffer']} element={<LazyAddFindTransportOffer />} />
-        <Route path={route['notices.addTranslationOffer']} element={<LazyAddTranslationOffer />} />
         <Route path={route['notices.addFindHelp']} element={<LazyAddFindHelp />} />
         <Route path={route['notices.addFindTranslationOffer']} element={<LazyAddFindTranslationOffer />} />
         <Route path={route['notices.success']} element={<LazyAddSuccess />} />

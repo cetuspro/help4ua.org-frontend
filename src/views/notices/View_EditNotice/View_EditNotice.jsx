@@ -12,23 +12,26 @@ import * as yup from 'yup'
 import { MdPassword } from 'react-icons/md'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useMemo } from 'react'
-import ShelterSearchForm from './forms/Form_ShelterSearch'
-import TransportOfferForm from './forms/Form_transportOffer'
-import TransportSearchForm from './forms/Form_TransportSearch'
 import HelpOfferForm from './forms/Form_HelpOffer'
 import { usePureMutation } from '../../../app/hooks/usePureMutation'
 import useObjectState from '../../../app/hooks/useObjectState'
-import ShelterOfferForm from './forms/Form_ShelterOffer'
 import { getNoticeToEdit } from '../../../app/CRUD/notices/getNoticeToEdit'
 import { updateNoticeStatus } from '../../../app/CRUD/notices/updateNoticeStatus'
 import Button from '@/components/common/Button'
+import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
+import Card from '@/components/common/Card'
+import { editNotice } from '../../../app/CRUD/notices/editNotice'
+import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
+import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
+import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
+import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
 
 const noticeTypes = {
-  1: ShelterOfferForm,
-  10: ShelterSearchForm,
-  20: TransportOfferForm,
-  22: TransportSearchForm,
-  30: HelpOfferForm,
+  1: FormAddShelterOffer,
+  10: FormAddFindShelter,
+  20: FormAddTransportOffer,
+  22: FormAddFindTransportOffer,
+  30: FormAddTranslationOffer,
   32: HelpOfferForm,
   50: HelpOfferForm,
   52: HelpOfferForm,
@@ -105,9 +108,15 @@ const ViewEditNotice = () => {
         )}
       </div>
       {!!state.notice ? <>
-        {!!CardComponent && <CardComponent
-          notice={state.notice}
-        />}
+        <Card>
+          {!!CardComponent && <CardComponent
+            notice={state.notice} // Remove after forms refactor
+            defaultValues={state.notice}
+            editMode
+            query={editNotice(noticeId, urlToken, state.smsToken)}
+            onSuccess={updateSuccess}
+          />}
+        </Card>
       </> : <>
         <p className="mb-4 ml-2 text-gray-500">{t("formDescription.editNotice")}</p>
         <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
