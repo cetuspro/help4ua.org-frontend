@@ -5,13 +5,12 @@ import { FormProvider } from 'react-hook-form'
 import {
   FaUser,
   FaPhone,
-  FaBed,
   FaClock,
   FaComment,
   FaUsers,
   FaEnvelope,
   FaMapPin,
-  FaDoorClosed, FaCheck,
+  FaCheck,
 } from 'react-icons/fa'
 import { InputText } from '@/components/form/Input_Text'
 import { InputCheckbox } from '@/components/form/Input_Checkbox'
@@ -21,28 +20,24 @@ import { useHookFormMutation } from '../../../../app/hooks/useHookFormMutation'
 import { InputSubmit } from '@/components/form/Input_Submit'
 import { HookFormError } from '@/components/form/HookFormError'
 import { periodsEnum } from '@/app/config/enum/periods'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
 
-const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) => {
+const FormAddFindShelter = ({defaultValues, query, onSuccess, editMode=false}) => {
   const schema = useMemo(() => yup.object().shape({
     name: yup.string().required(),
     description: yup.string().nullable(),
-    region: yup.number().required(),
     cityName: yup.string().required(),
     phoneNumber: yup.string().required(),
     email: yup.string().email().nullable(),
-    roomCount: yup.string().nullable(),
-    bedCount: yup.string().nullable(),
     accommodationPlacesCount: yup.string().required(),
     isAcceptedChild: yup.string().nullable(),
     isAcceptedAnimal: yup.string().nullable(),
     hasWashingMachine: yup.string().nullable(),
     isCatering: yup.string().nullable(),
     isDelivery: yup.string().nullable(),
-    type: yup.number().default(1),
+    type: yup.number().default(10),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     period: yup.string().required(),
   }), [editMode]);
@@ -70,7 +65,7 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
           <div>
             <InputText
               name="name"
-              label={t("form.name")}
+              label={t('form.name')}
               icon={FaUser}
               required
             />
@@ -78,7 +73,7 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
           <div>
             <InputText
               name="phoneNumber"
-              label={t("form.phoneNumber")}
+              label={t('form.phoneNumber')}
               icon={FaPhone}
               required
             />
@@ -86,22 +81,14 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
           <div>
             <InputText
               name="email"
-              label={t("form.email")}
+              label={t('form.email')}
               icon={FaEnvelope}
-            />
-          </div>
-          <div>
-            <InputSelect
-              name="region"
-              label={t("form.voivodeship")}
-              options={voivodeshipsEnum(a => a)}
-              required
             />
           </div>
           <div>
             <InputText
               name="cityName"
-              label={t("form.cityName")}
+              label={t('form.cityName')}
               icon={FaMapPin}
               required
             />
@@ -112,28 +99,10 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
           <div>
             <InputText
-              name="roomCount"
-              type="number"
-              min={0}
-              label={t("form.roomCount")}
-              icon={FaDoorClosed}
-            />
-          </div>
-          <div>
-            <InputText
-              name="bedCount"
-              type="number"
-              min={0}
-              label={t("form.bedCount")}
-              icon={FaBed}
-            />
-          </div>
-          <div>
-            <InputText
               name="accommodationPlacesCount"
               type="number"
               min={0}
-              label={t("form.accommodationPlacesCount")}
+              label={t('form.accommodationPlacesCount')}
               icon={FaUsers}
               required
             />
@@ -141,44 +110,32 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
           <div>
             <InputSelect
               name="period"
-              label={t("form.period")}
+              label={t('form.period')}
               icon={FaClock}
               options={periodsEnum(t)}
               required
             />
           </div>
         </div>
-        <h4 className="font-bold mt-8">Szczegóły</h4>
+        <h4 className="font-bold mt-8">{t("form.details")}</h4>
         <div className="flex-grow border-t border-gray-300 mb-4"/>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
           <div>
             <InputCheckbox
               name="isAcceptedChild"
-              label={t("form.hasAcceptedChild")}
+              label={t('form.isAcceptedChild')}
             />
           </div>
           <div>
             <InputCheckbox
               name="isAcceptedAnimal"
-              label={t("form.hasAcceptedAnimal")}
+              label={t('form.isAcceptedAnimal')}
             />
           </div>
           <div>
             <InputCheckbox
               name="isCatering"
-              label={t("form.hasCatering")}
-            />
-          </div>
-          <div>
-            <InputCheckbox
-              name="isDelivery"
-              label={t("form.hasDelivery")}
-            />
-          </div>
-          <div>
-            <InputCheckbox
-              name="hasWashingMachine"
-              label={t("form.hasWashingMachine")}
+              label={t('form.isCatering')}
             />
           </div>
         </div>
@@ -187,7 +144,7 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
         <div>
           <InputTextarea
             name="description"
-            label={t("form.description")}
+            label={t('form.description')}
             icon={FaComment}
           />
         </div>
@@ -209,4 +166,4 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
   );
 };
 
-export default FormAddShelterOffer;
+export default FormAddFindShelter;

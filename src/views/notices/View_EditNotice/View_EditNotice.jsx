@@ -12,9 +12,6 @@ import * as yup from 'yup'
 import { MdPassword } from 'react-icons/md'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useMemo } from 'react'
-import ShelterSearchForm from './forms/Form_ShelterSearch'
-import TransportOfferForm from './forms/Form_transportOffer'
-import TransportSearchForm from './forms/Form_TransportSearch'
 import HelpOfferForm from './forms/Form_HelpOffer'
 import { usePureMutation } from '../../../app/hooks/usePureMutation'
 import useObjectState from '../../../app/hooks/useObjectState'
@@ -24,12 +21,15 @@ import Button from '@/components/common/Button'
 import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
 import Card from '@/components/common/Card'
 import { editNotice } from '../../../app/CRUD/notices/editNotice'
+import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
+import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
+import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
 
 const noticeTypes = {
   1: FormAddShelterOffer,
-  10: ShelterSearchForm,
-  20: TransportOfferForm,
-  22: TransportSearchForm,
+  10: FormAddFindShelter,
+  20: FormAddTransportOffer,
+  22: FormAddFindTransportOffer,
   30: HelpOfferForm,
   50: HelpOfferForm,
 }
@@ -107,6 +107,7 @@ const ViewEditNotice = () => {
       {!!state.notice ? <>
         <Card>
           {!!CardComponent && <CardComponent
+            notice={state.notice} // Remove after forms refactor
             defaultValues={state.notice}
             editMode
             query={editNotice(noticeId, urlToken, state.smsToken)}

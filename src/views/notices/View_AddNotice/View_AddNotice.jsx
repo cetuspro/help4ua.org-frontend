@@ -3,7 +3,6 @@ import { route } from '@/app/router/urls/routes';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router';
-import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer';
 
 const query = (data) => {
   return axios({
@@ -13,7 +12,7 @@ const query = (data) => {
   });
 }
 
-const ViewAddShelterOffer = () => {
+const ViewAddNotice = ({title, description, formComponent: FormComponent}) => {
   const {t} = useTranslation();
   const navigate = useNavigate();
   
@@ -23,9 +22,9 @@ const ViewAddShelterOffer = () => {
     
   return (
     <div className="container mx-auto py-8">
-      <h2 className="font-bold mb-2 ml-2 text-2xl">{t("form.offerShelter")}</h2>
-      <p className="mb-4 ml-2 text-gray-500">{t("formDescription.offerShelter")}</p>
-      <div className="bg-white rounded-2xl p-4 flex flex-col justify-between leading-normal p-5">
+      <h2 className="font-bold mb-2 ml-2 text-2xl">{title}</h2>
+      <p className="mb-4 ml-2 text-gray-500">{description}</p>
+      <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <div>
             <div className=" bg-blue-500 text-white text-sm font-bold px-4 py-3 mb-5 border-4 border-blue-600" role="alert">
@@ -35,14 +34,14 @@ const ViewAddShelterOffer = () => {
               </p>
             </div>
           </div>
-            <FormAddShelterOffer
+            {!!FormComponent && <FormComponent
               query={query}
               onSuccess={onSuccess}
-            />
+            />}
         </div>
       </div>
     </div>
   );
 };
 
-export default ViewAddShelterOffer;
+export default ViewAddNotice;
