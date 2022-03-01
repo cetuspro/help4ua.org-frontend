@@ -65,7 +65,7 @@ const NoticeRoutes = () => {
             title={t('tiles.transport2')}
             columns={transportOfferColumns()}
             expandableRowsComponent={TransportOfferExpandedComponent}
-            // itemComponent={TransportOfferItem}
+            itemComponent={TransportOfferItem}
             noticeType={20}
             filters={NoticesFilter}
           />}
