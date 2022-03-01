@@ -13,7 +13,9 @@
     "transport": "Oferujesz pomoc w transporcie?",
     "lfTransport": "Szukasz transportu",
     "help": "Oferujesz pomoc?",
-    "helpPoints": "Punkty pomocy"
+    "helpPoints": "Punkty pomocy",
+    "lfTemporaryAnimalHome": "Szukasz domu tymczasowego dla zwierząt?",
+    "temporaryAnimalHome": "Oferujesz dom tymczasowy dla zwierząt?"
   },
   "periods": {
     "negotiable": "Do ustalenia",
@@ -59,7 +61,16 @@
     "description": "Opis",
     "voivodeship": "Województwo",
     "reason": "Przyczyna",
-    "send": "Wyślij"
+    "send": "Wyślij",
+    "temporaryAnimalHome": "Oferuję dom tymczasowy dla zwierząt",
+    "lfTemporaryAnimalHome": "Poszukuję domu tymczasowego dla zwierząt",
+    "whatAnimalType": "Jakie zwierzęta ?",
+    "animalDetails": "Rasa, wiek, wielkość zwierząt i inne istotne informacje",
+    "animalsTransportNeed": "Potrzebuję transportu z granicy",
+    "arrival": "Kiedy będziesz w Polsce?",
+    "howMany": "Ile?",
+    "constRefund": "Zwrot kosztów za karmę i leczenie",
+    "hasExperienceWithAnimals": "Mam doświadczenie w byciu domem tymczasowym"
   },
   "success": {
     "title": "Udało się!",
@@ -74,7 +85,9 @@
     "offerTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz przetransportować potrzebujących. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "findTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz transportu. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc."
+    "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc.",
+    "lfTemporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz domu tymczasowego dla swoich zwierząt. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! ",
+    "temporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz dom tymczasowy dla zwierząt osób potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! "
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
@@ -111,6 +124,17 @@
     "p8": "Twoje dane będą przetwarzane do momentu aktualności Twojego ogłoszenia, najpóźniej do czasu zakończenia akcji pomocy dla Ukrainy poprzez portal uapomoc.pl. Po tym czasie zostaną usunięte.",
     "p9": "Podanie przez Ciebie danych jest dobrowolne, lecz niezbędne do umieszczenia ich w portalu pomocy dla Ukrainy uapomoc.pl."
   },
-  "common": {
-  }
+  "animals": {
+    "dogs": "Psy",
+    "cats": "Koty",
+    "hamsters": "Chomiki",
+    "mouses": "Myszy",
+    "rats": "Szczury",
+    "rabbits": "Króliki",
+    "chinchillas": "Szynszyle",
+    "guineaPigs": "Świnki morskie",
+    "snakes": "Węże",
+    "other": "Inne"
+  },
+  "common": {}
 }

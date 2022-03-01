@@ -16,5 +16,7 @@ export const noticesRoutes = {
   'notices.addFindTransportOffer': `${BASE_URL}/dodaj-ogloszenie/szukam-transportu`,
   'notices.addHelpOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-pomoc`,
   'notices.addTranslationOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-tlumaczenia`,
+  'notices.addTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/oferuje-dom-tymczasowy`,
+  'notices.addFindTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/szukam-domu-tymczasowego`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
 }

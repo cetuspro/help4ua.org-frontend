@@ -1,23 +1,32 @@
-import { lazy } from 'react'
-import { Route, Navigate } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import UserLayout from '@/layouts/UserLayout'
-import { shelterOfferColumns, ShelterOfferExpandedComponent } from '@/views/notices/View_Notices/dataTable/shelterOffer'
-import { helpOfferColumnsColumns, HelpOfferExpandedComponent } from '@/views/notices/View_Notices/dataTable/helpOffer'
 import {
-  transportOfferColumns,
-  TransportOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/transportOffer'
+  helpOfferColumnsColumns,
+  HelpOfferExpandedComponent,
+} from '@/views/notices/View_Notices/dataTable/helpOffer'
+import {
+  shelterOfferColumns,
+  ShelterOfferExpandedComponent,
+} from '@/views/notices/View_Notices/dataTable/shelterOffer'
 import {
   shelterSearchColumns,
   ShelterSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/shelterSearch'
 import {
+  transportOfferColumns,
+  TransportOfferExpandedComponent,
+} from '@/views/notices/View_Notices/dataTable/transportOffer'
+import {
   transportSearchColumns,
   TransportSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/transportSearch'
 import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
-import { translationOfferColumns, TranslationOfferExpandedComponent } from '../View_Notices/dataTable/translationOffer'
+import { lazy } from 'react'
+import { Navigate, Route } from 'react-router-dom'
+import {
+  translationOfferColumns,
+  TranslationOfferExpandedComponent,
+} from '../View_Notices/dataTable/translationOffer'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddFindShelter = lazy(() => import('../../../ua/Form_AddFindShelter'))
@@ -27,71 +36,87 @@ const LazyAddFindTransportOffer = lazy(() => import('../../../ua/Form_AddFindTra
 const LazyAddHelpOffer = lazy(() => import('../../../ua/Form_AddHelpOffer'))
 const LazyAddSuccess = lazy(() => import('../../../ua/NoticeCreateSuccess'))
 const LazyAddTranslationOffer = lazy(() => import('../../../ua/Form_AddTranslationOffer'))
+const LazyAddTemporaryAnimalHome = lazy(() => import('../../../ua/Form_AddTemporaryAnimalHome'))
+const LazyAddFindTemporaryAnimalHome = lazy(() =>
+  import('../../../ua/Form_AddFindTemporaryAnimalHome'),
+)
 
 const NoticeRoutes = [
   <Route key={route['notices.list']} path={route['notices.list']} element={<UserLayout />}>
-    <Route index element={<Navigate to={route['index']} />}/>
+    <Route index element={<Navigate to={route['index']} />} />
     <Route
       path={route['notices.list2']}
-      element={<LazyNotices
-        title="Schronienie - osoby potrzebujące"
-        columns={shelterSearchColumns}
-        expandableRowsComponent={ShelterSearchExpandedComponent}
-        noticeType={10}
-        filters={NoticesFilter}
-      />}
+      element={
+        <LazyNotices
+          title="Schronienie - osoby potrzebujące"
+          columns={shelterSearchColumns}
+          expandableRowsComponent={ShelterSearchExpandedComponent}
+          noticeType={10}
+          filters={NoticesFilter}
+        />
+      }
     />
     <Route
       path={route['notices.list3']}
-      element={<LazyNotices
-        title="Schronienie - oferty pomocy"
-        columns={shelterOfferColumns}
-        expandableRowsComponent={ShelterOfferExpandedComponent}
-        noticeType={1}
-        filters={NoticesFilter}
-      />}
+      element={
+        <LazyNotices
+          title="Schronienie - oferty pomocy"
+          columns={shelterOfferColumns}
+          expandableRowsComponent={ShelterOfferExpandedComponent}
+          noticeType={1}
+          filters={NoticesFilter}
+        />
+      }
     />
     <Route
       path={route['notices.list4']}
-      element={<LazyNotices
-        title="Transport - oferty pomocy"
-        columns={transportOfferColumns}
-        expandableRowsComponent={TransportOfferExpandedComponent}
-        noticeType={20}
-        filters={NoticesFilter}
-      />}
+      element={
+        <LazyNotices
+          title="Transport - oferty pomocy"
+          columns={transportOfferColumns}
+          expandableRowsComponent={TransportOfferExpandedComponent}
+          noticeType={20}
+          filters={NoticesFilter}
+        />
+      }
     />
     <Route
       path={route['notices.list5']}
-      element={<LazyNotices
-        title="Inne oferty pomocy"
-        columns={helpOfferColumnsColumns}
-        expandableRowsComponent={HelpOfferExpandedComponent}
-        noticeType={50}
-        filters={NoticesFilter}
-      />}
+      element={
+        <LazyNotices
+          title="Inne oferty pomocy"
+          columns={helpOfferColumnsColumns}
+          expandableRowsComponent={HelpOfferExpandedComponent}
+          noticeType={50}
+          filters={NoticesFilter}
+        />
+      }
     />
     <Route
       path={route['notices.list6']}
-      element={<LazyNotices
-        title="Transport - osoby potrzebujące"
-        columns={transportSearchColumns}
-        expandableRowsComponent={TransportSearchExpandedComponent}
-        noticeType={22}
-        filters={NoticesFilter}
-      />}
+      element={
+        <LazyNotices
+          title="Transport - osoby potrzebujące"
+          columns={transportSearchColumns}
+          expandableRowsComponent={TransportSearchExpandedComponent}
+          noticeType={22}
+          filters={NoticesFilter}
+        />
+      }
     />
     <Route
       path={route['notices.list7']}
-      element={<LazyNotices
-        title="Tłumaczenia - oferty pomocy"
-        columns={translationOfferColumns}
-        expandableRowsComponent={TranslationOfferExpandedComponent}
-        noticeType={30}
-        filters={NoticesFilter}
-      />}
+      element={
+        <LazyNotices
+          title="Tłumaczenia - oferty pomocy"
+          columns={translationOfferColumns}
+          expandableRowsComponent={TranslationOfferExpandedComponent}
+          noticeType={30}
+          filters={NoticesFilter}
+        />
+      }
     />
-    <Route path={route['notices.view']()} element={<LazyNotice/>} />
+    <Route path={route['notices.view']()} element={<LazyNotice />} />
   </Route>,
   <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
     <Route index element={<LazyAddShelterOffer />} />
@@ -101,8 +126,16 @@ const NoticeRoutes = [
     <Route path={route['notices.addHelpOffer']} element={<LazyAddHelpOffer />} />
     <Route path={route['notices.addFindTransportOffer']} element={<LazyAddFindTransportOffer />} />
     <Route path={route['notices.addTranslationOffer']} element={<LazyAddTranslationOffer />} />
+    <Route
+      path={route['notices.addTemporaryAnimalHome']}
+      element={<LazyAddTemporaryAnimalHome />}
+    />
+    <Route
+      path={route['notices.addFindTemporaryAnimalHome']}
+      element={<LazyAddFindTemporaryAnimalHome />}
+    />
     <Route path={route['notices.success']} element={<LazyAddSuccess />} />
-  </Route>
+  </Route>,
 ]
 
 export default NoticeRoutes
