@@ -18,13 +18,15 @@ import TransportSearchForm from './forms/Form_TransportSearch'
 import HelpOfferForm from './forms/Form_HelpOffer'
 import { usePureMutation } from '../../../app/hooks/usePureMutation'
 import useObjectState from '../../../app/hooks/useObjectState'
-import ShelterOfferForm from './forms/Form_ShelterOffer'
 import { getNoticeToEdit } from '../../../app/CRUD/notices/getNoticeToEdit'
 import { updateNoticeStatus } from '../../../app/CRUD/notices/updateNoticeStatus'
 import Button from '@/components/common/Button'
+import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
+import Card from '@/components/common/Card'
+import { editNotice } from '../../../app/CRUD/notices/editNotice'
 
 const noticeTypes = {
-  1: ShelterOfferForm,
+  1: FormAddShelterOffer,
   10: ShelterSearchForm,
   20: TransportOfferForm,
   22: TransportSearchForm,
@@ -103,9 +105,14 @@ const ViewEditNotice = () => {
         )}
       </div>
       {!!state.notice ? <>
-        {!!CardComponent && <CardComponent
-          notice={state.notice}
-        />}
+        <Card>
+          {!!CardComponent && <CardComponent
+            defaultValues={state.notice}
+            editMode
+            query={editNotice(noticeId, urlToken, state.smsToken)}
+            onSuccess={updateSuccess}
+          />}
+        </Card>
       </> : <>
         <p className="mb-4 ml-2 text-gray-500">{t("formDescription.editNotice")}</p>
         <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">

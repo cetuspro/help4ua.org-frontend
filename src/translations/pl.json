@@ -52,7 +52,8 @@
     "reason": "Przyczyna",
     "send": "Wyślij",
     "editNotice": "Edytuj ogłoszenie",
-    "pin": "Kod PIN"
+    "pin": "Kod PIN",
+    "save": "Zapisz"
   },
   "success": {
     "title": "Udało się!",

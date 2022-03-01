@@ -22,7 +22,7 @@ import { useTranslation } from 'react-i18next'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddFindShelter = lazy(() => import('../../../ua/Form_AddFindShelter'))
-const LazyAddShelterOffer = lazy(() => import('../../../ua/Form_AddShelterOffer'))
+const LazyAddShelterOffer = lazy(() => import('../../../views/notices/View_AddNotice/View_AddShelterOffer'))
 const LazyAddTransportOffer = lazy(() => import('../../../ua/Form_AddTransportOffer'))
 const LazyAddFindTransportOffer = lazy(() => import('../../../ua/Form_AddFindTransportOffer'))
 const LazyAddHelpOffer = lazy(() => import('../../../ua/Form_AddHelpOffer'))

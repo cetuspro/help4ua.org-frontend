@@ -52,7 +52,8 @@
     "reason": "Reason",
     "send": "Send",
     "editNotice": "Edit notice",
-    "pin": "PIN code"
+    "pin": "PIN code",
+    "save": "Save"
   },
   "success": {
     "title": "Success!",
