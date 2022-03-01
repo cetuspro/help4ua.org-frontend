@@ -49,7 +49,6 @@ const schema = yup.object().shape({
 })
 
 const query = (data) => {
-  console.log(data)
   return axios({
     method: 'POST',
     url: `${API_URL}/notices/create`,

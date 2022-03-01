@@ -35,17 +35,7 @@ const AnimalOffersFilter = () => {
             icon={FaSearch}
             isLabelVisible={false}
           />
-          {/*<InputAsyncSelect*/}
-          {/*  {...getCitiesHelper}*/}
-          {/*  name="City"*/}
-          {/*  icon={FaCity}*/}
-          {/*  label={'Wybierz miasto'}*/}
-          {/*  isLabelVisible={false}*/}
-          {/*  transform={({ id, name }) => ({*/}
-          {/*    value: id,*/}
-          {/*    label: name,*/}
-          {/*  })}*/}
-          {/*/>*/}
+
           <InputAsyncSelect
             {...getRegionsHelper}
             name="Region"
