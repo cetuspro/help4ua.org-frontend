@@ -28,6 +28,7 @@ const FormAddTransportOffer = ({defaultValues, query, onSuccess, editMode=false}
     email: yup.string().email().nullable(),
     type: yup.number().default(20),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
+    language: yup.string().nullable(),
   }), [editMode]);
 
   const methods = useForm({

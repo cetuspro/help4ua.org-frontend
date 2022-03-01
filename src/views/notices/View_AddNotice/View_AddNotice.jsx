@@ -3,6 +3,7 @@ import { route } from '@/app/router/urls/routes';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router';
+import { useSelector } from 'react-redux'
 
 const query = (data) => {
   return axios({
@@ -15,7 +16,8 @@ const query = (data) => {
 const ViewAddNotice = ({title, description, formComponent: FormComponent}) => {
   const {t} = useTranslation();
   const navigate = useNavigate();
-  
+
+  const { language } = useSelector(state => state?.language)
   const onSuccess = () => {
     navigate(route['notices.success']);
   }
@@ -37,6 +39,7 @@ const ViewAddNotice = ({title, description, formComponent: FormComponent}) => {
             {!!FormComponent && <FormComponent
               query={query}
               onSuccess={onSuccess}
+              defaultValues={{ language }}
             />}
         </div>
       </div>

@@ -26,6 +26,7 @@ import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
 import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
 import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
 import toast from 'react-hot-toast'
+import { useSelector } from 'react-redux'
 
 const noticeTypes = {
   1: FormAddShelterOffer,
@@ -53,6 +54,7 @@ const schema = yup.object().shape({
 });
 
 const ViewEditNotice = () => {
+  const { language } = useSelector(state => state?.language)
   const { id: noticeId, token: urlToken } = useParams()
   const {t} = useTranslation();
   const [state, setState] = useObjectState({
@@ -63,6 +65,9 @@ const ViewEditNotice = () => {
 
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      language,
+    }
   });
 
   const handleGetNoticeSuccess = ({data, config: {params}}) => {
