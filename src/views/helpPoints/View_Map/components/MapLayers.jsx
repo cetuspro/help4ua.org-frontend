@@ -14,9 +14,9 @@ const MapLayers = () => {
       <QueryProvider {...helpPointsData}>
         <HelpPointsMarkers />
       </QueryProvider>
-      {/* <QueryProvider {...noticesData}>
+      <QueryProvider {...noticesData}>
         <NoticesMarkers />
-      </QueryProvider> */}
+      </QueryProvider>
     </LayersControl>
   )
 }

@@ -12,12 +12,17 @@ const NoticesMarkers = () => {
   const markers = useMemo(
     () =>
       data && isSuccess
-        ? data.map((item) => {
-            return {
-              ...item,
-              position: { lat: item?.localization?.latitude, lng: item?.localization?.longitude },
-            }
-          })
+        ? data
+            .map((item) => {
+              return {
+                ...item,
+                position: {
+                  lat: item?.location?.latitude ?? null,
+                  lng: item?.location?.longitude ?? null,
+                },
+              }
+            })
+            .filter((item) => item.position.lat !== null && item.position.lng !== null)
         : [],
     [isSuccess],
   )
