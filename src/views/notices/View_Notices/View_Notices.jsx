@@ -19,7 +19,7 @@ const ViewNotices = ({
   filters:Filters,
   itemComponent:ItemComponent,
 }) => {
-  const query = useGetNotices(noticeType)
+  const query = useGetNotices({noticeType})
   const {t} = useTranslation()
   const breadcrumbItems = [
     {
