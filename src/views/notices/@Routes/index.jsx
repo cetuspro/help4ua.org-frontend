@@ -29,6 +29,8 @@ const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
 const LazyAddHelpOffer = lazy(() => import('../../../ua/Form_AddHelpOffer'))
 const LazyAddFindHelp = lazy(() => import('../../../ua/Form_AddFindHelp'))
+const LazyAddlegalHelpOffer = lazy(() => import('../../../ua/Form_AddlegalHelpOffer'))
+const LazyAddfindLegalHelp = lazy(() => import('../../../ua/Form_AddfindLegalHelp'))
 const LazyAddSuccess = lazy(() => import('../../../ua/NoticeCreateSuccess'))
 const LazyAddFindTranslationOffer = lazy(() => import('../../../ua/Form_AddFindTranslationOffer'))
 const LazyEditNotice = lazy(() => import('../../../views/notices/View_EditNotice/View_EditNotice'))
@@ -120,6 +122,26 @@ const NoticeRoutes = () => {
             filters={NoticesFilter}
           />}
         />
+        <Route
+          path={route['notices.list13']}
+          element={<LazyNotices
+            title={t('tiles.legalHelp2')}
+            columns={helpOfferColumnsColumns()}
+            expandableRowsComponent={HelpOfferExpandedComponent}
+            noticeType={80}
+            filters={NoticesFilter}
+          />}
+        />
+        <Route
+          path={route['notices.list14']}
+          element={<LazyNotices
+            title={t('tiles.lfLegalHelp2')}
+            columns={helpOfferColumnsColumns()}
+            expandableRowsComponent={HelpOfferExpandedComponent}
+            noticeType={82}
+            filters={NoticesFilter}
+          />}
+        />
         <Route path={route['notices.view']()} element={<LazyNotice/>} />
       </Route>,
       <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
@@ -165,7 +187,9 @@ const NoticeRoutes = () => {
             />}
           />
         <Route path={route['notices.addHelpOffer']} element={<LazyAddHelpOffer />} />
+        <Route path={route['notices.addlegalHelpOffer']} element={<LazyAddlegalHelpOffer />} />
         <Route path={route['notices.addFindHelp']} element={<LazyAddFindHelp />} />
+        <Route path={route['notices.addfindLegalHelp']} element={<LazyAddfindLegalHelp />} />
         <Route path={route['notices.addFindTranslationOffer']} element={<LazyAddFindTranslationOffer />} />
         <Route path={route['notices.success']} element={<LazyAddSuccess />} />
       </Route>,
