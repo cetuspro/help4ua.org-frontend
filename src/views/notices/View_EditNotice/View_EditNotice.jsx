@@ -55,7 +55,7 @@ const schema = yup.object().shape({
 
 const ViewEditNotice = () => {
   const { language } = useSelector(state => state?.language)
-  const { id: noticeId, token: urlToken } = useParams()
+  const { id: noticeId, token: urlToken, pin } = useParams()
   const {t} = useTranslation();
   const [state, setState] = useObjectState({
     notice: null,
@@ -67,6 +67,7 @@ const ViewEditNotice = () => {
     resolver: yupResolver(schema),
     defaultValues: {
       language,
+      smsToken: pin??'',
     }
   });
 

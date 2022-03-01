@@ -171,6 +171,7 @@ const NoticeRoutes = () => {
       </Route>,
       <Route key={route['index']} path={route['index']} element={<UserLayout />}>
         <Route path={route['notices.edit']()} element={<LazyEditNotice />} />
+        <Route path={route['notices.edit2']()} element={<LazyEditNotice />} />
       </Route>
     ]
   )

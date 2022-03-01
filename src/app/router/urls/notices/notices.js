@@ -22,4 +22,5 @@ export const noticesRoutes = {
   'notices.addFindTranslationOffer': `${BASE_URL}/dodaj-ogloszenie/szukam-pomocy-w-tlumaczeniu`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
   'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
+  'notices.edit2': (id = ':id', token = ':token', pin = ':pin') => `${BASE_URL}/e/${id}/${token}/${pin}`,
 }
