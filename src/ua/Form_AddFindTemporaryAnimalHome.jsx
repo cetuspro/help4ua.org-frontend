@@ -37,14 +37,16 @@ const schema = yup.object().shape({
   email: yup.string().email().nullable(),
 
   animalType: yup.string().required(),
+  isDelivery: yup.string(),
   arrivalDate: yup.string().required(),
 
-  type: yup.number().default(60),
+  type: yup.number().default(62),
   acceptTerms: yup.string().required(),
   period: yup.string().required(),
 })
 
 const query = (data) => {
+  console.log(data)
   return axios({
     method: 'POST',
     url: `${API_URL}/notices/create`,

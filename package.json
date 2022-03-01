@@ -48,6 +48,7 @@
     "react-redux": "^7.2.6",
     "react-router": "^6.2.1",
     "react-router-dom": "6",
+    "react-router-hash-link": "^2.4.3",
     "react-select": "^5.2.1",
     "react-switch": "^6.0.0",
     "react-tippy": "^1.4.0",

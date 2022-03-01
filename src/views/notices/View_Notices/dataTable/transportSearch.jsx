@@ -3,24 +3,27 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { route } from '@/app/router/urls/routes'
 
-export const transportSearchColumns = [
-  {
-    name: 'Imię',
-    selector: ({ name }) => name,
-  },
-  {
-    name: 'Telefon',
-    selector: ({ phoneNumber }) => phoneNumber,
-  },
-  {
-    name: 'Ilość miejsc',
-    selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
-  },
-  {
-    name: 'Opis',
-    selector: ({ description }) => description?.slice(0, 100)
-  },
-];
+export const transportSearchColumns = () => {
+  const {t} = useTranslation()
+  return [
+    {
+      name: t('common.imie'),
+      selector: ({ name }) => name,
+    },
+    {
+      name: t('common.telefon'),
+      selector: ({ phoneNumber }) => phoneNumber,
+    },
+    {
+      name: t('common.miejsca'),
+      selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
+    },
+    {
+      name: t('common.opis'),
+      selector: ({ description }) => description?.slice(0, 100)
+    },
+  ];
+}
 
 const Item = ({label, value}) => {
   return (

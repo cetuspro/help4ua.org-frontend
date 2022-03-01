@@ -59,7 +59,14 @@
     "arrival": "Date when you will be in Poland",
     "howMany": "How many?",
     "constRefund": "Refund for food and treatment",
-    "hasExperienceWithAnimals": "I have experience in being a temporary home"
+    "hasExperienceWithAnimals": "I have experience in being a temporary home",
+    "editNotice": "Edit notice",
+    "pin": "PIN code",
+    "save": "Save",
+    "alertTitle": "ATTENTION",
+    "alertContent": "All persons fleeing from Ukraine from armed conflict, DO NOT have to register at reception points or worry about formalities. All persons fleeing from Ukraine, seeking refuge in Poland, do not need to worry about the legality of their stay. In the coming days, there is also no need to submit any applications at the Office for Foreigners, voivodeship offices or Border Guard posts. The same applies to Ukrainian citizens who are in Poland, but whose residence documents have expired.",
+    "findHelp": "I'm looking for help",
+    "offerFindTranslations": "I am looking for help with translation"
   },
   "success": {
     "title": "Success!",
@@ -69,21 +76,38 @@
   },
   "tiles": {
     "shelter": "Offering shelter?",
+    "shelter2": "Shelter - people in need",
+    "shelter3": "Shelter - offers of help",
     "lfShelter": "Looking for shelter?",
     "translations": "Offering translation assistance?",
+    "translations2": "Translations - offers of help",
     "transport": "Offering transportation?",
+    "transport2": "Transport - offers of help",
+    "transport3": "Transport - people in need",
     "lfTransport": "Looking for transportation?",
     "help": "Offering help?",
-    "lfTemporaryAnimalHome": "Looking for a temporary animal shelter?",
-    "temporaryAnimalHome": "Offering a temporary animal shelter?"
+    "seeMap": "See map",
+    "help2": "Other offers of help",
+    "helpPoints": "Help points",
+    "ogloszenia": "Announcements",
+    "lfHelp": "Looking for help?",
+    "lfHelp2": "Other help - people in need",
+    "lfTranslations": "Looking for help with translation?",
+    "lfTranslations2": "Translation - people in need",
+    "lfTemporaryAnimalHome": "Are you looking for a temporary home for pets?",
+    "temporaryAnimalHome": "Do you offer a temporary home for pets?"
   },
   "formDescription": {
-    "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility..",
-    "findShelter": "Here you can place your ad that you are looking for a place to stay with your loved ones. Remember the request is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "translations": "Here you can place your ad that you can support pl-ua translation. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "offerTransport": "This is where you can place your offer of transport to those in need. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "findTransport": "Here you can place your ad that you are looking for transportation. Remember the request is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "offerHelp": "This is where you can post your ad that you would like to help in some way. Maybe you have some items to donate, maybe you can help with administrative tasks, or you want to get involved in some way. Remember the ad is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
+    "findShelter": "Here you can place your ad that you are looking for a place to stay with your loved ones. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "translations": "Here you can place your announcement that you can support pl-ua translation. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "offerTransport": "This is where you can place your announcement to transport those in need. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "findTransport": "Here you can place your ad that you are looking for transportation. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "offerHelp": "This is where you can post your announcement that you would like to help in some way. Maybe you have some items to donate, maybe you can help with administrative tasks, or you want to get involved in some way. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "helpPoints": "This is where you will find a list of all the locations where help is offered.",
+    "editNotice": "Enter the PIN code received in SMS to access the notice edition",
+    "findHelp": "This is where you can post your announcement that you are looking for help. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "lfTranslations": "Here you can post your announcement that you need help with pl-ua translation. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
     "lfTemporaryAnimalHome": "Here you can place your ad that you are looking for a temporary animal shelter.. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! ",
     "temporaryAnimalHome": "Here you can place your ad that you are offering a temporary shelter for animals of those in need. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! "
   },
@@ -92,11 +116,13 @@
     "title": "In solidarity with Ukraine. Every help counts",
     "addNotice": "Add notice",
     "seeNotices": "See notices",
+    "activeAds": "Number of active ads",
     "info-1": "This is a grassroots social action site for those who want to help and for those who are looking for help!",
     "info-2": "We connect people of good heart with those who need help!",
     "info-3": "If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up!",
     "info-4": "If you came from Ukraine and are looking for a place where you could stay with your family, search our database!",
-    "info-5": "If you would like to help, become a volunteer, etc. anyone can help!"
+    "info-5": "If you would like to help, become a volunteer, etc. anyone can help!",
+    "helpPoints": "See help points"
   },
   "notice": {
     "markInactive": "Mark as inactive"
@@ -133,6 +159,35 @@
     "snakes": "Snakes",
     "other": "Other"
   },
-
-  "common": {}
+  "common": {
+    "miast": "City",
+    "miejsca": "Number of seats",
+    "imie": "Name",
+    "adres": "Address",
+    "telefon": "Phone",
+    "opis": "Description",
+    "okres": "Duration of stay",
+    "id": "ID",
+    "lozka": "Number of beds",
+    "dzieci": "I'll accept with small children",
+    "zwierzaki": "I'll accept with animals",
+    "pralka": "Access to the washing machine",
+    "jedzenie": "I provide food",
+    "transport": "I provide transport",
+    "data": "Added",
+    "tak": "Yes",
+    "nie": "No",
+    "brakDanych": "No data",
+    "miasto": "City",
+    "szukaj": "Search...",
+    "wojewodztwo": "Choose a province",
+    "wybierzLiczbeOsob": "Choose the number of people",
+    "ogloszenia": "Announcements",
+    "nazwa": "Name",
+    "lokalizacja": "Localization",
+    "stronaglowna": "Home page",
+    "punktypomocy": "Help points",
+    "animalType": "What animal",
+    "arrival": "Arrival date"
+  }
 }

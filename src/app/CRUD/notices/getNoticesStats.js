@@ -11,5 +11,8 @@ const getNoticesStats = () =>
 export const useGetNoticesStats = () =>
   useQuery2({
     queryKey: ['app.noticesStats'],
-    queryFn: getNoticesStats
+    queryFn: getNoticesStats,
+    config: {
+      refetchOnWindowFocus: false,
+    }
   })

@@ -36,19 +36,20 @@ const schema = yup.object().shape({
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
 
-  shouldRefund: yup.string(),
+  shouldRefund: yup.boolean(),
   animalType: yup.string().required(),
-  animalCount: yup.number().required(),
-  hasExperience: yup.string(),
+  accommodationPlacesCount: yup.number().required(),
+  hasExperience: yup.boolean(),
 
   isDelivery: yup.string(),
-  type: yup.number().default(1),
+  type: yup.number().default(60),
   acceptTerms: yup.string().required(),
 
-  period: yup.string().required(), //
+  period: yup.string().required(),
 })
 
 const query = (data) => {
+  console.log(data)
   return axios({
     method: 'POST',
     url: `${API_URL}/notices/create`,
@@ -136,7 +137,7 @@ const FormAddTemporaryAnimalHome = () => {
                 </div>
                 <div>
                   <InputText
-                    name="animalCount"
+                    name="accommodationPlacesCount"
                     type="number"
                     min={0}
                     label={t('form.howMany')}
@@ -167,10 +168,7 @@ const FormAddTemporaryAnimalHome = () => {
                   <InputCheckbox name="isDelivery" label={t('form.offerTransport')} />
                 </div>
                 <div>
-                  <InputCheckbox
-                    name="hasExperienceWithAnimals"
-                    label={t('form.hasExperienceWithAnimals')}
-                  />
+                  <InputCheckbox name="hasExperience" label={t('form.hasExperienceWithAnimals')} />
                 </div>
               </div>
               <h4 className="font-bold mt-8">{t('form.extraInfo')}</h4>
