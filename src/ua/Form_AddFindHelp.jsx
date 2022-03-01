@@ -35,7 +35,7 @@ const schema = yup.object().shape({
   cityName: yup.string().required(),
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
-  type: yup.number().default(50),
+  type: yup.number().default(52),
   acceptTerms: yup.string().required(),
 });
 
@@ -48,7 +48,7 @@ const query = (data) => {
 }
 const mt = (a) => a;
 
-const FormAddHelpOffer = () => {
+const FormAddFindHelp = () => {
   
   const methods = useForm({
     resolver: yupResolver(schema),
@@ -67,8 +67,8 @@ const FormAddHelpOffer = () => {
   
   return (
     <div className="container mx-auto py-8">
-      <h2 className="font-bold mb-2 ml-2 text-2xl">{t("form.offerHelp")}</h2>
-      <p className="mb-4 ml-2 text-gray-500">{t("formDescription.offerHelp")}</p>
+      <h2 className="font-bold mb-2 ml-2 text-2xl">{t("form.findHelp")}</h2>
+      <p className="mb-4 ml-2 text-gray-500">{t("formDescription.findHelp")}</p>
       <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>
@@ -138,4 +138,4 @@ const FormAddHelpOffer = () => {
   );
 };
 
-export default FormAddHelpOffer;
+export default FormAddFindHelp;

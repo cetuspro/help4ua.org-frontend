@@ -39,6 +39,7 @@ specifiers:
   react-redux: ^7.2.6
   react-router: ^6.2.1
   react-router-dom: '6'
+  react-router-hash-link: ^2.4.3
   react-select: ^5.2.1
   react-switch: ^6.0.0
   react-tippy: ^1.4.0
@@ -85,6 +86,7 @@ dependencies:
   react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
   react-router: 6.2.1_react@17.0.2
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
+  react-router-hash-link: 2.4.3_9def629ab2c13b5e3778a1470b004fd9
   react-select: 5.2.1_react-dom@17.0.2+react@17.0.2
   react-switch: 6.0.0_react-dom@17.0.2+react@17.0.2
   react-tippy: 1.4.0
@@ -2494,6 +2496,17 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       react-router: 6.2.1_react@17.0.2
+    dev: false
+
+  /react-router-hash-link/2.4.3_9def629ab2c13b5e3778a1470b004fd9:
+    resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
+    peerDependencies:
+      react: '>=15'
+      react-router-dom: '>=4'
+    dependencies:
+      prop-types: 15.8.0
+      react: 17.0.2
+      react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
     dev: false
 
   /react-router/6.2.1_react@17.0.2:

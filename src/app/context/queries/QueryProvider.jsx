@@ -1,10 +1,10 @@
-import { createContext, useContext } from "react";
-import { QueryPaginationDefault } from "./defaults/QueryPaginationDefault";
-import { QueryErrorsDefault } from "./defaults/QueryErrorsDefault";
-import { QuerySpinnerDefaults } from "./defaults/QuerySpinnerDefaults";
+import { createContext, useContext } from 'react'
+import { QueryPaginationDefault } from './defaults/QueryPaginationDefault'
+import { QueryErrorsDefault } from './defaults/QueryErrorsDefault'
+import { QuerySpinnerDefaults } from './defaults/QuerySpinnerDefaults'
 
-const QueryContext = createContext(null);
-const QueryRefetchContext = createContext(() => {});
+const QueryContext = createContext(null)
+const QueryRefetchContext = createContext(() => {})
 
 export const QueryProvider = ({
   data,
@@ -21,17 +21,18 @@ export const QueryProvider = ({
   alwaysRenderChild,
   withDefaultPagination,
   withParentQueryRefetch,
+  isSuccess,
   ...rest
 }) => {
-  const parentRefetch = useQueryRefetch();
+  const parentRefetch = useQueryRefetch()
 
   const handleRefetch = () => {
     // console.log(withParentQueryRefetch, 'eloooo', parentRefetch)
-    refetch();
-    if (withParentQueryRefetch && typeof parentRefetch === "function") {
-      parentRefetch();
+    refetch()
+    if (withParentQueryRefetch && typeof parentRefetch === 'function') {
+      parentRefetch()
     }
-  };
+  }
 
   return (
     <QueryRefetchContext.Provider value={handleRefetch}>
@@ -46,14 +47,14 @@ export const QueryProvider = ({
           isFetched,
           pagination,
           setPage,
-        }}
-      >
+          isSuccess,
+        }}>
         {!disableDefaults &&
-          status !== "success" &&
+          status !== 'success' &&
           (isFetching ? <QuerySpinnerDefaults /> : <QueryErrorsDefault />)}
-        {(disableDefaults || alwaysRenderChild || status === "success") && (
+        {(disableDefaults || alwaysRenderChild || status === 'success') && (
           <>
-            {typeof children === "function"
+            {typeof children === 'function'
               ? children(data, {
                   isFetching,
                   status,
@@ -68,13 +69,13 @@ export const QueryProvider = ({
         )}
       </QueryContext.Provider>
     </QueryRefetchContext.Provider>
-  );
-};
+  )
+}
 
 export const useQueryContext = () => {
-  const context = useContext(QueryContext);
+  const context = useContext(QueryContext)
   if (!context || !context.status) {
-    throw new Error("Missing QueryProvider");
+    throw new Error('Missing QueryProvider')
   }
   return {
     data: context?.data,
@@ -86,9 +87,10 @@ export const useQueryContext = () => {
     refetch: context?.refetch,
     pagination: context?.pagination,
     setPage: context?.setPage,
-  };
-};
+    isSuccess: context?.isSuccess,
+  }
+}
 
 export const useQueryRefetch = () => {
-  return useContext(QueryRefetchContext);
-};
+  return useContext(QueryRefetchContext)
+}

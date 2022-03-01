@@ -20,7 +20,9 @@ const noticeTypes = {
   20: TransportOfferCard,
   22: TransportSearchCard,
   30: HelpOfferCard,
+  32: HelpOfferCard,
   50: HelpOfferCard,
+  52: HelpOfferCard,
 }
 
 

@@ -31,7 +31,9 @@ const noticeTypes = {
   20: FormAddTransportOffer,
   22: FormAddFindTransportOffer,
   30: HelpOfferForm,
+  32: HelpOfferForm,
   50: HelpOfferForm,
+  52: HelpOfferForm,
 }
 
 const breadcrumbItems = (title) => [
