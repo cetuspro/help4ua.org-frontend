@@ -24,13 +24,14 @@ import { editNotice } from '../../../app/CRUD/notices/editNotice'
 import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
 import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
 import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
+import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
 
 const noticeTypes = {
   1: FormAddShelterOffer,
   10: FormAddFindShelter,
   20: FormAddTransportOffer,
   22: FormAddFindTransportOffer,
-  30: HelpOfferForm,
+  30: FormAddTranslationOffer,
   32: HelpOfferForm,
   50: HelpOfferForm,
   52: HelpOfferForm,

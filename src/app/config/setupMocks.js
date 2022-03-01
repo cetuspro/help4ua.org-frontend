@@ -33,8 +33,8 @@ export const setupMocks = () => {
   //   items: notices
   // })
 
-  mock.onPost(`${API_URL}/notices/create`).reply(config => {
-    console.log(JSON.parse(config.data));
-    return [200]
-  })
+  // mock.onPost(`${API_URL}/notices/create`).reply(config => {
+  //   console.log(JSON.parse(config.data));
+  //   return [200]
+  // })
 }
