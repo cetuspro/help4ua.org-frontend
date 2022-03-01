@@ -25,6 +25,8 @@ import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
 import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
 import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
 import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
+import toast from 'react-hot-toast'
+import { useSelector } from 'react-redux'
 
 const noticeTypes = {
   1: FormAddShelterOffer,
@@ -37,10 +39,10 @@ const noticeTypes = {
   52: HelpOfferForm,
 }
 
-const breadcrumbItems = (title) => [
+const breadcrumbItems = (t, title) => [
   {
     url: route['notices.list'],
-    label: 'Ogłoszenia',
+    label: t('header.notices'),
   },
   {
     label: title,
@@ -52,7 +54,8 @@ const schema = yup.object().shape({
 });
 
 const ViewEditNotice = () => {
-  const { id: noticeId, token: urlToken } = useParams()
+  const { language } = useSelector(state => state?.language)
+  const { id: noticeId, token: urlToken, pin } = useParams()
   const {t} = useTranslation();
   const [state, setState] = useObjectState({
     notice: null,
@@ -62,6 +65,10 @@ const ViewEditNotice = () => {
 
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      language,
+      smsToken: pin??'',
+    }
   });
 
   const handleGetNoticeSuccess = ({data, config: {params}}) => {
@@ -91,19 +98,24 @@ const ViewEditNotice = () => {
     })
   }
 
+  const handleDataChange = () => {
+    toast.success(t('success.saved'));
+    updateSuccess();
+  }
+
   return (
     <>
       <div className="container mx-auto py-8">
       
       <div className="flex flex-col sm:flex-row justify-between items-center pb-5 sm:py-1">
-        <Breadcrumb items={breadcrumbItems(`Ogłoszenie nr ${noticeId}`)}/>
+        <Breadcrumb items={breadcrumbItems(t, `Ogłoszenie nr ${noticeId}`)}/>
         {!!state.notice && (
           [2, 20].includes(state.notice.status) ? (
             <Button onClick={changeNoticeStatus} className="w-fit" size="small" color={state.notice?.status === 2 ? 'danger' : 'success'}>
-              {state.notice?.status === 2 ? 'Oznacz jako nieaktualne' : 'Oznacz jako aktualne'}
+              {state.notice?.status === 2 ? t('notice.markInactive') : t('notice.markActive')}
             </Button>
           ) : (
-            <div className="text-gray-400">Ogłoszenie oczekuje na akceptację</div>
+            <div className="text-gray-400">{t('notice.waitingForApproval')}</div>
           )
         )}
       </div>
@@ -114,7 +126,7 @@ const ViewEditNotice = () => {
             defaultValues={state.notice}
             editMode
             query={editNotice(noticeId, urlToken, state.smsToken)}
-            onSuccess={updateSuccess}
+            onSuccess={handleDataChange}
           />}
         </Card>
       </> : <>

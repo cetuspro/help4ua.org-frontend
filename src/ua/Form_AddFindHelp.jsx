@@ -27,6 +27,7 @@ import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '../components/form/Input_RODO'
+import { useSelector } from 'react-redux'
 
 
 const schema = yup.object().shape({
@@ -37,6 +38,7 @@ const schema = yup.object().shape({
   email: yup.string().email().nullable(),
   type: yup.number().default(52),
   acceptTerms: yup.string().required(),
+  language: yup.string().nullable(),
 });
 
 const query = (data) => {
@@ -49,9 +51,13 @@ const query = (data) => {
 const mt = (a) => a;
 
 const FormAddFindHelp = () => {
-  
+
+  const { language } = useSelector(state => state?.language)
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      language,
+    }
   });
   let navigate = useNavigate();
 
@@ -71,6 +77,7 @@ const FormAddFindHelp = () => {
       <p className="mb-4 ml-2 text-gray-500">{t("formDescription.findHelp")}</p>
       <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
+          <div className="p-5 bg-red-500"></div>
           <FormProvider {...methods}>
             <form onSubmit={mutation.mutate}>
               <div>
@@ -85,6 +92,7 @@ const FormAddFindHelp = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
                   <InputText
+                    required
                     name="name"
                     label={t("form.name")}
                     icon={FaUser}
@@ -92,6 +100,7 @@ const FormAddFindHelp = () => {
                 </div>
                 <div>
                   <InputText
+                    required
                     name="phoneNumber"
                     label={t("form.phoneNumber")}
                     icon={FaPhone}
@@ -106,6 +115,7 @@ const FormAddFindHelp = () => {
                 </div>
                 <div>
                   <InputText
+                    required
                     name="cityName"
                     label={t("form.cityName")}
                     icon={FaMapPin}

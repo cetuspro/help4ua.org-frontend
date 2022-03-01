@@ -7,7 +7,7 @@ import NoticesMarkers from './markers/NoticesMarkers'
 
 const MapLayers = () => {
   const helpPointsData = useGetHelpPoints()
-  const noticesData = useGetNotices()
+  const noticesData = useGetNotices({isForMap: true})
 
   return (
     <LayersControl position="topleft">

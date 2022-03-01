@@ -26,4 +26,6 @@ export const noticesRoutes = {
   'notices.addFindTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/szukam-domu-tymczasowego`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
   'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
+  'notices.edit2': (id = ':id', token = ':token', pin = ':pin') =>
+    `${BASE_URL}/e/${id}/${token}/${pin}`,
 }

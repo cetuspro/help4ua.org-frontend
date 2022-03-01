@@ -19,7 +19,7 @@ const ViewNotices = ({
   filters:Filters,
   itemComponent:ItemComponent,
 }) => {
-  const query = useGetNotices(noticeType)
+  const query = useGetNotices({noticeType})
   const {t} = useTranslation()
   const breadcrumbItems = [
     {
@@ -42,8 +42,18 @@ const ViewNotices = ({
             </div>
           </QueryHasNoResults>
           <QueryHasResults>
-            <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start max-w-full">
-              {!ItemComponent && (
+            {ItemComponent ? (
+              <div className="py-5">
+                {query.data?.map && query.data.map(item => (
+                  <ItemComponent
+                    key={item.id}
+                    {...item}
+                  />
+                ))}
+                <ItemComponentPagination/>
+              </div>
+            ) : (
+              <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start max-w-full">
                 <div className="bg-white p-4 rounded-lg overflow-x-auto w-full">
                   {columns?.map && typeof expandableRowsComponent !== 'undefined' ? (
                     <NoticesDataTable2
@@ -54,19 +64,8 @@ const ViewNotices = ({
                     <NoticesDataTable />
                   )}
                 </div>
-              )}
-              {ItemComponent && (
-                <div className="p-5">
-                  {query.data?.map && query.data.map(item => (
-                    <ItemComponent
-                      key={item.id}
-                      {...item}
-                    />
-                  ))}
-                  <ItemComponentPagination/>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
           </QueryHasResults>
         </QueryProvider>
       </div>

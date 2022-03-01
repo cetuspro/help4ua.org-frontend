@@ -25,6 +25,7 @@ import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
+import { useSelector } from 'react-redux'
 
 const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) => {
   const schema = useMemo(() => yup.object().shape({
@@ -45,6 +46,7 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
     type: yup.number().default(1),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     period: yup.string().required(),
+    language: yup.string().nullable(),
   }), [editMode]);
 
   const methods = useForm({

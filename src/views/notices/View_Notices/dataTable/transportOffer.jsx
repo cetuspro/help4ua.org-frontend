@@ -41,20 +41,9 @@ const Item = ({label, value}) => {
 
 export const TransportOfferExpandedComponent = ({data: {
   description,
-  cityName,
-  region,
-  address,
-  bedCount,
-  isAcceptedChild,
-  isAcceptedAnimal,
-  hasWashingMachine,
-  period,
-  isCatering,
-  isDelivery,
-  location,
+  descriptionUA,
   id,
   name,
-  accommodationPlacesCount,
   phoneNumber,
   createdAt,
 }}) => {
@@ -64,6 +53,7 @@ export const TransportOfferExpandedComponent = ({data: {
       <div className="flex gap-5">
         <div className="flex-1">
           {!!description && <Item label={t('common.opis')} value={description}/>}
+          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           {!!name && <Item label={t('common.imie')} value={name}/>}
           {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
           {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
@@ -96,8 +86,8 @@ export const TransportOfferItem = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <div className="bg-white rounded-lg shadow-lg mb-2 text-sm overflow-hidden shadow">
-      <div className="px-3 py-2 bg-gray-100 flex border border-gray-400 rounded-t-lg">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-300 mb-2 text-sm overflow-hidden shadow">
+      <div className="px-3 py-2 bg-gray-100 flex rounded-t-lg">
         <div className="w-1/3 flex">
           Miejsca: <strong className="ml-1.5">{accommodationPlacesCount ?? '-'}</strong>
         </div>

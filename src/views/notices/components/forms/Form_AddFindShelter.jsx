@@ -40,6 +40,7 @@ const FormAddFindShelter = ({defaultValues, query, onSuccess, editMode=false}) =
     type: yup.number().default(10),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     period: yup.string().required(),
+    language: yup.string().nullable(),
   }), [editMode]);
 
   const methods = useForm({

@@ -28,6 +28,7 @@ const FormAddTranslationOffer = ({defaultValues, query, onSuccess, editMode=fals
     email: yup.string().email().nullable(),
     type: yup.number().default(30),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
+    language: yup.string().nullable(),
   }), [editMode]);
 
   const methods = useForm({

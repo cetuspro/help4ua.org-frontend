@@ -13,10 +13,6 @@ import {
   ShelterSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/shelterSearch'
 import {
-  temporaryAnimalHomeOfferColumns,
-  TemporaryAnimalHomeOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/temporaryAnimalHomeOffer'
-import {
   transportOfferColumns,
   TransportOfferExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/transportOffer'
@@ -33,6 +29,10 @@ import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransport
 import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
 import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
 import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
+import {
+  temporaryAnimalHomeOfferColumns,
+  TemporaryAnimalHomeOfferExpandedComponent,
+} from '../View_Notices/dataTable/temporaryAnimalHomeOffer'
 import {
   temporaryAnimalHomeSearch,
   TemporaryAnimalHomeSearchExpandedComponent,
@@ -188,7 +188,7 @@ const NoticeRoutes = () => {
       <Route
         path={route['notices.addShelterOffer']}
         element={
-          <LazyAddNotice
+          <LazyAddNotice // done language props
             title={t('form.offerShelter')}
             description={t('formDescription.offerShelter')}
             formComponent={FormAddShelterOffer}
@@ -198,7 +198,7 @@ const NoticeRoutes = () => {
       <Route
         path={route['notices.addFindShelter']}
         element={
-          <LazyAddNotice
+          <LazyAddNotice // done language props
             title={t('form.findShelter')}
             description={t('formDescription.findShelter')}
             formComponent={FormAddFindShelter}
@@ -208,7 +208,7 @@ const NoticeRoutes = () => {
       <Route
         path={route['notices.addTranslationOffer']}
         element={
-          <LazyAddNotice
+          <LazyAddNotice // done language props
             title={t('form.offerTranslations')}
             description={t('formDescription.translations')}
             formComponent={FormAddTranslationOffer}
@@ -218,7 +218,7 @@ const NoticeRoutes = () => {
       <Route
         path={route['notices.addFindTransportOffer']}
         element={
-          <LazyAddNotice
+          <LazyAddNotice // done language props
             title={t('form.findTransport')}
             description={t('formDescription.findTransport')}
             formComponent={FormAddFindTransportOffer}
@@ -228,19 +228,21 @@ const NoticeRoutes = () => {
       <Route
         path={route['notices.addTransportOffer']}
         element={
-          <LazyAddNotice
+          <LazyAddNotice // done language props
             title={t('form.offerTransport')}
             description={t('formDescription.offerTransport')}
             formComponent={FormAddTransportOffer}
           />
         }
       />
+
       <Route path={route['notices.addHelpOffer']} element={<LazyAddHelpOffer />} />
       <Route path={route['notices.addFindHelp']} element={<LazyAddFindHelp />} />
       <Route
         path={route['notices.addFindTranslationOffer']}
         element={<LazyAddFindTranslationOffer />}
       />
+      <Route path={route['notices.success']} element={<LazyAddSuccess />} />
 
       <Route
         path={route['notices.addTemporaryAnimalHome']}
@@ -250,10 +252,10 @@ const NoticeRoutes = () => {
         path={route['notices.addFindTemporaryAnimalHome']}
         element={<LazyAddFindTemporaryAnimalHome />}
       />
-      <Route path={route['notices.success']} element={<LazyAddSuccess />} />
     </Route>,
     <Route key={route['index']} path={route['index']} element={<UserLayout />}>
       <Route path={route['notices.edit']()} element={<LazyEditNotice />} />
+      <Route path={route['notices.edit2']()} element={<LazyEditNotice />} />
     </Route>,
   ]
 }

@@ -27,6 +27,7 @@ import { useNavigate } from "react-router-dom";
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '../components/form/Input_RODO'
+import { useSelector } from 'react-redux'
 
 
 const schema = yup.object().shape({
@@ -37,6 +38,7 @@ const schema = yup.object().shape({
   email: yup.string().email().nullable(),
   type: yup.number().default(50),
   acceptTerms: yup.string().required(),
+  language: yup.string().nullable(),
 });
 
 const query = (data) => {
@@ -49,9 +51,13 @@ const query = (data) => {
 const mt = (a) => a;
 
 const FormAddHelpOffer = () => {
-  
+
+  const { language } = useSelector(state => state?.language)
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      language,
+    }
   });
   let navigate = useNavigate();
 

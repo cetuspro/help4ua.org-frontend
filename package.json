@@ -23,6 +23,7 @@
     "apexcharts": "^3.31.0",
     "axios": "^0.24.0",
     "axios-mock-adapter": "^1.20.0",
+    "classnames": "^2.3.1",
     "dayjs": "^1.10.7",
     "i18next": "^21.6.12",
     "leaflet": "^1.7.1",
