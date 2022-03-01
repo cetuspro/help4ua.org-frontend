@@ -99,11 +99,11 @@
     "offerTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz przetransportować potrzebujących. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "findTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz transportu. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "offerLegalHelp": "missing",
+    "offerLegalHelp": "",
     "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc.",
     "editNotice": "Podaj kod PIN otrzymany w SMS-ie aby uzyskać dostęp do edycji ogłoszenia",
     "findHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "findLegalHelp": "missing",
+    "findLegalHelp": "",
     "lfTranslations": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy w tłumaczeniu pl-ua. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
   },
   "frontpage": {
