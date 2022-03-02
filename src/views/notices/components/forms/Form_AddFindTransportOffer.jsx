@@ -30,7 +30,6 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
     language: yup.string().nullable(),
     transportFromStr: yup.string().required(),
     transportToStr: yup.string().required(),
-    carRegoNo: yup.string().required(),
 
   }), [editMode]);
 
