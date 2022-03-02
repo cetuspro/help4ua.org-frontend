@@ -57,7 +57,10 @@
     "alertTitle": "ATTENTION",
     "alertContent": "All persons fleeing from Ukraine from armed conflict, DO NOT have to register at reception points or worry about formalities. All persons fleeing from Ukraine, seeking refuge in Poland, do not need to worry about the legality of their stay. In the coming days, there is also no need to submit any applications at the Office for Foreigners, voivodeship offices or Border Guard posts. The same applies to Ukrainian citizens who are in Poland, but whose residence documents have expired.",
     "findHelp": "I'm looking for help",
-    "offerFindTranslations": "I am looking for help with translation"
+    "offerFindTranslations": "I am looking for help with translation",
+    "transportFromStr": "Transport from",
+    "transportToStr": "Transport to",
+    "carRegoNo": "Vehicle registration number"
   },
   "success": {
     "title": "Success!",

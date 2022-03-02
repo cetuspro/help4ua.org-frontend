@@ -29,6 +29,9 @@ const FormAddTransportOffer = ({defaultValues, query, onSuccess, editMode=false}
     type: yup.number().default(20),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     language: yup.string().nullable(),
+    transportFromStr: yup.string().required(),
+    transportToStr: yup.string().required(),
+    carRegoNo: yup.string().required(),
   }), [editMode]);
 
   const methods = useForm({
@@ -81,6 +84,30 @@ const FormAddTransportOffer = ({defaultValues, query, onSuccess, editMode=false}
               min={0}
               label={t('form.accommodationPlacesCount')}
               icon={FaUsers}
+            />
+          </div>
+          <div>
+            <InputText
+              name="transportFromStr"
+              label={t("form.transportFromStr")}
+              icon={FaUser}
+              required
+            />
+          </div>         
+          <div>
+            <InputText
+              name="transportToStr"
+              label={t("form.transportToStr")}
+              icon={FaUser}
+              required
+            />
+          </div>
+          <div>
+            <InputText
+              name="carRegoNo"
+              label={t("form.carRegoNo")}
+              icon={FaUser}
+              required
             />
           </div>
         </div>

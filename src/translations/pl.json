@@ -57,7 +57,10 @@
     "alertTitle": "UWAGA",
     "alertContent": "Wszystkie osoby uciekające z Ukrainy przed konfliktem zbrojnym, NIE MUSZĄ rejestrować się w punktach recepcyjnych ani martwić się o formalności. Wszystkie osoby uciekające z Ukrainy, szukające schronienia w Polsce, nie muszą obawiać się o legalność swojego pobytu. W najbliższych dniach nie trzeba też składać żadnych wniosków w Urzędzie do Spraw Cudzoziemców, urzędach wojewódzkich czy placówkach Straży Granicznej. To samo dotyczy obywateli Ukrainy, którzy są w Polsce, a ich dokumenty pobytowe utraciły ważność.",
     "findHelp": "Szukam pomocy",
-    "offerFindTranslations": "Szukam pomocy w tłumaczeniu"
+    "offerFindTranslations": "Szukam pomocy w tłumaczeniu",
+    "transportFromStr": "Transport z",
+    "transportToStr": "Transport do",
+    "carRegoNo": "Numer rejestracyjny pojazdu"
   },
   "success": {
     "title": "Udało się!",
