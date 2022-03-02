@@ -55,7 +55,7 @@ const schema = yup.object().shape({
 
 const ViewEditNotice = () => {
   const { language } = useSelector(state => state?.language)
-  const { id: noticeId, token: urlToken } = useParams()
+  const { id: noticeId, token: urlToken, pin } = useParams()
   const {t} = useTranslation();
   const [state, setState] = useObjectState({
     notice: null,
@@ -67,6 +67,7 @@ const ViewEditNotice = () => {
     resolver: yupResolver(schema),
     defaultValues: {
       language,
+      smsToken: pin??'',
     }
   });
 
@@ -80,13 +81,14 @@ const ViewEditNotice = () => {
 
   const getNoticeMutation = useHookFormMutation(methods, getNoticeToEdit(noticeId, urlToken), {handleSuccess: handleGetNoticeSuccess});
 
-  const updateSuccess = () => {
+  const updateSuccess = (message) => {
+    toast.success(message || t('success.saved'));
     getNoticeToEdit(noticeId, urlToken)({smsToken: state.smsToken}).then(data => {
       setState({notice: data.data});
     })
   }
   
-  const changeStatusMutation = usePureMutation(updateNoticeStatus(noticeId, urlToken), {onSuccess: updateSuccess});
+  const changeStatusMutation = usePureMutation(updateNoticeStatus(noticeId, urlToken), {onSuccess: () => updateSuccess(t('success.statusChanged'))});
 
   const changeNoticeStatus = () => {
     changeStatusMutation.mutate({
@@ -95,11 +97,6 @@ const ViewEditNotice = () => {
         status: state.notice.status === 2 ? 'OUTOFDATE' : 'VERIFIED'
       }
     })
-  }
-
-  const handleDataChange = () => {
-    toast.success(t('success.saved'));
-    updateSuccess();
   }
 
   return (
@@ -125,7 +122,7 @@ const ViewEditNotice = () => {
             defaultValues={state.notice}
             editMode
             query={editNotice(noticeId, urlToken, state.smsToken)}
-            onSuccess={handleDataChange}
+            onSuccess={() => updateSuccess(t('success.saved'))}
           />}
         </Card>
       </> : <>
