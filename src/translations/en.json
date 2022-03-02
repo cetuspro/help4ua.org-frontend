@@ -51,6 +51,15 @@
     "voivodeship": "Voivodeship",
     "reason": "Reason",
     "send": "Send",
+    "temporaryAnimalHome": "I offer a temporary home for animals",
+    "lfTemporaryAnimalHome": "I am looking for a temporary home for animals",
+    "whatAnimalType": "What kind of animals?",
+    "animalDetails": "Breed, age, size of animals and other relevant information",
+    "animalsTransportNeed": "I need transport from the border",
+    "arrival": "Date when you will be in Poland",
+    "howMany": "How many?",
+    "constRefund": "Refund for food and treatment",
+    "hasExperienceWithAnimals": "I have experience in being a temporary home",
     "editNotice": "Edit notice",
     "pin": "PIN code",
     "save": "Save",
@@ -86,7 +95,9 @@
     "lfHelp": "Looking for help?",
     "lfHelp2": "Other help - people in need",
     "lfTranslations": "Looking for help with translation?",
-    "lfTranslations2": "Translation - people in need"
+    "lfTranslations2": "Translation - people in need",
+    "lfTemporaryAnimalHome": "Are you looking for a temporary home for pets?",
+    "temporaryAnimalHome": "Do you offer a temporary home for pets?"
   },
   "formDescription": {
     "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
@@ -98,7 +109,9 @@
     "helpPoints": "This is where you will find a list of all the locations where help is offered.",
     "editNotice": "Enter the PIN code received in SMS to access the notice edition",
     "findHelp": "This is where you can post your announcement that you are looking for help. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "lfTranslations": "Here you can post your announcement that you need help with pl-ua translation. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!"
+    "lfTranslations": "Here you can post your announcement that you need help with pl-ua translation. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
+    "lfTemporaryAnimalHome": "Here you can place your ad that you are looking for a temporary animal shelter.. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! ",
+    "temporaryAnimalHome": "Here you can place your ad that you are offering a temporary shelter for animals of those in need. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! "
   },
   "frontpage": {
     "help": "Help for Ukraine",
@@ -138,6 +151,18 @@
     "p8": "Your data will be processed until the validity of your announcement, at the latest until the end of the campaign to help Ukraine through the uapomoc.pl portal. After this time they will be deleted.",
     "p9": "The data you provide is voluntary, but necessary for posting on the portal of help for Ukraine uapomoc.pl."
   },
+  "animals": {
+    "dogs": "Dogs",
+    "cats": "Cats",
+    "hamsters": "Hamsters",
+    "mouses": "Mouses",
+    "rats": "Rats",
+    "rabbits": "Rabbits",
+    "chinchillas": "Chinchillas",
+    "guineaPigs": "GuineaPigs",
+    "snakes": "Snakes",
+    "other": "Other"
+  },
   "common": {
     "miast": "City",
     "miejsca": "Number of seats",
@@ -166,6 +191,8 @@
     "nazwa": "Name",
     "lokalizacja": "Localization",
     "stronaglowna": "Home page",
-    "punktypomocy": "Help points"
+    "punktypomocy": "Help points",
+    "animalType": "What animal",
+    "arrival": "Arrival date"
   }
 }

@@ -10,6 +10,8 @@ export const noticesRoutes = {
   'notices.list7': `${BASE_URL}/ogloszenia/oferuje-tlumaczenia`,
   'notices.list8': `${BASE_URL}/ogloszenia/szukam-pomocy`,
   'notices.list9': `${BASE_URL}/ogloszenia/szukam-pomocy-w-tlumaczeniu`,
+  'notices.list10': `${BASE_URL}/ogloszenia/oferuje-dom-tymczasowy`,
+  'notices.list11': `${BASE_URL}/ogloszenia/szukam-domu-tymczasowego`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
   'notices.add': `${BASE_URL}/dodaj-ogloszenie`,
   'notices.addShelterOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-schronienie`,
@@ -20,7 +22,10 @@ export const noticesRoutes = {
   'notices.addTranslationOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-tlumaczenia`,
   'notices.addFindHelp': `${BASE_URL}/dodaj-ogloszenie/szukam-pomocy`,
   'notices.addFindTranslationOffer': `${BASE_URL}/dodaj-ogloszenie/szukam-pomocy-w-tlumaczeniu`,
+  'notices.addTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/oferuje-dom-tymczasowy`,
+  'notices.addFindTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/szukam-domu-tymczasowego`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
   'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
-  'notices.edit2': (id = ':id', token = ':token', pin = ':pin') => `${BASE_URL}/e/${id}/${token}/${pin}`,
+  'notices.edit2': (id = ':id', token = ':token', pin = ':pin') =>
+    `${BASE_URL}/e/${id}/${token}/${pin}`,
 }
