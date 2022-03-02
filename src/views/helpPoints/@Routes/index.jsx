@@ -22,8 +22,7 @@ const HelpPointsRoutes = () => {
       <Route
         path={route['helpPoints.add']}
         element={<LazyAddHelpPoint
-          title={t("form.offerTranslations")}
-          description={t("formDescription.translations")}
+          title={t("frontpage.addHelpPoint")}
           formComponent={FormAddHelpPoint}
         />}
       />
