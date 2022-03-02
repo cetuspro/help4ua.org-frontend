@@ -189,14 +189,14 @@ export default function Home() {
               </h3>
 
               <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[5]?.statusAndAmount?.[2]?.amount}
+                {t('frontpage.activeAds')}: {!isFetching && data?.[7]?.statusAndAmount?.[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1 to={route['notices.addHelpOffer']} label={t('frontpage.addNotice')} />
                 <Button2
                   to={route['notices.list5']}
                   label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[5]?.statusAndAmount?.[2]?.amount
+                    !isFetching && data?.[7]?.statusAndAmount?.[2]?.amount
                   })`}
                 />
               </div>
@@ -216,14 +216,14 @@ export default function Home() {
 
               <p className={'italic mb-4'}>
                 {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')}
+                {!isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1 to={route['notices.addFindHelp']} label={t('frontpage.addNotice')} />
                 <Button2
                   to={route['notices.list8']}
                   label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')
+                    !isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')
                   })`}
                 />
               </div>
@@ -298,7 +298,7 @@ export default function Home() {
 
               <p className={'italic mb-4'}>
                 {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[7]?.statusAndAmount?.[2]?.amount ?? '-')}
+                {!isFetching && (data?.[5]?.statusAndAmount?.[2]?.amount ?? '-')}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
@@ -308,7 +308,7 @@ export default function Home() {
                 <Button2
                   to={route['notices.list7']}
                   label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[7]?.statusAndAmount?.[2]?.amount ?? '-')
+                    !isFetching && (data?.[5]?.statusAndAmount?.[2]?.amount ?? '-')
                   })`}
                 />
               </div>
@@ -328,7 +328,7 @@ export default function Home() {
 
               <p className={'italic mb-4'}>
                 {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')}
+                {!isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1
@@ -338,7 +338,7 @@ export default function Home() {
                 <Button2
                   to={route['notices.list9']}
                   label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')
+                    !isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')
                   })`}
                 />
               </div>
