@@ -22,7 +22,7 @@ const AppRouter = () => {
 
         {PublicRoutes}
 
-        {HelpPointsRoutes}
+        {HelpPointsRoutes()}
 
         {NoticesRoutes()}
 

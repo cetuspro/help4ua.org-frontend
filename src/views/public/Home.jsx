@@ -301,8 +301,9 @@ export default function Home() {
                 {t('tiles.helpPoints')}
               </h3>
 
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1 to={route['helpPoints']} label={t('frontpage.helpPoints')} />
+              <div className="flex flex-col flex-wrap lg:flex-nowrap sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1 to={route['helpPoints.add']} label={t('frontpage.addHelpPoint')} />
+                <Button2 to={route['helpPoints']} label={t('frontpage.helpPoints')} />
                 <Button2 to={route['helpPoints.map']} label={t('tiles.seeMap')} />
               </div>
               <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
