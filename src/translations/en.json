@@ -66,8 +66,17 @@
     "alertTitle": "ATTENTION",
     "alertContent": "All persons fleeing from Ukraine from armed conflict, DO NOT have to register at reception points or worry about formalities. All persons fleeing from Ukraine, seeking refuge in Poland, do not need to worry about the legality of their stay. In the coming days, there is also no need to submit any applications at the Office for Foreigners, voivodeship offices or Border Guard posts. The same applies to Ukrainian citizens who are in Poland, but whose residence documents have expired.",
     "findHelp": "I'm looking for help",
+    "helpPointInfo": "Point information",
+    "type": "Type",
     "findLegalHelp": "I'm looking for legal assistance",
-    "offerFindTranslations": "I am looking for help with translation"
+    "offerFindTranslations": "I am looking for help with translation",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "legalAssistancePoint": "Legal assistance point",
+    "medicalAssistancePoint": "Medical assistance point",
+    "accommodationPoint": "Accommodation Point",
+    "collectionPoint": "Collection point",
+    "receptionPoint": "Reception point"
   },
   "success": {
     "title": "Success!",
@@ -75,7 +84,8 @@
     "content-2": "You will be contacted by someone by phone in the near future to confirm your application.",
     "home": "Homepage",
     "saved": "Saved!",
-    "statusChanged": "Notice status changed!"
+    "statusChanged": "Notice status changed!",
+    "helpPoint": "The Help Point has been added and is now waiting to be verified by our volunteers."
   },
   "tiles": {
     "shelter": "Offering shelter?",
@@ -129,7 +139,8 @@
     "info-3": "If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up!",
     "info-4": "If you came from Ukraine and are looking for a place where you could stay with your family, search our database!",
     "info-5": "If you would like to help, become a volunteer, etc. anyone can help!",
-    "helpPoints": "See help points"
+    "helpPoints": "See list",
+    "addHelpPoint": "Add point"
   },
   "notice": {
     "markActive": "Mark as active",
