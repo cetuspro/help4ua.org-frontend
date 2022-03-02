@@ -30,10 +30,8 @@ const ViewAddNotice = ({title, description, formComponent: FormComponent}) => {
         <div className="justify-start content-start text-left">
           <div>
             <div className=" bg-blue-500 text-white text-sm font-bold px-4 py-3 mb-5 border-4 border-blue-600" role="alert">
-              <p className="font-bold text-2xl">UWAGA</p>
-              <p className="text-sm">
-                Przypominamy, że obowiązkiem każdego obywatela Ukrainy jest zalegalizowanie swojego pobytu ciągu 15 dni od przekroczenia granicy!
-              </p>
+              <p className="font-bold text-2xl">{t('form.alertTitle')}</p>
+              <p className="text-sm">{t('form.alertContent')}</p>
             </div>
           </div>
             {!!FormComponent && <FormComponent
