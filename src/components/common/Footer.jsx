@@ -21,7 +21,7 @@ const Footer = () => {
           </Link>
           
         </div>
-        <div className="text-gray-400 text-sm text-center flex justify-center py-2">
+        <div className="text-gray-400 text-sm text-center flex flex-col sm:flex-row justify-center py-2">
           <div>© 2022 - UAPomoc.pl</div>
           <div className='mx-2 flex justify-center content-center'>
             <span>Made with</span>
