@@ -27,6 +27,9 @@ const TransportOfferCard = () => {
     name,
     phoneNumber,
     createdAt,
+    transportFromStr,
+    transportToStr,
+    carRegoNo
   } } = useQueryContext()
   const { t } = useTranslation();
   const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
@@ -39,8 +42,11 @@ const TransportOfferCard = () => {
           {!!description && <Item label="Opis:" value={description}/>}
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
+          {!! transportFromStr &&<Item label="Transport z:" value={transportFromStr}/>}
+          {!! transportToStr &&<Item label="Transport do:" value={transportToStr}/>}
+          {!! carRegoNo &&<Item label="Numer rejestracyjny:" value={carRegoNo}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
+          {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}         
         </div>
       </div>
       <Button to={route['notices.list4']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>
