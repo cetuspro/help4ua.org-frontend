@@ -7,7 +7,7 @@ import {
   FaPhone,
   FaComment,
   FaEnvelope,
-  FaCheck, FaUsers,
+  FaCheck, FaUsers,FaMapPin,
 } from 'react-icons/fa'
 import { InputText } from '@/components/form/Input_Text'
 import { InputTextarea } from '@/components/form/Input_Textarea'
@@ -28,6 +28,10 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
     type: yup.number().default(22),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     language: yup.string().nullable(),
+    transportFromStr: yup.string().required(),
+    transportToStr: yup.string().required(),
+    carRegoNo: yup.string().required(),
+
   }), [editMode]);
 
   const methods = useForm({
@@ -79,6 +83,23 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
               icon={FaUsers}
             />
           </div>
+          <div>
+            <InputText
+              name="transportFromStr"
+              label={t("form.transportFromStr")}
+              icon={FaMapPin}
+              required
+            />
+          </div>
+          <div>
+            <InputText
+              name="transportToStr"
+              label={t("form.transportToStr")}
+              icon={FaMapPin}
+              required
+            />
+          </div>
+         
         </div>
         <div>
           <InputTextarea
