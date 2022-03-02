@@ -12,7 +12,7 @@ const Header = () => {
             to={route['index']}
             className="inline-flex items-center h-8 lg:h-12 ring-offset-4 ring-primary-dark focus:ring transition duration-100"
             aria-label="Strona główna">
-            <img src={logo} alt="Conected City" className="w-full h-full" />
+            <img src={logo} alt="UA Pomoc" className="w-auto h-full" />
           </Link>
 
           <HorizontalNavigation />
