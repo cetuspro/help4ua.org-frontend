@@ -38,7 +38,7 @@ const schema = yup.object().shape({
 
   animalType: yup.string().required(),
   isDelivery: yup.string(),
-  arrivalDate: yup.string().required(),
+  arrivalDateStr: yup.string().required(),
 
   type: yup.number().default(62),
   acceptTerms: yup.string().required(),
@@ -156,7 +156,7 @@ const FormAddFindTemporaryAnimalHome = () => {
 
                 <div>
                   <InputText
-                    name="arrivalDate"
+                    name="arrivalDateStr"
                     label={t('form.arrival')}
                     icon={FaCalendarAlt}
                     required

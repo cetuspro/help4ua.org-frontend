@@ -28,7 +28,7 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
       email,
       animalType,
       isDelivery,
-      arrivalDate,
+      arrivalDateStr,
       address,
       period,
       id,
@@ -87,9 +87,7 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
 
           {!!period && <Item label={t('form.period')} value={getPeriod(t, Number(period))} />}
 
-          {!!arrivalDate && (
-            <Item label={t('common.arrival')} value={dayjs(arrivalDate).format('DD.MM.YYYY ')} />
-          )}
+          {!!arrivalDateStr && <Item label={t('common.arrival')} value={arrivalDateStr} />}
           {!!description && <Item label={t('common.opis')} value={description} />}
 
           {!!createdAt && (
