@@ -64,7 +64,8 @@
     "content-1": "Zgłoszenie zostało dodane i teraz czeka na weryfikację przez naszych wolontariuszy.",
     "content-2": "W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.",
     "home": "Strona główna",
-    "saved": "Zapisano zmiany!"
+    "saved": "Zapisano zmiany!",
+    "statusChanged": "Zmieniono status ogłoszenia!"
   },
   "tiles": {
     "shelter": "Oferujesz schronienie?",

@@ -64,7 +64,8 @@
     "content-1": "The submission has been added and is now waiting to be reviewed by our volunteers.",
     "content-2": "You will be contacted by someone by phone in the near future to confirm your application.",
     "home": "Homepage",
-    "saved": "Saved!"
+    "saved": "Saved!",
+    "statusChanged": "Notice status changed!"
   },
   "tiles": {
     "shelter": "Offering shelter?",
