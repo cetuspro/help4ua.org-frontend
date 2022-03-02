@@ -23,6 +23,18 @@ export const transportOfferColumns = () => {
       selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
     },
     {
+      name: t('form.transportFromStr'),
+      selector: ({transportFromStr }) => transportFromStr,
+    },
+    {
+      name: t('form.transportToStr'),
+      selector: ({transportToStr }) => transportToStr,
+    },
+    {
+      name: t('form.carRegoNo'),
+      selector: ({carRegoNo }) => carRegoNo,
+    },
+    {
       name: t('common.opis'),
       selector: ({ description }) => description?.slice(0, 100)
     },
@@ -46,6 +58,10 @@ export const TransportOfferExpandedComponent = ({data: {
   name,
   phoneNumber,
   createdAt,
+  carRegoNo,
+  transportToStr,
+  transportFromStr,
+
 }}) => {
   const { t } = useTranslation();
   return (
@@ -56,6 +72,9 @@ export const TransportOfferExpandedComponent = ({data: {
           {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           {!!name && <Item label={t('common.imie')} value={name}/>}
           {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
+          {!! transportFromStr &&<Item label={t('form.transportFromStr')} value={transportFromStr}/>}
+          {!! transportToStr &&<Item label={t('form.transportToStr')} value={transportToStr}/>}
+          {!! carRegoNo &&<Item label={t('form.carRegoNo')} value={carRegoNo}/>}
           {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label={t('common.id')} value={id}/>}
         </div>
@@ -83,6 +102,9 @@ export const TransportOfferItem = ({
   accommodationPlacesCount,
   phoneNumber,
   createdAt,
+  carRegoNo,
+  transportToStr,
+  transportFromStr,
 }) => {
   const { t } = useTranslation();
   return (
@@ -96,6 +118,15 @@ export const TransportOfferItem = ({
         </div>
         <div className="w-1/3 flex">
           <strong className="ml-1.5">{name}</strong>
+        </div>
+        <div className="w-1/3 flex">
+          <strong className="ml-1.5">{transportFromStr}</strong>
+        </div>
+        <div className="w-1/3 flex">
+          <strong className="ml-1.5">{transportToStr}</strong>
+        </div>
+        <div className="w-1/3 flex">
+          <strong className="ml-1.5">{carRegoNo}</strong>
         </div>
       </div>
       <div className="px-3 py-2 text-gray-700 text-xs whitespace-pre-wrap max-w-full">

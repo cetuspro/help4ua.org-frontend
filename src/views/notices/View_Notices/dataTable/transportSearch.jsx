@@ -19,6 +19,14 @@ export const transportSearchColumns = () => {
       selector: ({ accommodationPlacesCount }) => accommodationPlacesCount ? accommodationPlacesCount : '-',
     },
     {
+      name: t('form.transportFromStr'),
+      selector: ({transportFromStr }) => transportFromStr,
+    },
+    {
+      name: t('form.transportToStr'),
+      selector: ({transportToStr }) => transportToStr,
+    },  
+    {
       name: t('common.opis'),
       selector: ({ description }) => description?.slice(0, 100)
     },
@@ -41,6 +49,8 @@ export const TransportSearchExpandedComponent = ({data: {
   name,
   phoneNumber,
   createdAt,
+  transportToStr,
+  transportFromStr,
 }}) => {
   const { t } = useTranslation();
   return (
@@ -51,6 +61,8 @@ export const TransportSearchExpandedComponent = ({data: {
           {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           {!!name && <Item label="Imię:" value={name}/>}
           {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
+          {!!transportFromStr && <Item label="Transport z:" value={transportFromStr}/>}
+          {!!transportToStr && <Item label="Transport do:" value={transportToStr}/>}          
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
         </div>
