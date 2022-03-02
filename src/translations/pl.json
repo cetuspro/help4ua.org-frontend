@@ -70,7 +70,14 @@
     "arrival": "Kiedy będziesz w Polsce?",
     "howMany": "Ile?",
     "constRefund": "Zwrot kosztów za karmę i leczenie",
-    "hasExperienceWithAnimals": "Mam doświadczenie w byciu domem tymczasowym"
+    "hasExperienceWithAnimals": "Mam doświadczenie w byciu domem tymczasowym",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "legalAssistancePoint": "Punkt pomocy prawnej",
+    "medicalAssistancePoint": "Punkt pomocy medycznej",
+    "accommodationPoint": "Punkt noclegowy",
+    "collectionPoint": "Punkt zbiórki",
+    "receptionPoint": "Punkt recepcyjny"
   },
   "success": {
     "title": "Udało się!",
@@ -78,7 +85,8 @@
     "content-2": "W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.",
     "home": "Strona główna",
     "saved": "Zapisano zmiany!",
-    "statusChanged": "Zmieniono status ogłoszenia!"
+    "statusChanged": "Zmieniono status ogłoszenia!",
+    "helpPoint": "Punkt pomocy został dodany i teraz czeka na weryfikację przez naszych wolontariuszy."
   },
   "tiles": {
     "shelter": "Oferujesz schronienie?",

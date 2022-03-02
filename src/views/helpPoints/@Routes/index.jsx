@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import FormAddHelpPoint from '../View_AddHelpPoint/forms/Form_AddHelpPoint'
 const LazyHelpPoints = lazy(() => import('../View_HelpPoints/View_HelpPoints'))
 const LazyAddHelpPoint = lazy(() => import('../../helpPoints/View_AddHelpPoint/View_AddHelpPoint'))
-
+const LazyHelpPointCreateSuccess = lazy(() => import('../../helpPoints/View_HelpPointCreateSuccess/HelpPointCreateSuccess'))
 
 const Map = lazy(() => import('../View_Map/ViewMap'))
 
@@ -26,6 +26,10 @@ const HelpPointsRoutes = () => {
           description={t("formDescription.translations")}
           formComponent={FormAddHelpPoint}
         />}
+      />
+      <Route
+        path={route['helpPoints.success']}
+        element={<LazyHelpPointCreateSuccess/>}
       />
     </Route>,
   ]

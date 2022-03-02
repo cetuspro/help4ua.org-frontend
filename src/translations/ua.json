@@ -69,7 +69,14 @@
     "arrival": "Дата коли будете в Польщі",
     "howMany": "скільки?",
     "constRefund": "Повернення грошей за харчування та лікування",
-    "hasExperienceWithAnimals": "Маю досвід роботи в тимчасовому житлі"
+    "hasExperienceWithAnimals": "Маю досвід роботи в тимчасовому житлі",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "legalAssistancePoint": "Пункт юридичної допомоги",
+    "medicalAssistancePoint": "Медичний пункт",
+    "accommodationPoint": "Пункт розміщення",
+    "collectionPoint": "Пункт збору",
+    "receptionPoint": "Приймальний пункт"
   },
   "success": {
     "title": "Вдалося!",
@@ -77,7 +84,8 @@
     "content-2": "Найближчим часом хтось зв’яжеться з вами по телефону, щоб підтвердити вашу заявку.",
     "home": "Додому",
     "saved": "Зміни збережено",
-    "statusChanged": "Статус оголошення змінено!"
+    "statusChanged": "Статус оголошення змінено!",
+    "helpPoint": "Додано пункт допомоги і тепер очікує перевірки нашими волонтерами."
   },
   "tiles": {
     "shelter": "Ви пропонуєте притулок?",

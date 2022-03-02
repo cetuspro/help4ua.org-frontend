@@ -17,6 +17,7 @@ import { HookFormError } from '@/components/form/HookFormError'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useMemo } from 'react'
+import { helpPointTypesEnum } from '@/app/config/enum/helpPointTypes'
 
 const FormAddHelpPoint = ({defaultValues, query, onSuccess, editMode=false}) => {
   const schema = useMemo(() => yup.object().shape({
@@ -24,7 +25,14 @@ const FormAddHelpPoint = ({defaultValues, query, onSuccess, editMode=false}) => 
     description: yup.string().nullable(),
     region: yup.number().required(),
     cityName: yup.string().required(),
-    type: yup.number().default(1),
+    type: yup.number().default(0),
+    localization: yup
+    .object()
+    .required('Lokalizacja jest wymagana')
+    .shape({
+      latitude: yup.number().default(0).min(-90).max(90),
+      longitude: yup.number().default(0).min(-180).max(80),
+    }),
     language: yup.string().nullable(),
   }), [editMode]);
 
@@ -76,8 +84,22 @@ const FormAddHelpPoint = ({defaultValues, query, onSuccess, editMode=false}) => 
             <InputSelect
               name="type"
               label={t("form.type")}
-              options={voivodeshipsEnum(a => a)}
+              options={helpPointTypesEnum(t)}
               required
+            />
+          </div>
+          <div>
+            <InputText
+              name="localization.latitude"
+              label={t("form.latitude")}
+              icon={FaMapPin}
+            />
+          </div>
+          <div>
+            <InputText
+              name="localization.longitude"
+              label={t("form.longitude")}
+              icon={FaMapPin}
             />
           </div>
         </div>

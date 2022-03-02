@@ -19,7 +19,7 @@ const ViewAddHelpPoint = ({title, description, formComponent: FormComponent}) =>
 
   const { language } = useSelector(state => state?.language)
   const onSuccess = () => {
-    navigate(route['notices.success']);
+    navigate(route['helpPoints.success']);
   }
     
   return (

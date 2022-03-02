@@ -69,7 +69,14 @@
     "helpPointInfo": "Point information",
     "type": "Type",
     "findLegalHelp": "I'm looking for legal assistance",
-    "offerFindTranslations": "I am looking for help with translation"
+    "offerFindTranslations": "I am looking for help with translation",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "legalAssistancePoint": "Legal assistance point",
+    "medicalAssistancePoint": "Medical assistance point",
+    "accommodationPoint": "Accommodation Point",
+    "collectionPoint": "Collection point",
+    "receptionPoint": "Reception point"
   },
   "success": {
     "title": "Success!",
@@ -77,7 +84,8 @@
     "content-2": "You will be contacted by someone by phone in the near future to confirm your application.",
     "home": "Homepage",
     "saved": "Saved!",
-    "statusChanged": "Notice status changed!"
+    "statusChanged": "Notice status changed!",
+    "helpPoint": "The Help Point has been added and is now waiting to be verified by our volunteers."
   },
   "tiles": {
     "shelter": "Offering shelter?",
