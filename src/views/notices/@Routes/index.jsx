@@ -54,8 +54,8 @@ const LazyAddTemporaryAnimalHome = lazy(() => import('../../../ua/Form_AddTempor
 const LazyAddFindTemporaryAnimalHome = lazy(() =>
   import('../../../ua/Form_AddFindTemporaryAnimalHome'),
 )
-const LazyAddlegalHelpOffer = lazy(() => import('../../../ua/Form_AddlegalHelpOffer'))
-const LazyAddfindLegalHelp = lazy(() => import('../../../ua/Form_AddfindLegalHelp'))
+const LazyAddlegalHelpOffer = lazy(() => import('../../../ua/Form_AddLegalHelpOffer'))
+const LazyAddfindLegalHelp = lazy(() => import('../../../ua/Form_AddFindLegalHelp'))
 
 const NoticeRoutes = () => {
   const { t } = useTranslation()
