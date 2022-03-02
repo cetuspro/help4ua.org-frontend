@@ -28,7 +28,7 @@ const NoticesMarkers = () => {
   )
 
   return (
-    <LayersControl.Overlay name="Ogłoszenia">
+    <LayersControl.Overlay checked name="Ogłoszenia">
       <MarkerClusterGroup>
         {markers.map((marker) => (
           <GetNoticeMarker key={marker.id} {...marker}>

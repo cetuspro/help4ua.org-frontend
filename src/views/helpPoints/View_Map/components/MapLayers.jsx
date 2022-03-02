@@ -6,7 +6,7 @@ import HelpPointsMarkers from './markers/HelpPointsMarkers'
 import NoticesMarkers from './markers/NoticesMarkers'
 
 const MapLayers = () => {
-  const helpPointsData = useGetHelpPoints()
+  const helpPointsData = useGetHelpPoints({isForMap: true})
   const noticesData = useGetNotices({isForMap: true})
 
   return (

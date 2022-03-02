@@ -8,18 +8,18 @@ import { useSelector } from 'react-redux'
 const query = (data) => {
   return axios({
     method: 'POST',
-    url: `${API_URL}/notices/create`,
+    url: `${API_URL}/help-points/create`,
     data,
   });
 }
 
-const ViewAddNotice = ({title, description, formComponent: FormComponent}) => {
+const ViewAddHelpPoint = ({title, description, formComponent: FormComponent}) => {
   const {t} = useTranslation();
   const navigate = useNavigate();
 
   const { language } = useSelector(state => state?.language)
   const onSuccess = () => {
-    navigate(route['notices.success']);
+    navigate(route['helpPoints.success']);
   }
     
   return (
@@ -45,4 +45,4 @@ const ViewAddNotice = ({title, description, formComponent: FormComponent}) => {
   );
 };
 
-export default ViewAddNotice;
+export default ViewAddHelpPoint;

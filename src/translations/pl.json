@@ -23,6 +23,7 @@
     "findShelter": "Szukam schronienia",
     "findTransport": "Szukam transportu",
     "offerHelp": "Oferuję pomoc",
+    "offerLegalHelp": "Oferuję pomoc prawną",
     "offerShelter": "Oferuję schronienie",
     "offerTransport": "Oferuję transport",
     "offerTranslations": "Oferuję pomoc w tłumaczeniach",
@@ -60,14 +61,35 @@
     "offerFindTranslations": "Szukam pomocy w tłumaczeniu",
     "transportFromStr": "Transport z",
     "transportToStr": "Transport do",
-    "carRegoNo": "Numer rejestracyjny pojazdu"
+    "carRegoNo": "Numer rejestracyjny pojazdu",
+    "helpPointInfo": "Informacje o punkcie",
+    "type": "Typ",
+    "findLegalHelp": "Szukam pomocy prawnej",    
+    "temporaryAnimalHome": "Oferuję dom tymczasowy dla zwierząt",
+    "lfTemporaryAnimalHome": "Poszukuję domu tymczasowego dla zwierząt",
+    "whatAnimalType": "Jakie zwierzęta ?",
+    "animalDetails": "Rasa, wiek, wielkość zwierząt i inne istotne informacje",
+    "animalsTransportNeed": "Potrzebuję transportu z granicy",
+    "arrival": "Kiedy będziesz w Polsce?",
+    "howMany": "Ile?",
+    "constRefund": "Zwrot kosztów za karmę i leczenie",
+    "hasExperienceWithAnimals": "Mam doświadczenie w byciu domem tymczasowym",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "legalAssistancePoint": "Punkt pomocy prawnej",
+    "medicalAssistancePoint": "Punkt pomocy medycznej",
+    "accommodationPoint": "Punkt noclegowy",
+    "collectionPoint": "Punkt zbiórki",
+    "receptionPoint": "Punkt recepcyjny"
   },
   "success": {
     "title": "Udało się!",
     "content-1": "Zgłoszenie zostało dodane i teraz czeka na weryfikację przez naszych wolontariuszy.",
     "content-2": "W najbliższym czasie ktoś się z Tobą skontaktuje telefonicznie aby potwierdzić zgłoszenie.",
     "home": "Strona główna",
-    "saved": "Zapisano zmiany!"
+    "saved": "Zapisano zmiany!",
+    "statusChanged": "Zmieniono status ogłoszenia!",
+    "helpPoint": "Punkt pomocy został dodany i teraz czeka na weryfikację przez naszych wolontariuszy."
   },
   "tiles": {
     "shelter": "Oferujesz schronienie?",
@@ -82,12 +104,18 @@
     "lfTransport": "Szukasz transportu?",
     "help": "Oferujesz pomoc?",
     "help2": "Inne oferty pomocy",
+    "legalHelp": "Oferujesz pomoc prawną?",
+    "legalHelp2": "Oferty pomocy prawnej",
     "helpPoints": "Punkty pomocy",
     "seeMap": "Zobacz mapę",
     "lfHelp": "Szukasz pomocy?",
     "lfHelp2": "Inna pomoc - osoby potrzebujące",
+    "lfLegalHelp": "Szukasz pomocy prawnej?",
+    "lfLegalHelp2": "Pomoc prawna - osoby potrzebujące",
     "lfTranslations": "Szukasz pomocy w tłumaczeniu?",
-    "lfTranslations2": "Tłumaczenie - osoby potrzebujące"
+    "lfTranslations2": "Tłumaczenie - osoby potrzebujące",
+    "lfTemporaryAnimalHome": "Szukasz domu tymczasowego dla zwierząt?",
+    "temporaryAnimalHome": "Oferujesz dom tymczasowy dla zwierząt?"
   },
   "formDescription": {
     "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
@@ -96,10 +124,14 @@
     "offerTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że możesz przetransportować potrzebujących. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "findTransport": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz transportu. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "offerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że chciałabym pomóc w jakiś sposób. Może masz jakieś rzeczy do oddania, może pomożesz w załatwianiu spraw administracyjnych, albo chcesz się jakoś włączyć w akcję. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "offerLegalHelp": "",
     "helpPoints": "W tym miejscu znajdziesz listę wszystkich punktów w których oferowana jest pomoc.",
     "editNotice": "Podaj kod PIN otrzymany w SMS-ie aby uzyskać dostęp do edycji ogłoszenia",
     "findHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "lfTranslations": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy w tłumaczeniu pl-ua. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
+    "findLegalHelp": "",
+    "lfTranslations": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy w tłumaczeniu pl-ua. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "lfTemporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz domu tymczasowego dla swoich zwierząt. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! ",
+    "temporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz dom tymczasowy dla zwierząt osób potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! "
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
@@ -112,7 +144,8 @@
     "info-3": "Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!",
     "info-4": "Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych!",
     "info-5": "Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!",
-    "helpPoints": "Zobacz punkty pomocy"
+    "helpPoints": "Zobacz listę",
+    "addHelpPoint": "Dodaj punkt"
   },
   "notice": {
     "markActive": "Oznacz jako aktualne",
@@ -138,6 +171,18 @@
     "p7": "Twoje dane osobowe nie będą wykorzystywane w celu automatycznego podejmowania decyzji, w tym profilowania, tzn. zautomatyzowanej analizy Twoich danych osobowych i dostosowywania preferencji.",
     "p8": "Twoje dane będą przetwarzane do momentu aktualności Twojego ogłoszenia, najpóźniej do czasu zakończenia akcji pomocy dla Ukrainy poprzez portal uapomoc.pl. Po tym czasie zostaną usunięte.",
     "p9": "Podanie przez Ciebie danych jest dobrowolne, lecz niezbędne do umieszczenia ich w portalu pomocy dla Ukrainy uapomoc.pl."
+  },
+  "animals": {
+    "dogs": "Psy",
+    "cats": "Koty",
+    "hamsters": "Chomiki",
+    "mouses": "Myszy",
+    "rats": "Szczury",
+    "rabbits": "Króliki",
+    "chinchillas": "Szynszyle",
+    "guineaPigs": "Świnki morskie",
+    "snakes": "Węże",
+    "other": "Inne"
   },
   "common": {
     "shelter": "Oferujesz schronienie?",
@@ -173,6 +218,10 @@
     "nazwa": "Nazwa",
     "lokalizacja": "Lokalizacja",
     "stronaglowna": "Strona główna",
-    "punktypomocy": "Punkty pomocy"
+    "punktypomocy": "Punkty pomocy",
+    "animalType": "Jakie zwierzę",
+    "arrival": "Data przyjazdu",
+    "discordDescription": "Chcesz pomóc? Dołącz do naszego Discorda!",
+    "discordDescription2": "Każda para rąk się przyda!"
   }
 }
