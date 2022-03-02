@@ -1,7 +1,7 @@
+import { FiHome, FiEdit, FiTruck, FiGift, FiBriefcase } from 'react-icons/fi'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { FaMapMarkerAlt, FaPaw } from 'react-icons/fa'
-import { FiEdit, FiGift, FiHome, FiTruck } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import heroImg from '../../assets/img/hero.png'
@@ -231,6 +231,61 @@ export default function Home() {
                 {t('formDescription.findHelp')}
               </p>
             </div>
+
+            {/* LEGAL HELP */}
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FiBriefcase size={100} color="currentColor" />
+              </div>
+
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
+                {t('tiles.legalHelp')}
+              </h3>
+
+              <p className={'italic mb-4'}>
+                {t('frontpage.activeAds')}: {!isFetching && data?.[13]?.statusAndAmount?.[2]?.amount}
+              </p>
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1 to={route['notices.addlegalHelpOffer']} label={t('frontpage.addNotice')} />
+                <Button2
+                  to={route['notices.list13']}
+                  label={`${t('frontpage.seeNotices')} (${
+                    !isFetching && data?.[13]?.statusAndAmount?.[2]?.amount
+                  })`}
+                />
+              </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.offerLegalHelp')}
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
+              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+                <FiBriefcase size={100} color="currentColor" />
+              </div>
+
+              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
+                {t('tiles.lfLegalHelp')}
+              </h3>
+
+              <p className={'italic mb-4'}>
+                {t('frontpage.activeAds')}:{' '}
+                {!isFetching && (data?.[14]?.statusAndAmount?.[2]?.amount ?? '-')}
+              </p>
+              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1 to={route['notices.addfindLegalHelp']} label={t('frontpage.addNotice')} />
+                <Button2
+                  to={route['notices.list14']}
+                  label={`${t('frontpage.seeNotices')} (${
+                    !isFetching && (data?.[14]?.statusAndAmount?.[2]?.amount ?? '-')
+                  })`}
+                />
+              </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.findLegalHelp')}
+              </p>
+            </div>
+            {/* END LEGAL HELP */}
 
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">

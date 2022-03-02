@@ -54,6 +54,8 @@ const LazyAddTemporaryAnimalHome = lazy(() => import('../../../ua/Form_AddTempor
 const LazyAddFindTemporaryAnimalHome = lazy(() =>
   import('../../../ua/Form_AddFindTemporaryAnimalHome'),
 )
+const LazyAddlegalHelpOffer = lazy(() => import('../../../ua/Form_AddlegalHelpOffer'))
+const LazyAddfindLegalHelp = lazy(() => import('../../../ua/Form_AddfindLegalHelp'))
 
 const NoticeRoutes = () => {
   const { t } = useTranslation()
@@ -181,6 +183,26 @@ const NoticeRoutes = () => {
           />
         }
       />
+      <Route
+          path={route['notices.list13']}
+          element={<LazyNotices
+            title={t('tiles.legalHelp2')}
+            columns={helpOfferColumnsColumns()}
+            expandableRowsComponent={HelpOfferExpandedComponent}
+            noticeType={80}
+            filters={NoticesFilter}
+          />}
+        />
+        <Route
+          path={route['notices.list14']}
+          element={<LazyNotices
+            title={t('tiles.lfLegalHelp2')}
+            columns={helpOfferColumnsColumns()}
+            expandableRowsComponent={HelpOfferExpandedComponent}
+            noticeType={82}
+            filters={NoticesFilter}
+          />}
+        />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
     </Route>,
     <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
@@ -252,6 +274,8 @@ const NoticeRoutes = () => {
         path={route['notices.addFindTemporaryAnimalHome']}
         element={<LazyAddFindTemporaryAnimalHome />}
       />
+      <Route path={route['notices.addlegalHelpOffer']} element={<LazyAddlegalHelpOffer />} />
+      <Route path={route['notices.addfindLegalHelp']} element={<LazyAddfindLegalHelp />} />
     </Route>,
     <Route key={route['index']} path={route['index']} element={<UserLayout />}>
       <Route path={route['notices.edit']()} element={<LazyEditNotice />} />
