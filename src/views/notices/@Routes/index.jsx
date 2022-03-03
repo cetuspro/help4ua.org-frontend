@@ -17,6 +17,7 @@ import {
   TransportSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/transportSearch'
 import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
+import NoticesNoAccomodationsFilter from "@/views/notices/View_Notices/filters/Filters_NoticesNoAccomodations"
 import { translationOfferColumns, TranslationOfferExpandedComponent } from '../View_Notices/dataTable/translationOffer'
 import { useTranslation } from 'react-i18next'
 import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
@@ -77,7 +78,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={50}
-            filters={NoticesFilter}
+            filters={NoticesNoAccomodationsFilter}
           />}
         />
         <Route
@@ -97,7 +98,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={30}
-            filters={NoticesFilter}
+            filters={NoticesNoAccomodationsFilter}
           />}
         />
         <Route
@@ -107,7 +108,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={52}
-            filters={NoticesFilter}
+            filters={NoticesNoAccomodationsFilter}
           />}
         />
         <Route
@@ -117,7 +118,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={32}
-            filters={NoticesFilter}
+            filters={NoticesNoAccomodationsFilter}
           />}
         />
         <Route path={route['notices.view']()} element={<LazyNotice/>} />
