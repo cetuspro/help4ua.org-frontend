@@ -203,6 +203,18 @@ const NoticeRoutes = () => {
         }
       />
       <Route
+        path={route['notices.list15']}
+        element={
+          <LazyNotices
+            title={t('form.offerMedicalAssistance')}
+            columns={medicalAssistanceSearch()}
+            expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
+            noticeType={70}
+            filters={MedicalAssistanceFilter}
+          />
+        }
+      />
+      <Route
           path={route['notices.list13']}
           element={<LazyNotices
             title={t('tiles.legalHelp2')}
@@ -297,7 +309,19 @@ const NoticeRoutes = () => {
       <Route path={route['notices.addfindLegalHelp']} element={<LazyAddfindLegalHelp />} />
       <Route
         path={route['notices.addFindMedicalAssistance']}
-        element={<LazyAddFindMedicalAssistance />}
+        element={<LazyAddFindMedicalAssistance
+          type={72}
+          title={t("form.lfMedicalAssistance")}
+          description={t("formDescription.medicalAssistance")}
+        />}
+      />
+      <Route
+        path={route['notices.addOfferMedicalAssistance']}
+        element={<LazyAddFindMedicalAssistance 
+          type={70}
+          title={t("form.offerMedicalAssistance")}
+          description={t("formDescription.offerMedicalAssistance")}
+        />}
       />
     </Route>,
     <Route key={route['index']} path={route['index']} element={<UserLayout />}>
