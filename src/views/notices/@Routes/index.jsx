@@ -21,6 +21,7 @@ import {
   TransportSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/transportSearch'
 import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
+import NoticesNoAcommodationsFilter from '@/views/notices/View_Notices/filters/Filters_NoticesNoAccomodations'
 import { lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route } from 'react-router-dom'
@@ -107,7 +108,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={50}
-            filters={NoticesFilter}
+            filters={NoticesNoAcommodationsFilter}
           />
         }
       />
@@ -131,7 +132,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={30}
-            filters={NoticesFilter}
+            filters={NoticesNoAcommodationsFilter}
           />
         }
       />
@@ -143,7 +144,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={52}
-            filters={NoticesFilter}
+            filters={NoticesNoAcommodationsFilter}
           />
         }
       />
@@ -155,7 +156,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={32}
-            filters={NoticesFilter}
+            filters={NoticesNoAcommodationsFilter}
           />
         }
       />
@@ -190,7 +191,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={80}
-            filters={NoticesFilter}
+            filters={NoticesNoAcommodationsFilter}
           />}
         />
         <Route
@@ -200,7 +201,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={82}
-            filters={NoticesFilter}
+            filters={NoticesNoAcommodationsFilter}
           />}
         />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
