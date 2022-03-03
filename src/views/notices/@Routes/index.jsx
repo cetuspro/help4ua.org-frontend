@@ -43,6 +43,11 @@ import {
   TranslationOfferExpandedComponent,
 } from '../View_Notices/dataTable/translationOffer'
 import AnimalOffersFilter from '../View_Notices/filters/Filters_AnimalsOffer'
+import MedicalAssistanceFilter from '../View_Notices/filters/Filters_MedicalAssistance'
+import {
+  medicalAssistanceSearch,
+  MedicalAssistanceSearchExpandedComponent,
+} from '@/views/notices/View_Notices/dataTable/medicalAssistanceSearch'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
@@ -57,6 +62,7 @@ const LazyAddFindTemporaryAnimalHome = lazy(() =>
 )
 const LazyAddlegalHelpOffer = lazy(() => import('../../../ua/Form_AddLegalHelpOffer'))
 const LazyAddfindLegalHelp = lazy(() => import('../../../ua/Form_AddFindLegalHelp'))
+const LazyAddFindMedicalAssistance= lazy(() => import('../../../ua/Form_AddFindMedicalAssistance'))
 
 const NoticeRoutes = () => {
   const { t } = useTranslation()
@@ -185,6 +191,18 @@ const NoticeRoutes = () => {
         }
       />
       <Route
+        path={route['notices.list12']}
+        element={
+          <LazyNotices
+            title={t('form.lfMedicalAssistance')}
+            columns={medicalAssistanceSearch()}
+            expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
+            noticeType={72}
+            filters={MedicalAssistanceFilter}
+          />
+        }
+      />
+      <Route
           path={route['notices.list13']}
           element={<LazyNotices
             title={t('tiles.legalHelp2')}
@@ -277,6 +295,10 @@ const NoticeRoutes = () => {
       />
       <Route path={route['notices.addlegalHelpOffer']} element={<LazyAddlegalHelpOffer />} />
       <Route path={route['notices.addfindLegalHelp']} element={<LazyAddfindLegalHelp />} />
+      <Route
+        path={route['notices.addFindMedicalAssistance']}
+        element={<LazyAddFindMedicalAssistance />}
+      />
     </Route>,
     <Route key={route['index']} path={route['index']} element={<UserLayout />}>
       <Route path={route['notices.edit']()} element={<LazyEditNotice />} />
