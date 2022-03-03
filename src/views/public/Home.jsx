@@ -5,6 +5,7 @@ import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import heroImg from '../../assets/img/hero.png'
+import FAQ from '../../components/common/FAQ'
 
 export default function Home() {
   const { t } = useTranslation()
@@ -243,7 +244,8 @@ export default function Home() {
               </h3>
 
               <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[13]?.statusAndAmount?.[2]?.amount}
+                {t('frontpage.activeAds')}:{' '}
+                {!isFetching && data?.[13]?.statusAndAmount?.[2]?.amount}
               </p>
               <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1 to={route['notices.addlegalHelpOffer']} label={t('frontpage.addNotice')} />
@@ -406,7 +408,7 @@ export default function Home() {
                 {t('formDescription.lfTemporaryAnimalHome')}
               </p>
             </div>
-  
+
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
                 <FaBriefcaseMedical size={100} color="currentColor" />
@@ -436,7 +438,7 @@ export default function Home() {
                 {t('formDescription.offerMedicalAssistance')}
               </p>
             </div>
-        
+
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
               <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
                 <FaBriefcaseMedical size={100} color="currentColor" />
@@ -488,6 +490,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <FAQ />
     </>
   )
 }
