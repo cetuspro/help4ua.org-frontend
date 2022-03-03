@@ -32,7 +32,7 @@ export const shelterSearchColumns = () => {
     },
     {
       name: t('common.telefon'),
-      selector: ({ phoneNumber }) => phoneNumber,
+      selector: ({ phoneNumber }) => <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">{phoneNumber}</a>,
     },
     {
       name: t('common.opis'),
@@ -48,7 +48,14 @@ const Item = ({label, value}) => {
     </div>
   )
 }
-
+const PhoneItem = ({label, value}) => {
+  return (
+    <div className="py-2 flex gap-2">
+      <span className="">{label}</span>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
+    </div>
+  )
+}
 
 export const ShelterSearchExpandedComponent = ({data: {
   description,
@@ -93,7 +100,7 @@ export const ShelterSearchExpandedComponent = ({data: {
           ) : "Brak danych"}
           />
           {!!name && <Item label={t('common.imie')} value={name}/>}
-          {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
+          {!! phoneNumber &&<PhoneItem label={t('common.telefon')} value={phoneNumber}/>}
           {!! period &&<Item label={t('common.okres')} value={getPeriod(t, parseInt(period))}/>}
           {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label={t('common.id')} value={id}/>}
