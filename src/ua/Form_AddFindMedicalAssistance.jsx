@@ -30,7 +30,7 @@ const schema = yup.object().shape({
   cityName: yup.string().required(),
   phoneNumber: yup.string().required(),
   email: yup.string().email().nullable(),
-  type: yup.number().default(72),
+  type: yup.number().required(),
   language: yup.string().nullable(),
 });
 
@@ -42,13 +42,14 @@ const query = (data) => {
   });
 }
 
-const FormAddFindMedicalAssistance = () => {
+const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
 
   const { language } = useSelector(state => state?.language)
   const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       language,
+      type
     }
   });
   let navigate = useNavigate();
@@ -63,8 +64,8 @@ const FormAddFindMedicalAssistance = () => {
   
   return (
     <div className="container mx-auto py-8">
-      <h2 className="font-bold mb-2 ml-2 text-2xl">{t("form.lfMedicalAssistance")}</h2>
-      <p className="mb-4 ml-2 text-gray-500">{t("formDescription.medicalAssistance")}</p>
+      <h2 className="font-bold mb-2 ml-2 text-2xl">{title}</h2>
+      <p className="mb-4 ml-2 text-gray-500">{description}</p>
       <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
           <FormProvider {...methods}>

@@ -15,6 +15,7 @@ export const noticesRoutes = {
   'notices.list12': `${BASE_URL}/ogloszenia/szukam-pomocy-medycznej`,
   'notices.list13': `${BASE_URL}/ogloszenia/oferuje-pomoc-prawna`,
   'notices.list14': `${BASE_URL}/ogloszenia/szukam-pomocy-prawnej`,
+  'notices.list15': `${BASE_URL}/ogloszenia/offer-medical-assistance`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
   'notices.add': `${BASE_URL}/dodaj-ogloszenie`,
   'notices.addShelterOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-schronienie`,
@@ -30,6 +31,7 @@ export const noticesRoutes = {
   'notices.addTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/oferuje-dom-tymczasowy`,
   'notices.addFindTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/szukam-domu-tymczasowego`,
   'notices.addFindMedicalAssistance': `${BASE_URL}/dodaj-ogloszenie/szukam-pomocy-medycznej`,
+  'notices.addOfferMedicalAssistance': `${BASE_URL}/dodaj-ogloszenie/offer-medical-assistance`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
   'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
   'notices.edit2': (id = ':id', token = ':token', pin = ':pin') =>
