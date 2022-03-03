@@ -16,7 +16,7 @@ export const transportOfferColumns = () => {
     },
     {
       name: t('common.telefon'),
-      selector: ({ phoneNumber }) => phoneNumber,
+      selector: ({ phoneNumber }) => <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">{phoneNumber}</a>,
     },
     {
       name: t('common.miejsca'),
@@ -49,7 +49,14 @@ const Item = ({label, value}) => {
     </div>
   )
 }
-
+const PhoneItem = ({label, value}) => {
+  return (
+    <div className="py-2 flex gap-2">
+      <span className="">{label}</span>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
+    </div>
+  )
+}
 
 export const TransportOfferExpandedComponent = ({data: {
   description,
@@ -71,7 +78,7 @@ export const TransportOfferExpandedComponent = ({data: {
           {!!description && <Item label={t('common.opis')} value={description}/>}
           {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
           {!!name && <Item label={t('common.imie')} value={name}/>}
-          {!! phoneNumber &&<Item label={t('common.telefon')} value={phoneNumber}/>}
+          {!! phoneNumber &&<PhoneItem label={t('common.telefon')} value={phoneNumber}/>}
           {!! transportFromStr &&<Item label={t('form.transportFromStr')} value={transportFromStr}/>}
           {!! transportToStr &&<Item label={t('form.transportToStr')} value={transportToStr}/>}
           {!! carRegoNo &&<Item label={t('form.carRegoNo')} value={carRegoNo}/>}

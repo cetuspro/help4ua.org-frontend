@@ -38,7 +38,7 @@ const columns = [
   },
   {
     name: 'Telefon',
-    selector: ({ phoneNumber }) => phoneNumber,
+    selector: ({ phoneNumber }) => <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">{phoneNumber}</a>,
   },
   {
     name: 'Data dodania',
@@ -51,6 +51,14 @@ const Item = ({ label, value }) => {
     <div className="py-2 flex gap-2">
       <span className="">{label}</span>
       <span className="font-bold">{value}</span>
+    </div>
+  )
+}
+const PhoneItem = ({label, value}) => {
+  return (
+    <div className="py-2 flex gap-2">
+      <span className="">{label}</span>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
     </div>
   )
 }
@@ -119,7 +127,7 @@ const ExpandedComponent = ({
             }
           />
           {!!name && <Item label="Imię:" value={name} />}
-          {!!phoneNumber && <Item label="Telefon:" value={phoneNumber} />}
+          {!!phoneNumber && <PhoneItem label="Telefon:" value={phoneNumber} />}
           {!!period && <Item label="Na okres:" value={getPeriod(t, parseInt(period))} />}
           {!!createdAt && (
             <Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
