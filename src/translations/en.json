@@ -79,7 +79,8 @@
     "medicalAssistancePoint": "Medical assistance point",
     "accommodationPoint": "Accommodation Point",
     "collectionPoint": "Collection point",
-    "receptionPoint": "Reception point"
+    "receptionPoint": "Reception point",
+    "lfMedicalAssistance": "Looking for medical assistance"
   },
   "success": {
     "title": "Success!",
@@ -115,7 +116,8 @@
     "lfTranslations": "Looking for help with translation?",
     "lfTranslations2": "Translation - people in need",
     "lfTemporaryAnimalHome": "Are you looking for a temporary home for pets?",
-    "temporaryAnimalHome": "Do you offer a temporary home for pets?"
+    "temporaryAnimalHome": "Do you offer a temporary home for pets?",
+    "lfMedicalAssistance": "Looking for medical assistance?"
   },
   "formDescription": {
     "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
@@ -131,7 +133,8 @@
     "lfTemporaryAnimalHome": "Here you can place your ad that you are looking for a temporary animal shelter.. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! ",
     "temporaryAnimalHome": "Here you can place your ad that you are offering a temporary shelter for animals of those in need. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! ",
     "findLegalHelp": "This is where you can post your announcement that you are seeking legal help. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "offerLegalHelp": "This is where you can place your announcement that you offer legal assistance. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!"
+    "offerLegalHelp": "This is where you can place your announcement that you offer legal assistance. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "medicalAssistance": "Here you can post your announcement that you need medical assistance. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!"
   },
   "frontpage": {
     "help": "Help for Ukraine",
@@ -216,6 +219,7 @@
     "animalType": "What animal",
     "arrival": "Arrival date",
     "discordDescription": "Do you want to help? Join our Discord!",
-    "discordDescription2": "Any help is welcome!"
+    "discordDescription2": "Any help is welcome!",
+    "email": "Email"
   }
 }

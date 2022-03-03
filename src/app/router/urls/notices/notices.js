@@ -12,6 +12,7 @@ export const noticesRoutes = {
   'notices.list9': `${BASE_URL}/ogloszenia/szukam-pomocy-w-tlumaczeniu`,
   'notices.list10': `${BASE_URL}/ogloszenia/oferuje-dom-tymczasowy`,
   'notices.list11': `${BASE_URL}/ogloszenia/szukam-domu-tymczasowego`,
+  'notices.list12': `${BASE_URL}/ogloszenia/szukam-pomocy-medycznej`,
   'notices.list13': `${BASE_URL}/ogloszenia/oferuje-pomoc-prawna`,
   'notices.list14': `${BASE_URL}/ogloszenia/szukam-pomocy-prawnej`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
@@ -28,6 +29,7 @@ export const noticesRoutes = {
   'notices.addFindTranslationOffer': `${BASE_URL}/dodaj-ogloszenie/szukam-pomocy-w-tlumaczeniu`,
   'notices.addTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/oferuje-dom-tymczasowy`,
   'notices.addFindTemporaryAnimalHome': `${BASE_URL}/dodaj-ogloszenie/szukam-domu-tymczasowego`,
+  'notices.addFindMedicalAssistance': `${BASE_URL}/dodaj-ogloszenie/szukam-pomocy-medycznej`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
   'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
   'notices.edit2': (id = ':id', token = ':token', pin = ':pin') =>
