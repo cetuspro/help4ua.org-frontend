@@ -17,6 +17,7 @@ import { HookFormError } from '@/components/form/HookFormError'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
+import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
 
 const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=false}) => {
   const schema = useMemo(() => yup.object().shape({
@@ -30,7 +31,7 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
     language: yup.string().nullable(),
     transportFromStr: yup.string().required(),
     transportToStr: yup.string().required(),
-
+    voluntaryHelpCheckbox: editMode ? yup.string() : yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
   }), [editMode]);
 
   const methods = useForm({
@@ -110,6 +111,7 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
         {!editMode && (
           <div className="flex justify-end">
             <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+              <InputVoluntary />
               <InputRodo/>
             </div>
           </div>

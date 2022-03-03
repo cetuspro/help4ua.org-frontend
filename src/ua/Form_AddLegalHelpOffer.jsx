@@ -28,6 +28,7 @@ import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '../components/form/Input_RODO'
 import { useSelector } from 'react-redux'
+import { InputVoluntary } from '../components/form/Input_Voluntary'
 
 
 const schema = yup.object().shape({
@@ -38,6 +39,7 @@ const schema = yup.object().shape({
   email: yup.string().email().nullable(),
   type: yup.number().default(80),
   acceptTerms: yup.string().required(),
+  voluntaryHelpCheckbox: yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
   language: yup.string().nullable(),
 });
 
@@ -127,6 +129,7 @@ const FormAddHelpOffer = () => {
               </div>
               <div className="flex justify-end">
                 <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+                  <InputVoluntary />
                   <InputRodo/>
                 </div>
               </div>

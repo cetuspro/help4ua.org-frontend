@@ -23,6 +23,7 @@ import { periodsEnum } from '@/app/config/enum/periods'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
+import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
 
 const FormAddFindShelter = ({defaultValues, query, onSuccess, editMode=false}) => {
   const schema = useMemo(() => yup.object().shape({
@@ -41,6 +42,7 @@ const FormAddFindShelter = ({defaultValues, query, onSuccess, editMode=false}) =
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     period: yup.string().required(),
     language: yup.string().nullable(),
+    voluntaryHelpCheckbox: editMode ? yup.string() : yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
   }), [editMode]);
 
   const methods = useForm({
@@ -152,6 +154,7 @@ const FormAddFindShelter = ({defaultValues, query, onSuccess, editMode=false}) =
         {!editMode && (
           <div className="flex justify-end">
             <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+              <InputVoluntary />
               <InputRodo/>
             </div>
           </div>
