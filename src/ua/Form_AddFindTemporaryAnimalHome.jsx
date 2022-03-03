@@ -27,6 +27,7 @@ import { InputSelect } from '../components/form/Input_Select'
 import { InputSubmit } from '../components/form/Input_Submit'
 import { InputText } from '../components/form/Input_Text'
 import { InputTextarea } from '../components/form/Input_Textarea'
+import { InputVoluntary } from '../components/form/Input_Voluntary'
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -43,6 +44,7 @@ const schema = yup.object().shape({
   type: yup.number().default(62),
   acceptTerms: yup.string().required(),
   period: yup.string().required(),
+  voluntaryHelpCheckbox: yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
 })
 
 const query = (data) => {
@@ -163,6 +165,7 @@ const FormAddFindTemporaryAnimalHome = () => {
 
               <div className="flex justify-end">
                 <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+                  <InputVoluntary />
                   <InputRodo />
                 </div>
               </div>
