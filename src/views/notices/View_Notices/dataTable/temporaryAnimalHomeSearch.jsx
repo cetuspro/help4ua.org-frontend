@@ -16,7 +16,7 @@ export const temporaryAnimalHomeSearch = () => {
 
     {
       name: t('common.telefon'),
-      selector: ({ phoneNumber }) => phoneNumber,
+      selector: ({ phoneNumber }) => <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">{phoneNumber}</a>,
     },
     {
       name: t('common.okres'),
@@ -34,6 +34,14 @@ const Item = ({ label, value }) => {
     <div className="py-2 flex gap-2">
       <span className="">{label}</span>
       <span className="font-bold">{value}</span>
+    </div>
+  )
+}
+const PhoneItem = ({label, value}) => {
+  return (
+    <div className="py-2 flex gap-2">
+      <span className="">{label}</span>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
     </div>
   )
 }
@@ -71,7 +79,7 @@ export const TemporaryAnimalHomeSearchExpandedComponent = ({
       <div className="flex gap-5">
         <div className="flex-1">
           {!!name && <Item label={t('common.imie')} value={name} />}
-          {!!phoneNumber && <Item label={t('common.telefon')} value={phoneNumber} />}
+          {!!phoneNumber && <PhoneItem label={t('common.telefon')} value={phoneNumber} />}
           {!!email && <Item label={t('form.email')} value={email} />}
 
           <Item

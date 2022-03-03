@@ -16,6 +16,14 @@ const Item = ({ label, value }) => {
     </div>
   )
 }
+const PhoneItem = ({label, value}) => {
+  return (
+    <div className="py-2 flex gap-2">
+      <span className="">{label}</span>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
+    </div>
+  )
+}
 
 const TemporartyAnimalHomeOfferSearchCard = () => {
   const {
@@ -49,7 +57,7 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
       <div className="flex flex-col md:flex-row">
         <div className="flex-1">
           {!!name && <Item label={t('common.imie')} value={name} />}
-          {!!phoneNumber && <Item label={t('common.telefon')} value={phoneNumber} />}
+          {!!phoneNumber && <PhoneItem label={t('common.telefon')} value={phoneNumber} />}
           {!!email && <Item label={t('form.email')} value={email} />}
 
           <Item

@@ -15,7 +15,14 @@ const Item = ({label, value}) => {
     </div>
   )
 }
-
+const PhoneItem = ({label, value}) => {
+  return (
+    <div className="py-2 flex gap-2">
+      <span className="">{label}</span>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
+    </div>
+  )
+}
 const ShelterSearchCard = () => {
   const { data: {
     description,
@@ -62,7 +69,7 @@ const ShelterSearchCard = () => {
           ) : "Brak danych"}
           />
           {!!name && <Item label="Imię:" value={name}/>}
-          {!! phoneNumber &&<Item label="Telefon:" value={phoneNumber}/>}
+          {!! phoneNumber &&<PhoneItem label="Telefon:" value={phoneNumber}/>}
           {!! period &&<Item label="Na okres:" value={getPeriod(t, parseInt(period))}/>}
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
