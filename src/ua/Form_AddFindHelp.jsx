@@ -29,6 +29,7 @@ import { useTranslation } from 'react-i18next'
 import { InputRodo } from '../components/form/Input_RODO'
 import { useSelector } from 'react-redux'
 import { InputVoluntary } from '../components/form/Input_Voluntary'
+import { LanguageBlock } from './LanguageBlock'
 
 
 const schema = yup.object().shape({
@@ -40,7 +41,11 @@ const schema = yup.object().shape({
   type: yup.number().default(52),
   acceptTerms: yup.string().required(),
   language: yup.string().nullable(),
-  voluntaryHelpCheckbox: yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required()
+  isOfferFreeFlag: yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
+  ukraineLang: yup.bool(),
+  englishLang: yup.bool(),
+  germanyLang: yup.bool(),
+  polishLang: yup.bool(),
 });
 
 const query = (data) => {
@@ -124,6 +129,7 @@ const FormAddFindHelp = () => {
                   />
                 </div>
               </div>
+              <LanguageBlock />
               <div>
                 <InputTextarea
                   name="description"

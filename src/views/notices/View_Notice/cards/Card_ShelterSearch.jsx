@@ -3,7 +3,7 @@ import { route } from '@/app/router/urls/routes'
 import Card from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
-import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getPeriod, getValue, getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
@@ -45,6 +45,7 @@ const ShelterSearchCard = () => {
     ukraineLang,
     englishLang,
     germanyLang,
+    polishLang,
   } } = useQueryContext()
   const { t } = useTranslation();
   const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
@@ -82,9 +83,11 @@ const ShelterSearchCard = () => {
           <Item label="Dostęp do pralki:" value={getValue(hasWashingMachine)}/>
           <Item label="Zapewniam wyżywienie:" value={getValue(isCatering)}/>
           <Item label="Zapewniam transport:" value={getValue(isDelivery)}/>
-          <Item label="Język ukraiński:" value={getValue(ukraineLang)}/>
-          <Item label="Język niemiecki:" value={getValue(englishLang)}/>
-          <Item label="Język angielski:" value={getValue(germanyLang)}/>
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={`${t("form.language")}:`}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
       <Button to={route['notices.list2']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>

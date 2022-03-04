@@ -76,6 +76,20 @@ export const getValue = (val) => {
 export const getPeriod = (t, val) =>
   periodsEnum(t).find((item) => item.value === val)?.label ?? 'Brak danych'
 
+export const getLanguagesValue = (t, values) => {
+  const languagesMap = {
+    "ukraineLang": t('language.ukrainian'),
+    "englishLang": t('language.english'),
+    "germanyLang": t('language.germany'),
+    "polishLang": t('language.polish'),
+  }
+  return Object.keys(languagesMap).reduce((acc, langKey) => {
+    if (values[langKey]) {
+      acc.push(languagesMap[langKey])
+    }
+    return acc
+  }, []).join(', ')
+}
 const ExpandedComponent = ({
   data: {
     description,

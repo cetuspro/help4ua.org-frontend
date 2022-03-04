@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next'
 import { InputRodo } from '../components/form/Input_RODO'
 import { useSelector } from 'react-redux'
 import { InputVoluntary } from '../components/form/Input_Voluntary'
+import { LanguageBlock } from './LanguageBlock'
 
 
 const schema = yup.object().shape({
@@ -33,8 +34,12 @@ const schema = yup.object().shape({
   email: yup.string().email().nullable(),
   type: yup.number().required(),
   language: yup.string().nullable(),
-  voluntaryHelpCheckbox: yup.string().required(),
+  isOfferFreeFlag: yup.string().required(),
   acceptTerms: yup.string().required(),
+  ukraineLang: yup.bool(),
+  englishLang: yup.bool(),
+  germanyLang: yup.bool(),
+  polishLang: yup.bool(),
 });
 
 const query = (data) => {
@@ -112,6 +117,7 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
                   />
                 </div>
               </div>
+              <LanguageBlock />
               <div>
                 <InputTextarea
                   name="description"

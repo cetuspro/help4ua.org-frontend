@@ -6,6 +6,7 @@ import { route } from '@/app/router/urls/routes'
 import { FaMapMarked } from 'react-icons/all'
 import { FaPhone } from 'react-icons/fa'
 import { useState } from 'react'
+import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
 export const transportOfferColumns = () => {
   const {t} = useTranslation()
@@ -68,7 +69,10 @@ export const TransportOfferExpandedComponent = ({data: {
   carRegoNo,
   transportToStr,
   transportFromStr,
-
+  ukraineLang,
+  englishLang,
+  germanyLang,
+  polishLang,
 }}) => {
   const { t } = useTranslation();
   return (
@@ -84,6 +88,11 @@ export const TransportOfferExpandedComponent = ({data: {
           {!! carRegoNo &&<Item label={t('form.carRegoNo')} value={carRegoNo}/>}
           {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label={t('common.id')} value={id}/>}
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={t("form.language")}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>

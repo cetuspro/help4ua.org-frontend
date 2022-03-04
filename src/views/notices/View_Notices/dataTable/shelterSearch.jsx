@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
-import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getPeriod, getValue, getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
 export const shelterSearchColumns = () => {
   const {t} = useTranslation();
@@ -76,6 +76,10 @@ export const ShelterSearchExpandedComponent = ({data: {
   accommodationPlacesCount,
   phoneNumber,
   createdAt,
+  ukraineLang,
+  englishLang,
+  germanyLang,
+  polishLang,
 }}) => {
   const { t } = useTranslation();
   const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
@@ -113,6 +117,11 @@ export const ShelterSearchExpandedComponent = ({data: {
           <Item label={t('common.pralka')} value={getValue(hasWashingMachine)}/>
           <Item label={t('common.jedzenie')} value={getValue(isCatering)}/>
           <Item label={t('common.transport')} value={getValue(isDelivery)}/>
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={t("form.language")}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>

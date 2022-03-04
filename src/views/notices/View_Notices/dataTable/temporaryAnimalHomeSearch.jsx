@@ -3,7 +3,7 @@ import { route } from '@/app/router/urls/routes'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { getAnimal, getPeriod } from './DataTable_Notices'
+import { getAnimal, getPeriod, getLanguagesValue } from './DataTable_Notices'
 import { getBoolValue } from './temporaryAnimalHomeOffer'
 
 export const temporaryAnimalHomeSearch = () => {
@@ -62,6 +62,10 @@ export const TemporaryAnimalHomeSearchExpandedComponent = ({
     period,
     id,
     createdAt,
+    ukraineLang,
+    englishLang,
+    germanyLang,
+    polishLang,
   },
 }) => {
   const { t } = useTranslation()
@@ -124,6 +128,11 @@ export const TemporaryAnimalHomeSearchExpandedComponent = ({
             <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
           )}
           {!!id && <Item label={t('common.id')} value={id} />}
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={t("form.language")}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
       <Link

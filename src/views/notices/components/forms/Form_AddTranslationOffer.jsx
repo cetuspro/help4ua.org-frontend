@@ -19,6 +19,7 @@ import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
 import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
+import { LanguageBlock } from '../../../../ua/LanguageBlock'
 
 const FormAddTranslationOffer = ({defaultValues, query, onSuccess, editMode=false}) => {
   const schema = useMemo(() => yup.object().shape({
@@ -30,7 +31,11 @@ const FormAddTranslationOffer = ({defaultValues, query, onSuccess, editMode=fals
     type: yup.number().default(30),
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     language: yup.string().nullable(),
-    voluntaryHelpCheckbox: editMode ? yup.string() : yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
+    isOfferFreeFlag: editMode ? yup.string() : yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
+    ukraineLang: yup.bool(),
+    englishLang: yup.bool(),
+    germanyLang: yup.bool(),
+    polishLang: yup.bool(),
   }), [editMode]);
 
   const methods = useForm({
@@ -82,6 +87,7 @@ const FormAddTranslationOffer = ({defaultValues, query, onSuccess, editMode=fals
             />
           </div>
         </div>
+        <LanguageBlock />
         <div>
           <InputTextarea
             name="description"
