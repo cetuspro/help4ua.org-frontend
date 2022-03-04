@@ -22,8 +22,6 @@ import {
   transportSearchColumns,
   TransportSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/transportSearch'
-import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
-import NoticesNoAcommodationsFilter from '@/views/notices/View_Notices/filters/Filters_NoticesNoAccomodations'
 import { lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route } from 'react-router-dom'
@@ -46,6 +44,7 @@ import {
 } from '../View_Notices/dataTable/translationOffer'
 import AnimalOffersFilter from '../View_Notices/filters/Filters_AnimalsOffer'
 import MedicalAssistanceFilter from '../View_Notices/filters/Filters_MedicalAssistance'
+import {TransportFilter, BasicFilter, ShelterFilter} from '@/views/notices/View_Notices/filters'
 import {
   medicalAssistanceSearch,
   MedicalAssistanceSearchExpandedComponent,
@@ -79,7 +78,7 @@ const NoticeRoutes = () => {
             columns={shelterSearchColumns()}
             expandableRowsComponent={ShelterSearchExpandedComponent}
             noticeType={10}
-            filters={NoticesFilter}
+            filters={ShelterFilter}
           />
         }
       />
@@ -93,7 +92,7 @@ const NoticeRoutes = () => {
             columns={shelterOfferColumns()}
             expandableRowsComponent={ShelterOfferExpandedComponent}
             noticeType={1}
-            filters={NoticesFilter}
+            filters={ShelterFilter}
           />
         }
       />
@@ -106,7 +105,7 @@ const NoticeRoutes = () => {
             expandableRowsComponent={TransportOfferExpandedComponent}
             // itemComponent={TransportOfferItem}
             noticeType={20}
-            filters={NoticesFilter}
+            filters={TransportFilter}
           />
         }
       />
@@ -118,7 +117,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={50}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -130,7 +129,7 @@ const NoticeRoutes = () => {
             columns={transportSearchColumns()}
             expandableRowsComponent={TransportSearchExpandedComponent}
             noticeType={22}
-            filters={NoticesFilter}
+            filters={TransportFilter}
           />
         }
       />
@@ -142,7 +141,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={30}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -154,7 +153,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={52}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -166,7 +165,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={32}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -225,7 +224,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={80}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />}
         />
         <Route
@@ -235,7 +234,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={82}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />}
         />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
