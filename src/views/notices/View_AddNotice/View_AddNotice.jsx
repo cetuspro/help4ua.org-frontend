@@ -14,7 +14,7 @@ const query = (data) => {
   })
 }
 
-const ViewAddNotice = ({ title, description, formComponent: FormComponent }) => {
+const ViewAddNotice = ({ title, description, formComponent: FormComponent, type }) => {
   const { t } = useTranslation()
   const navigate = useNavigate()
 
@@ -41,7 +41,7 @@ const ViewAddNotice = ({ title, description, formComponent: FormComponent }) => 
             <FormComponent
               query={query}
               onSuccess={onSuccess}
-              defaultValues={{ language, countryId: DEFAULT_COUNTRY }}
+              defaultValues={type ? { language, countryId: DEFAULT_COUNTRY, type } : { language, countryId: DEFAULT_COUNTRY }}
             />
           )}
         </div>

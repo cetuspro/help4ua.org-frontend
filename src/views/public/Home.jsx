@@ -206,6 +206,15 @@ export default function Home() {
               description={'formDescription.offerVolunteerHelp'}
               toAdd={route['notices.addVolunteersOfferingHelp']}
               toView={route['notices.list16']}
+            />
+            <NoticeCard
+              icon={MdOutlineVolunteerActivism}
+              title={"tiles.lfVolunteerHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchVolunteerHelp")}
+              description={'formDescription.lfVolunteerHelp'}
+              toAdd={route['notices.addFindVolunteersHelp']}
+              toView={route['notices.list17']}
             /> 
 
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">

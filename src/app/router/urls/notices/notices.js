@@ -17,6 +17,7 @@ export const noticesRoutes = {
   'notices.list14': `${BASE_URL}/ogloszenia/szukam-pomocy-prawnej`,
   'notices.list15': `${BASE_URL}/ogloszenia/offer-medical-assistance`,
   'notices.list16': `${BASE_URL}/ogloszenia/offer-volunteers-help`,
+  'notices.list17': `${BASE_URL}/ogloszenia/find-volunteers-help`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
   'notices.add': `${BASE_URL}/dodaj-ogloszenie`,
   'notices.addShelterOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-schronienie`,
@@ -34,6 +35,7 @@ export const noticesRoutes = {
   'notices.addFindMedicalAssistance': `${BASE_URL}/dodaj-ogloszenie/szukam-pomocy-medycznej`,
   'notices.addOfferMedicalAssistance': `${BASE_URL}/dodaj-ogloszenie/offer-medical-assistance`,
   'notices.addVolunteersOfferingHelp': `${BASE_URL}/dodaj-ogloszenie/offer-volunteers-help`,
+  'notices.addFindVolunteersHelp': `${BASE_URL}/dodaj-ogloszenie/find-volunteers-help`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
   'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
   'notices.edit2': (id = ':id', token = ':token', pin = ':pin') =>
