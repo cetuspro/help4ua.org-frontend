@@ -81,7 +81,8 @@
     "collectionPoint": "Collection point",
     "receptionPoint": "Reception point",
     "lfMedicalAssistance": "Looking for medical assistance",
-    "offerMedicalAssistance": "Offer medical assistance"
+    "offerMedicalAssistance": "Offer medical assistance",
+    "offerVolunteerHelp": "Offer help as a volunteer"
   },
   "success": {
     "title": "Success!",
@@ -119,7 +120,8 @@
     "lfTemporaryAnimalHome": "Are you looking for a temporary home for pets?",
     "temporaryAnimalHome": "Do you offer a temporary home for pets?",
     "lfMedicalAssistance": "Looking for medical assistance?",
-    "offerMedicalAssistance": "Offering medical assistance?"
+    "offerMedicalAssistance": "Offering medical assistance?",
+    "offerVolunteerHelp": "Do you offer help as a volunteer?"
   },
   "formDescription": {
     "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
@@ -137,7 +139,8 @@
     "findLegalHelp": "This is where you can post your announcement that you are seeking legal help. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "offerLegalHelp": "This is where you can place your announcement that you offer legal assistance. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "medicalAssistance": "Here you can post your announcement that you need medical assistance. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
-    "offerMedicalAssistance": "Here you can place your announcement that you are offering medical assistance. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!"
+    "offerMedicalAssistance": "Here you can place your announcement that you are offering medical assistance. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "offerVolunteerHelp": "Here you can place your announcement that you are offering help as a volunteer. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!"
   },
   "frontpage": {
     "help": "Help for Ukraine",
