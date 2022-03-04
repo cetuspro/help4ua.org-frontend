@@ -15,6 +15,8 @@ const ViewNotices = ({
   columns,
   expandableRowsComponent,
   title,
+  styles,
+  config,
   noticeType,
   filters:Filters,
   itemComponent:ItemComponent,
@@ -54,9 +56,11 @@ const ViewNotices = ({
               </div>
             ) : (
               <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start max-w-full">
-                <div className="bg-white p-4 rounded-lg overflow-x-auto w-full">
+                <div className="overflow-x-auto w-full">
                   {columns?.map && typeof expandableRowsComponent !== 'undefined' ? (
                     <NoticesDataTable2
+                      styles={styles}
+                      config={config}
                       columns={columns}
                       expandableRowsComponent={expandableRowsComponent}
                     />

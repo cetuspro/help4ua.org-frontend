@@ -5,6 +5,8 @@ import {
   HelpOfferExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/helpOffer'
 import {
+  shelterOfferStyles,
+  shelterOfferConfig,
   shelterOfferColumns,
   ShelterOfferExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/shelterOffer'
@@ -89,6 +91,8 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.shelter3')}
+            styles={shelterOfferStyles}
+            config={shelterOfferConfig}
             columns={shelterOfferColumns()}
             expandableRowsComponent={ShelterOfferExpandedComponent}
             noticeType={1}

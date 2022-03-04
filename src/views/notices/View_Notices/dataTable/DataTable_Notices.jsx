@@ -177,7 +177,13 @@ const NoticesDataTable = () => {
     />
   )
 }
-export const NoticesDataTable2 = ({ columns, expandableRowsComponent }) => {
+
+export const NoticesDataTable2 = ({
+  styles = {},
+  config = {},
+  columns,
+  expandableRowsComponent,
+}) => {
   const { data } = useQueryContext()
   const pagination = usePagination()
   const [searchParams] = useSearchParams()
@@ -196,6 +202,8 @@ export const NoticesDataTable2 = ({ columns, expandableRowsComponent }) => {
       expandableRows={!!expandableRowsComponent}
       expandableRowsComponent={expandableRowsComponent}
       expandOnRowClicked={!!expandableRowsComponent}
+      styles={styles}
+      {...config}
     />
   )
 }
