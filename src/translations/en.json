@@ -89,7 +89,9 @@
     "speakUkrainian": "I speak Ukrainian",
     "speakEnglish": "I speak English",
     "speakPolish": "I speak Polish",
-    "speakGerman": "I speak German"
+    "speakGerman": "I speak German",
+    "lfWork": "Looking for work",
+    "offerWork": "Offer work"
   },
   "success": {
     "title": "Success!",
@@ -129,7 +131,9 @@
     "lfMedicalAssistance": "Looking for medical assistance?",
     "offerMedicalAssistance": "Offering medical assistance?",
     "offerVolunteerHelp": "Do you offer help as a volunteer?",
-    "lfVolunteerHelp": "Are you looking for volunteers help?"
+    "lfVolunteerHelp": "Are you looking for volunteers help?",
+    "lfWork": "Looking for work?",
+    "offerWork": "Offer work?"
   },
   "formDescription": {
     "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
@@ -149,7 +153,9 @@
     "medicalAssistance": "Here you can post your announcement that you need medical assistance. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
     "offerMedicalAssistance": "Here you can place your announcement that you are offering medical assistance. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "offerVolunteerHelp": "Here you can place your announcement that you are offering help as a volunteer. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "lfVolunteerHelp": "Here you can post your announcement that you need volunteers help. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!"
+    "lfVolunteerHelp": "Here you can post your announcement that you need volunteers help. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
+    "lfWork": "This is where you can place your announcement that you are looking for work. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
+    "offerWork": "Here you can post your announcement that you are offering work. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!"
   },
   "frontpage": {
     "help": "Help for Ukraine",
