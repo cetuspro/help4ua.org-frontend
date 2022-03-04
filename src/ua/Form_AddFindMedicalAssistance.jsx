@@ -106,16 +106,16 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
               <div className="flex-grow border-t border-gray-300 mb-4" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
-                  <InputText name="name" label={t('form.name')} icon={FaUser} />
+                  <InputText name="name" label={t('form.name')} icon={FaUser} required/>
                 </div>
                 <div>
-                  <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} />
+                  <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} required/>
                 </div>
                 <div>
                   <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
                 </div>
                 <div>
-                  <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} />
+                  <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} required/>
                 </div>
                 <div>
                   <InputAsyncSelect
