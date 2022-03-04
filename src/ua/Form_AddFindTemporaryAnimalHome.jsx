@@ -1,3 +1,4 @@
+import { useState, useMemo, useEffect } from 'react'
 import { animalsEnum } from '@/app/config/enum/animals'
 import { periodsEnum } from '@/app/config/enum/periods'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
@@ -5,7 +6,7 @@ import { API_URL } from '@/app/config/env'
 import { route } from '@/app/router/urls/routes'
 import { yupResolver } from '@hookform/resolvers/yup'
 import axios from 'axios'
-import { FormProvider, useForm } from 'react-hook-form'
+import { FormProvider, useForm, useWatch } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import {
   FaCalendarAlt,
@@ -16,6 +17,7 @@ import {
   FaPaw,
   FaPhone,
   FaUser,
+  FaFlag,
 } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
@@ -27,30 +29,11 @@ import { InputSelect } from '../components/form/Input_Select'
 import { InputSubmit } from '../components/form/Input_Submit'
 import { InputText } from '../components/form/Input_Text'
 import { InputTextarea } from '../components/form/Input_Textarea'
-import { InputVoluntary } from '../components/form/Input_Voluntary'
 import { LanguageBlock } from './LanguageBlock'
-
-const schema = yup.object().shape({
-  name: yup.string().required(),
-  description: yup.string(),
-  region: yup.number().required(),
-  cityName: yup.string().required(),
-  phoneNumber: yup.string().required(),
-  email: yup.string().email().nullable(),
-
-  animalType: yup.string().required(),
-  isDelivery: yup.string(),
-  arrivalDateStr: yup.string().required(),
-
-  type: yup.number().default(62),
-  acceptTerms: yup.string().required(),
-  period: yup.string().required(),
-  isOfferFreeFlag: yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
-  ukraineLang: yup.bool(),
-  englishLang: yup.bool(),
-  germanyLang: yup.bool(),
-  polishLang: yup.bool(),
-})
+import { InputVoluntary } from '../components/form/Input_Voluntary'
+import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
+import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
+import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
 
 const query = (data) => {
   return axios({
@@ -62,9 +45,47 @@ const query = (data) => {
 const mt = (a) => a
 
 const FormAddFindTemporaryAnimalHome = () => {
+  const [showRegion, setShowRegion] = useState(false)
+  const schema = useMemo(
+    () =>
+      yup.object().shape({
+        name: yup.string().required(),
+        description: yup.string(),
+        cityName: yup.string().required(),
+        countryId: yup.number().required(),
+        region: showRegion ? yup.number().required() : yup.string().nullable(),
+        phoneNumber: yup.string().required(),
+        email: yup.string().email().nullable(),
+        animalType: yup.string().required(),
+        isDelivery: yup.string(),
+        arrivalDateStr: yup.string().required(),
+        type: yup.number().default(62),
+        acceptTerms: yup.string().required(),
+        period: yup.string().required(),
+        voluntaryHelpCheckbox: yup
+          .bool()
+          .oneOf([true], 'voluntaryHelpCheckbox is a required field')
+          .required(),
+      }),
+    [showRegion],
+  )
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      countryId: DEFAULT_COUNTRY,
+    },
   })
+
+  const watched = useWatch({
+    control: methods.control,
+    name: 'countryId',
+  })
+
+  useEffect(() => {
+    const countryId = methods.getValues()?.countryId
+    setShowRegion(countryId === DEFAULT_COUNTRY)
+  }, [watched])
+
   let navigate = useNavigate()
 
   // console.log(methods.formState.errors)
@@ -112,15 +133,31 @@ const FormAddFindTemporaryAnimalHome = () => {
                   <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
                 </div>
                 <div>
-                  <InputSelect
-                    name="region"
-                    label={t('form.voivodeship')}
-                    options={voivodeshipsEnum(mt)}
+                  <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} required />
+                </div>
+                <div>
+                  <InputAsyncSelect
+                    {...getCountriesHelper}
+                    name="countryId"
+                    icon={FaFlag}
+                    label={t('form.country')}
+                    isLabelVisible
+                    transform={({ name, value }) => ({
+                      value: value,
+                      label: name,
+                    })}
                     required
                   />
                 </div>
                 <div>
-                  <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} required />
+                  <InputSelect
+                    name="region"
+                    label={t('form.voivodeship')}
+                    options={voivodeshipsEnum((a) => a)}
+                    hidden={!showRegion}
+                    disabled={!showRegion}
+                    required={showRegion}
+                  />
                 </div>
               </div>
               <h4 className="font-bold mt-8">{t('form.accommodation')}</h4>
