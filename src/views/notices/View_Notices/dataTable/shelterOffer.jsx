@@ -4,18 +4,7 @@ import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
-
-export const shelterOfferStyles = {  
-  rows: { style: { display: 'none' }},
-  table: { style: { background: 'transparent' }},
-  expanderRow: { style: { background: 'transparent' }},
-}
-
-export const shelterOfferConfig = {
-  noTableHead: true,
-  expandableRowsHideExpander: true,
-  expandableRowExpanded: () => true,
-}
+import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 
 export const shelterOfferColumns = () => {
   const {t} = useTranslation()
@@ -55,22 +44,6 @@ export const shelterOfferColumns = () => {
     ]
   )
 }
-const Item = ({label, value}) => {
-  return (
-    <div className="mb-2 flex gap-2">
-      <span className="">{label}:</span>
-      <span className="font-bold">{value}</span>
-    </div>
-  )
-}
-const PhoneItem = ({label, value}) => {
-  return (
-    <div className="mb-2 flex gap-2">
-      <span className="">{label}</span>
-      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
-    </div>
-  )
-}
 
 export const ShelterOfferExpandedComponent = ({data: {
   description,
@@ -95,13 +68,14 @@ export const ShelterOfferExpandedComponent = ({data: {
   const { t } = useTranslation();
   const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
   const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}+${address??''}`
+ 
   return (
     <div className="text-sm text-center bg-white dark:bg-gray-900 text-black dark:text-gray-400 rounded shadow p-3 mb-4">
       <div className="flex md:gap-5 flex-col md:flex-row text-left">
         <div className="flex-1">
-          {!!description && <Item label={t("common.opis")} value={description}/>}
-          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
-          {(cityName || getRegion(region) || address) && <Item label={t("common.adres")} value={
+          {!!description && <NoticeDetailsItem label={t("common.opis")} labelClassName="hidden sm:inline" value={description}/>}
+          {!!descriptionUA && <NoticeDetailsItem label={t("common.opisUA")} value={descriptionUA}/>}
+          {(cityName || getRegion(region) || address) && <NoticeDetailsItem label={t("common.adres")} value={
             <a
               href={href}
               target={'_blank'}
@@ -109,27 +83,27 @@ export const ShelterOfferExpandedComponent = ({data: {
               title="Zobacz na mapie"
               className="flex flex-col text-blue-700 hover:text-blue-500 items-start"
             >
-              {!!(cityName || getRegion(region)) ? <span>{cityName}, {getRegion(region)}</span> : ''}
+              {(cityName || getRegion(region)) ? <span>{cityName}, {getRegion(region)}</span> : ''}
               <span>{address}</span>
             </a>
           }
           />}
-          {!!name && <Item label={t("common.imie")} value={name}/>}
-          {!!phoneNumber && <PhoneItem label={t("common.telefon")} value={phoneNumber}/>}
-          {!!period && <Item label={t("common.okres")} value={getPeriod(t, parseInt(period))}/>}
-          {!!createdAt && <Item label={t("common.data")} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!!id && <Item label={t("common.id")} value={id}/>}
+          {!!name && <NoticeDetailsItem label={t("common.imie")} value={name}/>}
+          {!!phoneNumber && <NoticeDetailsItem label={t("common.telefon")} value={ <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">{phoneNumber}</a>}/>}
+          {!!period && <NoticeDetailsItem label={t("common.okres")} value={getPeriod(t, parseInt(period))}/>}
+          {!!createdAt && <NoticeDetailsItem label={t("common.data")} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!!id && <NoticeDetailsItem label={t("common.id")} value={id}/>}
         </div>
 
         <div className="flex-1">
-          {!!accommodationPlacesCount && <Item label={t("common.miejsca")} value={accommodationPlacesCount}/>}
-          {!!bedCount && <Item label={t("common.lozka")} value={bedCount}/>}
-          {!!isAcceptedChild && <Item label={t("common.dzieci")} value={getValue(isAcceptedChild)}/>}
-          {!!isAcceptedAnimal && <Item label={t("common.zwierzaki")} value={getValue(isAcceptedAnimal)}/>}
-          {!!hasWashingMachine && <Item label={t("common.pralka")} value={getValue(hasWashingMachine)}/>}
-          {!!isCatering && <Item label={t("common.jedzenie")} value={getValue(isCatering)}/>}
-          {!!isDelivery && <Item label={t("common.transport")} value={getValue(isDelivery)}/>}
-          <Item label={t("common.uniqueLink")} value={<Link to={route['notices.view'](id)} className="text-blue-700 hover:text-blue-500 inline-block font-semibold">Link</Link>}/>
+          {!!accommodationPlacesCount && <NoticeDetailsItem label={t("common.miejsca")} value={accommodationPlacesCount}/>}
+          {!!bedCount && <NoticeDetailsItem label={t("common.lozka")} value={bedCount}/>}
+          {!!isAcceptedChild && <NoticeDetailsItem label={t("common.dzieci")} value={getValue(isAcceptedChild)}/>}
+          {!!isAcceptedAnimal && <NoticeDetailsItem label={t("common.zwierzaki")} value={getValue(isAcceptedAnimal)}/>}
+          {!!hasWashingMachine && <NoticeDetailsItem label={t("common.pralka")} value={getValue(hasWashingMachine)}/>}
+          {!!isCatering && <NoticeDetailsItem label={t("common.jedzenie")} value={getValue(isCatering)}/>}
+          {!!isDelivery && <NoticeDetailsItem label={t("common.transport")} value={getValue(isDelivery)}/>}
+          <NoticeDetailsItem label={t("common.uniqueLink")} value={<Link to={route['notices.view'](id)} className="text-blue-700 hover:text-blue-500 inline-block font-bold">Link</Link>}/>
         </div>
       </div>
     </div>

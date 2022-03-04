@@ -1,11 +1,10 @@
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
-import { FaMapMarked } from 'react-icons/all'
 import { FaPhone } from 'react-icons/fa'
 import { useState } from 'react'
+import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 
 export const transportOfferColumns = () => {
   const {t} = useTranslation()
@@ -41,23 +40,6 @@ export const transportOfferColumns = () => {
   ];
 } 
 
-const Item = ({label, value}) => {
-  return (
-    <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
-      <span className="font-bold">{value}</span>
-    </div>
-  )
-}
-const PhoneItem = ({label, value}) => {
-  return (
-    <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
-      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
-    </div>
-  )
-}
-
 export const TransportOfferExpandedComponent = ({data: {
   description,
   descriptionUA,
@@ -68,25 +50,25 @@ export const TransportOfferExpandedComponent = ({data: {
   carRegoNo,
   transportToStr,
   transportFromStr,
-
 }}) => {
   const { t } = useTranslation();
   return (
-    <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
+    <div className="text-sm text-center bg-white dark:bg-gray-900 text-black dark:text-gray-400 rounded shadow p-3 mb-4">
       <div className="flex gap-5">
         <div className="flex-1">
-          {!!description && <Item label={t('common.opis')} value={description}/>}
-          {!!descriptionUA && <Item label={t("common.opisUA")} value={descriptionUA}/>}
-          {!!name && <Item label={t('common.imie')} value={name}/>}
-          {!! phoneNumber &&<PhoneItem label={t('common.telefon')} value={phoneNumber}/>}
-          {!! transportFromStr &&<Item label={t('form.transportFromStr')} value={transportFromStr}/>}
-          {!! transportToStr &&<Item label={t('form.transportToStr')} value={transportToStr}/>}
-          {!! carRegoNo &&<Item label={t('form.carRegoNo')} value={carRegoNo}/>}
-          {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
-          {!! id &&<Item label={t('common.id')} value={id}/>}
+          {!!description && <NoticeDetailsItem label={t('common.opis')} value={description}/>}
+          {!!descriptionUA && <NoticeDetailsItem label={t("common.opisUA")} value={descriptionUA}/>}
+          {!!name && <NoticeDetailsItem label={t('common.imie')} value={name}/>}
+          {!! phoneNumber &&<NoticeDetailsItem label={t('common.telefon')} value={phoneNumber}/>}
+          {!! transportFromStr &&<NoticeDetailsItem label={t('form.transportFromStr')} value={transportFromStr}/>}
+          {!! transportToStr &&<NoticeDetailsItem label={t('form.transportToStr')} value={transportToStr}/>}
+          {!! carRegoNo &&<NoticeDetailsItem label={t('form.carRegoNo')} value={carRegoNo}/>}
+          {!! createdAt &&<NoticeDetailsItem label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
+          {!! id &&<NoticeDetailsItem label={t('common.id')} value={id}/>}
+          <NoticeDetailsItem label={t("common.uniqueLink")} value={<Link to={route['notices.view'](id)} className="text-blue-700 hover:text-blue-500 inline-block font-bold">Link</Link>}/>
         </div>
       </div>
-      <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>
+      
     </div>
   )
 }
