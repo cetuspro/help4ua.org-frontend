@@ -58,7 +58,7 @@ export const shelterOfferColumns = () => {
 const Item = ({label, value}) => {
   return (
     <div className="mb-2 flex gap-2">
-      <span className="">{label}</span>
+      <span className="">{label}:</span>
       <span className="font-bold">{value}</span>
     </div>
   )
@@ -71,7 +71,6 @@ const PhoneItem = ({label, value}) => {
     </div>
   )
 }
-
 
 export const ShelterOfferExpandedComponent = ({data: {
   description,
@@ -121,6 +120,7 @@ export const ShelterOfferExpandedComponent = ({data: {
           {!!createdAt && <Item label={t("common.data")} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!!id && <Item label={t("common.id")} value={id}/>}
         </div>
+
         <div className="flex-1">
           {!!accommodationPlacesCount && <Item label={t("common.miejsca")} value={accommodationPlacesCount}/>}
           {!!bedCount && <Item label={t("common.lozka")} value={bedCount}/>}
@@ -129,9 +129,9 @@ export const ShelterOfferExpandedComponent = ({data: {
           {!!hasWashingMachine && <Item label={t("common.pralka")} value={getValue(hasWashingMachine)}/>}
           {!!isCatering && <Item label={t("common.jedzenie")} value={getValue(isCatering)}/>}
           {!!isDelivery && <Item label={t("common.transport")} value={getValue(isDelivery)}/>}
+          <Item label={t("common.uniqueLink")} value={<Link to={route['notices.view'](id)} className="text-blue-700 hover:text-blue-500 inline-block font-semibold">Link</Link>}/>
         </div>
       </div>
-      <Link to={route['notices.view'](id)} className="text-white mt-5 inline-block font-bold py-2 px-8 rounded bg-sky-500">Link</Link>
     </div>
   )
 }
