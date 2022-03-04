@@ -2,6 +2,7 @@ import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
+import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
 export const PersonalInfoDataTable = ({
   data: {
@@ -16,6 +17,10 @@ export const PersonalInfoDataTable = ({
     phoneNumber,
     email,
     createdAt,
+    ukraineLang,
+    englishLang,
+    germanyLang,
+    polishLang,
   },
 }) => {
   const { t } = useTranslation()
@@ -89,6 +94,12 @@ export const PersonalInfoDataTable = ({
             />
           )}
           {!!id && <NoticeDetailsItem label={t('common.id')} value={id} />}
+          {(ukraineLang || englishLang || germanyLang || polishLang) && (
+            <NoticeDetailsItem
+              label={t('form.language')}
+              value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+            />
+          )}
         </div>
       </div>
     </div>

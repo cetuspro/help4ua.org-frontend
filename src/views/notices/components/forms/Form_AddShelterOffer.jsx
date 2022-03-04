@@ -27,6 +27,7 @@ import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
+import { LanguageBlock } from '../../../../ua/LanguageBlock'
 
 const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) => {
   const schema = useMemo(() => yup.object().shape({
@@ -48,7 +49,11 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     period: yup.string().required(),
     language: yup.string().nullable(),
-    voluntaryHelpCheckbox: editMode ? yup.string() : yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
+    isOfferFreeFlag: editMode ? yup.string() : yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
+    ukraineLang: yup.bool(),
+    englishLang: yup.bool(),
+    germanyLang: yup.bool(),
+    polishLang: yup.bool(),
   }), [editMode]);
 
   const methods = useForm({
@@ -186,6 +191,7 @@ const FormAddShelterOffer = ({defaultValues, query, onSuccess, editMode=false}) 
             />
           </div>
         </div>
+        <LanguageBlock />
         <h4 className="font-bold mt-8">{t("form.extraInfo")}</h4>
         <div className="flex-grow border-t border-gray-300 mb-4"/>
         <div>

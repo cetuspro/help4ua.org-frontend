@@ -5,7 +5,7 @@ import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
-import { getAnimal, getPeriod } from '../../View_Notices/dataTable/DataTable_Notices'
+import { getAnimal, getPeriod, getLanguagesValue } from '../../View_Notices/dataTable/DataTable_Notices'
 import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
 
 const Item = ({ label, value }) => {
@@ -41,6 +41,10 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
       period,
       id,
       createdAt,
+      ukraineLang,
+      englishLang,
+      germanyLang,
+      polishLang,
     },
   } = useQueryContext()
   const { t } = useTranslation()
@@ -102,6 +106,11 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
             <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
           )}
           {!!id && <Item label={t('common.id')} value={id} />}
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={`${t("form.language")}:`}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
       <Button to={route['notices.list11']} className="mt-10 mx-auto w-fit" size="small">

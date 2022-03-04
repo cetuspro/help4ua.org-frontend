@@ -6,7 +6,7 @@ export const InputVoluntary = () => {
   return (
     <div className="mb-4">
       <InputCheckbox
-        name="voluntaryHelpCheckbox"
+        name="isOfferFreeFlag"
         required
         label={t('common.voluntaryHelp')}
       />

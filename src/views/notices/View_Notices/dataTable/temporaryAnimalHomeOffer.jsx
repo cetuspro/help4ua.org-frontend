@@ -3,8 +3,8 @@ import { route } from '@/app/router/urls/routes'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { getAnimal, getPeriod } from './DataTable_Notices'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
+import { getAnimal, getPeriod, getLanguagesValue } from './DataTable_Notices'
 
 export const temporaryAnimalHomeOfferColumns = () => {
   const { t } = useTranslation()
@@ -57,6 +57,10 @@ export const TemporaryAnimalHomeOfferExpandedComponent = ({
     accommodationPlacesCount,
     phoneNumber,
     createdAt,
+    ukraineLang,
+    englishLang,
+    germanyLang,
+    polishLang,
   },
 }) => {
   const { t } = useTranslation()
@@ -147,6 +151,12 @@ export const TemporaryAnimalHomeOfferExpandedComponent = ({
             />
           )}
           {!!id && <NoticeDetailsItem label={t('common.id')} value={id} />}
+          {(ukraineLang || englishLang || germanyLang || polishLang) && (
+            <NoticeDetailsItem
+              label={t('form.language')}
+              value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+            />
+          )}
           <NoticeDetailsItem
             label={t('common.uniqueLink')}
             value={
