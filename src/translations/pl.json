@@ -32,6 +32,7 @@
     "phoneNumber": "Numer telefonu",
     "email": "Adres email",
     "cityName": "Miejscowość",
+    "country": "Kraj",
     "accommodation": "Zakwaterowanie",
     "accommodationPlacesCount": "Liczba osób",
     "period": "Na jak długo",
@@ -84,7 +85,12 @@
     "lfMedicalAssistance": "Potrzebuję pomocy medycznej",
     "offerMedicalAssistance": "Oferta pomoc medyczną",
     "offerVolunteerHelp": "Oferujesz pomoc jako wolontariusz?",
-    "lfVolunteerHelp": "Potrzebuję pomocy od wolontariuszy"
+    "lfVolunteerHelp": "Potrzebuję pomocy od wolontariuszy",
+    "language": "Język",
+    "speakUkrainian": "Mówię po ukraińsku",
+    "speakEnglish": "Mówię po angielsku",
+    "speakPolish": "Mówię po polsku",
+    "speakGerman": "Mówię po niemiecku"
   },
   "success": {
     "title": "Udało się!",
@@ -163,6 +169,12 @@
     "markActive": "Oznacz jako aktualne",
     "markInactive": "Oznacz jako nieaktualne",
     "waitingForApproval": "Ogłoszenie oczekuje na akceptację"
+  },
+  "language": {
+    "ukrainian": "Ukraiński",
+    "english": "Angielski",
+    "germany": "Niemiecki",
+    "polish": "Polski"
   },
   "RODO": {
     "label": "Wyrażam zgodę na przetwarzanie moich danych przez Cetuspro Sp. z o.o. z siedzibą w Rzeszowie w celu opublikowania moich danych w ogłoszeniu umieszczonym na portalu uapomoc.pl, skierowanym do osób potrzebujących i udzielającym pomocy Ukrainie. <1>Klauzula</1>\n",

@@ -3,7 +3,8 @@ import { route } from '@/app/router/urls/routes'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { getAnimal, getPeriod } from './DataTable_Notices'
+import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
+import { getAnimal, getPeriod, getLanguagesValue } from './DataTable_Notices'
 
 export const temporaryAnimalHomeOfferColumns = () => {
   const { t } = useTranslation()
@@ -18,7 +19,11 @@ export const temporaryAnimalHomeOfferColumns = () => {
     },
     {
       name: t('common.telefon'),
-      selector: ({ phoneNumber }) => <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">{phoneNumber}</a>,
+      selector: ({ phoneNumber }) => (
+        <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">
+          {phoneNumber}
+        </a>
+      ),
     },
     {
       name: t('common.okres'),
@@ -29,23 +34,6 @@ export const temporaryAnimalHomeOfferColumns = () => {
       selector: ({ cityName }) => cityName || '-',
     },
   ]
-}
-
-const Item = ({ label, value }) => {
-  return (
-    <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
-      <span className="font-bold">{value}</span>
-    </div>
-  )
-}
-const PhoneItem = ({label, value}) => {
-  return (
-    <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
-      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
-    </div>
-  )
 }
 
 export const getBoolValue = (t, value) =>
@@ -59,7 +47,6 @@ export const TemporaryAnimalHomeOfferExpandedComponent = ({
     address,
     email,
     period,
-    isCatering,
     isDelivery,
     location,
     shouldRefund,
@@ -70,6 +57,10 @@ export const TemporaryAnimalHomeOfferExpandedComponent = ({
     accommodationPlacesCount,
     phoneNumber,
     createdAt,
+    ukraineLang,
+    englishLang,
+    germanyLang,
+    polishLang,
   },
 }) => {
   const { t } = useTranslation()
@@ -83,17 +74,28 @@ export const TemporaryAnimalHomeOfferExpandedComponent = ({
         }`
 
   return (
-    <div className="border-b p-4 text-sm bg-[#fafafa] text-center">
+    <div className="text-sm text-center bg-white dark:bg-gray-900 text-black dark:text-gray-400 rounded shadow p-3 mb-4">
       <div className="flex gap-5">
         <div className="flex-1">
-          {!!name && <Item label={t('common.imie')} value={name} />}
-          {!!phoneNumber && <PhoneItem label={t('common.telefon')} value={phoneNumber} />}
-          {!!email && <Item label={t('form.email')} value={email} />}
-          {!!description && <Item label={t('common.opis')} value={description} />}
-          <Item
-            label={t('common.adres')}
-            value={
-              cityName || getRegion(region) || address ? (
+          {!!name && <NoticeDetailsItem label={t('common.imie')} value={name} />}
+          {!!phoneNumber && (
+            <NoticeDetailsItem
+              label={t('common.telefon')}
+              value={
+                <a
+                  href={`tel:${phoneNumber}`}
+                  className="font-bold text-blue-700 hover:text-blue-500">
+                  {phoneNumber}
+                </a>
+              }
+            />
+          )}
+          {!!email && <NoticeDetailsItem label={t('form.email')} value={email} />}
+          {!!description && <NoticeDetailsItem label={t('common.opis')} value={description} />}
+          {(cityName || getRegion(region) || address) && (
+            <NoticeDetailsItem
+              label={t('common.adres')}
+              value={
                 <a
                   href={href}
                   target={'_blank'}
@@ -109,46 +111,64 @@ export const TemporaryAnimalHomeOfferExpandedComponent = ({
                   )}
                   <span>{address}</span>
                 </a>
-              ) : (
-                'Brak danych'
-              )
-            }
-          />
-
+              }
+            />
+          )}
           {!!animalType && (
-            <Item label={t('form.whatAnimalType')} value={getAnimal(t, Number(animalType))} />
+            <NoticeDetailsItem
+              label={t('form.whatAnimalType')}
+              value={getAnimal(t, Number(animalType))}
+            />
           )}
           {!!accommodationPlacesCount && (
-            <Item label={t('form.howMany')} value={accommodationPlacesCount} />
+            <NoticeDetailsItem label={t('form.howMany')} value={accommodationPlacesCount} />
           )}
-
           {!!hasExperience && (
-            <Item
+            <NoticeDetailsItem
               label={t('form.hasExperienceWithAnimals')}
               value={getBoolValue(t, hasExperience)}
             />
           )}
           {!!isDelivery && (
-            <Item label={t('form.offerTransport')} value={getBoolValue(t, isDelivery)} />
+            <NoticeDetailsItem
+              label={t('form.offerTransport')}
+              value={getBoolValue(t, isDelivery)}
+            />
           )}
-
           {!!shouldRefund && (
-            <Item label={t('form.constRefund')} value={getBoolValue(t, shouldRefund)} />
+            <NoticeDetailsItem
+              label={t('form.constRefund')}
+              value={getBoolValue(t, shouldRefund)}
+            />
           )}
-
-          {!!period && <Item label={t('form.period')} value={getPeriod(t, Number(period))} />}
-
+          {!!period && (
+            <NoticeDetailsItem label={t('form.period')} value={getPeriod(t, Number(period))} />
+          )}
           {!!createdAt && (
-            <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
+            <NoticeDetailsItem
+              label={t('common.data')}
+              value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}
+            />
           )}
-          {!!id && <Item label={t('common.id')} value={id} />}
+          {!!id && <NoticeDetailsItem label={t('common.id')} value={id} />}
+          {(ukraineLang || englishLang || germanyLang || polishLang) && (
+            <NoticeDetailsItem
+              label={t('form.language')}
+              value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+            />
+          )}
+          <NoticeDetailsItem
+            label={t('common.uniqueLink')}
+            value={
+              <Link
+                to={route['notices.view'](id)}
+                className="text-blue-700 hover:text-blue-500 inline-block font-bold">
+                Link
+              </Link>
+            }
+          />
         </div>
       </div>
-      <Link
-        to={route['notices.view'](id)}
-        className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">
-        Link
-      </Link>
     </div>
   )
 }

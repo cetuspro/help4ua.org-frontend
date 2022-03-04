@@ -3,7 +3,7 @@ import { useQueryContext } from '@/app/context/queries/QueryProvider'
 import { route } from '@/app/router/urls/routes'
 import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
-import { getAnimal, getPeriod } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getAnimal, getPeriod, getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
@@ -45,6 +45,10 @@ const TemporaryAnimalHomeOfferCard = () => {
       accommodationPlacesCount,
       phoneNumber,
       createdAt,
+      ukraineLang,
+      englishLang,
+      germanyLang,
+      polishLang,
     },
   } = useQueryContext()
   const { t } = useTranslation()
@@ -115,6 +119,11 @@ const TemporaryAnimalHomeOfferCard = () => {
             <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
           )}
           {!!id && <Item label={t('common.id')} value={id} />}
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={`${t("form.language")}:`}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
       <Button to={route['notices.list10']} className="mt-10 mx-auto w-fit" size="small">

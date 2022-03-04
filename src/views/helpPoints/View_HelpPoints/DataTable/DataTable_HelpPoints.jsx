@@ -3,6 +3,7 @@ import Datatable from '@/components/common/Datatable'
 import usePagination from '../../../../app/hooks/usePagination'
 import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { isBool } from '@/app/utils/isBool'
 
 const columns = () => {
   const { t } = useTranslation()
@@ -48,23 +49,6 @@ const columns = () => {
       wrap: true,
     },
   ]
-}
-
-const Item = ({ label, value }) => {
-  return (
-    <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
-      <span className="font-bold">{value}</span>
-    </div>
-  )
-}
-const PhoneItem = ({label, value}) => {
-  return (
-    <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
-      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
-    </div>
-  )
 }
 
 export const getValue = (val) => (isBool(val) ? (val ? 'TAK' : 'NIE') : 'Brak danych')
