@@ -235,6 +235,7 @@
     "email": "Email",
     "onMap": "Zobacz na mapie",
     "back": "Wróć",
-    "voluntaryHelp": "Pomoc ma charakter dobrowolny i zobowiązuje się nie pobierać żadnych odpłatności związanych z świadczoną pomocą"
+    "voluntaryHelp": "Pomoc ma charakter dobrowolny i zobowiązuje się nie pobierać żadnych odpłatności związanych z świadczoną pomocą",
+    "uniqueLink": "Unikalny link"
   }
 }

@@ -22,8 +22,6 @@ import {
   transportSearchColumns,
   TransportSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/transportSearch'
-import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
-import NoticesNoAcommodationsFilter from '@/views/notices/View_Notices/filters/Filters_NoticesNoAccomodations'
 import { lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route } from 'react-router-dom'
@@ -46,13 +44,14 @@ import {
 } from '../View_Notices/dataTable/translationOffer'
 import AnimalOffersFilter from '../View_Notices/filters/Filters_AnimalsOffer'
 import MedicalAssistanceFilter from '../View_Notices/filters/Filters_MedicalAssistance'
+import {TransportFilter, BasicFilter, ShelterFilter} from '@/views/notices/View_Notices/filters'
 import {
   medicalAssistanceSearch,
   MedicalAssistanceSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/medicalAssistanceSearch'
-import FormAddVolunteerOffer from '../components/forms/Form_AddVolunteerOffer'
 import { personalDataColumnConfig } from '../View_Notices/columnConfigs/personalDataColumnConfig'
 import { PersonalInfoDataTable } from '../View_Notices/dataTable/personalInfoDataTable'
+import FormAddVolunteerOffer from '../components/forms/Form_AddVolunteerOffer'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
@@ -82,7 +81,7 @@ const NoticeRoutes = () => {
             columns={shelterSearchColumns()}
             expandableRowsComponent={ShelterSearchExpandedComponent}
             noticeType={10}
-            filters={NoticesFilter}
+            filters={ShelterFilter}
           />
         }
       />
@@ -96,7 +95,7 @@ const NoticeRoutes = () => {
             columns={shelterOfferColumns()}
             expandableRowsComponent={ShelterOfferExpandedComponent}
             noticeType={1}
-            filters={NoticesFilter}
+            filters={ShelterFilter}
           />
         }
       />
@@ -109,7 +108,7 @@ const NoticeRoutes = () => {
             expandableRowsComponent={TransportOfferExpandedComponent}
             // itemComponent={TransportOfferItem}
             noticeType={20}
-            filters={NoticesFilter}
+            filters={TransportFilter}
           />
         }
       />
@@ -121,7 +120,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={50}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -133,7 +132,7 @@ const NoticeRoutes = () => {
             columns={transportSearchColumns()}
             expandableRowsComponent={TransportSearchExpandedComponent}
             noticeType={22}
-            filters={NoticesFilter}
+            filters={TransportFilter}
           />
         }
       />
@@ -145,7 +144,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={30}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -157,7 +156,7 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={52}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -169,7 +168,7 @@ const NoticeRoutes = () => {
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={32}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -222,25 +221,13 @@ const NoticeRoutes = () => {
         }
       />
       <Route
-        path={route['notices.list16']}
-        element={
-          <LazyNotices
-            title={t('form.offerVolunteerHelp')}
-            columns={personalDataColumnConfig()}
-            expandableRowsComponent={PersonalInfoDataTable}
-            noticeType={100}
-            filters={NoticesNoAcommodationsFilter}
-          />
-        }
-      />
-      <Route
           path={route['notices.list13']}
           element={<LazyNotices
             title={t('tiles.legalHelp2')}
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={80}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />}
         />
         <Route
@@ -250,9 +237,21 @@ const NoticeRoutes = () => {
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={82}
-            filters={NoticesNoAcommodationsFilter}
+            filters={BasicFilter}
           />}
         />
+        <Route
+        path={route['notices.list16']}
+        element={
+          <LazyNotices
+            title={t('form.offerVolunteerHelp')}
+            columns={personalDataColumnConfig()}
+            expandableRowsComponent={PersonalInfoDataTable}
+            noticeType={100}
+            filters={BasicFilter}
+          />
+        }
+      />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
     </Route>,
     <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
@@ -342,7 +341,7 @@ const NoticeRoutes = () => {
           description={t("formDescription.offerMedicalAssistance")}
         />}
       />
-        <Route
+      <Route
         path={route['notices.addVolunteersOfferingHelp']}
         element={
           <LazyAddNotice

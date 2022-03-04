@@ -229,6 +229,7 @@
     "email": "Email",
     "onMap": "See on Map",
     "back": "Back",
-    "voluntaryHelp": "Help is voluntary and I undertakes not to collect any payments related to the provided help"
+    "voluntaryHelp": "Help is voluntary and I undertakes not to collect any payments related to the provided help",
+    "uniqueLink": "Unique link"
   }
 }
