@@ -82,7 +82,8 @@
     "collectionPoint": "Punkt zbiórki",
     "receptionPoint": "Punkt recepcyjny",
     "lfMedicalAssistance": "Potrzebuję pomocy medycznej",
-    "offerMedicalAssistance": "Oferta pomoc medyczną"
+    "offerMedicalAssistance": "Oferta pomoc medyczną",
+    "offerVolunteerHelp": "Oferujesz pomoc jako wolontariusz?"
   },
   "success": {
     "title": "Udało się!",
@@ -119,7 +120,8 @@
     "lfTemporaryAnimalHome": "Szukasz domu tymczasowego dla zwierząt?",
     "temporaryAnimalHome": "Oferujesz dom tymczasowy dla zwierząt?",
     "lfMedicalAssistance": "Szukasz pomocy medycznej?",
-    "offerMedicalAssistance": "Oferujesz pomoc medyczną?"
+    "offerMedicalAssistance": "Oferujesz pomoc medyczną?",
+    "offerVolunteerHelp": "Oferujesz pomoc jako wolontariusz?"
   },
   "formDescription": {
     "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
@@ -137,7 +139,8 @@
     "lfTemporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz domu tymczasowego dla swoich zwierząt. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! ",
     "temporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz dom tymczasowy dla zwierząt osób potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! ",
     "medicalAssistance": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy medycznej. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "offerMedicalAssistance": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz pomoc medyczną. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
+    "offerMedicalAssistance": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz pomoc medyczną. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "offerVolunteerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz pomoc jako wolontariusz. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
@@ -230,6 +233,8 @@
     "discordDescription": "Chcesz pomóc? Dołącz do naszego Discorda!",
     "discordDescription2": "Każda para rąk się przyda!",
     "email": "Email",
+    "onMap": "Zobacz na mapie",
+    "back": "Wróć",
     "voluntaryHelp": "Pomoc ma charakter dobrowolny i zobowiązuje się nie pobierać żadnych odpłatności związanych z świadczoną pomocą",
     "uniqueLink": "Unikalny link"
   }

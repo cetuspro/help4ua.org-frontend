@@ -49,6 +49,9 @@ import {
   medicalAssistanceSearch,
   MedicalAssistanceSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/medicalAssistanceSearch'
+import { personalDataColumnConfig } from '../View_Notices/columnConfigs/personalDataColumnConfig'
+import { PersonalInfoDataTable } from '../View_Notices/dataTable/personalInfoDataTable'
+import FormAddVolunteerOffer from '../components/forms/Form_AddVolunteerOffer'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
@@ -237,6 +240,18 @@ const NoticeRoutes = () => {
             filters={BasicFilter}
           />}
         />
+        <Route
+        path={route['notices.list16']}
+        element={
+          <LazyNotices
+            title={t('form.offerVolunteerHelp')}
+            columns={personalDataColumnConfig()}
+            expandableRowsComponent={PersonalInfoDataTable}
+            noticeType={100}
+            filters={BasicFilter}
+          />
+        }
+      />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
     </Route>,
     <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
@@ -325,6 +340,17 @@ const NoticeRoutes = () => {
           title={t("form.offerMedicalAssistance")}
           description={t("formDescription.offerMedicalAssistance")}
         />}
+      />
+      <Route
+        path={route['notices.addVolunteersOfferingHelp']}
+        element={
+          <LazyAddNotice
+            title={t('form.offerVolunteerHelp')}
+            description={t('formDescription.offerVolunteerHelp')}
+            formComponent={FormAddVolunteerOffer}
+            type={100}
+          />
+        }
       />
     </Route>,
     <Route key={route['index']} path={route['index']} element={<UserLayout />}>
