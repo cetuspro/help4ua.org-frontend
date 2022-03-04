@@ -226,6 +226,8 @@
     "arrival": "Arrival date",
     "discordDescription": "Do you want to help? Join our Discord!",
     "discordDescription2": "Any help is welcome!",
-    "email": "Email"
+    "email": "Email",
+    "onMap": "See on Map",
+    "back": "Back"
   }
 }

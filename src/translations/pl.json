@@ -232,6 +232,8 @@
     "arrival": "Data przyjazdu",
     "discordDescription": "Chcesz pomóc? Dołącz do naszego Discorda!",
     "discordDescription2": "Każda para rąk się przyda!",
-    "email": "Email"
+    "email": "Email",
+    "onMap": "Zobacz na mapie",
+    "back": "Wróć"
   }
 }

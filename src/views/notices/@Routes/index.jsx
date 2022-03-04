@@ -49,6 +49,8 @@ import {
   MedicalAssistanceSearchExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/medicalAssistanceSearch'
 import FormAddVolunteerOffer from '../components/forms/Form_AddVolunteerOffer'
+import { personalDataColumnConfig } from '../View_Notices/columnConfigs/personalDataColumnConfig'
+import { PersonalInfoDataTable } from '../View_Notices/dataTable/personalInfoDataTable'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
@@ -212,6 +214,18 @@ const NoticeRoutes = () => {
             expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
             noticeType={70}
             filters={MedicalAssistanceFilter}
+          />
+        }
+      />
+      <Route
+        path={route['notices.list16']}
+        element={
+          <LazyNotices
+            title={t('form.offerVolunteerHelp')}
+            columns={personalDataColumnConfig()}
+            expandableRowsComponent={PersonalInfoDataTable}
+            noticeType={100}
+            filters={NoticesNoAcommodationsFilter}
           />
         }
       />

@@ -28,7 +28,7 @@ const ViewNotices = ({
   ]
   return (
     <>
-      <Button size="small" className="gap-2 mb-2 inline-flex" to={route['homepage.notices']}><MdArrowBackIosNew/>Wróć</Button>
+      <Button size="small" className="gap-2 mb-2 inline-flex" to={route['homepage.notices']}><MdArrowBackIosNew/>{t("common.back")}</Button>
       <Breadcrumb items={breadcrumbItems} />
       <h1 className="text-black-800 dark:text-gray-100 text-2xl sm:text-5xl md:text-4xl font-bold mb-8 md:mb-12">
         {title}

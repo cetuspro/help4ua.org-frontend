@@ -225,6 +225,8 @@
     "arrival": "Дата прибуття",
     "discordDescription": "Ви хочете допомогти? Приєднуйтесь до нашого Discord!",
     "discordDescription2": "Будь-яка допомога вітається!",
-    "email": "Email"
+    "email": "Email",
+    "onMap": "Показати на карті",
+    "back": "Повернутися"
   }
 }
