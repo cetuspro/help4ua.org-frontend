@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
+import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 export const helpOfferColumnsColumns = () => {
   const { t } = useTranslation()
@@ -64,6 +67,22 @@ export const HelpOfferExpandedComponent = ({
   },
 }) => {
   const { t } = useTranslation()
+  const [showField, setShowField] = useState(false)
+  const [realPhoneNumber, setRealPhoneNumber] = useState('XXX-XXX-XXX')
+
+  const handleAction = async () => {
+    try {
+      if (showField) return
+      const field = await getHiddenFields({
+        noticeId: id,
+        type: FieldType.PHONE,
+      })
+      setRealPhoneNumber(field)
+      setShowField(true)
+    } catch (e) {
+      console.log(e)
+    }
+  }
   const getRegion = (val) => voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
   const href =
     location?.lat && location?.long
@@ -104,13 +123,14 @@ export const HelpOfferExpandedComponent = ({
           )}
           {!!name && <NoticeDetailsItem label={t('common.imie')} value={name} />}
           {!!phoneNumber && (
-            <NoticeDetailsItem
+            <ActionDetailsItem
+              onAction={handleAction}
               label={t('common.telefon')}
               value={
                 <a
-                  href={`tel:${phoneNumber}`}
+                  href={`tel:${showField ? realPhoneNumber : phoneNumber}`}
                   className="font-bold text-blue-700 hover:text-blue-500">
-                  {phoneNumber}
+                  {showField ? realPhoneNumber : phoneNumber}
                 </a>
               }
             />
