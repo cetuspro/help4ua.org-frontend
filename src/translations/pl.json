@@ -91,8 +91,8 @@
     "speakEnglish": "Mówię po angielsku",
     "speakPolish": "Mówię po polsku",
     "speakGerman": "Mówię po niemiecku",
-    "lfWork": "Szukanie pracy",
-    "offerWork": "Oferujesz pracy"
+    "lfWork": "Szukasz pracy",
+    "offerWork": "Oferujesz pracę"
   },
   "success": {
     "title": "Udało się!",
@@ -132,8 +132,8 @@
     "offerMedicalAssistance": "Oferujesz pomoc medyczną?",
     "offerVolunteerHelp": "Oferujesz pomoc jako wolontariusz?",
     "lfVolunteerHelp": "Szukasz wolontariuszy?",
-    "lfWork": "Szukanie pracy?",
-    "offerWork": "Oferujesz pracy?"
+    "lfWork": "Szukasz pracy?",
+    "offerWork": "Oferujesz pracę?"
   },
   "formDescription": {
     "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
