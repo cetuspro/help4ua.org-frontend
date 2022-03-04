@@ -83,7 +83,7 @@ export default function Home() {
             />
             <NoticeCard
               icon={FiHome}
-              title={"lfShelter.shelter"}
+              title={"tiles.lfShelter"}
               isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchAccommodation")}
               description={'formDescription.findShelter'}
