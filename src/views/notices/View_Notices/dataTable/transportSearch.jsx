@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { route } from '@/app/router/urls/routes'
+import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
 export const transportSearchColumns = () => {
   const {t} = useTranslation()
@@ -59,6 +60,10 @@ export const TransportSearchExpandedComponent = ({data: {
   createdAt,
   transportToStr,
   transportFromStr,
+  ukraineLang,
+  englishLang,
+  germanyLang,
+  polishLang,
 }}) => {
   const { t } = useTranslation();
   return (
@@ -73,6 +78,11 @@ export const TransportSearchExpandedComponent = ({data: {
           {!!transportToStr && <Item label="Transport do:" value={transportToStr}/>}          
           {!! createdAt &&<Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label="Identyfikator ogłoszenia:" value={id}/>}
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={t("form.language")}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
       <Link to={route['notices.view'](id)} className="text-blue-500 hover:text-blue-300 mt-5 inline-block font-bold">Link</Link>

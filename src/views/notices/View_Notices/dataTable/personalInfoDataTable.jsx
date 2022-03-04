@@ -1,6 +1,7 @@
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
+import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
 const Item = ({label, value}) => {
   return (
@@ -23,6 +24,10 @@ export const PersonalInfoDataTable = ({data: {
   phoneNumber,
   email,
   createdAt,
+  ukraineLang,
+  englishLang,
+  germanyLang,
+  polishLang,
 }}) => {
   const { t } = useTranslation();
   const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
@@ -71,6 +76,11 @@ export const PersonalInfoDataTable = ({data: {
           }
           {!! createdAt &&<Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}/>}
           {!! id &&<Item label={t('common.id')} value={id}/>}
+          { (ukraineLang || englishLang || germanyLang || polishLang) &&
+          <Item label={t("form.language")}
+                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+          />
+          }
         </div>
       </div>
     </div>

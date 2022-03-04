@@ -82,7 +82,12 @@
     "receptionPoint": "Reception point",
     "lfMedicalAssistance": "Looking for medical assistance",
     "offerMedicalAssistance": "Offer medical assistance",
-    "offerVolunteerHelp": "Offer help as a volunteer"
+    "offerVolunteerHelp": "Offer help as a volunteer",
+    "language": "Language",
+    "speakUkrainian": "I speak Ukrainian",
+    "speakEnglish": "I speak English",
+    "speakPolish": "I speak Polish",
+    "speakGerman": "I speak German"
   },
   "success": {
     "title": "Success!",
@@ -160,6 +165,12 @@
     "markActive": "Mark as active",
     "markInactive": "Mark as inactive",
     "waitingForApproval": "Notice pending approval"
+  },
+  "language": {
+    "ukrainian": "Ukrainian",
+    "english": "English",
+    "germany": "German",
+    "polish": "Polish"
   },
   "RODO": {
     "label": "I agree to the processing of my data by Cetuspro Sp. z o.o. based in Rzeszow, in order to publish my data in an advertisement placed on the uapomoc.pl portal, addressed to people in need and providing help to Ukraine. <1>Clause</1>",

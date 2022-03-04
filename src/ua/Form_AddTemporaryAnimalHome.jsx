@@ -28,6 +28,7 @@ import { InputSubmit } from '../components/form/Input_Submit'
 import { InputText } from '../components/form/Input_Text'
 import { InputTextarea } from '../components/form/Input_Textarea'
 import { InputVoluntary } from '../components/form/Input_Voluntary'
+import { LanguageBlock } from './LanguageBlock'
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -47,7 +48,11 @@ const schema = yup.object().shape({
   acceptTerms: yup.string().required(),
 
   period: yup.string().required(),
-  voluntaryHelpCheckbox: yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
+  isOfferFreeFlag: yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
+  ukraineLang: yup.bool(),
+  englishLang: yup.bool(),
+  germanyLang: yup.bool(),
+  polishLang: yup.bool(),
 })
 
 const query = (data) => {
@@ -169,6 +174,7 @@ const FormAddTemporaryAnimalHome = () => {
                   <InputCheckbox name="hasExperience" label={t('form.hasExperienceWithAnimals')} />
                 </div>
               </div>
+              <LanguageBlock />
               <h4 className="font-bold mt-8">{t('form.extraInfo')}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4" />
               <div>

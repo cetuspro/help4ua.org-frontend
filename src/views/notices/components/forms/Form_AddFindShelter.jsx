@@ -42,7 +42,7 @@ const FormAddFindShelter = ({defaultValues, query, onSuccess, editMode=false}) =
     acceptTerms: editMode ? yup.string() : yup.string().required(),
     period: yup.string().required(),
     language: yup.string().nullable(),
-    voluntaryHelpCheckbox: editMode ? yup.string() : yup.bool().oneOf([true], 'voluntaryHelpCheckbox is a required field').required(),
+    isOfferFreeFlag: editMode ? yup.string() : yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
   }), [editMode]);
 
   const methods = useForm({
