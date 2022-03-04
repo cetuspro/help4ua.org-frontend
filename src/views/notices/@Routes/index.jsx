@@ -241,17 +241,29 @@ const NoticeRoutes = () => {
           />}
         />
         <Route
-        path={route['notices.list16']}
-        element={
-          <LazyNotices
-            title={t('form.offerVolunteerHelp')}
-            columns={personalDataColumnConfig()}
-            expandableRowsComponent={PersonalInfoDataTable}
-            noticeType={100}
-            filters={BasicFilter}
-          />
-        }
-      />
+          path={route['notices.list16']}
+          element={
+            <LazyNotices
+              title={t('form.offerVolunteerHelp')}
+              columns={personalDataColumnConfig()}
+              expandableRowsComponent={PersonalInfoDataTable}
+              noticeType={100}
+              filters={BasicFilter}
+            />
+          } 
+        />
+        <Route
+          path={route['notices.list17']}
+          element={
+            <LazyNotices
+              title={t('form.lfVolunteerHelp')}
+              columns={personalDataColumnConfig()}
+              expandableRowsComponent={PersonalInfoDataTable}
+              noticeType={102}
+              filters={BasicFilter}
+            />
+          } 
+        />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
     </Route>,
     <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
@@ -349,6 +361,17 @@ const NoticeRoutes = () => {
             description={t('formDescription.offerVolunteerHelp')}
             formComponent={FormAddVolunteerOffer}
             type={100}
+          />
+        }
+      />
+      <Route
+        path={route['notices.addFindVolunteersHelp']}
+        element={
+          <LazyAddNotice
+            title={t('form.lfVolunteerHelp')}
+            description={t('formDescription.lfVolunteerHelp')}
+            formComponent={FormAddVolunteerOffer}
+            type={102}
           />
         }
       />

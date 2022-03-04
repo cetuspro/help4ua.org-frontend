@@ -75,7 +75,7 @@ export default function Home() {
             <NoticeCard
               icon={FiHome}
               title={"tiles.shelter"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferAccommodation")}
               description={'formDescription.offerShelter'}
               toAdd={route['notices.addShelterOffer']}
@@ -84,7 +84,7 @@ export default function Home() {
             <NoticeCard
               icon={FiHome}
               title={"lfShelter.shelter"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchAccommodation")}
               description={'formDescription.findShelter'}
               toAdd={route['notices.addFindShelter']}
@@ -93,7 +93,7 @@ export default function Home() {
             <NoticeCard
               icon={FiTruck}
               title={"tiles.transport"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferTransportHelp")}
               description={'formDescription.offerTransport'}
               toAdd={route['notices.addTransportOffer']}
@@ -102,7 +102,7 @@ export default function Home() {
             <NoticeCard
               icon={FiTruck}
               title={"tiles.lfTransport"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchTransportHelp")}
               description={'formDescription.findTransport'}
               toAdd={route['notices.addFindTransportOffer']}
@@ -111,7 +111,7 @@ export default function Home() {
             <NoticeCard
               icon={FiGift}
               title={"tiles.help"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelp")}
               description={'formDescription.offerHelp'}
               toAdd={route['notices.addHelpOffer']}
@@ -120,7 +120,7 @@ export default function Home() {
             <NoticeCard
               icon={FiGift}
               title={"tiles.lfHelp"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelp")}
               description={'formDescription.findHelp'}
               toAdd={route['notices.addFindHelp']}
@@ -129,7 +129,7 @@ export default function Home() {
             <NoticeCard
               icon={FiBriefcase}
               title={"tiles.legalHelp"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferLegalAssistance")}
               description={'formDescription.offerLegalHelp'}
               toAdd={route['notices.addlegalHelpOffer']}
@@ -138,7 +138,7 @@ export default function Home() {
             <NoticeCard
               icon={FiBriefcase}
               title={"tiles.lfLegalHelp"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchLegalAssistance")}
               description={'formDescription.findLegalHelp'}
               toAdd={route['notices.addfindLegalHelp']}
@@ -147,7 +147,7 @@ export default function Home() {
             <NoticeCard
               icon={FiEdit}
               title={"tiles.translations"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferTranslationHelp")}
               description={'formDescription.translations'}
               toAdd={route['notices.addTranslationOffer']}
@@ -156,7 +156,7 @@ export default function Home() {
             <NoticeCard
               icon={FiEdit}
               title={"tiles.lfTranslations"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchTranslationHelp")}
               description={'formDescription.lfTranslations'}
               toAdd={route['notices.addFindTranslationOffer']}
@@ -165,7 +165,7 @@ export default function Home() {
             <NoticeCard
               icon={FaPaw}
               title={"tiles.temporaryAnimalHome"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelpForAnimal")}
               description={'formDescription.temporaryAnimalHome'}
               toAdd={route['notices.addTemporaryAnimalHome']}
@@ -174,7 +174,7 @@ export default function Home() {
             <NoticeCard
               icon={FaPaw}
               title={"tiles.lfTemporaryAnimalHome"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelpForAnimal")}
               description={'formDescription.lfTemporaryAnimalHome'}
               toAdd={route['notices.addFindTemporaryAnimalHome']}
@@ -183,7 +183,7 @@ export default function Home() {
             <NoticeCard
               icon={FaBriefcaseMedical}
               title={"tiles.offerMedicalAssistance"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferMedicalHelp")}
               description={'formDescription.offerMedicalAssistance'}
               toAdd={route['notices.addOfferMedicalAssistance']}
@@ -192,7 +192,7 @@ export default function Home() {
             <NoticeCard
               icon={FaBriefcaseMedical}
               title={"tiles.lfMedicalAssistance"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "SearchMedicalHelp")}
               description={'formDescription.medicalAssistance'}
               toAdd={route['notices.addFindMedicalAssistance']}
@@ -201,11 +201,20 @@ export default function Home() {
             <NoticeCard
               icon={MdOutlineVolunteerActivism}
               title={"tiles.offerVolunteerHelp"}
-              isFetching
+              isFetching={isFetching}
               verifiedAmount={getNoticeVerifiedAmount(data, "OfferVolunteerHelp")}
               description={'formDescription.offerVolunteerHelp'}
               toAdd={route['notices.addVolunteersOfferingHelp']}
               toView={route['notices.list16']}
+            />
+            <NoticeCard
+              icon={MdOutlineVolunteerActivism}
+              title={"tiles.lfVolunteerHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchVolunteerHelp")}
+              description={'formDescription.lfVolunteerHelp'}
+              toAdd={route['notices.addFindVolunteersHelp']}
+              toView={route['notices.list17']}
             /> 
 
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
