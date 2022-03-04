@@ -6,6 +6,15 @@ import { route } from '@/app/router/urls/routes'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 
+const Item = ({ label, value }) => {
+  return (
+    <div className="py-1 flex gap-1">
+      <span className="">{label}</span>
+      <span className="font-bold ">{value}</span>
+    </div>
+  )
+}
+
 export const translationOfferColumns = () => {
   const { t } = useTranslation()
   return [
