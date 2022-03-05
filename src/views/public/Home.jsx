@@ -1,7 +1,7 @@
 import { FiHome, FiEdit, FiTruck, FiGift, FiBriefcase } from 'react-icons/fi'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
-import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical, FaUserTie } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import heroImg from '../../assets/img/hero.png'
@@ -197,7 +197,25 @@ export default function Home() {
               description={'formDescription.medicalAssistance'}
               toAdd={route['notices.addFindMedicalAssistance']}
               toView={route['notices.list12']}
-            /> 
+            />
+            <NoticeCard
+              icon={FaUserTie}
+              title={"tiles.offerWork"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferingWork")}
+              description={'formDescription.offerWork'}
+              toAdd={route['notices.addOfferWork']}
+              toView={route['notices.list110']}
+            />
+            <NoticeCard
+              icon={FaUserTie}
+              title={"tiles.lfWork"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchWork")}
+              description={'formDescription.lfWork'}
+              toAdd={route['notices.addFindWork']}
+              toView={route['notices.list112']}
+            />
             <NoticeCard
               icon={MdOutlineVolunteerActivism}
               title={"tiles.offerVolunteerHelp"}
@@ -206,6 +224,15 @@ export default function Home() {
               description={'formDescription.offerVolunteerHelp'}
               toAdd={route['notices.addVolunteersOfferingHelp']}
               toView={route['notices.list16']}
+            />
+            <NoticeCard
+              icon={MdOutlineVolunteerActivism}
+              title={"tiles.lfVolunteerHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchVolunteerHelp")}
+              description={'formDescription.lfVolunteerHelp'}
+              toAdd={route['notices.addFindVolunteersHelp']}
+              toView={route['notices.list17']}
             /> 
 
             <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
