@@ -9,6 +9,10 @@ import Button from './Button'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 
+import li from "../../assets/img/social/li.png"
+import ig from "../../assets/img/social/ig.png"
+import fb from "../../assets/img/social/fb.png"
+
 const HorizontalNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { isAuthenticated, roles } = useAuth()
@@ -29,6 +33,20 @@ const HorizontalNavigation = () => {
             <NavItem key={item.id} to={item.route} label={item.label} icon={item.icon} />
           ))}
         {/*<UserDropdown />*/}
+
+        <div className='hidden sm:flex justify-center items-center gap-x-3 '>
+          <p className='font-semibold'>{t('header.supportUs')+':'}</p>
+          {/* <a href='https://www.instagram.com/uapomoc.pl' target={"_blank"} rel={'noreferrer'}> 
+            <img src={li} alt={'UApomoc Linkedin'}></img>
+          </a> */}
+          <a href='https://www.instagram.com/uapomoc.pl' target={"_blank"} rel={'noreferrer'}> 
+            <img src={ig} alt={'UApomoc Instagram'}></img>
+          </a>
+          <a href='https://www.facebook.com/uapomocpl' target={"_blank"} rel={'noreferrer'}> 
+            <img src={fb} alt={'UApomoc Facebook'}></img>
+          </a>
+        </div>
+
         <LanguageSwitcher/>
       </nav>
     </>

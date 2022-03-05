@@ -14,18 +14,18 @@ const NoticeCard = ({
   const { t } = useTranslation()
   
   return (
-    <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-    <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
+    <div className="flex flex-col items-center justify-center lg:items-start max-w-[600px] py-8 border-b lg:border-0 "> {/*shadow-md rounded-3xl*/}
+    {/* <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
       <Icon size={100} color="currentColor" />
-    </div>
+    </div> */}
 
-    <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
+    <h3 className="text-xl md:text-2xl font-semibold text-center lg:text-start mb-4">
       {t(title)}
     </h3>
 
-    <p className={'italic mb-4'}>
+    {/* <p className={'italic mb-4'}>
       {t('frontpage.activeAds')}: {!isFetching ? verifiedAmount : '-'}
-    </p>
+    </p> */}
     <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
       <Link
         className="inline-block bg-blue-600 hover:bg-blue-800 focus-visible:ring ring-yellow-300 text-white active:text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
@@ -42,7 +42,7 @@ const NoticeCard = ({
         })`}
       </Link>
     </div>
-    <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+    <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-justify mx-auto">
       {t(description)}
     </p>
   </div>
