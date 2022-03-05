@@ -275,6 +275,8 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.offerVolunteerHelp')}
+            styles={shelterOfferStyles}
+            config={shelterOfferConfig}
             columns={personalDataColumnConfig()}
             expandableRowsComponent={PersonalInfoDataTable}
             noticeType={100}
@@ -287,6 +289,8 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfVolunteerHelp')}
+            styles={shelterOfferStyles}
+            config={shelterOfferConfig}
             columns={personalDataColumnConfig()}
             expandableRowsComponent={PersonalInfoDataTable}
             noticeType={102}
