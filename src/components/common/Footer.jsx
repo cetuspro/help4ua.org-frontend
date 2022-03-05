@@ -19,7 +19,7 @@ const Footer = () => {
           <a href='https://www.instagram.com/uapomoc.pl' target={"_blank"} rel={'noreferrer'}> 
             <img src={ig} alt={'UApomoc Instagram'}></img>
           </a>
-          <a href='https://www.facebook.com/uapomocpl' target={"_blank"} rel={'noreferrer'}> 
+          <a href='https://www.facebook.com/help4uaorg' target={"_blank"} rel={'noreferrer'}> 
             <img src={fb} alt={'UApomoc Facebook'}></img>
           </a>
         </div>
