@@ -83,6 +83,7 @@ export const HelpOfferExpandedComponent = ({
       console.log(e)
     }
   }
+
   const getRegion = (val) => voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
   const href =
     location?.lat && location?.long
@@ -128,7 +129,7 @@ export const HelpOfferExpandedComponent = ({
               label={t('common.telefon')}
               value={
                 <a
-                  href={`tel:${showField ? realPhoneNumber : phoneNumber}`}
+                  href={showField ? `tel:${realPhoneNumber}` : 'javascript:void(0)'}
                   className="font-bold text-blue-700 hover:text-blue-500">
                   {showField ? realPhoneNumber : phoneNumber}
                 </a>

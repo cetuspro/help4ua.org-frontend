@@ -94,7 +94,7 @@ export const TemporaryAnimalHomeSearchExpandedComponent = ({
               label={t('common.telefon')}
               value={
                 <a
-                  href={`tel:${showField ? realPhoneNumber : phoneNumber}`}
+                  href={showField ? `tel:${realPhoneNumber}` : 'javascript:void(0)'}
                   className="font-bold text-blue-700 hover:text-blue-500">
                   {showField ? realPhoneNumber : phoneNumber}
                 </a>
