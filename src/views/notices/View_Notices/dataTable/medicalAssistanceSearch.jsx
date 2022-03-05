@@ -81,10 +81,8 @@ export const MedicalAssistanceSearchExpandedComponent = ({
     <div className="text-sm text-center bg-white dark:bg-gray-900 text-black dark:text-gray-400 rounded shadow p-3 mb-4">
       <div className="flex gap-5">
         <div className="flex-1">
-          {!!description && <NoticeDetailsItem label={t('common.opis')} value={description} />}
-          {!!descriptionUA && (
-            <NoticeDetailsItem label={t('common.opisUA')} value={descriptionUA} />
-          )}
+          {!!description && <NoticeDetailsItem value={description} />}
+          {!!descriptionUA && <NoticeDetailsItem value={descriptionUA} />}
           {(cityName || getRegion(region) || address) && (
             <NoticeDetailsItem
               label={t('common.adres')}
