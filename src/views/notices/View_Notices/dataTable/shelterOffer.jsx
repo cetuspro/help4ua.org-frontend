@@ -114,15 +114,9 @@ export const ShelterOfferExpandedComponent = ({
       <div className="flex md:gap-5 flex-col md:flex-row text-left">
         <div className="flex-1">
           {!!description && (
-            <NoticeDetailsItem
-              label={t('common.opis')}
-              labelClassName="hidden sm:inline"
-              value={description}
-            />
+            <NoticeDetailsItem labelClassName="hidden sm:inline" value={description} />
           )}
-          {!!descriptionUA && (
-            <NoticeDetailsItem label={t('common.opisUA')} value={descriptionUA} />
-          )}
+          {!!descriptionUA && <NoticeDetailsItem value={descriptionUA} />}
           {(cityName || getRegion(region) || address) && (
             <NoticeDetailsItem
               label={t('common.adres')}
