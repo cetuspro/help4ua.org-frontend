@@ -4,6 +4,12 @@ import { Controller, useFormContext } from 'react-hook-form'
 import { FormFieldError } from './HookFormFieldError'
 import { getLocation } from '@/app/CRUD/region/getLocation'
 import { customStyles } from '@/app/utils/form/select'
+import prepareLocationList from '@/app/utils/form/prepareLocationList'
+
+// remove location from form state before submit
+// add debounce
+
+const LOCATION_FIELDS = ['latitude', 'longitude', 'cityId', 'cityName', 'postalCodeId']
 
 const InputLocationAutocomplete = ({
   label,
@@ -15,32 +21,32 @@ const InputLocationAutocomplete = ({
   ...props
 }) => {
   const [location, setLocation] = useState(null)
-  const { control, getValues, resetField } = useFormContext()
+  const { control, getValues, resetField, setValue } = useFormContext()
   const { countryId } = getValues()
 
   const loadOptions = async (inputValue, callback) => {
     if (inputValue.length >= 3) {
       const data = await getLocation(inputValue, countryId)
-      const preparedLocations = data
-        .map(({ name, ...rest }) => ({
-          value: name,
-          label: name,
-          name,
-          countryId,
-          ...rest,
-        }))
-        .filter((item) => item.latitude && item.longitude)
 
-      callback(preparedLocations)
+      callback(prepareLocationList(data))
     }
   }
 
   useEffect(() => {
-    control.register(name)
+    LOCATION_FIELDS.forEach((field) => {
+      control.register(field)
+    })
+
+    return () => {
+      control.unregister(name)
+    }
   }, [])
 
   useEffect(() => {
-    resetField(name)
+    LOCATION_FIELDS.forEach((field) => {
+      resetField(field)
+    })
+
     setLocation(null)
   }, [countryId])
 
@@ -64,6 +70,12 @@ const InputLocationAutocomplete = ({
               onChange={(data) => {
                 onChange(data)
                 setLocation(data)
+
+                if (data) {
+                  LOCATION_FIELDS.forEach((field) => {
+                    setValue(field, data[field])
+                  })
+                }
               }}
               {...props}
               {...field}

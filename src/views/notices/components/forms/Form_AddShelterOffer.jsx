@@ -41,7 +41,11 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
       yup.object().shape({
         name: yup.string().required(),
         description: yup.string().nullable(),
-        location: yup.object().required(),
+        cityId: yup.number().nullable(),
+        cityName: yup.string().required('Location field is required'),
+        postalCodeId: yup.number().nullable(),
+        latitude: yup.number(),
+        longitude: yup.number(),
         countryId: yup.number().required(),
         region: showRegion ? yup.number().required() : yup.string().nullable(),
         phoneNumber: yup.string().required(),
@@ -99,7 +103,13 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
         <div className="flex-grow border-t border-gray-300 mb-4" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
           <div>
-            <InputText name="name" label={t('form.name')} icon={FaUser} required />
+            <InputText
+              name="name"
+              label={t('form.nameLabel')}
+              placeholder={t('form.name')}
+              icon={FaUser}
+              required
+            />
           </div>
           <div>
             <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} required />
@@ -107,7 +117,7 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
           <div>
             <InputLocationAutocomplete
               name="location"
-              label={t('form.location')}
+              label={t('form.locationLabel')}
               placeholder={t('form.location')}
               required
               icon={FaMapPin}
@@ -115,7 +125,12 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
             />
           </div>
           <div>
-            <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
+            <InputText
+              name="email"
+              label={<span className="mb-4 block">{t('form.email')}</span>}
+              placeholder={t('form.email')}
+              icon={FaEnvelope}
+            />
           </div>
           <div>
             <InputAsyncSelect
@@ -132,7 +147,7 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
             />
           </div>
           <div>
-           <InputSelect
+            <InputSelect
               name="region"
               label={t('form.voivodeship')}
               options={voivodeshipsEnum((a) => a)}
