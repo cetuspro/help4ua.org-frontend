@@ -19,6 +19,12 @@ We have all communication there.
 
 ## How to start coding?
 
+Tasks:
+- Development tasks: [Trello](https://trello.com/b/hpaAYSL5/development)
+
+How to report bug?
+If you find a bug, you can report it in the tab [Issues](https://github.com/cetuspro/help4ua.org-frontend/issues).
+
 To run this project, you will need to add the following environment variables to your .env file
 
 `VITE_API_URL`
