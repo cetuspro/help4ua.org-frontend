@@ -24,9 +24,11 @@ You can contact us:
 ## Roles in project:
 Technical:
 - Norbert Pisz - [LinkedIn](https://www.linkedin.com/in/norbert-pisz-8ba76b54/) - Head of Development
-- 
+[WIP]
+
 Managment:
-- Rafał Cencora - [LinkedIn](https://www.linkedin.com/in/rafa%C5%82-cencora-701a3b8b/) - Head of Development
+- Rafał Cencora - [LinkedIn](https://www.linkedin.com/in/rafa%C5%82-cencora-701a3b8b/) - Managment
+[WIP]
 
 ## How to start coding?
 If you want to start work, be sure to join our discord and ask the admin to assign the role of "dev-team".
