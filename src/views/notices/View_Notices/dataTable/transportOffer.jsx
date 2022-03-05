@@ -5,7 +5,9 @@ import { route } from '@/app/router/urls/routes'
 import { FaPhone } from 'react-icons/fa'
 import { useState } from 'react'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
+import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 export const transportOfferColumns = () => {
   const { t } = useTranslation()
@@ -64,6 +66,22 @@ export const TransportOfferExpandedComponent = ({
   },
 }) => {
   const { t } = useTranslation()
+  const [showField, setShowField] = useState(false)
+  const [realPhoneNumber, setRealPhoneNumber] = useState('XXX-XXX-XXX')
+
+  const handleAction = async () => {
+    try {
+      if (showField) return
+      const field = await getHiddenFields({
+        noticeId: id,
+        type: FieldType.PHONE,
+      })
+      setRealPhoneNumber(field)
+      setShowField(true)
+    } catch (e) {
+      console.log(e)
+    }
+  }
   return (
     <div className="text-sm text-center bg-white dark:bg-gray-900 text-black dark:text-gray-400 rounded shadow p-3 mb-4">
       <div className="flex gap-5">
@@ -73,7 +91,13 @@ export const TransportOfferExpandedComponent = ({
             <NoticeDetailsItem label={t('common.opisUA')} value={descriptionUA} />
           )}
           {!!name && <NoticeDetailsItem label={t('common.imie')} value={name} />}
-          {!!phoneNumber && <NoticeDetailsItem label={t('common.telefon')} value={phoneNumber} />}
+          {!!phoneNumber && (
+            <ActionDetailsItem
+              onAction={handleAction}
+              label={t('common.telefon')}
+              value={showField ? realPhoneNumber : phoneNumber}
+            />
+          )}
           {!!transportFromStr && (
             <NoticeDetailsItem label={t('form.transportFromStr')} value={transportFromStr} />
           )}

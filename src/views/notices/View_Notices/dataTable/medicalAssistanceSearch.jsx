@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
+import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 export const medicalAssistanceSearch = () => {
   const { t } = useTranslation()
@@ -51,6 +54,22 @@ export const MedicalAssistanceSearchExpandedComponent = ({
 }) => {
   const { t } = useTranslation()
   const getRegion = (val) => voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
+  const [showField, setShowField] = useState(false)
+  const [realPhoneNumber, setRealPhoneNumber] = useState('XXX-XXX-XXX')
+
+  const handleAction = async () => {
+    try {
+      if (showField) return
+      const field = await getHiddenFields({
+        noticeId: id,
+        type: FieldType.PHONE,
+      })
+      setRealPhoneNumber(field)
+      setShowField(true)
+    } catch (e) {
+      console.log(e)
+    }
+  }
   const href =
     location?.lat && location?.long
       ? `http://www.google.com/maps/place/${location?.lat},${location?.long}`
@@ -90,13 +109,14 @@ export const MedicalAssistanceSearchExpandedComponent = ({
           )}
           {!!name && <NoticeDetailsItem label={t('common.imie')} value={name} />}
           {!!phoneNumber && (
-            <NoticeDetailsItem
+            <ActionDetailsItem
+              onAction={handleAction}
               label={t('common.telefon')}
               value={
                 <a
-                  href={`tel:${phoneNumber}`}
+                  href={`tel:${showField ? realPhoneNumber : phoneNumber}`}
                   className="flex flex-col text-blue-700 hover:text-blue-500 items-start">
-                  {phoneNumber}
+                  {showField ? realPhoneNumber : phoneNumber}
                 </a>
               }
             />

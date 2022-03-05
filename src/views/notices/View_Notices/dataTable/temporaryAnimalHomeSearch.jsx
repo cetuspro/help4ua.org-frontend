@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { route } from '@/app/router/urls/routes'
 import dayjs from 'dayjs'
@@ -6,6 +7,8 @@ import { Link } from 'react-router-dom'
 import { getAnimal, getPeriod, getLanguagesValue } from './DataTable_Notices'
 import { getBoolValue } from './temporaryAnimalHomeOffer'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
+import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
+import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 export const temporaryAnimalHomeSearch = () => {
   const { t } = useTranslation()
@@ -57,6 +60,22 @@ export const TemporaryAnimalHomeSearchExpandedComponent = ({
 }) => {
   const { t } = useTranslation()
   const getRegion = (val) => voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
+  const [showField, setShowField] = useState(false)
+  const [realPhoneNumber, setRealPhoneNumber] = useState('XXX-XXX-XXX')
+
+  const handleAction = async () => {
+    try {
+      if (showField) return
+      const field = await getHiddenFields({
+        noticeId: id,
+        type: FieldType.PHONE,
+      })
+      setRealPhoneNumber(field)
+      setShowField(true)
+    } catch (e) {
+      console.log(e)
+    }
+  }
   const href =
     location?.lat && location?.long
       ? `http://www.google.com/maps/place/${location?.lat},${location?.long}`
@@ -70,13 +89,14 @@ export const TemporaryAnimalHomeSearchExpandedComponent = ({
         <div className="flex-1">
           {!!name && <NoticeDetailsItem label={t('common.imie')} value={name} />}
           {!!phoneNumber && (
-            <NoticeDetailsItem
+            <ActionDetailsItem
+              onAction={handleAction}
               label={t('common.telefon')}
               value={
                 <a
-                  href={`tel:${phoneNumber}`}
+                  href={`tel:${showField ? realPhoneNumber : phoneNumber}`}
                   className="font-bold text-blue-700 hover:text-blue-500">
-                  {phoneNumber}
+                  {showField ? realPhoneNumber : phoneNumber}
                 </a>
               }
             />
