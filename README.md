@@ -38,13 +38,15 @@ Tasks:
 ## How to report bug?
 If you find a bug, you can report it in the tab [Issues](https://github.com/cetuspro/help4ua.org-frontend/issues).
 
+
+
+## Technical informations
 To run this project, you will need to add the following environment variables to your .env file
 
 `VITE_API_URL`
 
 `VITE_BASE_URL`
 
-## Deployment
 To deploy this project
 ```bash
   pnpm install
