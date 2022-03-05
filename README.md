@@ -12,7 +12,7 @@ Production is running on:
 - [help4ua.com](www.help4ua.com)
 - [uapomoc.pl](www.uapomoc.pl)
 
-Join our Discord on: [https://discord.com/invite/QfYgU75Mcw](https://discord.com/invite/QfYgU75Mcw)
+Join our Discord on: [help4ua.org discord](https://discord.com/invite/QfYgU75Mcw)
 We have all communication there.
 
 
