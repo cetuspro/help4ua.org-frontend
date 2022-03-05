@@ -15,14 +15,24 @@ Production is running on:
 Join our Discord on: [help4ua.org discord](https://discord.com/invite/QfYgU75Mcw)
 We have all communication there.
 
+## How to contact with us?
+You can contact us:
+- [Discord](https://discord.com/invite/QfYgU75Mcw)
+- Email: akcjauapomoc@gmail.com
+- LinkedIn to creator: [Norbert Pisz](https://www.linkedin.com/in/norbert-pisz-8ba76b54/)
 
+Roles in project:
+- [https://www.linkedin.com/in/norbert-pisz-8ba76b54/](Norbert Pisz) - Head of Development
+- 
 
 ## How to start coding?
+If you want to start work, be sure to join our discord and ask the admin to assign the role of "dev-team".
+contact [Norbert Pisz](https://www.linkedin.com/in/norbert-pisz-8ba76b54/) on discord
 
 Tasks:
 - Development tasks: [Trello](https://trello.com/b/hpaAYSL5/development)
 
-How to report bug?
+## How to report bug?
 If you find a bug, you can report it in the tab [Issues](https://github.com/cetuspro/help4ua.org-frontend/issues).
 
 To run this project, you will need to add the following environment variables to your .env file
