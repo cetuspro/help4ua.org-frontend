@@ -18,6 +18,7 @@ import {
 import { InputText } from '@/components/form/Input_Text'
 import { InputCheckbox } from '@/components/form/Input_Checkbox'
 import { InputSelect } from '@/components/form/Input_Select'
+import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import { InputTextarea } from '@/components/form/Input_Textarea'
 import { useHookFormMutation } from '../../../../app/hooks/useHookFormMutation'
 import { InputSubmit } from '@/components/form/Input_Submit'
@@ -27,7 +28,6 @@ import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo, useState } from 'react'
-import { useSelector } from 'react-redux'
 import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
 import { LanguageBlock } from '../../../../ua/LanguageBlock'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
@@ -41,7 +41,7 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
       yup.object().shape({
         name: yup.string().required(),
         description: yup.string().nullable(),
-        cityName: yup.string().required(),
+        location: yup.object().required(),
         countryId: yup.number().required(),
         region: showRegion ? yup.number().required() : yup.string().nullable(),
         phoneNumber: yup.string().required(),
@@ -89,7 +89,6 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
   }, [defaultValues])
 
   const { t } = useTranslation()
-
   const mutation = useHookFormMutation(methods, query, { onSuccess })
 
   return (
@@ -106,11 +105,17 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
             <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} required />
           </div>
           <div>
-            <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
+            <InputLocationAutocomplete
+              name="location"
+              label={t('form.location')}
+              placeholder={t('form.location')}
+              required
+              icon={FaMapPin}
+              components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            />
           </div>
-
           <div>
-            <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} required />
+            <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
           </div>
           <div>
             <InputAsyncSelect
@@ -127,7 +132,7 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
             />
           </div>
           <div>
-            <InputSelect
+           <InputSelect
               name="region"
               label={t('form.voivodeship')}
               options={voivodeshipsEnum((a) => a)}

@@ -31,6 +31,7 @@
     "phoneNumber": "Телефонний номер",
     "email": "Електронна пошта",
     "cityName": "Місто",
+    "location": "Місцезнаходження",
     "country": "Країна",
     "accommodation": "Проживання",
     "accommodationPlacesCount": "кількість людей",
