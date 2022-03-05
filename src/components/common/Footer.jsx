@@ -37,13 +37,14 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="text-gray-400 text-sm text-center flex flex-col sm:flex-row justify-center py-2">
-          <div>© 2022 - UAPomoc.pl</div>
-          <div className='mx-2 flex justify-center content-center'>
-            <span>Made with</span>
+        <div className="text-gray-400 text-sm text-center flex flex-col lg:flex-row justify-center py-2">
+          <div>© 2022 - help4ua.org</div>
+          <div className='mx-2 flex justify-center content-center flex-row flex-wrap'>
+            Started by
+            <a className="mx-1" href="https://cetuspro.com" target="_blank" rel='noreferrer'>cetuspro.com</a>
+            and made with
             <FaHeart className="mx-1 mt-0.5 text-sm"/>
-            <span>by</span>
-            <a className="mx-1" href="https://cetuspro.com" target="_blank" rel='noreferrer' >cetuspro.com</a>
+            from people to people.
           </div>
         </div>
       </div>
