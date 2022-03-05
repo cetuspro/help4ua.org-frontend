@@ -42,7 +42,7 @@ const NoticeCard = ({
         })`}
       </Link>
     </div>
-    <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center lg:text-left mx-auto">
+    <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-justify mx-auto">
       {t(description)}
     </p>
   </div>

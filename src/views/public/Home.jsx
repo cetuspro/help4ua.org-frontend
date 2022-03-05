@@ -75,7 +75,7 @@ export default function Home() {
         <div id={'rodzaje-ogloszen'} className="max-w-screen-xl px-4 md:px-8 mx-auto mt-4 mb-40 scroll-mt-10">
           <h2 className='text-xl font-semibold'>{t('frontpage.noticesTypesQuestion')}</h2>
           {/* <div className='flex flex-wrap justify-between w-fit gap-x-6'> */}
-          <div className="grid w-11/12 max-w-[300px] m-auto sm:max-w-none sm:w-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 sm:px-10 md:px-0 lg:px-10 py-2"> {/*max-w-[300px] m-auto sm:max-w-none*/}
+          <div className="grid w-11/12 max-w-[300px] m-auto sm:max-w-none sm:w-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 sm:px-10 md:px-0 py-2"> {/*max-w-[300px] m-auto sm:max-w-none*/}
           
           
             <Button3
@@ -91,15 +91,9 @@ export default function Home() {
             />
 
             <Button3
-              icon={FiGift}
-              label={t('frontpage.otherHelp')}
-              hashLink={'#inna-pomoc'}
-            />
-
-            <Button3
-              icon={FiBriefcase}
-              label={t('frontpage.legalHelp')}
-              hashLink={'#pomoc-prawna'}
+              icon={MdOutlineVolunteerActivism}
+              label={t('frontpage.volunteering')}
+              hashLink={'#wolontariat'}
             />
 
             <Button3
@@ -109,9 +103,9 @@ export default function Home() {
             />
 
             <Button3
-              icon={FaPaw}
-              label={t('frontpage.animalHome')}
-              hashLink={'#dom-dla-zwierzat'}
+              icon={FiBriefcase}
+              label={t('frontpage.legalHelp')}
+              hashLink={'#pomoc-prawna'}
             />
 
             <Button3
@@ -121,15 +115,21 @@ export default function Home() {
             />
 
             <Button3
+              icon={FaPaw}
+              label={t('frontpage.animalHome')}
+              hashLink={'#dom-dla-zwierzat'}
+            />
+
+            <Button3
               icon={FaUserTie}
               label={t('frontpage.jobOffers')}
               hashLink={'#oferty-pracy'}
             />
 
             <Button3
-              icon={MdOutlineVolunteerActivism}
-              label={t('frontpage.volunteering')}
-              hashLink={'#wolontariat'}
+              icon={FiGift}
+              label={t('frontpage.otherHelp')}
+              hashLink={'#inna-pomoc'}
             />
 
             <Button3
@@ -188,46 +188,25 @@ export default function Home() {
               />
             </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FiGift} title={t('frontpage.otherHelp')} hashId={'inna-pomoc'}>
+            <NoticeCardsWrapper icon={MdOutlineVolunteerActivism} title={t('frontpage.volunteering')} hashId={'wolontariat'}>
               <NoticeCard
-                icon={FiGift}
-                title={"tiles.help"}
+                icon={MdOutlineVolunteerActivism}
+                title={"tiles.offerVolunteerHelp"}
                 isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelp")}
-                description={'formDescription.offerHelp'}
-                toAdd={route['notices.addHelpOffer']}
-                toView={route['notices.list5']}
+                verifiedAmount={getNoticeVerifiedAmount(data, "OfferVolunteerHelp")}
+                description={'formDescription.offerVolunteerHelp'}
+                toAdd={route['notices.addVolunteersOfferingHelp']}
+                toView={route['notices.list16']}
               />
               <NoticeCard
-                icon={FiGift}
-                title={"tiles.lfHelp"}
+                icon={MdOutlineVolunteerActivism}
+                title={"tiles.lfVolunteerHelp"}
                 isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelp")}
-                description={'formDescription.findHelp'}
-                toAdd={route['notices.addFindHelp']}
-                toView={route['notices.list8']}
-              />
-            </NoticeCardsWrapper>
-
-            <NoticeCardsWrapper icon={FiBriefcase} title={t('frontpage.legalHelp')} hashId={'pomoc-prawna'}>
-              <NoticeCard
-                icon={FiBriefcase}
-                title={"tiles.legalHelp"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferLegalAssistance")}
-                description={'formDescription.offerLegalHelp'}
-                toAdd={route['notices.addlegalHelpOffer']}
-                toView={route['notices.list13']}
-              />            
-              <NoticeCard
-                icon={FiBriefcase}
-                title={"tiles.lfLegalHelp"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchLegalAssistance")}
-                description={'formDescription.findLegalHelp'}
-                toAdd={route['notices.addfindLegalHelp']}
-                toView={route['notices.list14']}
-              />   
+                verifiedAmount={getNoticeVerifiedAmount(data, "SearchVolunteerHelp")}
+                description={'formDescription.lfVolunteerHelp'}
+                toAdd={route['notices.addFindVolunteersHelp']}
+                toView={route['notices.list17']}
+              /> 
             </NoticeCardsWrapper>
 
             <NoticeCardsWrapper icon={FiEdit} title={t('frontpage.translations')} hashId={'tlumaczenia'}>
@@ -251,25 +230,25 @@ export default function Home() {
               />  
             </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FaPaw} title={t('frontpage.animalHome')} hashId={'dom-dla-zwierzat'}>
+            <NoticeCardsWrapper icon={FiBriefcase} title={t('frontpage.legalHelp')} hashId={'pomoc-prawna'}>
               <NoticeCard
-                icon={FaPaw}
-                title={"tiles.temporaryAnimalHome"}
+                icon={FiBriefcase}
+                title={"tiles.legalHelp"}
                 isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelpForAnimal")}
-                description={'formDescription.temporaryAnimalHome'}
-                toAdd={route['notices.addTemporaryAnimalHome']}
-                toView={route['notices.list10']}
-              /> 
+                verifiedAmount={getNoticeVerifiedAmount(data, "OfferLegalAssistance")}
+                description={'formDescription.offerLegalHelp'}
+                toAdd={route['notices.addlegalHelpOffer']}
+                toView={route['notices.list13']}
+              />            
               <NoticeCard
-                icon={FaPaw}
-                title={"tiles.lfTemporaryAnimalHome"}
+                icon={FiBriefcase}
+                title={"tiles.lfLegalHelp"}
                 isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelpForAnimal")}
-                description={'formDescription.lfTemporaryAnimalHome'}
-                toAdd={route['notices.addFindTemporaryAnimalHome']}
-                toView={route['notices.list11']}
-              /> 
+                verifiedAmount={getNoticeVerifiedAmount(data, "SearchLegalAssistance")}
+                description={'formDescription.findLegalHelp'}
+                toAdd={route['notices.addfindLegalHelp']}
+                toView={route['notices.list14']}
+              />   
             </NoticeCardsWrapper>
 
             <NoticeCardsWrapper icon={FaBriefcaseMedical} title={t('frontpage.medicalAssistance')} hashId={'pomoc-medyczna'}>
@@ -290,6 +269,27 @@ export default function Home() {
                 description={'formDescription.medicalAssistance'}
                 toAdd={route['notices.addFindMedicalAssistance']}
                 toView={route['notices.list12']}
+              /> 
+            </NoticeCardsWrapper>
+
+            <NoticeCardsWrapper icon={FaPaw} title={t('frontpage.animalHome')} hashId={'dom-dla-zwierzat'}>
+              <NoticeCard
+                icon={FaPaw}
+                title={"tiles.temporaryAnimalHome"}
+                isFetching={isFetching}
+                verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelpForAnimal")}
+                description={'formDescription.temporaryAnimalHome'}
+                toAdd={route['notices.addTemporaryAnimalHome']}
+                toView={route['notices.list10']}
+              /> 
+              <NoticeCard
+                icon={FaPaw}
+                title={"tiles.lfTemporaryAnimalHome"}
+                isFetching={isFetching}
+                verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelpForAnimal")}
+                description={'formDescription.lfTemporaryAnimalHome'}
+                toAdd={route['notices.addFindTemporaryAnimalHome']}
+                toView={route['notices.list11']}
               /> 
             </NoticeCardsWrapper>
 
@@ -314,28 +314,26 @@ export default function Home() {
               />
             </NoticeCardsWrapper>
 
-
-            <NoticeCardsWrapper icon={MdOutlineVolunteerActivism} title={t('frontpage.volunteering')} hashId={'wolontariat'}>
+            <NoticeCardsWrapper icon={FiGift} title={t('frontpage.otherHelp')} hashId={'inna-pomoc'}>
               <NoticeCard
-                icon={MdOutlineVolunteerActivism}
-                title={"tiles.offerVolunteerHelp"}
+                icon={FiGift}
+                title={"tiles.help"}
                 isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferVolunteerHelp")}
-                description={'formDescription.offerVolunteerHelp'}
-                toAdd={route['notices.addVolunteersOfferingHelp']}
-                toView={route['notices.list16']}
+                verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelp")}
+                description={'formDescription.offerHelp'}
+                toAdd={route['notices.addHelpOffer']}
+                toView={route['notices.list5']}
               />
               <NoticeCard
-                icon={MdOutlineVolunteerActivism}
-                title={"tiles.lfVolunteerHelp"}
+                icon={FiGift}
+                title={"tiles.lfHelp"}
                 isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchVolunteerHelp")}
-                description={'formDescription.lfVolunteerHelp'}
-                toAdd={route['notices.addFindVolunteersHelp']}
-                toView={route['notices.list17']}
-              /> 
+                verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelp")}
+                description={'formDescription.findHelp'}
+                toAdd={route['notices.addFindHelp']}
+                toView={route['notices.list8']}
+              />
             </NoticeCardsWrapper>
-
 
             <NoticeCardsWrapper icon={FaMapMarkerAlt} title={t('tiles.helpPoints')}>
               <div id={'punkty-pomocy'} className="flex flex-col items-center justify-center py-4">
