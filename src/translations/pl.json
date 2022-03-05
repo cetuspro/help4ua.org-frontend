@@ -32,6 +32,7 @@
     "phoneNumber": "Numer telefonu",
     "email": "Adres email",
     "cityName": "Miejscowość",
+    "location": "Lokalizacja",
     "country": "Kraj",
     "accommodation": "Zakwaterowanie",
     "accommodationPlacesCount": "Liczba osób",
