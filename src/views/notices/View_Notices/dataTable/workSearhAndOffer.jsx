@@ -114,7 +114,7 @@ export const WorkSearchAndOfferExpandedComponent = ({
               label={t('common.telefon')}
               value={
                 <a
-                  href={`tel:${showField ? realPhoneNumber : phoneNumber}`}
+                  href={showField ? `tel:${realPhoneNumber}` : 'javascript:void(0)'}
                   className="flex flex-col text-blue-700 hover:text-blue-500 items-start">
                   {showField ? realPhoneNumber : phoneNumber}
                 </a>
