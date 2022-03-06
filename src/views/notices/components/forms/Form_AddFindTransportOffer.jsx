@@ -2,13 +2,7 @@ import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FormProvider } from 'react-hook-form'
-import {
-  FaUser,
-  FaPhone,
-  FaComment,
-  FaEnvelope,
-  FaCheck, FaUsers,FaMapPin,
-} from 'react-icons/fa'
+import { FaUser, FaComment, FaEnvelope, FaCheck, FaUsers, FaMapPin } from 'react-icons/fa'
 import { InputText } from '@/components/form/Input_Text'
 import { InputTextarea } from '@/components/form/Input_Textarea'
 import { useHookFormMutation } from '../../../../app/hooks/useHookFormMutation'
@@ -19,44 +13,51 @@ import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
 import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
 import { LanguageBlock } from '../../../../ua/LanguageBlock'
+import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
-const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=false}) => {
-  const schema = useMemo(() => yup.object().shape({
-    name: yup.string().required(),
-    description: yup.string().nullable(),
-    accommodationPlacesCount: yup.string().required(),
-    phoneNumber: yup.string().required(),
-    email: yup.string().email().nullable(),
-    type: yup.number().default(22),
-    acceptTerms: editMode ? yup.string() : yup.string().required(),
-    language: yup.string().nullable(),
-    transportFromStr: yup.string().required(),
-    transportToStr: yup.string().required(),
-    isOfferFreeFlag: editMode ? yup.string() : yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
-    ukraineLang: yup.bool(),
-    englishLang: yup.bool(),
-    germanyLang: yup.bool(),
-    polishLang: yup.bool(),
-  }), [editMode]);
+const FormAddFindTransportOffer = ({ defaultValues, query, onSuccess, editMode = false }) => {
+  const schema = useMemo(
+    () =>
+      yup.object().shape({
+        name: yup.string().required(),
+        description: yup.string().nullable(),
+        accommodationPlacesCount: yup.string().required(),
+        phoneNumber: yup.string().required(),
+        email: yup.string().email().nullable(),
+        type: yup.number().default(22),
+        acceptTerms: editMode ? yup.string() : yup.string().required(),
+        language: yup.string().nullable(),
+        transportFromStr: yup.string().required(),
+        transportToStr: yup.string().required(),
+        isOfferFreeFlag: editMode
+          ? yup.string()
+          : yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
+        ukraineLang: yup.bool(),
+        englishLang: yup.bool(),
+        germanyLang: yup.bool(),
+        polishLang: yup.bool(),
+      }),
+    [editMode],
+  )
 
   const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: defaultValues,
-  });
+  })
 
   useEffect(() => {
-    methods.reset(defaultValues);
-  }, [defaultValues]);
+    methods.reset(defaultValues)
+  }, [defaultValues])
 
-  const {t} = useTranslation();
-  const mutation = useHookFormMutation(methods, query, {onSuccess});
-  
+  const { t } = useTranslation()
+  const mutation = useHookFormMutation(methods, query, { onSuccess })
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={mutation.mutate}>
-        <HookFormError/>
-        <h4 className="font-bold">{t("form.personalInfo")}</h4>
-        <div className="flex-grow border-t border-gray-300 mb-4"/>
+        <HookFormError />
+        <h4 className="font-bold">{t('form.personalInfo')}</h4>
+        <div className="flex-grow border-t border-gray-300 mb-4" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
           <div>
             <InputText
@@ -68,31 +69,23 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
             />
           </div>
           <div>
-            <InputText
-              name="phoneNumber"
-              label={t("form.phoneNumber")}
-              icon={FaPhone}
-            />
+            <InputPhoneNumber label={t('form.phoneNumber')} name="phoneNumber" required={true} />
           </div>
           <div>
-            <InputText
-              name="email"
-              label={t("form.email")}
-              icon={FaEnvelope}
-            />
+            <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
           </div>
           <div>
             <InputText
               name="accommodationPlacesCount"
               type="number"
-              label={t("form.accommodationPlacesCount")}
+              label={t('form.accommodationPlacesCount')}
               icon={FaUsers}
             />
           </div>
           <div>
             <InputText
               name="transportFromStr"
-              label={t("form.transportFromStr")}
+              label={t('form.transportFromStr')}
               icon={FaMapPin}
               required
             />
@@ -100,7 +93,7 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
           <div>
             <InputText
               name="transportToStr"
-              label={t("form.transportToStr")}
+              label={t('form.transportToStr')}
               icon={FaMapPin}
               required
             />
@@ -108,29 +101,22 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
         </div>
         <LanguageBlock />
         <div>
-          <InputTextarea
-            name="description"
-            label={t("form.description")}
-            icon={FaComment}
-          />
+          <InputTextarea name="description" label={t('form.description')} icon={FaComment} />
         </div>
         {!editMode && (
           <div className="flex justify-end">
             <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
               <InputVoluntary />
-              <InputRodo/>
+              <InputRodo />
             </div>
           </div>
         )}
         <div className="flex justify-end pt-5">
-          <InputSubmit
-            icon={<FaCheck/>}
-            value={t(editMode ? "form.save" : "form.send")}
-          />
+          <InputSubmit icon={<FaCheck />} value={t(editMode ? 'form.save' : 'form.send')} />
         </div>
       </form>
     </FormProvider>
-  );
-};
+  )
+}
 
-export default FormAddFindTransportOffer;
+export default FormAddFindTransportOffer

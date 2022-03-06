@@ -3,7 +3,7 @@ import * as yup from 'yup'
 import { useForm, useWatch } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FormProvider } from 'react-hook-form'
-import { FaUser, FaPhone, FaComment, FaEnvelope, FaMapPin, FaCheck, FaFlag } from 'react-icons/fa'
+import { FaUser, FaComment, FaEnvelope, FaMapPin, FaCheck, FaFlag } from 'react-icons/fa'
 import { InputText } from '../components/form/Input_Text'
 import { InputSelect } from '../components/form/Input_Select'
 import { InputTextarea } from '../components/form/Input_Textarea'
@@ -23,6 +23,7 @@ import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import { addNotice } from '@/app/CRUD/notices/addNotice'
+import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
 const FormAddHelpOffer = () => {
   const { language } = useSelector((state) => state?.language)
@@ -110,7 +111,11 @@ const FormAddHelpOffer = () => {
                   />
                 </div>
                 <div>
-                  <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} />
+                  <InputPhoneNumber
+                    label={t('form.phoneNumber')}
+                    name="phoneNumber"
+                    required={true}
+                  />
                 </div>
                 <div>
                   <InputLocationAutocomplete

@@ -10,7 +10,7 @@ import ua from '../../assets/img/flags/ua.svg'
 import { useTranslation } from 'react-i18next'
 
 
-const languages = [{ lng: 'ua', flag: ua }, { lng: 'pl', flag: pl }, { lng: 'en', flag: en }]
+export const languages = [{ lng: 'ua', flag: ua }, { lng: 'pl', flag: pl }, { lng: 'en', flag: en }]
 const getCurrentLanguage = (lng) => languages.find(item => item.lng === lng)
 
 const LanguageSwitcher = () => {
