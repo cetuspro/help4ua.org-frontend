@@ -13,7 +13,6 @@ export const usePaginatedQuery2 = ({
 }) => {
   const [{ page: filterPage, perPage: filterPerPage, ...filters }] = useFilters()
   const params = useAllLocationParams()
-  // console.log(params)
 
   const page = passedPage ?? filterPage ?? params?.pageNumber ?? defaultPage
   const perPage = passedPerPage ?? filterPerPage ?? params?.pageSize ?? defaultPageSize
@@ -40,8 +39,6 @@ export const usePaginatedQuery2 = ({
       keepPreviousData: true,
     },
   )
-
-  // console.log(queryData)
 
   return {
     data: queryData?.items ?? [],

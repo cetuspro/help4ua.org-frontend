@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
-import { route } from '@/app/router/urls/routes'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { getAnimal, getPeriod, getLanguagesValue } from './DataTable_Notices'
+import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
+import { route } from '@/app/router/urls/routes'
 import { getBoolValue } from './temporaryAnimalHomeOffer'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
+import { getAnimal, getLanguagesValue, getPeriod } from '../models/tableList'
 
 export const temporaryAnimalHomeSearch = () => {
   const { t } = useTranslation()

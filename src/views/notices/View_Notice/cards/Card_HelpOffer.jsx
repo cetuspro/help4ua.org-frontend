@@ -3,9 +3,9 @@ import { route } from '@/app/router/urls/routes'
 import Card from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
-import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
+import { getLanguagesValue } from '../../View_Notices/models/tableList'
 
 const Item = ({label, value}) => {
   return (
@@ -49,7 +49,7 @@ const HelpOfferCard = () => {
       <div className="flex flex-col md:flex-row">
         <div className="flex-1">
           {!!description && <Item label="Opis:" value={description}/>}
-          <Item label="Adres:" value={!!(cityName || getRegion(region) || address) ? (
+          <Item label="Adres:" value={(cityName || getRegion(region) || address) ? (
             <a
               href={href}
               target={'_blank'}
@@ -57,7 +57,7 @@ const HelpOfferCard = () => {
               title="Zobacz na mapie"
               className="flex flex-col text-blue-700 hover:text-blue-500 items-start"
             >
-              {!!(cityName || getRegion(region)) ? <span>{cityName}, {getRegion(region)}</span> : ''}
+              {(cityName || getRegion(region)) ? <span>{cityName}, {getRegion(region)}</span> : ''}
               <span>{address}</span>
             </a>
           ) : "Brak danych"}

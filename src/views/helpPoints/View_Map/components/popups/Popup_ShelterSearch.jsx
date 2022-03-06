@@ -1,12 +1,10 @@
-import { useQueryContext } from '@/app/context/queries/QueryProvider'
-import { route } from '@/app/router/urls/routes'
-import Card from '@/components/common/Card'
-import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
-import { getPeriod, getValue, getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
+import { route } from '@/app/router/urls/routes'
+import Button from '@/components/common/Button'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { isNullOrUndefined } from '@/app/utils/isNullOrUndefined'
+import { getLanguagesValue, getPeriod, getValue } from '@/views/notices/View_Notices/models/tableList'
 
 const Item = ({ label, value }) => {
   return (

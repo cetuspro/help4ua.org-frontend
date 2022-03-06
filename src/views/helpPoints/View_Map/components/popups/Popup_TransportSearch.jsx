@@ -1,11 +1,7 @@
-import { useQueryContext } from '@/app/context/queries/QueryProvider'
 import { route } from '@/app/router/urls/routes'
-import Card from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
-import { getPeriod, getValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
 const Item = ({ label, value }) => {
   return (
@@ -18,10 +14,6 @@ const Item = ({ label, value }) => {
 
 const TransportSearchPopup = ({
   description,
-  cityName,
-  region,
-  address,
-  location,
   id,
   name,
   phoneNumber,

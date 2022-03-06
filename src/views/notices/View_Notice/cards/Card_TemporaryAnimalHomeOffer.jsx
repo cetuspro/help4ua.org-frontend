@@ -3,10 +3,10 @@ import { useQueryContext } from '@/app/context/queries/QueryProvider'
 import { route } from '@/app/router/urls/routes'
 import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
-import { getAnimal, getPeriod, getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
+import { getAnimal, getLanguagesValue, getPeriod } from '../../View_Notices/models/tableList'
 
 const Item = ({ label, value }) => {
   return (
@@ -32,9 +32,7 @@ const TemporaryAnimalHomeOfferCard = () => {
       cityName,
       region,
       address,
-
       period,
-      isCatering,
       isDelivery,
       location,
       shouldRefund,

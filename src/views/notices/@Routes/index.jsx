@@ -114,7 +114,6 @@ const NoticeRoutes = () => {
             config={shelterOfferConfig}
             columns={transportOfferColumns()}
             expandableRowsComponent={TransportOfferExpandedComponent}
-            // itemComponent={TransportOfferItem}
             noticeType={20}
             filters={TransportFilter}
           />

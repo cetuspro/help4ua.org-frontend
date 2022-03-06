@@ -18,7 +18,7 @@ const defaultStyles = {
   },
 }
 
-const Datatable = ({pagination, styles, ...rest}) => {
+const DataTableList = ({pagination, styles, ...rest}) => {
   const customStyles = useMemo(() => ({ ...defaultStyles, ...styles }), [styles])
   const paginationProps = useMemo(() => pagination ? {
     pagination: true,
@@ -40,4 +40,4 @@ const Datatable = ({pagination, styles, ...rest}) => {
   )
 }
 
-export default Datatable
+export default DataTableList

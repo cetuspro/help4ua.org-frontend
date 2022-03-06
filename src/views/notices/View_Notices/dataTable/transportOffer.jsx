@@ -6,7 +6,7 @@ import { FaPhone } from 'react-icons/fa'
 import { useState } from 'react'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
-import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getLanguagesValue } from '../../View_Notices/models/tableList'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 export const transportOfferColumns = () => {
@@ -134,22 +134,10 @@ export const TransportOfferExpandedComponent = ({
 
 export const TransportOfferItem = ({
   description,
-  cityName,
-  region,
-  address,
-  bedCount,
-  isAcceptedChild,
-  isAcceptedAnimal,
-  hasWashingMachine,
-  period,
-  isCatering,
-  isDelivery,
-  location,
   id,
   name,
   accommodationPlacesCount,
   phoneNumber,
-  createdAt,
   carRegoNo,
   transportToStr,
   transportFromStr,

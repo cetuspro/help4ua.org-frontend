@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
-import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getLanguagesValue } from '../../View_Notices/models/tableList'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 const Item = ({ label, value }) => {

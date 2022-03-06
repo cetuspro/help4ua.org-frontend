@@ -6,11 +6,7 @@ import { Link } from 'react-router-dom'
 import { route } from '@/app/router/urls/routes'
 import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
-import {
-  getPeriod,
-  getValue,
-  getLanguagesValue,
-} from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getLanguagesValue, getPeriod, getValue } from '../models/tableList'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 export const shelterSearchColumns = () => {
