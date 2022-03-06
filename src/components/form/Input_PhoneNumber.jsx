@@ -54,10 +54,10 @@ const InputPhoneNumber = ({
               </label>
             )}
             <div className={'flex absolute right-0 top-0 '}>
-              <div onClick={() => onChange('+48')} className="m-2 cursor-pointer">
+              <div onClick={() => onChange(`+48${value}`)} className="m-2 cursor-pointer">
                 <FlagImg lng="pl" size={20} />
               </div>
-              <div onClick={() => onChange('+380')} className="m-2 cursor-pointer">
+              <div onClick={() => onChange(`+380${value}`)} className="m-2 cursor-pointer">
                 <FlagImg lng="ua" size={20} />
               </div>
             </div>
