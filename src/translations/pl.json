@@ -69,7 +69,7 @@
     "carRegoNo": "Numer rejestracyjny pojazdu",
     "helpPointInfo": "Informacje o punkcie",
     "type": "Typ",
-    "findLegalHelp": "Szukam pomocy prawnej",    
+    "findLegalHelp": "Szukam pomocy prawnej",
     "temporaryAnimalHome": "Oferuję dom tymczasowy dla zwierząt",
     "lfTemporaryAnimalHome": "Poszukuję domu tymczasowego dla zwierząt",
     "whatAnimalType": "Jakie zwierzęta ?",
@@ -186,7 +186,6 @@
     "jobOffers": "Oferty pracy",
     "volunteering": "Wolontariat",
     "helpPointss": "Punkty pomocy"
-
   },
   "notice": {
     "markActive": "Oznacz jako aktualne",
@@ -275,6 +274,8 @@
     "back": "Wróć",
     "voluntaryHelp": "Pomoc ma charakter dobrowolny i zobowiązuje się nie pobierać żadnych odpłatności związanych z świadczoną pomocą",
     "uniqueLink": "Unikalny link",
-    "show":  "Odkryj"
+    "show": "Odkryj",
+    "price": "Cena",
+    "priceFree": "Pomoc oferowana na tej stronie jest zawsze darmowa"
   }
 }

@@ -12,6 +12,7 @@ import {
   getLanguagesValue,
 } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
+import PriceFree from '@/components/common/PriceFree'
 
 export const shelterOfferColumns = () => {
   const { t } = useTranslation()
@@ -191,6 +192,7 @@ export const ShelterOfferExpandedComponent = ({
               value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
             />
           )}
+          <PriceFree className={'pt-0'}/>
           <NoticeDetailsItem
             label={t('common.uniqueLink')}
             value={
