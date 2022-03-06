@@ -27,13 +27,18 @@ You can contact us:
 
 Frontend team:
 - Maciej Kamiński - Head of Frontend
+- Łukasz Rząsa - Frontend Developer
 - Grzegorz Babiarz - Frontend Developer
-- Oleh Khozhai(FE) - Frontend Developer
+- Bartosz Maziarka - Frontend Developer
+- Oleh Khozhai - Frontend Developer
+- Myroslava - Frontend Developer
+- Aleksander Ortenburger - Frontend Developer
+- Łukasz Żeromski - Frontend Developer
 - Maciej Papciak - Frontend Developer
 - Karol Joniak - Frontend Developer
 - Michał Gacka - Frotnend Developer
 - Rafał Król - Frontend Developer
-- 
+
 
 Backend Team:
 - Mariusz Wadas - Backend Developer
