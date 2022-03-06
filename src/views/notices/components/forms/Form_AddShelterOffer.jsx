@@ -4,7 +4,6 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { FormProvider } from 'react-hook-form'
 import {
   FaUser,
-  FaPhone,
   FaBed,
   FaClock,
   FaComment,
@@ -33,6 +32,7 @@ import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
+import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
 const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false }) => {
   const [showRegion, setShowRegion] = useState(false)
@@ -113,7 +113,7 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
             />
           </div>
           <div>
-            <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} required />
+            <InputPhoneNumber label={t('form.phoneNumber')} name="phoneNumber" required={true} />{' '}
           </div>
           <div>
             <InputLocationAutocomplete

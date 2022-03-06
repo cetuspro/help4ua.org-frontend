@@ -2,7 +2,7 @@ import * as yup from 'yup'
 import { useForm, useWatch } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FormProvider } from 'react-hook-form'
-import { FaUser, FaPhone, FaComment, FaEnvelope, FaMapPin, FaCheck, FaFlag } from 'react-icons/fa'
+import { FaUser, FaComment, FaEnvelope, FaMapPin, FaCheck, FaFlag } from 'react-icons/fa'
 import { InputText } from '@/components/form/Input_Text'
 import { InputTextarea } from '@/components/form/Input_Textarea'
 import { useHookFormMutation } from '../../../../app/hooks/useHookFormMutation'
@@ -17,6 +17,7 @@ import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
+import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
 const FormAddVolunteerOffer = ({ defaultValues, query, onSuccess, editMode = false }) => {
   const [showRegion, setShowRegion] = useState(false)
@@ -81,7 +82,7 @@ const FormAddVolunteerOffer = ({ defaultValues, query, onSuccess, editMode = fal
             />
           </div>
           <div>
-            <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} />
+            <InputPhoneNumber label={t('form.phoneNumber')} name="phoneNumber" required={true} />
           </div>
           <div>
             <InputLocationAutocomplete
