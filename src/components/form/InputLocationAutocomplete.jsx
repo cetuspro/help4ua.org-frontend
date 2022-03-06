@@ -1,4 +1,5 @@
 import { memo, useEffect, useState } from 'react'
+import { useDebouncedCallback } from 'use-debounce'
 import AsyncSelect from 'react-select/async'
 import { Controller, useFormContext } from 'react-hook-form'
 import { FormFieldError } from './HookFormFieldError'
@@ -21,13 +22,13 @@ const InputLocationAutocomplete = ({
   const { control, getValues, resetField, setValue } = useFormContext()
   const { countryId } = getValues()
 
-  const loadOptions = async (inputValue, callback) => {
+  const loadOptions = useDebouncedCallback((inputValue, callback) => {
     if (inputValue.length >= 3) {
-      const data = await getLocation(inputValue, countryId)
-
-      callback(prepareLocationList(data))
+      getLocation(inputValue, countryId).then((data) => {
+        callback(prepareLocationList(data))
+      })
     }
-  }
+  }, 1000)
 
   useEffect(() => {
     LOCATION_FIELDS.forEach((field) => {
