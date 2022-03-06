@@ -1,18 +1,9 @@
-import { API_URL } from '@/app/config/env'
 import { route } from '@/app/router/urls/routes'
-import axios from 'axios'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
-
-const query = (data) => {
-  return axios({
-    method: 'POST',
-    url: `${API_URL}/notices/create`,
-    data,
-  })
-}
+import { addNotice } from '@/app/CRUD/notices/addNotice'
 
 const ViewAddNotice = ({ title, description, formComponent: FormComponent, type }) => {
   const { t } = useTranslation()
@@ -39,9 +30,13 @@ const ViewAddNotice = ({ title, description, formComponent: FormComponent, type 
           </div>
           {!!FormComponent && (
             <FormComponent
-              query={query}
+              query={addNotice}
               onSuccess={onSuccess}
-              defaultValues={type ? { language, countryId: DEFAULT_COUNTRY, type } : { language, countryId: DEFAULT_COUNTRY }}
+              defaultValues={
+                type
+                  ? { language, countryId: DEFAULT_COUNTRY, type }
+                  : { language, countryId: DEFAULT_COUNTRY }
+              }
             />
           )}
         </div>

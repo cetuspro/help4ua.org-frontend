@@ -18,6 +18,7 @@ import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 
 const FormAddTranslationOffer = ({ defaultValues, query, onSuccess, editMode = false }) => {
   const [showRegion, setShowRegion] = useState(false)
@@ -26,7 +27,12 @@ const FormAddTranslationOffer = ({ defaultValues, query, onSuccess, editMode = f
       yup.object().shape({
         name: yup.string().required(),
         description: yup.string().nullable(),
-        cityName: yup.string().required(),
+        cityId: yup.number().nullable(),
+        cityName: yup.string(),
+        postalCodeId: yup.number().nullable(),
+        latitude: yup.number(),
+        longitude: yup.number(),
+        location: yup.object().required(),
         countryId: yup.number().required(),
         region: showRegion ? yup.number().required() : yup.string().nullable(),
         phoneNumber: yup.string().required(),
@@ -65,7 +71,6 @@ const FormAddTranslationOffer = ({ defaultValues, query, onSuccess, editMode = f
   }, [defaultValues])
 
   const { t } = useTranslation()
-
   const mutation = useHookFormMutation(methods, query, { onSuccess })
 
   return (
@@ -76,16 +81,34 @@ const FormAddTranslationOffer = ({ defaultValues, query, onSuccess, editMode = f
         <div className="flex-grow border-t border-gray-300 mb-4" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
           <div>
-            <InputText name="name" label={t('form.name')} icon={FaUser} />
+            <InputText
+              name="name"
+              label={t('form.nameLabel')}
+              placeholder={t('form.name')}
+              icon={FaUser}
+              required
+            />
           </div>
           <div>
             <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} />
           </div>
           <div>
-            <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
+            <InputLocationAutocomplete
+              name="location"
+              label={t('form.locationLabel')}
+              placeholder={t('form.location')}
+              required
+              icon={FaMapPin}
+              components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+            />
           </div>
           <div>
-            <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} />
+            <InputText
+              name="email"
+              label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
+              placeholder={t('form.email')}
+              icon={FaEnvelope}
+            />
           </div>
           <div>
             <InputAsyncSelect

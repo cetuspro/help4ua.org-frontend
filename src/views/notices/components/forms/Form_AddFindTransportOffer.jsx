@@ -49,7 +49,6 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
   }, [defaultValues]);
 
   const {t} = useTranslation();
-
   const mutation = useHookFormMutation(methods, query, {onSuccess});
   
   return (
@@ -62,8 +61,10 @@ const FormAddFindTransportOffer = ({defaultValues, query, onSuccess, editMode=fa
           <div>
             <InputText
               name="name"
-              label={t("form.name")}
+              label={t('form.nameLabel')}
+              placeholder={t('form.name')}
               icon={FaUser}
+              required
             />
           </div>
           <div>

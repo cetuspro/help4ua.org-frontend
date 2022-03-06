@@ -18,7 +18,6 @@ import {
 import { InputText } from '@/components/form/Input_Text'
 import { InputCheckbox } from '@/components/form/Input_Checkbox'
 import { InputSelect } from '@/components/form/Input_Select'
-import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import { InputTextarea } from '@/components/form/Input_Textarea'
 import { useHookFormMutation } from '../../../../app/hooks/useHookFormMutation'
 import { InputSubmit } from '@/components/form/Input_Submit'
@@ -33,6 +32,7 @@ import { LanguageBlock } from '../../../../ua/LanguageBlock'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 
 const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false }) => {
   const [showRegion, setShowRegion] = useState(false)
@@ -42,10 +42,11 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
         name: yup.string().required(),
         description: yup.string().nullable(),
         cityId: yup.number().nullable(),
-        cityName: yup.string().required('Location field is required'),
+        cityName: yup.string(),
         postalCodeId: yup.number().nullable(),
         latitude: yup.number(),
         longitude: yup.number(),
+        location: yup.object().required(),
         countryId: yup.number().required(),
         region: showRegion ? yup.number().required() : yup.string().nullable(),
         phoneNumber: yup.string().required(),
@@ -127,7 +128,7 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
           <div>
             <InputText
               name="email"
-              label={<span className="mb-4 block">{t('form.email')}</span>}
+              label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
               placeholder={t('form.email')}
               icon={FaEnvelope}
             />
