@@ -42,6 +42,7 @@ Frontend team:
 
 Backend Team:
 - Mariusz Wadas - Backend Developer
+- Patryk Smycz - Backend Developer
 - Michał Łuczyszyn - Backend Developer
 - Kamil Grochmal - Backend Developer
 
