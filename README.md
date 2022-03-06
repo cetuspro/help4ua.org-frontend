@@ -22,7 +22,7 @@ You can contact us:
 - LinkedIn to creator for fast contact: [Norbert Pisz](https://www.linkedin.com/in/norbert-pisz-8ba76b54/)
 
 ## Roles in project:
-Technical team:
+#Technical team:
 - Norbert Pisz - [LinkedIn](https://www.linkedin.com/in/norbert-pisz-8ba76b54/) - Head of Development
 
 Frontend team:
@@ -32,10 +32,25 @@ Frontend team:
 - Maciej Papciak - Frontend Developer
 - Karol Joniak - Frontend Developer
 - Michał Gacka - Frotnend Developer
-
+- Rafał Król - Frontend Developer
+- 
 
 Backend Team:
 - Mariusz Wadas - Backend Developer
+- Michał Łuczyszyn - Backend Developer
+- Kamil Grochmal - Backend Developer
+
+UX Team:
+- Lilia Skórska - Graphic/UX Designer
+- Tomasz Budzyński - UI/UX Designer
+
+Test team:
+
+Devops Team:
+- Marek Łaska - Devops
+- Paweł Ufnalewski - Devops
+
+#Data team
 
 [WIP]
 
@@ -43,6 +58,9 @@ Backend Team:
 
 Managment:
 - Rafał Cencora - [LinkedIn](https://www.linkedin.com/in/rafa%C5%82-cencora-701a3b8b/) - Managment
+- Bartosz Jadam - Managment
+- Agata Wojciechowska -
+- Karol Kibałko
 [WIP]
 
 ## How to start coding?
