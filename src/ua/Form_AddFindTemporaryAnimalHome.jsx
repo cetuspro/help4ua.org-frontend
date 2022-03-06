@@ -2,10 +2,8 @@ import { useState, useMemo, useEffect } from 'react'
 import { animalsEnum } from '@/app/config/enum/animals'
 import { periodsEnum } from '@/app/config/enum/periods'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
-import { API_URL } from '@/app/config/env'
 import { route } from '@/app/router/urls/routes'
 import { yupResolver } from '@hookform/resolvers/yup'
-import axios from 'axios'
 import { FormProvider, useForm, useWatch } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import {
@@ -34,15 +32,8 @@ import { InputVoluntary } from '../components/form/Input_Voluntary'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
-
-const query = (data) => {
-  return axios({
-    method: 'POST',
-    url: `${API_URL}/notices/create`,
-    data,
-  })
-}
-const mt = (a) => a
+import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
+import { addNotice } from '@/app/CRUD/notices/addNotice'
 
 const FormAddFindTemporaryAnimalHome = () => {
   const [showRegion, setShowRegion] = useState(false)
@@ -51,7 +42,12 @@ const FormAddFindTemporaryAnimalHome = () => {
       yup.object().shape({
         name: yup.string().required(),
         description: yup.string(),
-        cityName: yup.string().required(),
+        cityId: yup.number().nullable(),
+        cityName: yup.string(),
+        postalCodeId: yup.number().nullable(),
+        latitude: yup.number(),
+        longitude: yup.number(),
+        location: yup.object().required(),
         countryId: yup.number().required(),
         region: showRegion ? yup.number().required() : yup.string().nullable(),
         phoneNumber: yup.string().required(),
@@ -62,7 +58,7 @@ const FormAddFindTemporaryAnimalHome = () => {
         type: yup.number().default(62),
         acceptTerms: yup.string().required(),
         period: yup.string().required(),
-        voluntaryHelpCheckbox: yup
+        isOfferFreeFlag: yup
           .bool()
           .oneOf([true], 'voluntaryHelpCheckbox is a required field')
           .required(),
@@ -88,15 +84,12 @@ const FormAddFindTemporaryAnimalHome = () => {
 
   let navigate = useNavigate()
 
-  // console.log(methods.formState.errors)
-  const handleSuccess = ({ data }) => {
-    // data = id
+  const handleSuccess = () => {
     navigate(route['notices.success'])
   }
 
   const { t } = useTranslation()
-
-  const mutation = useHookFormMutation(methods, query, { handleSuccess })
+  const mutation = useHookFormMutation(methods, addNotice, { handleSuccess })
 
   return (
     <div className="container mx-auto py-8">
@@ -119,7 +112,13 @@ const FormAddFindTemporaryAnimalHome = () => {
               <div className="flex-grow border-t border-gray-300 mb-4" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
-                  <InputText name="name" label={t('form.name')} icon={FaUser} required />
+                  <InputText
+                    name="name"
+                    label={t('form.nameLabel')}
+                    placeholder={t('form.name')}
+                    icon={FaUser}
+                    required
+                  />
                 </div>
                 <div>
                   <InputText
@@ -130,10 +129,22 @@ const FormAddFindTemporaryAnimalHome = () => {
                   />
                 </div>
                 <div>
-                  <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
+                  <InputLocationAutocomplete
+                    name="location"
+                    label={t('form.locationLabel')}
+                    placeholder={t('form.location')}
+                    required
+                    icon={FaMapPin}
+                    components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+                  />
                 </div>
                 <div>
-                  <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} required />
+                  <InputText
+                    name="email"
+                    label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
+                    placeholder={t('form.email')}
+                    icon={FaEnvelope}
+                  />
                 </div>
                 <div>
                   <InputAsyncSelect

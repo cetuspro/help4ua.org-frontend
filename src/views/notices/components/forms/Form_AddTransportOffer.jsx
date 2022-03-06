@@ -64,7 +64,8 @@ const FormAddTransportOffer = ({defaultValues, query, onSuccess, editMode=false}
           <div>
             <InputText
               name="name"
-              label={t('form.name')}
+              label={t('form.nameLabel')}
+              placeholder={t('form.name')}
               icon={FaUser}
               required
             />

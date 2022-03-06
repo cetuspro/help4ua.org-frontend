@@ -7,8 +7,6 @@ import { FaUser, FaPhone, FaComment, FaEnvelope, FaMapPin, FaCheck, FaFlag } fro
 import { InputText } from '../components/form/Input_Text'
 import { InputTextarea } from '../components/form/Input_Textarea'
 import { useHookFormMutation } from '../app/hooks/useHookFormMutation'
-import axios from 'axios'
-import { API_URL } from '@/app/config/env'
 import { InputSubmit } from '../components/form/Input_Submit'
 import { HookFormError } from '../components/form/HookFormError'
 import { useNavigate } from 'react-router-dom'
@@ -23,14 +21,8 @@ import { InputSelect } from '../components/form/Input_Select'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
-
-const query = (data) => {
-  return axios({
-    method: 'POST',
-    url: `${API_URL}/notices/create`,
-    data,
-  })
-}
+import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
+import { addNotice } from '@/app/CRUD/notices/addNotice'
 
 const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
   const { language } = useSelector((state) => state?.language)
@@ -40,7 +32,12 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
       yup.object().shape({
         name: yup.string().required(),
         description: yup.string(),
-        cityName: yup.string().required(),
+        cityId: yup.number().nullable(),
+        cityName: yup.string(),
+        postalCodeId: yup.number().nullable(),
+        latitude: yup.number(),
+        longitude: yup.number(),
+        location: yup.object().required(),
         countryId: yup.number().required(),
         region: showRegion ? yup.number().required() : yup.string().nullable(),
         phoneNumber: yup.string().required(),
@@ -82,8 +79,7 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
   }
 
   const { t } = useTranslation()
-
-  const mutation = useHookFormMutation(methods, query, { handleSuccess })
+  const mutation = useHookFormMutation(methods, addNotice, { handleSuccess })
 
   return (
     <div className="container mx-auto py-8">
@@ -106,16 +102,39 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
               <div className="flex-grow border-t border-gray-300 mb-4" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
-                  <InputText name="name" label={t('form.name')} icon={FaUser} required/>
+                  <InputText
+                    name="name"
+                    label={t('form.nameLabel')}
+                    placeholder={t('form.name')}
+                    icon={FaUser}
+                    required
+                  />
                 </div>
                 <div>
-                  <InputText name="phoneNumber" label={t('form.phoneNumber')} icon={FaPhone} required/>
+                  <InputText
+                    name="phoneNumber"
+                    label={t('form.phoneNumber')}
+                    icon={FaPhone}
+                    required
+                  />
                 </div>
                 <div>
-                  <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
+                  <InputLocationAutocomplete
+                    name="location"
+                    label={t('form.locationLabel')}
+                    placeholder={t('form.location')}
+                    required
+                    icon={FaMapPin}
+                    components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+                  />
                 </div>
                 <div>
-                  <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} required/>
+                  <InputText
+                    name="email"
+                    label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
+                    placeholder={t('form.email')}
+                    icon={FaEnvelope}
+                  />
                 </div>
                 <div>
                   <InputAsyncSelect
