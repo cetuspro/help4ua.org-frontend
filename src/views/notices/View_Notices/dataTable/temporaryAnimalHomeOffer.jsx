@@ -8,6 +8,7 @@ import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import { getAnimal, getPeriod, getLanguagesValue } from './DataTable_Notices'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
+import PriceFree from '@/components/common/PriceFree'
 
 export const temporaryAnimalHomeOfferColumns = () => {
   const { t } = useTranslation()
@@ -176,6 +177,7 @@ export const TemporaryAnimalHomeOfferExpandedComponent = ({
               value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
             />
           )}
+          <PriceFree className={'pt-0'}/>
           <NoticeDetailsItem
             label={t('common.uniqueLink')}
             value={

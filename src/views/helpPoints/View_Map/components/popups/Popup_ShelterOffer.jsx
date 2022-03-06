@@ -7,6 +7,7 @@ import { getPeriod, getValue, getLanguagesValue } from '@/views/notices/View_Not
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { isNullOrUndefined } from '@/app/utils/isNullOrUndefined'
+import PriceFree from '@/components/common/PriceFree'
 
 const Item = ({ label, value }) => {
   return (
@@ -102,6 +103,7 @@ const ShelterOfferPopup = ({
               value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
             />
           )}
+          <PriceFree />
         </div>
       </div>
       <Button to={route['notices.view'](id)} className="mt-5 mx-auto w-fit" size="small">

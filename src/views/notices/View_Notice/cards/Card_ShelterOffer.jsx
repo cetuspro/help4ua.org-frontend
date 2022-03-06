@@ -6,6 +6,7 @@ import dayjs from 'dayjs'
 import { getPeriod, getValue, getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
+import PriceFree from '@/components/common/PriceFree'
 
 const Item = ({label, value}) => {
   return (
@@ -88,6 +89,7 @@ const ShelterOfferCard = () => {
                 value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
           />
           }
+          <PriceFree />
         </div>
       </div>
       <Button to={route['notices.list3']} className="mt-10 mx-auto w-fit" size="small">Wróć do listy ogłoszeń</Button>

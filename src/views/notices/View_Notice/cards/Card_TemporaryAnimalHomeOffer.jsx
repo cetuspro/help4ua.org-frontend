@@ -7,6 +7,7 @@ import { getAnimal, getPeriod, getLanguagesValue } from '@/views/notices/View_No
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
+import PriceFree from '@/components/common/PriceFree'
 
 const Item = ({ label, value }) => {
   return (
@@ -124,6 +125,7 @@ const TemporaryAnimalHomeOfferCard = () => {
                 value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
           />
           }
+          <PriceFree />
         </div>
       </div>
       <Button to={route['notices.list10']} className="mt-10 mx-auto w-fit" size="small">

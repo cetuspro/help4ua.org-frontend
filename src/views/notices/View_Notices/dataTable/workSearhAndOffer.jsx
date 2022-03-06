@@ -6,6 +6,7 @@ import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
+import PriceFree from '@/components/common/PriceFree'
 
 export const workSearchAndOffer = () => {
   const { t } = useTranslation()
@@ -144,6 +145,7 @@ export const WorkSearchAndOfferExpandedComponent = ({
               value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
             />
           )}
+          <PriceFree className={'pt-0'}/>
         </div>
       </div>
     </div>
