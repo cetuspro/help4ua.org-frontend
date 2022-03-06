@@ -45,6 +45,7 @@ Backend Team:
 - Patryk Smycz - Backend Developer
 - Michał Łuczyszyn - Backend Developer
 - Kamil Grochmal - Backend Developer
+- Miłosz Skiba - Backend Developer
 
 UX Team:
 - Lilia Skórska - Graphic/UX Designer
