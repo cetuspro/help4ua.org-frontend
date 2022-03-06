@@ -6,13 +6,6 @@ import { getLocation } from '@/app/CRUD/region/getLocation'
 import { customStyles } from '@/app/utils/form/select'
 import prepareLocationList from '@/app/utils/form/prepareLocationList'
 
-// test & commit & create PR
-// add debounce
-
-// create form template
-// remove location from form state before submit
-// move validators to separate file
-
 const LOCATION_FIELDS = ['latitude', 'longitude', 'cityId', 'cityName', 'postalCodeId']
 
 const InputLocationAutocomplete = ({
