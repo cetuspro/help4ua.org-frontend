@@ -8,6 +8,7 @@ import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 import { getLanguagesValue, getPeriod, getValue } from '../models/tableList'
+import PriceFree from '@/components/common/PriceFree'
 
 export const shelterOfferColumns = () => {
   const { t } = useTranslation()
@@ -187,6 +188,7 @@ export const ShelterOfferExpandedComponent = ({
               value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
             />
           )}
+          <PriceFree className={'pt-0'} />
           <NoticeDetailsItem
             label={t('common.uniqueLink')}
             value={

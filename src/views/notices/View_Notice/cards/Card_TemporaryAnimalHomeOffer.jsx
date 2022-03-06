@@ -7,6 +7,7 @@ import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
 import { getAnimal, getLanguagesValue, getPeriod } from '../../View_Notices/models/tableList'
+import PriceFree from '@/components/common/PriceFree'
 
 const Item = ({ label, value }) => {
   return (
@@ -16,11 +17,13 @@ const Item = ({ label, value }) => {
     </div>
   )
 }
-const PhoneItem = ({label, value}) => {
+const PhoneItem = ({ label, value }) => {
   return (
     <div className="py-2 flex gap-2">
       <span className="">{label}</span>
-      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">
+        {value}
+      </a>
     </div>
   )
 }
@@ -117,11 +120,13 @@ const TemporaryAnimalHomeOfferCard = () => {
             <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
           )}
           {!!id && <Item label={t('common.id')} value={id} />}
-          { (ukraineLang || englishLang || germanyLang || polishLang) &&
-          <Item label={`${t("form.language")}:`}
-                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
-          />
-          }
+          {(ukraineLang || englishLang || germanyLang || polishLang) && (
+            <Item
+              label={`${t('form.language')}:`}
+              value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+            />
+          )}
+          <PriceFree />
         </div>
       </div>
       <Button to={route['notices.list10']} className="mt-10 mx-auto w-fit" size="small">

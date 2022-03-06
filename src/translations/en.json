@@ -77,7 +77,7 @@
     "carRegoNo": "Vehicle registration number",
     "helpPointInfo": "Point information",
     "type": "Type",
-    "findLegalHelp": "I'm looking for legal assistance",    
+    "findLegalHelp": "I'm looking for legal assistance",
     "latitude": "Latitude",
     "longitude": "Longitude",
     "legalAssistancePoint": "Legal assistance point",
@@ -172,7 +172,7 @@
     "info-3": "If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up!",
     "info-4": "If you came from Ukraine and are looking for a place where you could stay with your family, search our database!",
     "info-5": "If you would like to help, become a volunteer, etc. anyone can help!",
-    "briefInfo": "This is a grassroots social action site for those who want to help and for those who are looking for help! We connect people of good heart with those who need help! If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up! If you came from Ukraine and are looking for a place where you could stay with your family, search our database! If you would like to help, become a volunteer, etc. anyone can help!", 
+    "briefInfo": "This is a grassroots social action site for those who want to help and for those who are looking for help! We connect people of good heart with those who need help! If you have space and are willing to host Ukrainian residents looking for a safe home, please sign up! If you came from Ukraine and are looking for a place where you could stay with your family, search our database! If you would like to help, become a volunteer, etc. anyone can help!",
     "helpPoints": "See list",
     "addHelpPoint": "Add point",
     "noticesTypesQuestion": "What notices will you find?",
@@ -268,6 +268,8 @@
     "back": "Back",
     "voluntaryHelp": "Help is voluntary and I undertakes not to collect any payments related to the provided help",
     "uniqueLink": "Unique link",
-    "show": "Show"
+    "show": "Show",
+    "price": "Price",
+    "priceFree": "The help offered on this website is always free"
   }
 }

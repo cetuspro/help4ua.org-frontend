@@ -8,6 +8,7 @@ import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
 import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import { getLanguagesValue } from '../../View_Notices/models/tableList'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
+import PriceFree from '@/components/common/PriceFree'
 
 const Item = ({ label, value }) => {
   return (
@@ -155,6 +156,7 @@ export const TranslationOfferExpandedComponent = ({
               value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
             />
           )}
+          <PriceFree className={'pt-0'}/>
           <NoticeDetailsItem
             label={t('common.uniqueLink')}
             value={
