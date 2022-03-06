@@ -22,9 +22,24 @@ You can contact us:
 - LinkedIn to creator for fast contact: [Norbert Pisz](https://www.linkedin.com/in/norbert-pisz-8ba76b54/)
 
 ## Roles in project:
-Technical:
+Technical team:
 - Norbert Pisz - [LinkedIn](https://www.linkedin.com/in/norbert-pisz-8ba76b54/) - Head of Development
+
+Frontend team:
+- Maciej Kamiński - Head of Frontend
+- Grzegorz Babiarz - Frontend Developer
+- Oleh Khozhai(FE) - Frontend Developer
+- Maciej Papciak - Frontend Developer
+- Karol Joniak - Frontend Developer
+- Michał Gacka - Frotnend Developer
+
+
+Backend Team:
+- Mariusz Wadas - Backend Developer
+
 [WIP]
+
+
 
 Managment:
 - Rafał Cencora - [LinkedIn](https://www.linkedin.com/in/rafa%C5%82-cencora-701a3b8b/) - Managment
