@@ -73,6 +73,7 @@ const FormAddFindShelter = ({ defaultValues, query, onSuccess, editMode = false 
   const watched = useWatch({
     control: methods.control,
     name: 'countryId',
+    phoneNumber: '+48',
   })
 
   useEffect(() => {
@@ -137,7 +138,7 @@ const FormAddFindShelter = ({ defaultValues, query, onSuccess, editMode = false 
               icon={FaMapPin}
               components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             />
-          </div>        
+          </div>
           <div>
             <InputSelect
               name="region"

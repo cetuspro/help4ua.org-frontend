@@ -66,6 +66,7 @@ const FromFindAndOfferWork = ({ title, description, type } = {}) => {
   const watched = useWatch({
     control: methods.control,
     name: 'countryId',
+    phoneNumber: '+48',
   })
 
   useEffect(() => {
@@ -135,7 +136,11 @@ const FromFindAndOfferWork = ({ title, description, type } = {}) => {
                 <div>
                   <InputText
                     name="email"
-                    label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+                    label={
+                      <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                        {t('form.email')}
+                      </span>
+                    }
                     placeholder={t('form.email')}
                     icon={FaEnvelope}
                   />
@@ -149,7 +154,7 @@ const FromFindAndOfferWork = ({ title, description, type } = {}) => {
                     icon={FaMapPin}
                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                   />
-                </div>                
+                </div>
                 <div>
                   <InputSelect
                     name="region"

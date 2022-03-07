@@ -69,6 +69,7 @@ const FormAddFindTemporaryAnimalHome = () => {
     resolver: yupResolver(schema),
     defaultValues: {
       countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
     },
   })
 
@@ -158,7 +159,7 @@ const FormAddFindTemporaryAnimalHome = () => {
                     icon={FaMapPin}
                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                   />
-                </div>               
+                </div>
                 <div>
                   <InputSelect
                     name="region"
