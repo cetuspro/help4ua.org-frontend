@@ -119,24 +119,6 @@ const FormAddFindHelp = () => {
                   />
                 </div>
                 <div>
-                  <InputLocationAutocomplete
-                    name="location"
-                    label={t('form.locationLabel')}
-                    placeholder={t('form.location')}
-                    required
-                    icon={FaMapPin}
-                    components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
-                  />
-                </div>
-                <div>
-                  <InputText
-                    name="email"
-                    label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
-                    placeholder={t('form.email')}
-                    icon={FaEnvelope}
-                  />
-                </div>
-                <div>
                   <InputAsyncSelect
                     {...getCountriesHelper}
                     name="countryId"
@@ -150,6 +132,24 @@ const FormAddFindHelp = () => {
                     required
                   />
                 </div>
+                <div>
+                  <InputText
+                    name="email"
+                    label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
+                    placeholder={t('form.email')}
+                    icon={FaEnvelope}
+                  />
+                </div>
+                <div>
+                  <InputLocationAutocomplete
+                    name="location"
+                    label={t('form.locationLabel')}
+                    placeholder={t('form.location')}
+                    required
+                    icon={FaMapPin}
+                    components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+                  />
+                </div>                
                 <div>
                   <InputSelect
                     name="region"
