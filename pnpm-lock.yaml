@@ -26,7 +26,6 @@ specifiers:
   react-data-table-component: ^7.4.6
   react-dom: ^17.0.0
   react-dropzone: ^11.5.1
-  react-google-recaptcha: ^2.1.0
   react-helmet: ^6.1.0
   react-hook-form: ^7.20.5
   react-hot-toast: ^2.1.1
@@ -37,7 +36,6 @@ specifiers:
   react-is: ^17.0.2
   react-leaflet: ^3.2.2
   react-leaflet-markercluster: ^3.0.0-rc1
-  react-phone-input-2: ^2.15.0
   react-query: ^3.34.0
   react-redux: ^7.2.6
   react-router: ^6.2.1
@@ -76,7 +74,6 @@ dependencies:
   react-data-table-component: 7.4.6_c17876e09d792e0c7b0f44e49f814625
   react-dom: 17.0.2_react@17.0.2
   react-dropzone: 11.5.1_react@17.0.2
-  react-google-recaptcha: 2.1.0_react@17.0.2
   react-helmet: 6.1.0_react@17.0.2
   react-hook-form: 7.22.5_react@17.0.2
   react-hot-toast: 2.1.1_6bba596ee6fb84e656d75c53902ecf01
@@ -87,7 +84,6 @@ dependencies:
   react-is: 17.0.2
   react-leaflet: 3.2.2_91fa1427a3331e02931dfea77720a290
   react-leaflet-markercluster: 3.0.0-rc1_react-dom@17.0.2+react@17.0.2
-  react-phone-input-2: 2.15.0_react-dom@17.0.2+react@17.0.2
   react-query: 3.34.6_react-dom@17.0.2+react@17.0.2
   react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
   react-router: 6.2.1_react@17.0.2
@@ -1960,14 +1956,6 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
-  /lodash.reduce/4.6.0:
-    resolution: {integrity: sha1-8atrg5KZrUj3hKu/R2WW8DuRTTs=}
-    dev: false
-
-  /lodash.startswith/4.2.1:
-    resolution: {integrity: sha1-xZjErc4YiiflMUVzHNxsDnF3YAw=}
-    dev: false
-
   /lodash.throttle/4.1.1:
     resolution: {integrity: sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=}
     dev: false
@@ -2303,16 +2291,6 @@ packages:
       react: 17.0.2
     dev: false
 
-  /react-async-script/1.2.0_react@17.0.2:
-    resolution: {integrity: sha512-bCpkbm9JiAuMGhkqoAiC0lLkb40DJ0HOEJIku+9JDjxX3Rcs+ztEOG13wbrOskt3n2DTrjshhaQ/iay+SnGg5Q==}
-    peerDependencies:
-      react: '>=16.4.1'
-    dependencies:
-      hoist-non-react-statics: 3.3.2
-      prop-types: 15.8.0
-      react: 17.0.2
-    dev: false
-
   /react-data-table-component/7.4.6_c17876e09d792e0c7b0f44e49f814625:
     resolution: {integrity: sha512-3ES2Qq07x0IWBuYyzfl1qCq2WX4X/AqVhZwKDhOH6tuEU5kbxzpRfQOD5naKdFk6L4rtNDm8FBL0tfk0DLdMpA==}
     peerDependencies:
@@ -2349,16 +2327,6 @@ packages:
 
   /react-fast-compare/3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
-    dev: false
-
-  /react-google-recaptcha/2.1.0_react@17.0.2:
-    resolution: {integrity: sha512-K9jr7e0CWFigi8KxC3WPvNqZZ47df2RrMAta6KmRoE4RUi7Ys6NmNjytpXpg4HI/svmQJLKR+PncEPaNJ98DqQ==}
-    peerDependencies:
-      react: '>=16.4.1'
-    dependencies:
-      prop-types: 15.8.0
-      react: 17.0.2
-      react-async-script: 1.2.0_react@17.0.2
     dev: false
 
   /react-helmet/6.1.0_react@17.0.2:
@@ -2474,22 +2442,6 @@ packages:
     dependencies:
       '@react-leaflet/core': 1.1.1_91fa1427a3331e02931dfea77720a290
       leaflet: 1.7.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-    dev: false
-
-  /react-phone-input-2/2.15.0_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-60EOJSgmRFl9Ar89/JznaDsdB9FNf5T6nvQf0sN1t3X7exrKHbUT3ij7HZn2Y7jigcPv9EkdyzVr0MiOk1FKmw==}
-    peerDependencies:
-      react: ^16.12.0 || ^17.0.0
-      react-dom: ^16.12.0 || ^17.0.0
-    dependencies:
-      classnames: 2.3.1
-      lodash.debounce: 4.0.8
-      lodash.memoize: 4.1.2
-      lodash.reduce: 4.6.0
-      lodash.startswith: 4.2.1
-      prop-types: 15.8.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false

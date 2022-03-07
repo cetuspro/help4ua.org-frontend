@@ -9,8 +9,7 @@
       "@/layouts/*": ["./layouts/*"],
       "@/CRUD/*": ["./app/CRUD/*"],
       "@/hooks/*": ["./app/hooks/*"],
-      "@/app/*": ["./app/*"],
-      "@/components/*": ["./components/*"]
+      "@/app/*": ["./app/*"]
     }
   },
   "exclude": ["node_modules", "build", "dist"]

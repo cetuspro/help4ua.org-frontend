@@ -13,6 +13,7 @@ import {
   FaEnvelope,
   FaMapPin,
   FaPaw,
+  FaPhone,
   FaUser,
   FaFlag,
 } from 'react-icons/fa'
@@ -33,7 +34,6 @@ import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import { addNotice } from '@/app/CRUD/notices/addNotice'
-import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
 const FormAddFindTemporaryAnimalHome = () => {
   const [showRegion, setShowRegion] = useState(false)
@@ -121,10 +121,11 @@ const FormAddFindTemporaryAnimalHome = () => {
                   />
                 </div>
                 <div>
-                  <InputPhoneNumber
-                    label={t('form.phoneNumber')}
+                  <InputText
                     name="phoneNumber"
-                    required={true}
+                    label={t('form.phoneNumber')}
+                    icon={FaPhone}
+                    required
                   />
                 </div>
                 <div>
