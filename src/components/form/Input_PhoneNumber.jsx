@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import PhoneInput from 'react-phone-input-2'
+import PI from 'react-phone-input-2'
 import { FormFieldError } from './HookFormFieldError'
 import { useSelector } from 'react-redux'
 import { languages } from '../common/LanguageSwitcher'
+import 'react-phone-input-2/lib/style.css'
+
+const PhoneInput = PI.default? PI.default: PI;
 
 const FlagImg = ({ lng, size }) => {
   const languageObj = languages.find((i) => i.lng.toLowerCase() == lng.toLowerCase())
@@ -29,7 +32,6 @@ const InputPhoneNumber = ({
   onChange: handleChange,
   ...props
 }) => {
-  const { language } = useSelector((state) => state?.language)
   const { control } = useFormContext()
 
   useEffect(() => {
@@ -54,10 +56,10 @@ const InputPhoneNumber = ({
               </label>
             )}
             <div className={'flex absolute right-0 top-0 '}>
-              <div onClick={() => onChange(`+48${value}`)} className="m-2 cursor-pointer">
+              <div onClick={() => onChange(`+48`)} className="m-2 cursor-pointer">
                 <FlagImg lng="pl" size={20} />
               </div>
-              <div onClick={() => onChange(`+380${value}`)} className="m-2 cursor-pointer">
+              <div onClick={() => onChange(`+380`)} className="m-2 cursor-pointer">
                 <FlagImg lng="ua" size={20} />
               </div>
             </div>
