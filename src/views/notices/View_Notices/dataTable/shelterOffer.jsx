@@ -1,62 +1,26 @@
-import { useState } from 'react'
-import dayjs from 'dayjs'
-import { useTranslation } from 'react-i18next'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
-import { Link } from 'react-router-dom'
-import { route } from '@/app/router/urls/routes'
-import NoticeDetailsItem from '@/views/notices/View_Notices/NoticeDetailsItem'
-import ActionDetailsItem from '@/views/notices/View_Notices/ActionDetailsItem'
 import {
-  getPeriod,
-  getValue,
-  getLanguagesValue,
-} from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
-import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
-import PriceFree from '@/components/common/PriceFree'
-
-export const shelterOfferColumns = () => {
-  const { t } = useTranslation()
-
-  return [
-    {
-      name: t('common.miasto'),
-      selector: ({ cityName }) => cityName,
-    },
-    {
-      name: t('common.miejsca'),
-      selector: ({ accommodationPlacesCount }) => accommodationPlacesCount,
-    },
-    {
-      name: t('common.imie'),
-      selector: ({ name }) => name,
-    },
-    {
-      name: t('common.adres'),
-      cell: ({ address, location }) => (
-        <a
-          href={`http://www.google.com/maps/place/${location?.lat},${location?.long}`}
-          className="text-blue-400 hover:text-blue-600"
-          target="_blank"
-          rel="noreferrer"
-          title="Zobacz na mapie">
-          {address}
-        </a>
-      ),
-    },
-    {
-      name: t('common.telefon'),
-      selector: ({ phoneNumber }) => (
-        <a href={`tel:${phoneNumber}`} className="font-bold text-blue-700 hover:text-blue-500">
-          {phoneNumber}
-        </a>
-      ),
-    },
-    {
-      name: t('common.opis'),
-      selector: ({ description }) => description?.slice(0, 100),
-    },
-  ]
-}
+  NoticeLayout,
+  ParentRowLayout,
+  ChildrenLayout,
+  BottomChildrenLayout,
+} from '../../components/common/Layouts'
+import Address from '../../components/common/Address'
+import Name from '../../components/common/Name'
+import PhoneNumber from '../../components/common/PhoneNumber'
+import Description from '../../components/common/Description'
+import Period from '../../components/common/Period'
+import AccommodationPlaces from '../../components/common/AccommodationPlaces'
+import BedCount from '../../components/common/BedCount'
+import UniqueLink from '../../components/common/UniqueLink'
+import Children from '../../components/common/Children'
+import Animals from '../../components/common/Animals'
+import WashingMachine from '../../components/common/WashingMachine'
+import Food from '../../components/common/Food'
+import Transport from '../../components/common/Transport'
+import Language from '../../components/common/Language'
+import FreePrice from '../../components/common/FreePrice'
+import CreatedAt from '../../components/common/CreatedAt'
+import NoticeId from '../../components/common/NoticeId'
 
 export const ShelterOfferExpandedComponent = ({
   data: {
@@ -84,128 +48,55 @@ export const ShelterOfferExpandedComponent = ({
     polishLang,
   },
 }) => {
-  const { t } = useTranslation()
-  const getRegion = (val) => voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
-  const [showField, setShowField] = useState(false)
-  const [realPhoneNumber, setRealPhoneNumber] = useState('XXX-XXX-XXX')
-
-  const handleAction = async () => {
-    try {
-      if (showField) return
-      const field = await getHiddenFields({
-        noticeId: id,
-        type: FieldType.PHONE,
-      })
-      setRealPhoneNumber(field)
-      setShowField(true)
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
-  const href =
-    location?.lat && location?.long
-      ? `http://www.google.com/maps/place/${location?.lat},${location?.long}`
-      : `https://www.google.com/maps/search/${cityName ?? ''}+${getRegion(region) ?? ''}+${
-          address ?? ''
-        }`
-
   return (
-    <div className="text-sm text-center bg-white dark:bg-gray-900 text-black dark:text-gray-400 rounded shadow p-3 mb-4">
-      <div className="flex md:gap-5 flex-col md:flex-row text-left">
-        <div className="flex-1">
-          {!!description && (
-            <NoticeDetailsItem labelClassName="hidden sm:inline" value={description} />
+    <NoticeLayout>
+      <ParentRowLayout>
+        <ChildrenLayout side="left">
+          {(cityName || region || address) && (
+            <Address cityName={cityName} region={region} address={address} location={location} />
           )}
-          {!!descriptionUA && <NoticeDetailsItem value={descriptionUA} />}
-          {(cityName || getRegion(region) || address) && (
-            <NoticeDetailsItem
-              label={t('common.adres')}
-              value={
-                <a
-                  href={href}
-                  target={'_blank'}
-                  rel={'noreferrer'}
-                  title="Zobacz na mapie"
-                  className="flex flex-col text-blue-700 hover:text-blue-500 items-start">
-                  {cityName || getRegion(region) ? (
-                    <span>
-                      {cityName}, {getRegion(region)}
-                    </span>
-                  ) : (
-                    ''
-                  )}
-                  <span>{address}</span>
-                </a>
-              }
-            />
-          )}
-          {!!name && <NoticeDetailsItem label={t('common.imie')} value={name} />}
-          {!!phoneNumber && (
-            <ActionDetailsItem
-              onAction={handleAction}
-              label={t('common.telefon')}
-              value={
-                <a
-                  onClick={(e) => !showField && e.preventDefault()}
-                  href={showField ? `tel:${realPhoneNumber}` : '#'}
-                  className="font-bold text-blue-700 hover:text-blue-500">
-                  {showField ? realPhoneNumber : phoneNumber}
-                </a>
-              }
-            />
-          )}
-          {!!period && (
-            <NoticeDetailsItem label={t('common.okres')} value={getPeriod(t, parseInt(period))} />
-          )}
-          {!!createdAt && (
-            <NoticeDetailsItem
-              label={t('common.data')}
-              value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}
-            />
-          )}
-          {!!id && <NoticeDetailsItem label={t('common.id')} value={id} />}
-        </div>
+          {!!name && <Name name={name} />}
+          {!!phoneNumber && <PhoneNumber id={id} phoneNumber={phoneNumber} />}
+        </ChildrenLayout>
 
-        <div className="flex-1">
+        <ChildrenLayout side="right">
+          {!!description && <Description description={description} />}
+          {!!descriptionUA && <Description description={descriptionUA} />}
+        </ChildrenLayout>
+      </ParentRowLayout>
+
+      <ParentRowLayout>
+        <ChildrenLayout side="left">
+          {!!period && <Period period={period} />}
           {!!accommodationPlacesCount && (
-            <NoticeDetailsItem label={t('common.miejsca')} value={accommodationPlacesCount} />
+            <AccommodationPlaces accommodationPlacesCount={accommodationPlacesCount} />
           )}
-          {!!bedCount && <NoticeDetailsItem label={t('common.lozka')} value={bedCount} />}
-          {!!isAcceptedChild && (
-            <NoticeDetailsItem label={t('common.dzieci')} value={getValue(isAcceptedChild)} />
-          )}
-          {!!isAcceptedAnimal && (
-            <NoticeDetailsItem label={t('common.zwierzaki')} value={getValue(isAcceptedAnimal)} />
-          )}
-          {!!hasWashingMachine && (
-            <NoticeDetailsItem label={t('common.pralka')} value={getValue(hasWashingMachine)} />
-          )}
-          {!!isCatering && (
-            <NoticeDetailsItem label={t('common.jedzenie')} value={getValue(isCatering)} />
-          )}
-          {!!isDelivery && (
-            <NoticeDetailsItem label={t('common.transport')} value={getValue(isDelivery)} />
-          )}
+          {!!bedCount && <BedCount bedCount={bedCount} />}
+          <UniqueLink id={id} />
+        </ChildrenLayout>
+
+        <ChildrenLayout side="right">
+          {!!isAcceptedChild && <Children isAcceptedChild={isAcceptedChild} />}
+          {!!isAcceptedAnimal && <Animals isAcceptedAnimal={isAcceptedAnimal} />}
+          {!!hasWashingMachine && <WashingMachine hasWashingMachine={hasWashingMachine} />}
+          {!!isCatering && <Food isCatering={isCatering} />}
+          {!!isDelivery && <Transport isDelivery={isDelivery} />}
           {(ukraineLang || englishLang || germanyLang || polishLang) && (
-            <NoticeDetailsItem
-              label={t('form.language')}
-              value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+            <Language
+              ukraineLang={ukraineLang}
+              englishLang={englishLang}
+              germanyLang={germanyLang}
+              polishLang={polishLang}
             />
           )}
-          <PriceFree className={'pt-0'} />
-          <NoticeDetailsItem
-            label={t('common.uniqueLink')}
-            value={
-              <Link
-                to={route['notices.view'](id)}
-                className="text-blue-700 hover:text-blue-500 inline-block font-bold">
-                Link
-              </Link>
-            }
-          />
-        </div>
-      </div>
-    </div>
+          <FreePrice />
+        </ChildrenLayout>
+      </ParentRowLayout>
+
+      <BottomChildrenLayout>
+        {!!createdAt && <CreatedAt createdAt={createdAt} />}
+        {!!id && <NoticeId id={id} />}
+      </BottomChildrenLayout>
+    </NoticeLayout>
   )
 }

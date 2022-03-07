@@ -1,28 +1,28 @@
-import { withFilters } from '@/app/context/queries/Filters';
-import { QueryHasNoResults } from '@/app/context/queries/QueryHasNoResults';
-import { QueryHasResults } from '@/app/context/queries/QueryHasResults';
-import { QueryProvider } from '@/app/context/queries/QueryProvider';
+import { withFilters } from '@/app/context/queries/Filters'
+import { QueryHasNoResults } from '@/app/context/queries/QueryHasNoResults'
+import { QueryHasResults } from '@/app/context/queries/QueryHasResults'
+import { QueryProvider } from '@/app/context/queries/QueryProvider'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
-import { useGetNotices } from '../../../app/CRUD/notices/getNotices';
+import { useGetNotices } from '../../../app/CRUD/notices/getNotices'
 import NoticesDataTable, { NoticesDataTable2 } from './dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
 import usePagination from '@/app/hooks/usePagination'
-import Button from '@/components/common/Button';
-import { MdArrowBackIosNew } from 'react-icons/md';
-import { route } from '@/app/router/urls/routes';
+import Button from '@/components/common/Button'
+import { MdArrowBackIosNew } from 'react-icons/md'
+import { route } from '@/app/router/urls/routes'
 
 const ViewNotices = ({
-  columns,
+  columns = [],
   expandableRowsComponent,
   title,
   styles,
   config,
   noticeType,
-  filters:Filters,
-  itemComponent:ItemComponent,
+  filters: Filters,
+  itemComponent: ItemComponent,
 }) => {
-  const query = useGetNotices({noticeType})
-  const {t} = useTranslation()
+  const query = useGetNotices({ noticeType })
+  const { t } = useTranslation()
   const breadcrumbItems = [
     {
       label: t('common.ogloszenia'),
@@ -30,13 +30,16 @@ const ViewNotices = ({
   ]
   return (
     <>
-      <Button size="small" className="gap-2 mb-2 inline-flex" to={route['homepage.notices']}><MdArrowBackIosNew/>{t("common.back")}</Button>
+      <Button size="small" className="gap-2 mb-2 inline-flex" to={route['homepage.notices']}>
+        <MdArrowBackIosNew />
+        {t('common.back')}
+      </Button>
       <Breadcrumb items={breadcrumbItems} />
       <h1 className="text-black-800 dark:text-gray-100 text-2xl sm:text-5xl md:text-4xl font-bold mb-8 md:mb-12">
         {title}
       </h1>
       <Filters />
-      <div >
+      <div>
         <QueryProvider {...query}>
           <QueryHasNoResults>
             <div className="bg-white p-8 rounded-xl grow">
@@ -46,13 +49,9 @@ const ViewNotices = ({
           <QueryHasResults>
             {ItemComponent ? (
               <div className="py-5">
-                {query.data?.map && query.data.map(item => (
-                  <ItemComponent
-                    key={item.id}
-                    {...item}
-                  />
-                ))}
-                <ItemComponentPagination/>
+                {query.data?.map &&
+                  query.data.map((item) => <ItemComponent key={item.id} {...item} />)}
+                <ItemComponentPagination />
               </div>
             ) : (
               <div className="flex flex-col lg:flex-row gap-6 mt-4 items-start max-w-full">
@@ -74,17 +73,13 @@ const ViewNotices = ({
         </QueryProvider>
       </div>
     </>
-  );
-};
+  )
+}
 
 const ItemComponentPagination = () => {
   const pagination = usePagination()
-  return (
-    <div>
-      
-    </div>
-  );
-};
+  return <div></div>
+}
 
 export default withFilters(ViewNotices, {
   params: ['SearchPhrase, PageNumber, PageSize, region, City, accommodationPlacesCount'],
