@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
 import PI from 'react-phone-input-2'
-import { FormFieldError } from './HookFormFieldError'
-import { useSelector } from 'react-redux'
-import { languages } from '../common/LanguageSwitcher'
 import 'react-phone-input-2/lib/style.css'
+import { languages } from '../common/LanguageSwitcher'
+import { FormFieldError } from './HookFormFieldError'
 
 const PhoneInput = PI.default ? PI.default : PI
 
@@ -37,8 +35,6 @@ const InputPhoneNumber = ({
   useEffect(() => {
     disabled ? control.unregister(name) : control.register(name)
   }, [disabled])
-
-  const { t } = useTranslation()
 
   return (
     <Controller
