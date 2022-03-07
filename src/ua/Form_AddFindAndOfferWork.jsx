@@ -59,6 +59,7 @@ const FromFindAndOfferWork = ({ title, description, type } = {}) => {
     defaultValues: {
       language,
       countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
       type,
     },
   })
@@ -66,7 +67,6 @@ const FromFindAndOfferWork = ({ title, description, type } = {}) => {
   const watched = useWatch({
     control: methods.control,
     name: 'countryId',
-    phoneNumber: '+48',
   })
 
   useEffect(() => {

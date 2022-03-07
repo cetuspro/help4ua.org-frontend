@@ -58,13 +58,13 @@ const FormAddFindHelp = () => {
     defaultValues: {
       language,
       countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
     },
   })
 
   const watched = useWatch({
     control: methods.control,
     name: 'countryId',
-    phoneNumber: '+48',
   })
 
   useEffect(() => {
@@ -134,7 +134,11 @@ const FormAddFindHelp = () => {
                 <div>
                   <InputText
                     name="email"
-                    label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+                    label={
+                      <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                        {t('form.email')}
+                      </span>
+                    }
                     placeholder={t('form.email')}
                     icon={FaEnvelope}
                   />

@@ -4,6 +4,10 @@ import qs from 'qs'
 
 export const FilterContext = createContext([{}, undefined])
 
+const getDisplayName = (WrappedComponent) => {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+}
+
 const paramsToFilters = (params, search) => {
   const parsed = qs.parse(search, { ignoreQueryPrefix: true })
 
@@ -64,13 +68,14 @@ export const FilterProvider = ({ children, params = [], initial = {} }) => {
   )
 }
 
-export const withFilters =
-  (Component, { params = [], initial = {} } = {}) =>
-  (props) =>
-    (
-      <FilterProvider {...{ params, initial }}>
-        <Component {...props} />
-      </FilterProvider>
-    )
+export const withFilters = (WrappedComponent, { params = [], initial = {} } = {}) => {
+  const Component = (props) => (
+    <FilterProvider {...{ params, initial }}>
+      <WrappedComponent {...props} />
+    </FilterProvider>
+  )
+  Component.displayName = `withFilters(${getDisplayName(WrappedComponent)})`
+  return Component
+}
 
 export const useFilters = () => useContext(FilterContext)

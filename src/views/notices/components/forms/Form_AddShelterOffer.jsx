@@ -82,7 +82,6 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
   const watched = useWatch({
     control: methods.control,
     name: 'countryId',
-    phoneNumber: '+48',
   })
 
   useEffect(() => {
@@ -133,7 +132,11 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
           <div>
             <InputText
               name="email"
-              label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm ">{t('form.email')}</span>}
+              label={
+                <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm ">
+                  {t('form.email')}
+                </span>
+              }
               placeholder={t('form.email')}
               icon={FaEnvelope}
             />

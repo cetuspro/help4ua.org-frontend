@@ -7,5 +7,10 @@ export const withPriceFree = (WrappedComponent) => {
     }
   }
 
+  HOC.displayName = `WithPriceFree(${getDisplayName(WrappedComponent)})`
   return HOC
+}
+
+const getDisplayName = (WrappedComponent) => {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
 }

@@ -96,7 +96,14 @@ export const ShelterDataComponent = ({
           <ActionDetailsItem
             onAction={handleAction}
             label={t('common.telefon')}
-            value={showField ? realPhoneNumber : phoneNumber}
+            value={
+              <a
+                onClick={(e) => !showField && e.preventDefault()}
+                href={showField ? `tel:${realPhoneNumber}` : '#'}
+                className="font-bold text-blue-700 hover:text-blue-500">
+                {showField ? realPhoneNumber : phoneNumber}
+              </a>
+            }
           />
         )}
         {!!period && (
