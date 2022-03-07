@@ -87,7 +87,6 @@ const FormAddFindHelp = () => {
       <p className="mb-4 ml-2 text-gray-500">{t('formDescription.findHelp')}</p>
       <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
         <div className="justify-start content-start text-left">
-          <div className="p-5 bg-red-500"></div>
           <FormProvider {...methods}>
             <form onSubmit={mutation.mutate}>
               <div>
@@ -135,7 +134,11 @@ const FormAddFindHelp = () => {
                 <div>
                   <InputText
                     name="email"
-                    label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+                    label={
+                      <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                        {t('form.email')}
+                      </span>
+                    }
                     placeholder={t('form.email')}
                     icon={FaEnvelope}
                   />
@@ -149,7 +152,7 @@ const FormAddFindHelp = () => {
                     icon={FaMapPin}
                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                   />
-                </div>                
+                </div>
                 <div>
                   <InputSelect
                     name="region"
