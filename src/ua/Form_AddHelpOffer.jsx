@@ -59,6 +59,7 @@ const FormAddHelpOffer = () => {
     defaultValues: {
       language,
       countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
     },
   })
 
@@ -148,7 +149,7 @@ const FormAddHelpOffer = () => {
                     icon={FaMapPin}
                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                   />
-                </div>                
+                </div>
                 <div>
                   <InputSelect
                     name="region"

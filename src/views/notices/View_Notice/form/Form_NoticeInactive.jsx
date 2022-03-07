@@ -27,6 +27,9 @@ const FormMarkInactive = ({ onSuccess, onCancel, noticeId }) => {
 
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      phoneNumber: '+48',
+    },
   })
 
   const handleSuccess = ({ data }) => {

@@ -82,6 +82,7 @@ const FormAddShelterOffer = ({ defaultValues, query, onSuccess, editMode = false
   const watched = useWatch({
     control: methods.control,
     name: 'countryId',
+    phoneNumber: '+48',
   })
 
   useEffect(() => {

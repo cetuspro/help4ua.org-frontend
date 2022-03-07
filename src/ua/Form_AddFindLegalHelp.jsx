@@ -64,6 +64,7 @@ const FormAddFindHelp = () => {
   const watched = useWatch({
     control: methods.control,
     name: 'countryId',
+    phoneNumber: '+48',
   })
 
   useEffect(() => {
@@ -147,7 +148,7 @@ const FormAddFindHelp = () => {
                     icon={FaMapPin}
                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                   />
-                </div>                
+                </div>
                 <div>
                   <InputSelect
                     name="region"
