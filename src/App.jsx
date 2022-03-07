@@ -11,7 +11,7 @@ import { useAuth } from '@/app/hooks/useAuth'
 import { I18nextProvider, useTranslation } from 'react-i18next'
 import i18next from 'i18next'
 import { i18nInit } from './i18nInit'
-import 'react-phone-input-2/lib/style.css'
+import '@/assets/react-phone-input-2-style/style.css'
 
 
 const queryClient = new QueryClient({
