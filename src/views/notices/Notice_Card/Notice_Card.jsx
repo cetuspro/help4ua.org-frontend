@@ -35,9 +35,9 @@ const NoticeCard = ({
         {t(description)}
       </p>
       {additionalNotes && (
-        <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-justify mx-auto">
+        <div className="max-w-screen-md text-gray-600 mb-2 text-sm text-justify mx-auto">
           {t(additionalNotes)}
-        </p>
+        </div>
       )}
     </div>
   )

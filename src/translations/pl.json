@@ -159,7 +159,8 @@
     "offerVolunteerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz pomoc jako wolontariusz. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "lfVolunteerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy wolontariuszy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "lfWork": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz pracy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "offerWork": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz oferujesz pracę. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
+    "offerWork": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz oferujesz pracę. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "lfCheckBeforeAdd": "UWAGA! Zanim dodasz ogłoszenie sprawdź bazę danych ogłoszeń - ofert, czy nie ma ogłoszenia spełniającego Twoje potrzeby."
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
