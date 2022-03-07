@@ -1,12 +1,14 @@
-import { useQueryContext } from '@/app/context/queries/QueryProvider'
 import { route } from '@/app/router/urls/routes'
-import Card from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
-import { getPeriod, getValue, getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { isNullOrUndefined } from '@/app/utils/isNullOrUndefined'
+import {
+  getLanguagesValue,
+  getPeriod,
+  getValue,
+} from '@/views/notices/View_Notices/models/tableList'
 import PriceFree from '@/components/common/PriceFree'
 
 const Item = ({ label, value }) => {
@@ -39,7 +41,7 @@ const ShelterOfferPopup = ({
   ukraineLang,
   englishLang,
   germanyLang,
-  polishLang
+  polishLang,
 }) => {
   const { t } = useTranslation()
   const getRegion = (val) => voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
@@ -81,22 +83,40 @@ const ShelterOfferPopup = ({
           />
           {!!name && <Item label={`${t('common.imie')}:`} value={name} />}
           {!!phoneNumber && <Item label={`${t('common.telefon')}:`} value={phoneNumber} />}
-          {!!period && <Item label={`${t('form.period')}:`} value={getPeriod(t, parseInt(period))} />}
+          {!!period && (
+            <Item label={`${t('form.period')}:`} value={getPeriod(t, parseInt(period))} />
+          )}
           {!!createdAt && (
-            <Item label={`${t('common.data')}:`} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
+            <Item
+              label={`${t('common.data')}:`}
+              value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')}
+            />
           )}
           {!!id && <Item label={`${t('common.id')}:`} value={id} />}
         </div>
         <div className="flex-1">
           {!!accommodationPlacesCount && (
-            <Item label={`${t('form.accommodationPlacesCount')}:`} value={accommodationPlacesCount} />
+            <Item
+              label={`${t('form.accommodationPlacesCount')}:`}
+              value={accommodationPlacesCount}
+            />
           )}
           {!!bedCount && <Item label={`${t('form.bedCount')}:`} value={bedCount} />}
-          { !isNullOrUndefined(isAcceptedChild) && <Item label={`${t('form.hasAcceptedChild')}:`} value={getValue(isAcceptedChild)} />}
-          { !isNullOrUndefined(isAcceptedAnimal) && <Item label={`${t('form.hasAcceptedAnimal')}:`} value={getValue(isAcceptedAnimal)} />}
-          { !isNullOrUndefined(hasWashingMachine) && <Item label={`${t('form.hasWashingMachine')}:`} value={getValue(hasWashingMachine)} />}
-          { !isNullOrUndefined(isCatering) && <Item label={`${t('form.hasCatering')}:`} value={getValue(isCatering)} />}
-          { !isNullOrUndefined(isDelivery) && <Item label={`${t('form.isDelivery')}:`} value={getValue(isDelivery)} /> }
+          {!isNullOrUndefined(isAcceptedChild) && (
+            <Item label={`${t('form.hasAcceptedChild')}:`} value={getValue(isAcceptedChild)} />
+          )}
+          {!isNullOrUndefined(isAcceptedAnimal) && (
+            <Item label={`${t('form.hasAcceptedAnimal')}:`} value={getValue(isAcceptedAnimal)} />
+          )}
+          {!isNullOrUndefined(hasWashingMachine) && (
+            <Item label={`${t('form.hasWashingMachine')}:`} value={getValue(hasWashingMachine)} />
+          )}
+          {!isNullOrUndefined(isCatering) && (
+            <Item label={`${t('form.hasCatering')}:`} value={getValue(isCatering)} />
+          )}
+          {!isNullOrUndefined(isDelivery) && (
+            <Item label={`${t('form.isDelivery')}:`} value={getValue(isDelivery)} />
+          )}
           {(ukraineLang || englishLang || germanyLang || polishLang) && (
             <Item
               label={t('form.language')}

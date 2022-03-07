@@ -5,8 +5,8 @@ import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
-import { getAnimal, getPeriod, getLanguagesValue } from '../../View_Notices/dataTable/DataTable_Notices'
 import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
+import { getAnimal, getLanguagesValue, getPeriod } from '../../View_Notices/models/tableList'
 
 const Item = ({ label, value }) => {
   return (

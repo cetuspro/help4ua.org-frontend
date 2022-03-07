@@ -249,7 +249,7 @@
     "data": "Added",
     "tak": "Yes",
     "nie": "No",
-    "brakDanych": "No data",
+    "noData": "No data",
     "miasto": "City",
     "szukaj": "Search...",
     "wojewodztwo": "Choose a province",

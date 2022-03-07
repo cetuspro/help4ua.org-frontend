@@ -1,10 +1,10 @@
-export const shelterOfferStyles = {  
-  rows: { style: { display: 'none' }},
-  table: { style: { background: 'transparent' }},
-  expanderRow: { style: { background: 'transparent' }},
+export const listStyles = {
+  rows: { style: { display: 'none' } },
+  table: { style: { background: 'transparent' } },
+  expanderRow: { style: { background: 'transparent' } },
 }
 
-export const shelterOfferConfig = {
+export const listConfig = {
   noTableHead: true,
   expandableRowsHideExpander: true,
   expandableRowExpanded: () => true,
