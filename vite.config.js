@@ -13,7 +13,7 @@ export default defineConfig({
     jsxInject: `import React from 'react'`,
   },
   optimizeDeps: {
-    exclude: ['node_modules'],
+    exclude: [''],
   },
   server: {
     host: true,
