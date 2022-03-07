@@ -76,8 +76,8 @@ export default function Home() {
           <h2 className='text-xl font-semibold'>{t('frontpage.noticesTypesQuestion')}</h2>
           {/* <div className='flex flex-wrap justify-between w-fit gap-x-6'> */}
           <div className="grid w-11/12 max-w-[300px] m-auto sm:max-w-none sm:w-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 sm:px-10 md:px-0 py-2"> {/*max-w-[300px] m-auto sm:max-w-none*/}
-          
-          
+
+
             <Button3
               icon={FiHome}
               label={t('frontpage.shelter')}
@@ -147,207 +147,207 @@ export default function Home() {
         <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
 
           <NoticeCardsWrapper icon={FiHome} title={t('frontpage.shelter')} hashId={'schronienie'}>
-              <NoticeCard
-                icon={FiHome}
-                title={"tiles.shelter"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferAccommodation")}
-                description={'formDescription.offerShelter'}
-                toAdd={route['notices.addShelterOffer']}
-                toView={route['notices.list3']}
-              />
-              <NoticeCard
-                icon={FiHome}
-                title={"tiles.lfShelter"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchAccommodation")}
-                description={'formDescription.findShelter'}
-                toAdd={route['notices.addFindShelter']}
-                toView={route['notices.list2']}
-              />
-            </NoticeCardsWrapper>
+            <NoticeCard
+              icon={FiHome}
+              title={"tiles.shelter"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferAccommodation")}
+              description={'formDescription.offerShelter'}
+              toAdd={route['notices.addShelterOffer']}
+              toView={route['notices.list3']}
+            />
+            <NoticeCard
+              icon={FiHome}
+              title={"tiles.lfShelter"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchAccommodation")}
+              description={'formDescription.findShelter'}
+              toAdd={route['notices.addFindShelter']}
+              toView={route['notices.list2']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FiTruck} title={t('frontpage.transport')} hashId={'transport'}>
-              <NoticeCard
-                icon={FiTruck}
-                title={"tiles.transport"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferTransportHelp")}
-                description={'formDescription.offerTransport'}
-                toAdd={route['notices.addTransportOffer']}
-                toView={route['notices.list4']}
-              />
-              <NoticeCard
-                icon={FiTruck}
-                title={"tiles.lfTransport"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchTransportHelp")}
-                description={'formDescription.findTransport'}
-                toAdd={route['notices.addFindTransportOffer']}
-                toView={route['notices.list6']}
-              />
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={FiTruck} title={t('frontpage.transport')} hashId={'transport'}>
+            <NoticeCard
+              icon={FiTruck}
+              title={"tiles.transport"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferTransportHelp")}
+              description={'formDescription.offerTransport'}
+              toAdd={route['notices.addTransportOffer']}
+              toView={route['notices.list4']}
+            />
+            <NoticeCard
+              icon={FiTruck}
+              title={"tiles.lfTransport"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchTransportHelp")}
+              description={'formDescription.findTransport'}
+              toAdd={route['notices.addFindTransportOffer']}
+              toView={route['notices.list6']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={MdOutlineVolunteerActivism} title={t('frontpage.volunteering')} hashId={'wolontariat'}>
-              <NoticeCard
-                icon={MdOutlineVolunteerActivism}
-                title={"tiles.offerVolunteerHelp"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferVolunteerHelp")}
-                description={'formDescription.offerVolunteerHelp'}
-                toAdd={route['notices.addVolunteersOfferingHelp']}
-                toView={route['notices.list16']}
-              />
-              <NoticeCard
-                icon={MdOutlineVolunteerActivism}
-                title={"tiles.lfVolunteerHelp"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchVolunteerHelp")}
-                description={'formDescription.lfVolunteerHelp'}
-                toAdd={route['notices.addFindVolunteersHelp']}
-                toView={route['notices.list17']}
-              /> 
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={MdOutlineVolunteerActivism} title={t('frontpage.volunteering')} hashId={'wolontariat'}>
+            <NoticeCard
+              icon={MdOutlineVolunteerActivism}
+              title={"tiles.offerVolunteerHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferVolunteerHelp")}
+              description={'formDescription.offerVolunteerHelp'}
+              toAdd={route['notices.addVolunteersOfferingHelp']}
+              toView={route['notices.list16']}
+            />
+            <NoticeCard
+              icon={MdOutlineVolunteerActivism}
+              title={"tiles.lfVolunteerHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchVolunteerHelp")}
+              description={'formDescription.lfVolunteerHelp'}
+              toAdd={route['notices.addFindVolunteersHelp']}
+              toView={route['notices.list17']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FiEdit} title={t('frontpage.translations')} hashId={'tlumaczenia'}>
-              <NoticeCard
-                icon={FiEdit}
-                title={"tiles.translations"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferTranslationHelp")}
-                description={'formDescription.translations'}
-                toAdd={route['notices.addTranslationOffer']}
-                toView={route['notices.list7']}
-              />  
-              <NoticeCard
-                icon={FiEdit}
-                title={"tiles.lfTranslations"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchTranslationHelp")}
-                description={'formDescription.lfTranslations'}
-                toAdd={route['notices.addFindTranslationOffer']}
-                toView={route['notices.list9']}
-              />  
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={FiEdit} title={t('frontpage.translations')} hashId={'tlumaczenia'}>
+            <NoticeCard
+              icon={FiEdit}
+              title={"tiles.translations"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferTranslationHelp")}
+              description={'formDescription.translations'}
+              toAdd={route['notices.addTranslationOffer']}
+              toView={route['notices.list7']}
+            />
+            <NoticeCard
+              icon={FiEdit}
+              title={"tiles.lfTranslations"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchTranslationHelp")}
+              description={'formDescription.lfTranslations'}
+              toAdd={route['notices.addFindTranslationOffer']}
+              toView={route['notices.list9']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FiBriefcase} title={t('frontpage.legalHelp')} hashId={'pomoc-prawna'}>
-              <NoticeCard
-                icon={FiBriefcase}
-                title={"tiles.legalHelp"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferLegalAssistance")}
-                description={'formDescription.offerLegalHelp'}
-                toAdd={route['notices.addlegalHelpOffer']}
-                toView={route['notices.list13']}
-              />            
-              <NoticeCard
-                icon={FiBriefcase}
-                title={"tiles.lfLegalHelp"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchLegalAssistance")}
-                description={'formDescription.findLegalHelp'}
-                toAdd={route['notices.addfindLegalHelp']}
-                toView={route['notices.list14']}
-              />   
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={FiBriefcase} title={t('frontpage.legalHelp')} hashId={'pomoc-prawna'}>
+            <NoticeCard
+              icon={FiBriefcase}
+              title={"tiles.legalHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferLegalAssistance")}
+              description={'formDescription.offerLegalHelp'}
+              toAdd={route['notices.addlegalHelpOffer']}
+              toView={route['notices.list13']}
+            />
+            <NoticeCard
+              icon={FiBriefcase}
+              title={"tiles.lfLegalHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchLegalAssistance")}
+              description={'formDescription.findLegalHelp'}
+              toAdd={route['notices.addfindLegalHelp']}
+              toView={route['notices.list14']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FaBriefcaseMedical} title={t('frontpage.medicalAssistance')} hashId={'pomoc-medyczna'}>
-              <NoticeCard
-                icon={FaBriefcaseMedical}
-                title={"tiles.offerMedicalAssistance"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferMedicalHelp")}
-                description={'formDescription.offerMedicalAssistance'}
-                toAdd={route['notices.addOfferMedicalAssistance']}
-                toView={route['notices.list15']}
-              /> 
-              <NoticeCard
-                icon={FaBriefcaseMedical}
-                title={"tiles.lfMedicalAssistance"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchMedicalHelp")}
-                description={'formDescription.medicalAssistance'}
-                toAdd={route['notices.addFindMedicalAssistance']}
-                toView={route['notices.list12']}
-              /> 
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={FaBriefcaseMedical} title={t('frontpage.medicalAssistance')} hashId={'pomoc-medyczna'}>
+            <NoticeCard
+              icon={FaBriefcaseMedical}
+              title={"tiles.offerMedicalAssistance"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferMedicalHelp")}
+              description={'formDescription.offerMedicalAssistance'}
+              toAdd={route['notices.addOfferMedicalAssistance']}
+              toView={route['notices.list15']}
+            />
+            <NoticeCard
+              icon={FaBriefcaseMedical}
+              title={"tiles.lfMedicalAssistance"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchMedicalHelp")}
+              description={'formDescription.medicalAssistance'}
+              toAdd={route['notices.addFindMedicalAssistance']}
+              toView={route['notices.list12']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FaPaw} title={t('frontpage.animalHome')} hashId={'dom-dla-zwierzat'}>
-              <NoticeCard
-                icon={FaPaw}
-                title={"tiles.temporaryAnimalHome"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelpForAnimal")}
-                description={'formDescription.temporaryAnimalHome'}
-                toAdd={route['notices.addTemporaryAnimalHome']}
-                toView={route['notices.list10']}
-              /> 
-              <NoticeCard
-                icon={FaPaw}
-                title={"tiles.lfTemporaryAnimalHome"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelpForAnimal")}
-                description={'formDescription.lfTemporaryAnimalHome'}
-                toAdd={route['notices.addFindTemporaryAnimalHome']}
-                toView={route['notices.list11']}
-              /> 
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={FaPaw} title={t('frontpage.animalHome')} hashId={'dom-dla-zwierzat'}>
+            <NoticeCard
+              icon={FaPaw}
+              title={"tiles.temporaryAnimalHome"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelpForAnimal")}
+              description={'formDescription.temporaryAnimalHome'}
+              toAdd={route['notices.addTemporaryAnimalHome']}
+              toView={route['notices.list10']}
+            />
+            <NoticeCard
+              icon={FaPaw}
+              title={"tiles.lfTemporaryAnimalHome"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelpForAnimal")}
+              description={'formDescription.lfTemporaryAnimalHome'}
+              toAdd={route['notices.addFindTemporaryAnimalHome']}
+              toView={route['notices.list11']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FaUserTie} title={t('frontpage.jobOffers')} hashId={'oferty-pracy'}>
-              <NoticeCard
-                icon={FaUserTie}
-                title={"tiles.offerWork"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferingWork")}
-                description={'formDescription.offerWork'}
-                toAdd={route['notices.addOfferWork']}
-                toView={route['notices.list110']}
-              />
-              <NoticeCard
-                icon={FaUserTie}
-                title={"tiles.lfWork"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchWork")}
-                description={'formDescription.lfWork'}
-                toAdd={route['notices.addFindWork']}
-                toView={route['notices.list112']}
-              />
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={FaUserTie} title={t('frontpage.jobOffers')} hashId={'oferty-pracy'}>
+            <NoticeCard
+              icon={FaUserTie}
+              title={"tiles.offerWork"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferingWork")}
+              description={'formDescription.offerWork'}
+              toAdd={route['notices.addOfferWork']}
+              toView={route['notices.list110']}
+            />
+            <NoticeCard
+              icon={FaUserTie}
+              title={"tiles.lfWork"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchWork")}
+              description={'formDescription.lfWork'}
+              toAdd={route['notices.addFindWork']}
+              toView={route['notices.list112']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FiGift} title={t('frontpage.otherHelp')} hashId={'inna-pomoc'}>
-              <NoticeCard
-                icon={FiGift}
-                title={"tiles.help"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelp")}
-                description={'formDescription.offerHelp'}
-                toAdd={route['notices.addHelpOffer']}
-                toView={route['notices.list5']}
-              />
-              <NoticeCard
-                icon={FiGift}
-                title={"tiles.lfHelp"}
-                isFetching={isFetching}
-                verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelp")}
-                description={'formDescription.findHelp'}
-                toAdd={route['notices.addFindHelp']}
-                toView={route['notices.list8']}
-              />
-            </NoticeCardsWrapper>
+          <NoticeCardsWrapper icon={FiGift} title={t('frontpage.otherHelp')} hashId={'inna-pomoc'}>
+            <NoticeCard
+              icon={FiGift}
+              title={"tiles.help"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "OfferHelp")}
+              description={'formDescription.offerHelp'}
+              toAdd={route['notices.addHelpOffer']}
+              toView={route['notices.list5']}
+            />
+            <NoticeCard
+              icon={FiGift}
+              title={"tiles.lfHelp"}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, "SearchHelp")}
+              description={'formDescription.findHelp'}
+              toAdd={route['notices.addFindHelp']}
+              toView={route['notices.list8']}
+            />
+          </NoticeCardsWrapper>
 
-            <NoticeCardsWrapper icon={FaMapMarkerAlt} title={t('tiles.helpPoints')}>
-              <div id={'punkty-pomocy'} className="flex flex-col items-center justify-center py-4">
-                
-                <div className="flex flex-col flex-wrap lg:flex-nowrap sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                  <Button1 to={route['helpPoints.add']} label={t('frontpage.addHelpPoint')} />
-                  <Button2 to={route['helpPoints']} label={t('frontpage.helpPoints')} />
-                  <Button2 to={route['helpPoints.map']} label={t('tiles.seeMap')} />
-                </div>
-                <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                  {t('formDescription.helpPoints')}
-                </p>
+          <NoticeCardsWrapper icon={FaMapMarkerAlt} title={t('tiles.helpPoints')} hashId={'punkty-pomocy'}>
+            <div className="flex flex-col items-center justify-center py-4">
+
+              <div className="flex flex-col flex-wrap lg:flex-nowrap sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button1 to={route['helpPoints.add']} label={t('frontpage.addHelpPoint')} />
+                <Button2 to={route['helpPoints']} label={t('frontpage.helpPoints')} />
+                <Button2 to={route['helpPoints.map']} label={t('tiles.seeMap')} />
               </div>
-            </NoticeCardsWrapper>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.helpPoints')}
+              </p>
+            </div>
+          </NoticeCardsWrapper>
         </div>
       </div>
     </>
@@ -370,7 +370,7 @@ const Button2 = ({ to, label }) => (
   </Link>
 )
 
-const Button3 = ({icon: Icon, label, hashLink }) => (
+const Button3 = ({ icon: Icon, label, hashLink }) => (
 
   <div className="flex flex-col mt-6 sm:justify-center lg:justify-start gap-2.5 ">
     <a
