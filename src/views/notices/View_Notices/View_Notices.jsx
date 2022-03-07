@@ -9,13 +9,13 @@ import { useTranslation } from 'react-i18next'
 import Button from '@/components/common/Button'
 import { MdArrowBackIosNew } from 'react-icons/md'
 import { route } from '@/app/router/urls/routes'
+import { listConfig, listStyles } from '@/app/config/noticeList'
 
 const ViewNotices = ({
-  columns,
   expandableRowsComponent,
   title,
-  styles,
-  config,
+  styles = listStyles,
+  config = listConfig,
   noticeType,
   filters: Filters,
 }) => {
@@ -51,7 +51,6 @@ const ViewNotices = ({
                 <NoticesDataTable
                   styles={styles}
                   config={config}
-                  columns={columns}
                   expandableRowsComponent={expandableRowsComponent}
                 />
               </div>
