@@ -59,6 +59,7 @@ const FormAddFindTranslationOffer = () => {
     defaultValues: {
       language,
       countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
     },
   })
 
@@ -130,11 +131,15 @@ const FormAddFindTranslationOffer = () => {
                     })}
                     required
                   />
-                </div>                
+                </div>
                 <div>
                   <InputText
                     name="email"
-                    label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+                    label={
+                      <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                        {t('form.email')}
+                      </span>
+                    }
                     placeholder={t('form.email')}
                     icon={FaEnvelope}
                   />
@@ -148,7 +153,7 @@ const FormAddFindTranslationOffer = () => {
                     icon={FaMapPin}
                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                   />
-                </div>                
+                </div>
                 <div>
                   <InputSelect
                     name="region"

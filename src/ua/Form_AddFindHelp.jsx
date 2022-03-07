@@ -59,6 +59,7 @@ const FormAddFindHelp = () => {
     defaultValues: {
       language,
       countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
     },
   })
 
