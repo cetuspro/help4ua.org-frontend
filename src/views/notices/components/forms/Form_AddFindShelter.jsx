@@ -123,7 +123,7 @@ const FormAddFindShelter = ({ defaultValues, query, onSuccess, editMode = false 
           <div>
             <InputText
               name="email"
-              label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
+              label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
               placeholder={t('form.email')}
               icon={FaEnvelope}
             />
