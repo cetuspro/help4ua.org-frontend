@@ -9,8 +9,8 @@ const Animals = ({ isAcceptedAnimal }) => {
 
   return (
     <NoticeDetailsItem
-      label={t('common.dzieci')}
-      icon={<Icon.MdChildFriendly />}
+      label={t('common.zwierzaki')}
+      icon={<Icon.MdPets />}
       value={getValue(isAcceptedAnimal)}
     />
   )
