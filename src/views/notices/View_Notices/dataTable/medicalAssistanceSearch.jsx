@@ -112,7 +112,8 @@ export const MedicalAssistanceSearchExpandedComponent = ({
               label={t('common.telefon')}
               value={
                 <a
-                  href={showField ? `tel:${realPhoneNumber}` : 'javascript:void(0)'}
+                  onClick={(e) => !showField && e.preventDefault()}
+                  href={showField ? `tel:${realPhoneNumber}` : '#'}
                   className="flex flex-col text-blue-700 hover:text-blue-500 items-start">
                   {showField ? realPhoneNumber : phoneNumber}
                 </a>

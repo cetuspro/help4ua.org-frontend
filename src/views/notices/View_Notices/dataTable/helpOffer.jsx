@@ -128,7 +128,8 @@ export const HelpOfferExpandedComponent = ({
               label={t('common.telefon')}
               value={
                 <a
-                  href={showField ? `tel:${realPhoneNumber}` : 'javascript:void(0)'}
+                  onClick={(e) => !showField && e.preventDefault()}
+                  href={showField ? `tel:${realPhoneNumber}` : '#'}
                   className="font-bold text-blue-700 hover:text-blue-500">
                   {showField ? realPhoneNumber : phoneNumber}
                 </a>
@@ -148,7 +149,7 @@ export const HelpOfferExpandedComponent = ({
               value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
             />
           )}
-          <PriceFree className={'pt-0'}/>
+          <PriceFree className={'pt-0'} />
           <NoticeDetailsItem
             label={t('common.uniqueLink')}
             value={
