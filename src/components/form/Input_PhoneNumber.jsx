@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { languages } from '../common/LanguageSwitcher'
 import 'react-phone-input-2/lib/style.css'
 
-const PhoneInput = PI.default? PI.default: PI;
+const PhoneInput = PI.default ? PI.default : PI
 
 const FlagImg = ({ lng, size }) => {
   const languageObj = languages.find((i) => i.lng.toLowerCase() == lng.toLowerCase())
