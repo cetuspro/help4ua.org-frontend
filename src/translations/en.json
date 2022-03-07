@@ -159,7 +159,8 @@
     "offerVolunteerHelp": "Here you can place your announcement that you are offering help as a volunteer. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "lfVolunteerHelp": "Here you can post your announcement that you need volunteers help. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
     "lfWork": "This is where you can place your announcement that you are looking for work. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
-    "offerWork": "Here you can post your announcement that you are offering work. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!"
+    "offerWork": "Here you can post your announcement that you are offering work. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
+    "lfCheckBeforeAdd": "Before publishing a new offer, check out the database of existing offers. Maybe there is something that fits Your needs"
   },
   "frontpage": {
     "help": "Help for Ukraine",
