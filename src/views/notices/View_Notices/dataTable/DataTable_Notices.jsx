@@ -2,14 +2,9 @@ import { memo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useQueryContext } from '@/app/context/queries/QueryProvider'
 import usePagination from '@/app/hooks/usePagination'
-import DataTableList from '@/components/common/DataTable'
+import DataTableList from '@/components/common/Datatable'
 
-const NoticesDataTable = ({
-  styles = {},
-  config = {},
-  columns,
-  expandableRowsComponent,
-}) => {
+const NoticesDataTable = ({ styles = {}, config = {}, columns, expandableRowsComponent }) => {
   const { data } = useQueryContext()
   const pagination = usePagination()
   const [searchParams] = useSearchParams()
