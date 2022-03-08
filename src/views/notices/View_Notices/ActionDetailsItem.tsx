@@ -11,10 +11,11 @@ const ActionDetailsItem = ({ label, labelClassName, value, valueClassName, onAct
       <span className={labelClassName}>{label}:</span>
       <span className={`font-bold ${valueClassName}`}>{value}</span>
       <Button
-        className="text-xs mb-1 absolute left-48 ring-transparent bg-blue-600 active:bg-blue-700 hover:bg-blue-700"
+        className="text-xs mb-1 absolute left-48 ring-transparent bg-blue-600 active:bg-blue-700 hover:bg-blue-700 text-white"
         style={{
           bottom: '-10px',
           padding: '5px',
+          color:'white',
         }}
         onClick={handleClick}>
         {t('common.show')}
