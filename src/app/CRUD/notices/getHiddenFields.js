@@ -1,19 +1,19 @@
-import { API_URL } from "@/app/config/env";
-import axios from "axios";
+import { API_URL } from '@/app/config/env'
+import axios from 'axios'
 
 export const FieldType = {
-  PHONE: "phone"
+  PHONE: 'phone',
 }
 
-const getHiddenFields = ({noticeId, type})  => {
+const getHiddenFields = ({ noticeId, type, token }) => {
   return axios({
     method: 'POST',
     url: `${API_URL}/notices/${noticeId}/raise-show`,
-    params: {type},
+    params: { type, recaptchaToken: token },
     headers: {
-      'Content-Type': "application/json"
-    }
-  }).then(({data}) => data)
+      'Content-Type': 'application/json',
+    },
+  }).then(({ data }) => data)
 }
 
 export default getHiddenFields

@@ -11,6 +11,7 @@ import { useAuth } from '@/app/hooks/useAuth'
 import { I18nextProvider, useTranslation } from 'react-i18next'
 import i18next from 'i18next'
 import { i18nInit } from './i18nInit'
+import { Popup, PopupContextProvider } from '@/app/hooks/usePopup'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,12 +28,12 @@ export default function App() {
   const { accessToken, refreshToken } = useAuth()
   const [isLoading, setIsLoading] = useState(true)
   const [translationLoaded, setTranslationLoaded] = useState(false)
-  const {i18n} = useTranslation();
-  const { language } = useSelector(state => state?.language)
+  const { i18n } = useTranslation()
+  const { language } = useSelector((state) => state?.language)
   useEffect(() => {
     i18nInit(language).then(() => setTranslationLoaded(true))
   }, [])
-  
+
   useEffect(() => {
     if (!accessToken) return
 
@@ -59,8 +60,11 @@ export default function App() {
   return (
     <I18nextProvider i18n={i18next}>
       <QueryClientProvider client={queryClient}>
-        <AppRouter />
-        <Toaster />
+        <PopupContextProvider>
+          <AppRouter />
+          <Toaster />
+          <Popup />
+        </PopupContextProvider>
       </QueryClientProvider>
     </I18nextProvider>
   )
