@@ -1,7 +1,8 @@
-import { useTranslation } from "react-i18next"
-import { animalsEnum } from "@/app/config/enum/animals"
-import { isBool } from "@/app/utils/isBool"
-import { periodsEnum } from "@/app/config/enum/periods"
+import { useTranslation } from 'react-i18next'
+import { animalsEnum } from '@/app/config/enum/animals'
+import { isBool } from '@/app/utils/isBool'
+import { periodsEnum } from '@/app/config/enum/periods'
+import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
 export const getAnimal = (t, value) => {
   return animalsEnum(t).find((element) => element.value === value)?.label ?? 'Brak danych'
@@ -18,15 +19,23 @@ export const getPeriod = (t, val) =>
 
 export const getLanguagesValue = (t, values) => {
   const languagesMap = {
-    "ukraineLang": t('language.ukrainian'),
-    "englishLang": t('language.english'),
-    "germanyLang": t('language.germany'),
-    "polishLang": t('language.polish'),
+    ukraineLang: t('language.ukrainian'),
+    englishLang: t('language.english'),
+    germanyLang: t('language.germany'),
+    polishLang: t('language.polish'),
   }
-  return Object.keys(languagesMap).reduce((acc, langKey) => {
-    if (values[langKey]) {
-      acc.push(languagesMap[langKey])
-    }
-    return acc
-  }, []).join(', ')
+  return Object.keys(languagesMap)
+    .reduce((acc, langKey) => {
+      if (values[langKey]) {
+        acc.push(languagesMap[langKey])
+      }
+      return acc
+    }, [])
+    .join(', ')
+}
+
+export const getRegion = (val) => {
+  const { t } = useTranslation()
+
+  return voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
 }

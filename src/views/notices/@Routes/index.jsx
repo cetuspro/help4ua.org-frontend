@@ -4,7 +4,7 @@ import {
   helpOfferColumnsColumns,
   HelpOfferExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/helpOffer'
-import { ShelterDataComponent } from '@/views/notices/View_Notices/dataTable/ShelterDataComponent'
+import ShelterListItem from '@/views/notices/View_Notices/components/ShelterListItem'
 import {
   transportOfferColumns,
   TransportOfferExpandedComponent,
@@ -75,7 +75,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.shelter2')}
-            expandableRowsComponent={ShelterDataComponent}
+            expandableRowsComponent={ShelterListItem}
             noticeType={10}
             filters={ShelterFilter}
           />
@@ -86,7 +86,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.shelter3')}
-            expandableRowsComponent={withPriceFree(ShelterDataComponent)}
+            expandableRowsComponent={withPriceFree(ShelterListItem)}
             noticeType={1}
             filters={ShelterFilter}
           />
