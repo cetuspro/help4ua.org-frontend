@@ -13,6 +13,10 @@ import {
   MdFoodBank,
   MdEmojiTransportation,
   MdPriceChange,
+  MdDirectionsCar,
+  MdEmail,
+  MdOutlineDateRange,
+  MdAccessibilityNew,
 } from 'react-icons/md'
 import { GiWashingMachine } from 'react-icons/gi'
 
@@ -32,4 +36,10 @@ export default {
   MdEmojiTransportation,
   MdPriceChange,
   GiWashingMachine,
+  MdDirectionsCar,
+  MdEmail,
+  MdOutlineDateRange,
+  MdAccessibilityNew,
 }
+
+export const iconConfig = { size: '17px' }

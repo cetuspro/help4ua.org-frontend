@@ -18,7 +18,9 @@ export const ParentRowLayout = ({ children, ...props }) => {
 
 export const ChildrenLayout = ({ children, side, ...props }) => {
   return (
-    <div className={`w-full ${side === 'left' ? 'lg:w-1/3' : 'lg:w-4/6'} mb-5 lg:mb-0`} {...props}>
+    <div
+      className={`w-full ${side === 'left' ? 'lg:w-1/3 lg:mr-5' : 'lg:w-4/6'} mb-5 lg:mb-0`}
+      {...props}>
       {children}
     </div>
   )

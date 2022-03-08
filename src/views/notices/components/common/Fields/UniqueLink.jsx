@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '../NoticeDetailsItem'
-import Icon from '@/assets/img/icons'
+import Icon, { iconConfig } from '@/assets/img/icons'
 import { route } from '@/app/router/urls/routes'
 
 const UniqueLink = ({ id }) => {
@@ -11,7 +11,7 @@ const UniqueLink = ({ id }) => {
   return (
     <NoticeDetailsItem
       label={t('common.uniqueLink')}
-      icon={<Icon.MdLink />}
+      icon={<Icon.MdLink {...iconConfig} />}
       value={
         <Link
           to={route['notices.view'](id)}

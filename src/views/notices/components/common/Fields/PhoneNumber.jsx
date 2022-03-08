@@ -1,7 +1,7 @@
 import { useState, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import ActionDetailsItem from '../ActionDetailsItem'
-import Icon from '@/assets/img/icons'
+import Icon, { iconConfig } from '@/assets/img/icons'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
 const PhoneNumber = ({ id, phoneNumber }) => {
@@ -26,12 +26,12 @@ const PhoneNumber = ({ id, phoneNumber }) => {
     <ActionDetailsItem
       onAction={handleAction}
       label={t('common.telefon')}
-      icon={<Icon.MdPhone />}
+      icon={<Icon.MdPhone {...iconConfig} />}
       value={
         <a
           onClick={(e) => !showField && e.preventDefault()}
           href={showField ? `tel:${realPhoneNumber}` : '#'}
-          className="font-bold text-blue-700 hover:text-blue-500">
+          className="text-blue-700 hover:text-blue-500">
           {showField ? realPhoneNumber : phoneNumber}
         </a>
       }

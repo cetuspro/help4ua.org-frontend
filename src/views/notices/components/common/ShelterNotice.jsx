@@ -4,26 +4,27 @@ import {
   ParentRowLayout,
   ChildrenLayout,
   BottomChildrenLayout,
-} from '../../components/common/Layouts'
-import Address from '../../components/common/Fields/Address'
-import Name from '../../components/common/Fields/Name'
-import PhoneNumber from '../../components/common/Fields/PhoneNumber'
-import Description from '../../components/common/Fields/Description'
-import Period from '../../components/common/Fields/Period'
-import AccommodationPlaces from '../../components/common/Fields/AccommodationPlaces'
-import BedCount from '../../components/common/Fields/BedCount'
-import UniqueLink from '../../components/common/Fields/UniqueLink'
-import Children from '../../components/common/Fields/Children'
-import Animals from '../../components/common/Fields/Animals'
-import WashingMachine from '../../components/common/Fields/WashingMachine'
-import Food from '../../components/common/Fields/Food'
-import Transport from '../../components/common/Fields/Transport'
-import Language from '../../components/common/Fields/Language'
-import FreePrice from '../../components/common/Fields/FreePrice'
-import CreatedAt from '../../components/common/Fields/CreatedAt'
-import NoticeId from '../../components/common/Fields/NoticeId'
+} from '@/views/notices/components/common/Layouts'
+import Address from '@/views/notices/components/common/Fields/Address'
+import Name from '@/views/notices/components/common/Fields/Name'
+import PhoneNumber from '@/views/notices/components/common/Fields/PhoneNumber'
+import Description from '@/views/notices/components/common/Fields/Description'
+import Period from '@/views/notices/components/common/Fields/Period'
+import AccommodationPlaces from '@/views/notices/components/common/Fields/AccommodationPlaces'
+import BedCount from '@/views/notices/components/common/Fields/BedCount'
+import UniqueLink from '@/views/notices/components/common/Fields/UniqueLink'
+import Children from '@/views/notices/components/common/Fields/Children'
+import Animal from '@/views/notices/components/common/Fields/Animal'
+import WashingMachine from '@/views/notices/components/common/Fields/WashingMachine'
+import Food from '@/views/notices/components/common/Fields/Food'
+import Transport from '@/views/notices/components/common/Fields/Transport'
+import Language from '@/views/notices/components/common/Fields/Language'
+import FreePrice from '@/views/notices/components/common/Fields/FreePrice'
+import CreatedAt from '@/views/notices/components/common/Fields/CreatedAt'
+import NoticeId from '@/views/notices/components/common/Fields/NoticeId'
+import Email from '@/views/notices/components/common/Fields/Email'
 
-const ShelterListItem = ({
+const ShelterNotice = ({
   data: {
     description,
     descriptionUA,
@@ -40,6 +41,7 @@ const ShelterListItem = ({
     location,
     id,
     name,
+    email,
     accommodationPlacesCount,
     phoneNumber,
     createdAt,
@@ -59,6 +61,7 @@ const ShelterListItem = ({
           )}
           {!!name && <Name name={name} />}
           {!!phoneNumber && <PhoneNumber id={id} phoneNumber={phoneNumber} />}
+          {!!email && <Email email={email} />}
         </ChildrenLayout>
 
         <ChildrenLayout side="right">
@@ -79,7 +82,7 @@ const ShelterListItem = ({
 
         <ChildrenLayout side="right">
           {!!isAcceptedChild && <Children isAcceptedChild={isAcceptedChild} />}
-          {!!isAcceptedAnimal && <Animals isAcceptedAnimal={isAcceptedAnimal} />}
+          {!!isAcceptedAnimal && <Animal isAcceptedAnimal={isAcceptedAnimal} />}
           {!!hasWashingMachine && <WashingMachine hasWashingMachine={hasWashingMachine} />}
           {!!isCatering && <Food isCatering={isCatering} />}
           {!!isDelivery && <Transport isDelivery={isDelivery} />}
@@ -103,4 +106,4 @@ const ShelterListItem = ({
   )
 }
 
-export default memo(ShelterListItem)
+export default memo(ShelterNotice)

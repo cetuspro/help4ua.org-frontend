@@ -39,3 +39,14 @@ export const getRegion = (val) => {
 
   return voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
 }
+
+export const getTransportLabelAndValue = ({ isDelivery, transportFromStr, transportToStr }) => {
+  if (transportFromStr) {
+    return { label: 'form.transportFromStr', value: transportFromStr }
+  }
+  if (transportToStr) {
+    return { label: 'form.transportToStr', value: transportToStr }
+  }
+
+  return { label: 'common.transport', value: getValue(isDelivery) }
+}

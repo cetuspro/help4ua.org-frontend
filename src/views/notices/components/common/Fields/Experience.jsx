@@ -4,16 +4,16 @@ import NoticeDetailsItem from '../NoticeDetailsItem'
 import Icon, { iconConfig } from '@/assets/img/icons'
 import { getValue } from '../../../View_Notices/models/tableList'
 
-const Food = ({ isCatering }) => {
+const Experience = ({ hasExperience }) => {
   const { t } = useTranslation()
 
   return (
     <NoticeDetailsItem
-      label={t('common.jedzenie')}
-      icon={<Icon.MdFoodBank {...iconConfig} />}
-      value={getValue(isCatering)}
+      label={t('form.hasExperienceWithAnimals')}
+      value={getValue(hasExperience)}
+      icon={<Icon.MdAccessibilityNew {...iconConfig} />}
     />
   )
 }
 
-export default memo(Food)
+export default memo(Experience)

@@ -4,7 +4,7 @@ import { QueryHasResults } from '@/app/context/queries/QueryHasResults'
 import { QueryProvider } from '@/app/context/queries/QueryProvider'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotices } from '../../../app/CRUD/notices/getNotices'
-import NoticesDataTable from './dataTable/DataTable_Notices'
+import NoticesDataTable from './DataTable_Notices'
 import { useTranslation } from 'react-i18next'
 import Button from '@/components/common/Button'
 import { MdArrowBackIosNew } from 'react-icons/md'
@@ -61,8 +61,6 @@ const ViewNotices = ({
     </>
   )
 }
-
-// ViewNotices.defaultProps = {};
 
 export default withFilters(ViewNotices, {
   params: ['SearchPhrase, PageNumber, PageSize, region, City, accommodationPlacesCount'],

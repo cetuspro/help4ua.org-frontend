@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '../NoticeDetailsItem'
-import Icon from '@/assets/img/icons'
+import Icon, { iconConfig } from '@/assets/img/icons'
 
 const Description = ({ description, descriptionUA }) => {
   const { t } = useTranslation()
@@ -10,7 +10,7 @@ const Description = ({ description, descriptionUA }) => {
     <NoticeDetailsItem
       label={description ? t('common.opis') : t('common.opisUA')}
       className="flex-col"
-      icon={<Icon.MdOutlineTextSnippet />}
+      icon={<Icon.MdOutlineTextSnippet {...iconConfig} />}
       value={description || descriptionUA}
       valueClassName="text-gray-800 font-normal"
     />
