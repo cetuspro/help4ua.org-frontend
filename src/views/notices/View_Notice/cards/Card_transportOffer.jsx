@@ -10,7 +10,7 @@ import PriceFree from '@/components/common/PriceFree'
 const Item = ({ label, value }) => {
   return (
     <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
+      <span className="">{label}:</span>
       <span className="font-bold">{value}</span>
     </div>
   )
@@ -18,7 +18,7 @@ const Item = ({ label, value }) => {
 const PhoneItem = ({ label, value }) => {
   return (
     <div className="py-2 flex gap-2">
-      <span className="">{label}</span>
+      <span className="">{label}:</span>
       <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">
         {value}
       </a>
@@ -49,16 +49,18 @@ const TransportOfferCard = () => {
     <Card>
       <div className="flex flex-col md:flex-row">
         <div className="flex-1">
-          {!!description && <Item label="Opis:" value={description} />}
-          {!!name && <Item label="Imię:" value={name} />}
-          {!!phoneNumber && <PhoneItem label="Telefon:" value={phoneNumber} />}
-          {!!transportFromStr && <Item label="Transport z:" value={transportFromStr} />}
-          {!!transportToStr && <Item label="Transport do:" value={transportToStr} />}
-          {!!carRegoNo && <Item label="Numer rejestracyjny:" value={carRegoNo} />}
-          {!!createdAt && (
-            <Item label="Data dodania:" value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
+          {!!description && <Item label={t('form.description')} value={description} />}
+          {!!name && <Item label={t('common.imie')} value={name} />}
+          {!!phoneNumber && <PhoneItem label={t('form.phoneNumber')} value={phoneNumber} />}
+          {!!transportFromStr && (
+            <Item label={t('form.transportFromStr')} value={transportFromStr} />
           )}
-          {!!id && <Item label="Identyfikator ogłoszenia:" value={id} />}
+          {!!transportToStr && <Item label={t('form.transportToStr')} value={transportToStr} />}
+          {!!carRegoNo && <Item label={t('form.carRegoNo')} value={carRegoNo} />}
+          {!!createdAt && (
+            <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
+          )}
+          {!!id && <Item label={t('common.id')} value={id} />}
           {(ukraineLang || englishLang || germanyLang || polishLang) && (
             <Item
               label={`${t('form.language')}:`}
@@ -69,7 +71,7 @@ const TransportOfferCard = () => {
         </div>
       </div>
       <Button to={route['notices.list4']} className="mt-10 mx-auto w-fit" size="small">
-        Wróć do listy ogłoszeń
+        {t('common.backToOffer')}
       </Button>
     </Card>
   )

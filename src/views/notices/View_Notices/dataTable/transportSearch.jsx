@@ -98,9 +98,11 @@ export const TransportSearchExpandedComponent = ({
             />
           )}
           {!!transportFromStr && (
-            <NoticeDetailsItem label="Transport z:" value={transportFromStr} />
+            <NoticeDetailsItem label={t('form.transportFromStr')} value={transportFromStr} />
           )}
-          {!!transportToStr && <NoticeDetailsItem label="Transport do:" value={transportToStr} />}
+          {!!transportToStr && (
+            <NoticeDetailsItem label={t('form.transportToStr')} value={transportToStr} />
+          )}
           {!!createdAt && (
             <NoticeDetailsItem
               label={t('common.data')}
