@@ -1,6 +1,6 @@
 import { useState, memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import ActionDetailsItem from './ActionDetailsItem'
+import ActionDetailsItem from '../ActionDetailsItem'
 import Icon from '@/assets/img/icons'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 

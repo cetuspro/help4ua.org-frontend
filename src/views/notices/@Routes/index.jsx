@@ -4,11 +4,7 @@ import {
   helpOfferColumnsColumns,
   HelpOfferExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/helpOffer'
-import { ShelterOfferExpandedComponent } from '@/views/notices/View_Notices/dataTable/shelterOffer'
-import {
-  shelterSearchColumns,
-  ShelterSearchExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/shelterSearch'
+import ShelterListItem from '@/views/notices/View_Notices/components/ShelterListItem'
 import {
   transportOfferColumns,
   TransportOfferExpandedComponent,
@@ -20,7 +16,6 @@ import {
 import { lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route } from 'react-router-dom'
-import { noticeListStyles, noticeListConfig } from '@/app/config/noticeList'
 import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
 import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
 import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
@@ -52,6 +47,7 @@ import {
   workSearchAndOffer,
   WorkSearchAndOfferExpandedComponent,
 } from '@/views/notices/View_Notices/dataTable/workSearhAndOffer'
+import { withPriceFree } from '../View_Notices/withPriceFree'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
@@ -79,10 +75,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.shelter2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
-            columns={shelterSearchColumns()}
-            expandableRowsComponent={ShelterSearchExpandedComponent}
+            expandableRowsComponent={ShelterListItem}
             noticeType={10}
             filters={ShelterFilter}
           />
@@ -93,9 +86,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.shelter3')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
-            expandableRowsComponent={ShelterOfferExpandedComponent}
+            expandableRowsComponent={withPriceFree(ShelterListItem)}
             noticeType={1}
             filters={ShelterFilter}
           />
@@ -106,11 +97,8 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.transport2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={transportOfferColumns()}
             expandableRowsComponent={TransportOfferExpandedComponent}
-            // itemComponent={TransportOfferItem}
             noticeType={20}
             filters={TransportFilter}
           />
@@ -121,8 +109,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.help2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={50}
@@ -135,8 +121,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.transport3')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={transportSearchColumns()}
             expandableRowsComponent={TransportSearchExpandedComponent}
             noticeType={22}
@@ -149,8 +133,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.translations2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={30}
@@ -163,8 +145,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.lfHelp2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={52}
@@ -177,8 +157,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.lfTranslations2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={translationOfferColumns()}
             expandableRowsComponent={TranslationOfferExpandedComponent}
             noticeType={32}
@@ -191,8 +169,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.temporaryAnimalHome')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={temporaryAnimalHomeOfferColumns()}
             expandableRowsComponent={TemporaryAnimalHomeOfferExpandedComponent}
             noticeType={60}
@@ -205,9 +181,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfTemporaryAnimalHome')}
-            y
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={temporaryAnimalHomeSearch()}
             expandableRowsComponent={TemporaryAnimalHomeSearchExpandedComponent}
             noticeType={62}
@@ -220,8 +193,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfMedicalAssistance')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={medicalAssistanceSearch()}
             expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
             noticeType={72}
@@ -234,8 +205,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.offerMedicalAssistance')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={medicalAssistanceSearch()}
             expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
             noticeType={70}
@@ -248,8 +217,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.legalHelp2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={80}
@@ -262,8 +229,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.lfLegalHelp2')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={helpOfferColumnsColumns()}
             expandableRowsComponent={HelpOfferExpandedComponent}
             noticeType={82}
@@ -276,8 +241,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.offerVolunteerHelp')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={personalDataColumnConfig()}
             expandableRowsComponent={PersonalInfoDataTable}
             noticeType={100}
@@ -290,8 +253,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfVolunteerHelp')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={personalDataColumnConfig()}
             expandableRowsComponent={PersonalInfoDataTable}
             noticeType={102}
@@ -304,8 +265,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.offerWork')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={workSearchAndOffer()}
             expandableRowsComponent={WorkSearchAndOfferExpandedComponent}
             noticeType={110}
@@ -318,8 +277,6 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfWork')}
-            styles={noticeListStyles}
-            config={noticeListConfig}
             columns={workSearchAndOffer()}
             expandableRowsComponent={WorkSearchAndOfferExpandedComponent}
             noticeType={112}

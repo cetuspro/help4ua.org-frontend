@@ -1,12 +1,12 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import NoticeDetailsItem from './NoticeDetailsItem'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
+import NoticeDetailsItem from '../NoticeDetailsItem'
 import Icon from '@/assets/img/icons'
+import { getRegion } from '../../../View_Notices/models/tableList'
 
 const Address = ({ cityName, region, address, location }) => {
   const { t } = useTranslation()
-  const getRegion = (val) => voivodeshipsEnum(t).find((item) => item.value === val)?.label ?? ''
+
   const href =
     location?.lat && location?.long
       ? `http://www.google.com/maps/place/${location?.lat},${location?.long}`

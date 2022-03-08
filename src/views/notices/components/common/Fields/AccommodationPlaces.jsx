@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import NoticeDetailsItem from './NoticeDetailsItem'
+import NoticeDetailsItem from '../NoticeDetailsItem'
 import Icon from '@/assets/img/icons'
 
 const AccommodationPlaces = ({ accommodationPlacesCount }) => {

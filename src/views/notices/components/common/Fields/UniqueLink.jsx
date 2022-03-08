@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import NoticeDetailsItem from './NoticeDetailsItem'
+import NoticeDetailsItem from '../NoticeDetailsItem'
 import Icon from '@/assets/img/icons'
 import { route } from '@/app/router/urls/routes'
 

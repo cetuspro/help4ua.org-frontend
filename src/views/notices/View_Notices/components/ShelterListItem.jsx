@@ -1,28 +1,29 @@
+import { memo } from 'react'
 import {
   NoticeLayout,
   ParentRowLayout,
   ChildrenLayout,
   BottomChildrenLayout,
 } from '../../components/common/Layouts'
-import Address from '../../components/common/Address'
-import Name from '../../components/common/Name'
-import PhoneNumber from '../../components/common/PhoneNumber'
-import Description from '../../components/common/Description'
-import Period from '../../components/common/Period'
-import AccommodationPlaces from '../../components/common/AccommodationPlaces'
-import BedCount from '../../components/common/BedCount'
-import UniqueLink from '../../components/common/UniqueLink'
-import Children from '../../components/common/Children'
-import Animals from '../../components/common/Animals'
-import WashingMachine from '../../components/common/WashingMachine'
-import Food from '../../components/common/Food'
-import Transport from '../../components/common/Transport'
-import Language from '../../components/common/Language'
-import FreePrice from '../../components/common/FreePrice'
-import CreatedAt from '../../components/common/CreatedAt'
-import NoticeId from '../../components/common/NoticeId'
+import Address from '../../components/common/Fields/Address'
+import Name from '../../components/common/Fields/Name'
+import PhoneNumber from '../../components/common/Fields/PhoneNumber'
+import Description from '../../components/common/Fields/Description'
+import Period from '../../components/common/Fields/Period'
+import AccommodationPlaces from '../../components/common/Fields/AccommodationPlaces'
+import BedCount from '../../components/common/Fields/BedCount'
+import UniqueLink from '../../components/common/Fields/UniqueLink'
+import Children from '../../components/common/Fields/Children'
+import Animals from '../../components/common/Fields/Animals'
+import WashingMachine from '../../components/common/Fields/WashingMachine'
+import Food from '../../components/common/Fields/Food'
+import Transport from '../../components/common/Fields/Transport'
+import Language from '../../components/common/Fields/Language'
+import FreePrice from '../../components/common/Fields/FreePrice'
+import CreatedAt from '../../components/common/Fields/CreatedAt'
+import NoticeId from '../../components/common/Fields/NoticeId'
 
-export const ShelterOfferExpandedComponent = ({
+const ShelterListItem = ({
   data: {
     description,
     descriptionUA,
@@ -47,6 +48,7 @@ export const ShelterOfferExpandedComponent = ({
     germanyLang,
     polishLang,
   },
+  withPriceFree,
 }) => {
   return (
     <NoticeLayout>
@@ -61,7 +63,7 @@ export const ShelterOfferExpandedComponent = ({
 
         <ChildrenLayout side="right">
           {!!description && <Description description={description} />}
-          {!!descriptionUA && <Description description={descriptionUA} />}
+          {!!descriptionUA && <Description descriptionUA={descriptionUA} />}
         </ChildrenLayout>
       </ParentRowLayout>
 
@@ -89,7 +91,7 @@ export const ShelterOfferExpandedComponent = ({
               polishLang={polishLang}
             />
           )}
-          <FreePrice />
+          {withPriceFree && <FreePrice />}
         </ChildrenLayout>
       </ParentRowLayout>
 
@@ -100,3 +102,5 @@ export const ShelterOfferExpandedComponent = ({
     </NoticeLayout>
   )
 }
+
+export default memo(ShelterListItem)

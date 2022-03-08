@@ -34,8 +34,8 @@ const ViewAddNotice = ({ title, description, formComponent: FormComponent, type 
               onSuccess={onSuccess}
               defaultValues={
                 type
-                  ? { language, countryId: DEFAULT_COUNTRY, type }
-                  : { language, countryId: DEFAULT_COUNTRY }
+                  ? { language, countryId: DEFAULT_COUNTRY, type, phoneNumber: '+48' }
+                  : { language, countryId: DEFAULT_COUNTRY, phoneNumber: '+48' }
               }
             />
           )}

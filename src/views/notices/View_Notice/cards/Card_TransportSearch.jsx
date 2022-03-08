@@ -3,9 +3,8 @@ import { route } from '@/app/router/urls/routes'
 import Card from '@/components/common/Card'
 import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
-import { getLanguagesValue } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getLanguagesValue } from '../../View_Notices/models/tableList'
 import { useTranslation } from 'react-i18next'
-import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 
 const Item = ({label, value}) => {
   return (
@@ -27,10 +26,6 @@ const PhoneItem = ({label, value}) => {
 const TransportSearchCard = () => {
   const { data: {
     description,
-    cityName,
-    region,
-    address,
-    location,
     id,
     name,
     phoneNumber,
@@ -43,8 +38,6 @@ const TransportSearchCard = () => {
     polishLang
   } } = useQueryContext()
   const { t } = useTranslation();
-  const getRegion = val => voivodeshipsEnum(t).find(item => item.value === val)?.label ?? "";
-  const href = location?.lat && location?.long ? `http://www.google.com/maps/place/${location?.lat},${location?.long}` : `https://www.google.com/maps/search/${cityName??''}+${getRegion(region)??''}+${address??''}`
 
   return (
     <Card>

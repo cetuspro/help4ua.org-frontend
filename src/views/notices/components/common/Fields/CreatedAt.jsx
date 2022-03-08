@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
-import NoticeDetailsItem from './NoticeDetailsItem'
+import NoticeDetailsItem from '../NoticeDetailsItem'
 
 const CreatedAt = ({ createdAt }) => {
   const { t } = useTranslation()

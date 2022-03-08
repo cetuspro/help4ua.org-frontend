@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import NoticeDetailsItem from './NoticeDetailsItem'
+import NoticeDetailsItem from '../NoticeDetailsItem'
 import Icon from '@/assets/img/icons'
-import { getPeriod } from '@/views/notices/View_Notices/dataTable/DataTable_Notices'
+import { getPeriod } from '../../../View_Notices/models/tableList'
 
 const Period = ({ period }) => {
   const { t } = useTranslation()

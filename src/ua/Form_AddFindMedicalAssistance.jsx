@@ -59,6 +59,7 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
     defaultValues: {
       language,
       countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
       type,
     },
   })
@@ -135,7 +136,11 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
                 <div>
                   <InputText
                     name="email"
-                    label={<span className="md:block md:mb-4 xl:mb-0">{t('form.email')}</span>}
+                    label={
+                      <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                        {t('form.email')}
+                      </span>
+                    }
                     placeholder={t('form.email')}
                     icon={FaEnvelope}
                   />
@@ -149,7 +154,7 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
                     icon={FaMapPin}
                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                   />
-                </div>               
+                </div>
                 <div>
                   <InputSelect
                     name="region"
@@ -165,8 +170,8 @@ const FormAddFindMedicalAssistance = ({ title, description, type } = {}) => {
               <div>
                 <InputTextarea name="description" label={t('form.description')} icon={FaComment} />
               </div>
-              <div className="flex justify-end">
-                <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+              <div className="flex ">
+                <div className="w-full md:w-1/1 lg:w-1/1 xl:w-1/1 mt-8">
                   <InputVoluntary />
                   <InputRodo />
                 </div>
