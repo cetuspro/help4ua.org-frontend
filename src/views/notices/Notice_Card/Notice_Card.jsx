@@ -26,7 +26,7 @@ const NoticeCard = ({
           {`${t('frontpage.addNotice')}`}
         </Link>
         <Link
-          className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
+          className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-dazzling-blue text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
           to={toView}>
           {`${t('frontpage.seeNotices')} (${!isFetching ? verifiedAmount : '-'})`}
         </Link>

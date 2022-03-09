@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         primary: '#fbbf24',
         'primary-dark': '#d69d0b',
+        'dazzling-blue':'#30499f',
       },
       animation: {
         enter: 'enter 200ms ease-out',
