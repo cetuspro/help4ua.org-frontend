@@ -4,10 +4,11 @@ import * as yup from 'yup'
 import Card from '@/components/common/Card'
 import { AutoSubmit } from '@/components/form/AutoSubmit'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
+import { InputCheckbox } from '@/components/form/Input_Checkbox'
 import { InputText } from '@/components/form/Input_Text'
 import { InputSelect } from '@/components/form/Input_Select'
 import { ImSortNumbericDesc } from 'react-icons/im'
-import { FormProvider } from 'react-hook-form'
+import { FormProvider, useWatch } from 'react-hook-form'
 import { FaSearch, FaFlag } from 'react-icons/fa'
 import { getRegionsHelper } from '@/app/CRUD/region/getRegions'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
@@ -15,6 +16,7 @@ import { BiMapPin } from 'react-icons/bi'
 import { useTranslation, Trans } from 'react-i18next'
 
 const ACCOMODATION_COUNT = 10
+const POLAND_COUNTRY_ID = 1
 export const ALL_COUNTRIES_ITEM = {
   value: null,
   label: <Trans i18nKey={"common.allCountries"} />
@@ -35,14 +37,26 @@ const BaseFilter = ({ types = [], config }) => {
   })
   const { t } = useTranslation()
 
+  const watchedCountryId = useWatch({
+    control: methods.control,
+    name: 'CountryId',
+  })
+
   useEffect(() => {
     const hasFilters = (type) => types.includes(type)
     const filtered = Object.keys(config)
       .filter(hasFilters)
+      .filter((filterItem) => {
+        if (watchedCountryId !== POLAND_COUNTRY_ID && filterItem === FilterType.REGION) {
+          methods.setValue('Region', null)
+          return undefined
+        }
+        return filterItem
+      })
       .reduce((acc, key) => ({ ...acc, [key]: config[key] }), {})
 
     setFilters(filtered)
-  }, [types])
+  }, [types, watchedCountryId])
 
   return types.length ? (
     <Card className="p-3">
@@ -65,7 +79,9 @@ export const FilterType = {
   CITY: 'city',
   REGION: 'region',
   ACCOMODATION: 'accommodationPlacesCount',
-  COUNTRY: 'CountryId'
+  COUNTRY: 'CountryId',
+  ACCEPT_SMALL_CHILDREN: 'acceptSmallChildren',
+  ACCEPT_PETS: 'acceptPets'
 } as const
 
 export const config = {
@@ -78,23 +94,6 @@ export const config = {
         label={t('common.szukaj')}
         icon={FaSearch}
         isLabelVisible={false}
-      />
-    ),
-  },
-  [FilterType.REGION]: {
-    validator: yup.string().nullable(),
-    render: ({ t }) => (
-      <InputAsyncSelect
-        {...getRegionsHelper}
-        key="region"
-        name="Region"
-        icon={BiMapPin}
-        label={t('common.wojewodztwo')}
-        isLabelVisible={false}
-        transform={({ id, name }) => ({
-          value: id,
-          label: name,
-        })}
       />
     ),
   },
@@ -117,6 +116,23 @@ export const config = {
       />
     ),
   },
+  [FilterType.REGION]: {
+    validator: yup.string().nullable(),
+    render: ({ t }) => (
+      <InputAsyncSelect
+        {...getRegionsHelper}
+        key="region"
+        name="Region"
+        icon={BiMapPin}
+        label={t('common.wojewodztwo')}
+        isLabelVisible={false}
+        transform={({ id, name }) => ({
+          value: id,
+          label: name,
+        })}
+      />
+    ),
+  },
   [FilterType.CITY]: {
     validator: yup.string().nullable(),
   },
@@ -130,6 +146,26 @@ export const config = {
         icon={ImSortNumbericDesc}
         label={t('common.wybierzLiczbeOsob')}
         isLabelVisible={false}
+      />
+    ),
+  },
+  [FilterType.ACCEPT_SMALL_CHILDREN]: {
+    validator: yup.bool(),
+    render: ({ t }) => (
+      <InputCheckbox
+        key="hasAcceptedChild"
+        name="hasAcceptedChild"
+        label={t("form.hasAcceptedChild")}
+      />
+    ),
+  },
+  [FilterType.ACCEPT_PETS]: {
+    validator: yup.bool(),
+    render: ({ t }) => (
+      <InputCheckbox
+        key="hasAcceptedAnimal"
+        name="hasAcceptedAnimal"
+        label={t("form.hasAcceptedAnimal")}
       />
     ),
   },
