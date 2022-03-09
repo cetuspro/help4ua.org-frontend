@@ -3,6 +3,7 @@ import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
+import PhoneNumber from '@/views/notices/components/common/Fields/PhoneNumber'
 
 const Item = ({ label, value }) => {
   return (
@@ -63,7 +64,7 @@ const HelpOfferPopup = ({
             }
           />
           {!!name && <Item label={`${t('common.imie')}:`} value={name} />}
-          {!!phoneNumber && <Item label={`${t('common.telefon')}:`} value={phoneNumber} />}
+          {!!phoneNumber && <PhoneNumber id={id} phoneNumber={phoneNumber} showIcon={false}/>}
           {!!createdAt && (
             <Item label={`${t('common.data')}:`} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
           )}

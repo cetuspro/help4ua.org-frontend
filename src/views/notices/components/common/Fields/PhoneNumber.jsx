@@ -4,7 +4,7 @@ import ActionDetailsItem from '../ActionDetailsItem'
 import Icon, { iconConfig } from '@/assets/img/icons'
 import getHiddenFields, { FieldType } from '@/app/CRUD/notices/getHiddenFields'
 
-const PhoneNumber = ({ id, phoneNumber }) => {
+const PhoneNumber = ({ id, phoneNumber, showIcon = true }) => {
   const { t } = useTranslation()
   const [showField, setShowField] = useState(false)
   const [realPhoneNumber, setRealPhoneNumber] = useState('XXX-XXX-XXX')
@@ -26,7 +26,8 @@ const PhoneNumber = ({ id, phoneNumber }) => {
     <ActionDetailsItem
       onAction={handleAction}
       label={t('common.telefon')}
-      icon={<Icon.MdPhone {...iconConfig} />}
+      icon={showIcon ? <Icon.MdPhone {...iconConfig}/> : null}
+      valueClassName={showField && 'text-blue-700'}
       value={
         <a
           onClick={(e) => !showField && e.preventDefault()}
