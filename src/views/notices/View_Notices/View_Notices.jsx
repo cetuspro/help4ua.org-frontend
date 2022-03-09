@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { MdArrowBackIosNew } from 'react-icons/md'
 import { withFilters } from '@/app/context/queries/Filters'
 import { QueryHasNoResults } from '@/app/context/queries/QueryHasNoResults'
 import { QueryHasResults } from '@/app/context/queries/QueryHasResults'
@@ -5,27 +7,18 @@ import { QueryProvider } from '@/app/context/queries/QueryProvider'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotices } from '../../../app/CRUD/notices/getNotices'
 import NoticesDataTable from './DataTable_Notices'
-import { useTranslation } from 'react-i18next'
 import Button from '@/components/common/Button'
-import { MdArrowBackIosNew } from 'react-icons/md'
 import { route } from '@/app/router/urls/routes'
 import { listConfig, listStyles } from '@/app/config/noticeList'
+import { NOTICE_COMPONENT, NOTICE_FILTER, NOTICE_TITLE } from '@/views/notices/config'
 
-const ViewNotices = ({
-  expandableRowsComponent,
-  title,
-  styles = listStyles,
-  config = listConfig,
-  noticeType,
-  filters: Filters,
-}) => {
+const ViewNotices = ({ styles = listStyles, config = listConfig, noticeType }) => {
   const query = useGetNotices({ noticeType })
   const { t } = useTranslation()
-  const breadcrumbItems = [
-    {
-      label: t('common.ogloszenia'),
-    },
-  ]
+  const breadcrumbItems = [{ label: t('common.ogloszenia') }]
+  const FiltersComponent = NOTICE_FILTER[noticeType]
+  const noticeComponent = NOTICE_COMPONENT[noticeType]
+  const title = t(NOTICE_TITLE[noticeType])
 
   return (
     <>
@@ -37,7 +30,7 @@ const ViewNotices = ({
       <h1 className="text-black-800 dark:text-gray-100 text-2xl sm:text-5xl md:text-4xl font-bold mb-8 md:mb-12">
         {title}
       </h1>
-      <Filters />
+      <FiltersComponent />
       <div>
         <QueryProvider {...query}>
           <QueryHasNoResults>
@@ -51,7 +44,7 @@ const ViewNotices = ({
                 <NoticesDataTable
                   styles={styles}
                   config={config}
-                  expandableRowsComponent={expandableRowsComponent}
+                  expandableRowsComponent={noticeComponent}
                 />
               </div>
             </div>

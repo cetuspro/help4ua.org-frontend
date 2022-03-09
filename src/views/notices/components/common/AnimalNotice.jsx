@@ -49,6 +49,7 @@ const AnimalNotice = ({
     arrivalDateStr,
   },
   withPriceFree,
+  hasLink = true,
 }) => {
   return (
     <NoticeLayout>
@@ -76,7 +77,7 @@ const AnimalNotice = ({
           )}
           {!!hasExperience && <Experience hasExperience={hasExperience} />}
           {!!isDelivery && <Transport isDelivery={isDelivery} />}
-          <UniqueLink id={id} />
+          {hasLink && <UniqueLink id={id} />}
         </ChildrenLayout>
 
         <ChildrenLayout side="right">

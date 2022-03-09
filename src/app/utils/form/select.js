@@ -1,5 +1,4 @@
 export const findOption = (value, options) => {
-  if (!value) return null
   let option = null
   const a = options?.forEach((item) => {
     if (option) return
