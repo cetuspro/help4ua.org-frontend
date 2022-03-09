@@ -10,6 +10,7 @@ import {
   getValue,
 } from '@/views/notices/View_Notices/models/tableList'
 import PriceFree from '@/components/common/PriceFree'
+import PhoneNumber from '@/views/notices/components/common/Fields/PhoneNumber'
 
 const Item = ({ label, value }) => {
   return (
@@ -82,7 +83,7 @@ const ShelterOfferPopup = ({
             }
           />
           {!!name && <Item label={`${t('common.imie')}:`} value={name} />}
-          {!!phoneNumber && <Item label={`${t('common.telefon')}:`} value={phoneNumber} />}
+          {!!phoneNumber && <PhoneNumber id={id} phoneNumber={phoneNumber} showIcon={false}/>}
           {!!period && (
             <Item label={`${t('form.period')}:`} value={getPeriod(t, parseInt(period))} />
           )}

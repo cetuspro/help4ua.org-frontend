@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
 const Button = forwardRef(
-  ({ color = 'primary', size = 'normal', to, children, className, onClick, ...rest }, ref) => {
+  ({ color = 'primary', size = 'normal', to, children, className = '', onClick, ...rest }, ref) => {
     const buttonStyles = `${
       color === 'primary'
         ? `bg-primary hover:bg-primary-dark active:bg-primary-dark text-dazzling-blue`
@@ -22,13 +22,13 @@ const Button = forwardRef(
 
     if (to)
       return (
-        <HashLink ref={ref} {...rest} to={to} className={buttonStyles}>
+        <HashLink ref={ref} {...rest} to={to} className={`${buttonStyles} ${className}`}>
           {children}
         </HashLink>
       )
     else
       return (
-        <button ref={ref} {...rest} onClick={onClick} className={buttonStyles}>
+        <button ref={ref} {...rest} onClick={onClick} className={`${buttonStyles} ${className}`}>
           {children}
         </button>
       )

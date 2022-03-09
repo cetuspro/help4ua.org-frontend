@@ -5,8 +5,12 @@ import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
-import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
-import { getAnimal, getLanguagesValue, getPeriod } from '../../View_Notices/models/tableList'
+import {
+  getAnimal,
+  getLanguagesValue,
+  getPeriod,
+  getValue,
+} from '../../View_Notices/models/tableList'
 import PriceFree from '@/components/common/PriceFree'
 
 const Item = ({ label, value }) => {
@@ -101,17 +105,14 @@ const TemporaryAnimalHomeOfferCard = () => {
           )}
 
           {!!hasExperience && (
-            <Item
-              label={t('form.hasExperienceWithAnimals')}
-              value={getBoolValue(t, hasExperience)}
-            />
+            <Item label={t('form.hasExperienceWithAnimals')} value={getValue(t, hasExperience)} />
           )}
           {!!isDelivery && (
-            <Item label={t('form.offerTransport')} value={getBoolValue(t, isDelivery)} />
+            <Item label={t('form.offerTransport')} value={getValue(t, isDelivery)} />
           )}
 
           {!!shouldRefund && (
-            <Item label={t('form.constRefund')} value={getBoolValue(t, shouldRefund)} />
+            <Item label={t('form.constRefund')} value={getValue(t, shouldRefund)} />
           )}
 
           {!!period && <Item label={t('form.period')} value={getPeriod(t, Number(period))} />}

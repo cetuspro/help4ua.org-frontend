@@ -1,53 +1,22 @@
-import { route } from '@/app/router/urls/routes'
-import UserLayout from '@/layouts/UserLayout'
-import {
-  helpOfferColumnsColumns,
-  HelpOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/helpOffer'
-import { ShelterDataComponent } from '@/views/notices/View_Notices/dataTable/ShelterDataComponent'
-import {
-  transportOfferColumns,
-  TransportOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/transportOffer'
-import {
-  transportSearchColumns,
-  TransportSearchExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/transportSearch'
 import { lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route } from 'react-router-dom'
+import { route } from '@/app/router/urls/routes'
+import UserLayout from '@/layouts/UserLayout'
+import ShelterNotice from '@/views/notices/components/common/ShelterNotice'
+import TransportNotice from '@/views/notices/components/common/TransportNotice'
+import DefaultNotice from '@/views/notices/components/common/DefaultNotice'
+import AnimalNotice from '@/views/notices/components/common/AnimalNotice'
 import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
 import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
 import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
 import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
 import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
-import {
-  temporaryAnimalHomeOfferColumns,
-  TemporaryAnimalHomeOfferExpandedComponent,
-} from '../View_Notices/dataTable/temporaryAnimalHomeOffer'
-import {
-  temporaryAnimalHomeSearch,
-  TemporaryAnimalHomeSearchExpandedComponent,
-} from '../View_Notices/dataTable/temporaryAnimalHomeSearch'
-import {
-  translationOfferColumns,
-  TranslationOfferExpandedComponent,
-} from '../View_Notices/dataTable/translationOffer'
 import AnimalOffersFilter from '../View_Notices/filters/Filters_AnimalsOffer'
 import MedicalAssistanceFilter from '../View_Notices/filters/Filters_MedicalAssistance'
 import { TransportFilter, BasicFilter, ShelterFilter } from '@/views/notices/View_Notices/filters'
-import {
-  medicalAssistanceSearch,
-  MedicalAssistanceSearchExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/medicalAssistanceSearch'
-import { personalDataColumnConfig } from '../View_Notices/columnConfigs/personalDataColumnConfig'
-import { PersonalInfoDataTable } from '../View_Notices/dataTable/personalInfoDataTable'
 import FormAddVolunteerOffer from '../components/forms/Form_AddVolunteerOffer'
-import {
-  workSearchAndOffer,
-  WorkSearchAndOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/workSearhAndOffer'
-import { withPriceFree } from '../View_Notices/withPriceFree'
+import { withPriceFree } from '@/views/notices/View_Notices/hoc/withPriceFree'
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
@@ -75,7 +44,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.shelter2')}
-            expandableRowsComponent={ShelterDataComponent}
+            expandableRowsComponent={ShelterNotice}
             noticeType={10}
             filters={ShelterFilter}
           />
@@ -86,7 +55,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.shelter3')}
-            expandableRowsComponent={withPriceFree(ShelterDataComponent)}
+            expandableRowsComponent={withPriceFree(ShelterNotice)}
             noticeType={1}
             filters={ShelterFilter}
           />
@@ -97,8 +66,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.transport2')}
-            columns={transportOfferColumns()}
-            expandableRowsComponent={TransportOfferExpandedComponent}
+            expandableRowsComponent={withPriceFree(TransportNotice)}
             noticeType={20}
             filters={TransportFilter}
           />
@@ -109,8 +77,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.help2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
+            expandableRowsComponent={withPriceFree(TransportNotice)}
             noticeType={50}
             filters={BasicFilter}
           />
@@ -121,8 +88,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.transport3')}
-            columns={transportSearchColumns()}
-            expandableRowsComponent={TransportSearchExpandedComponent}
+            expandableRowsComponent={TransportNotice}
             noticeType={22}
             filters={TransportFilter}
           />
@@ -133,8 +99,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.translations2')}
-            columns={translationOfferColumns()}
-            expandableRowsComponent={TranslationOfferExpandedComponent}
+            expandableRowsComponent={withPriceFree(DefaultNotice)}
             noticeType={30}
             filters={BasicFilter}
           />
@@ -145,8 +110,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.lfHelp2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
+            expandableRowsComponent={DefaultNotice}
             noticeType={52}
             filters={BasicFilter}
           />
@@ -157,8 +121,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.lfTranslations2')}
-            columns={translationOfferColumns()}
-            expandableRowsComponent={TranslationOfferExpandedComponent}
+            expandableRowsComponent={DefaultNotice}
             noticeType={32}
             filters={BasicFilter}
           />
@@ -169,8 +132,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.temporaryAnimalHome')}
-            columns={temporaryAnimalHomeOfferColumns()}
-            expandableRowsComponent={TemporaryAnimalHomeOfferExpandedComponent}
+            expandableRowsComponent={withPriceFree(AnimalNotice)}
             noticeType={60}
             filters={AnimalOffersFilter}
           />
@@ -181,8 +143,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfTemporaryAnimalHome')}
-            columns={temporaryAnimalHomeSearch()}
-            expandableRowsComponent={TemporaryAnimalHomeSearchExpandedComponent}
+            expandableRowsComponent={AnimalNotice}
             noticeType={62}
             filters={AnimalOffersFilter}
           />
@@ -193,8 +154,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfMedicalAssistance')}
-            columns={medicalAssistanceSearch()}
-            expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
+            expandableRowsComponent={DefaultNotice}
             noticeType={72}
             filters={MedicalAssistanceFilter}
           />
@@ -205,8 +165,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.offerMedicalAssistance')}
-            columns={medicalAssistanceSearch()}
-            expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
+            expandableRowsComponent={withPriceFree(DefaultNotice)}
             noticeType={70}
             filters={MedicalAssistanceFilter}
           />
@@ -217,8 +176,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.legalHelp2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
+            expandableRowsComponent={withPriceFree(DefaultNotice)}
             noticeType={80}
             filters={BasicFilter}
           />
@@ -229,8 +187,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('tiles.lfLegalHelp2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
+            expandableRowsComponent={DefaultNotice}
             noticeType={82}
             filters={BasicFilter}
           />
@@ -241,8 +198,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.offerVolunteerHelp')}
-            columns={personalDataColumnConfig()}
-            expandableRowsComponent={PersonalInfoDataTable}
+            expandableRowsComponent={withPriceFree(DefaultNotice)}
             noticeType={100}
             filters={BasicFilter}
           />
@@ -253,8 +209,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfVolunteerHelp')}
-            columns={personalDataColumnConfig()}
-            expandableRowsComponent={PersonalInfoDataTable}
+            expandableRowsComponent={DefaultNotice}
             noticeType={102}
             filters={BasicFilter}
           />
@@ -265,8 +220,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.offerWork')}
-            columns={workSearchAndOffer()}
-            expandableRowsComponent={WorkSearchAndOfferExpandedComponent}
+            expandableRowsComponent={withPriceFree(DefaultNotice)}
             noticeType={110}
             filters={BasicFilter}
           />
@@ -277,8 +231,7 @@ const NoticeRoutes = () => {
         element={
           <LazyNotices
             title={t('form.lfWork')}
-            columns={workSearchAndOffer()}
-            expandableRowsComponent={WorkSearchAndOfferExpandedComponent}
+            expandableRowsComponent={DefaultNotice}
             noticeType={112}
             filters={BasicFilter}
           />
