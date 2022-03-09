@@ -2,6 +2,7 @@ import { route } from '@/app/router/urls/routes'
 import Button from '@/components/common/Button'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
+import PhoneNumber from '@/views/notices/components/common/Fields/PhoneNumber'
 
 const Item = ({ label, value }) => {
   return (
@@ -29,7 +30,7 @@ const TransportSearchPopup = ({
         <div className="flex-1">
           {!!description && <Item label={`${t('form.description')}:`} value={description} />}
           {!!name && <Item label={`${t('common.imie')}:`} value={name} />}
-          {!!phoneNumber && <Item label={`${t('common.telefon')}:`} value={phoneNumber} />}
+          {!!phoneNumber && <PhoneNumber id={id} phoneNumber={phoneNumber} showIcon={false}/>}
           {!!transportFromStr && <Item label={`${t('form.transportFromStr')}:`} value={transportFromStr} />}
           {!!transportToStr && <Item label={`${t('form.transportToStr')}:`} value={transportToStr} />}
           {!!createdAt && (

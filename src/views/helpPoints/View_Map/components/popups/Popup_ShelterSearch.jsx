@@ -5,6 +5,7 @@ import Button from '@/components/common/Button'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { isNullOrUndefined } from '@/app/utils/isNullOrUndefined'
 import { getLanguagesValue, getPeriod, getValue } from '@/views/notices/View_Notices/models/tableList'
+import PhoneNumber from '@/views/notices/components/common/Fields/PhoneNumber'
 
 const Item = ({ label, value }) => {
   return (
@@ -77,7 +78,7 @@ const ShelterSearchPopup = ({
             }
           />
           {!!name && <Item label={`${t('common.imie')}:`} value={name} />}
-          {!!phoneNumber && <Item label={`${t('common.telefon')}:`} value={phoneNumber} />}
+          {!!phoneNumber && <PhoneNumber id={id} phoneNumber={phoneNumber} showIcon={false}/>}
           {!!period && <Item label={`${t('form.period')}:`} value={getPeriod(t, parseInt(period))} />}
           {!!createdAt && (
             <Item label={`${t('common.data')}:`} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />

@@ -10,7 +10,7 @@ const ActionDetailsItem = ({ label, labelClassName, value, valueClassName, icon,
   return (
     <div className="mb-2 flex gap-2 items-center">
       <span className={`flex items-center ${labelClassName}`}>
-        <span className="mr-2.5">{icon}</span>
+        { icon && <span className="mr-2.5">{icon}</span> }
         {label}:
       </span>
       <span className={`font-bold ${valueClassName}`}>{value}</span>
