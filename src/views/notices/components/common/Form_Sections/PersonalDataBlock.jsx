@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react'
-import { useWatch } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { FaEnvelope, FaFlag, FaMapPin, FaUser } from 'react-icons/fa'
 
 import { getCountriesHelper } from '@/CRUD/region/getCountries'
 
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
-import { DEFAULT_COUNTRY } from '@/app/config/countryConfig'
 import { capitalizeString } from '@/app/utils/textTransform'
 
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
@@ -18,20 +15,8 @@ import { InputText } from '@/components/form/Input_Text'
 import { FormSectionHeader } from './FormSectionHeader'
 import { FormSectionLayout } from './FormSectionLayout'
 
-export const FormPersonalData = ({ methods }) => {
+export const PersonalDataBlock = ({ showRegion }) => {
   const { t } = useTranslation()
-  const [showRegion, setShowRegion] = useState(false)
-
-  const watched = useWatch({
-    control: methods.control,
-    name: 'countryId',
-    phoneNumber: '+48',
-  })
-
-  useEffect(() => {
-    const countryId = methods.getValues()?.countryId
-    setShowRegion(countryId === DEFAULT_COUNTRY)
-  }, [watched])
 
   return (
     <>

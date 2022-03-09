@@ -38,7 +38,7 @@ const noticeTypes = {
   32: HelpOfferForm,
   50: HelpOfferForm,
   52: HelpOfferForm,
-  100: FormAddVolunteerOffer
+  100: FormAddVolunteerOffer,
 }
 
 const breadcrumbItems = (t, title) => [
@@ -53,27 +53,33 @@ const breadcrumbItems = (t, title) => [
 
 const schema = yup.object().shape({
   smsToken: yup.string().required(),
-});
+})
 
 const ViewEditNotice = () => {
-  const { language } = useSelector(state => state?.language)
+  const { language } = useSelector((state) => state?.language)
   const { id: noticeId, token: urlToken, pin } = useParams()
-  const {t} = useTranslation();
+  const { t } = useTranslation()
   const [state, setState] = useObjectState({
     notice: null,
     smsToken: null,
-  });
-  const CardComponent = useMemo(() => !state.notice ? null : state.notice?.type in noticeTypes ? noticeTypes[state.notice?.type] : noticeTypes[30]);
+  })
+  const CardComponent = useMemo(() =>
+    !state.notice
+      ? null
+      : state.notice?.type in noticeTypes
+      ? noticeTypes[state.notice?.type]
+      : noticeTypes[30],
+  )
 
   const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       language,
-      smsToken: pin??'',
-    }
-  });
+      smsToken: pin ?? '',
+    },
+  })
 
-  const handleGetNoticeSuccess = ({data, config: {params}}) => {
+  const handleGetNoticeSuccess = ({ data, config: { params } }) => {
     setState({
       notice: data,
       smsToken: params.smsToken,
@@ -81,80 +87,92 @@ const ViewEditNotice = () => {
     })
   }
 
-  const getNoticeMutation = useHookFormMutation(methods, getNoticeToEdit(noticeId, urlToken), {handleSuccess: handleGetNoticeSuccess});
+  const getNoticeMutation = useHookFormMutation(methods, getNoticeToEdit(noticeId, urlToken), {
+    handleSuccess: handleGetNoticeSuccess,
+  })
 
   const updateSuccess = (message) => {
-    toast.success(message || t('success.saved'));
-    getNoticeToEdit(noticeId, urlToken)({smsToken: state.smsToken}).then(data => {
-      setState({notice: data.data});
+    toast.success(message || t('success.saved'))
+    getNoticeToEdit(
+      noticeId,
+      urlToken,
+    )({ smsToken: state.smsToken }).then((data) => {
+      setState({ notice: data.data })
     })
   }
-  
-  const changeStatusMutation = usePureMutation(updateNoticeStatus(noticeId, urlToken), {onSuccess: () => updateSuccess(t('success.statusChanged'))});
+
+  const changeStatusMutation = usePureMutation(updateNoticeStatus(noticeId, urlToken), {
+    onSuccess: () => updateSuccess(t('success.statusChanged')),
+  })
 
   const changeNoticeStatus = () => {
     changeStatusMutation.mutate({
       smsToken: state.smsToken,
       data: {
-        status: state.notice.status === 2 ? 'OUTOFDATE' : 'VERIFIED'
-      }
+        status: state.notice.status === 2 ? 'OUTOFDATE' : 'VERIFIED',
+      },
     })
   }
 
   return (
     <>
       <div className="container mx-auto py-8">
-      
-      <div className="flex flex-col sm:flex-row justify-between items-center pb-5 sm:py-1">
-        <Breadcrumb items={breadcrumbItems(t, `Ogłoszenie nr ${noticeId}`)}/>
-        {!!state.notice && (
-          [2, 20].includes(state.notice.status) ? (
-            <Button onClick={changeNoticeStatus} className="w-fit" size="small" color={state.notice?.status === 2 ? 'danger' : 'success'}>
-              {state.notice?.status === 2 ? t('notice.markInactive') : t('notice.markActive')}
-            </Button>
-          ) : (
-            <div className="text-gray-400">{t('notice.waitingForApproval')}</div>
-          )
+        <div className="flex flex-col sm:flex-row justify-between items-center pb-5 sm:py-1">
+          <Breadcrumb items={breadcrumbItems(t, `Ogłoszenie nr ${noticeId}`)} />
+          {!!state.notice &&
+            ([2, 20].includes(state.notice.status) ? (
+              <Button
+                onClick={changeNoticeStatus}
+                className="w-fit"
+                size="small"
+                color={state.notice?.status === 2 ? 'danger' : 'success'}>
+                {state.notice?.status === 2 ? t('notice.markInactive') : t('notice.markActive')}
+              </Button>
+            ) : (
+              <div className="text-gray-400">{t('notice.waitingForApproval')}</div>
+            ))}
+        </div>
+        {state.notice ? (
+          <>
+            <Card>
+              {!!CardComponent && (
+                <CardComponent
+                  notice={state.notice} // Remove after forms refactor
+                  defaultValues={state.notice}
+                  editMode
+                  query={editNotice(noticeId, urlToken, state.smsToken)}
+                  onSuccess={() => updateSuccess(t('success.saved'))}
+                />
+              )}
+            </Card>
+          </>
+        ) : (
+          <>
+            <p className="mb-4 ml-2 text-gray-500">{t('formDescription.editNotice')}</p>
+            <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
+              <div className="justify-start content-start text-left">
+                <FormProvider {...methods}>
+                  <form onSubmit={getNoticeMutation.mutate}>
+                    <HookFormError />
+                    {!!state.error && <div className="">{state.error}</div>}
+                    <div>
+                      <InputText
+                        name="smsToken"
+                        label={t('form.pin')}
+                        type="number"
+                        icon={MdPassword}
+                      />
+                    </div>
+                    <div className="flex justify-end pt-5">
+                      <InputSubmit icon={<FaPen />} value={t('form.editNotice')} />
+                    </div>
+                  </form>
+                </FormProvider>
+              </div>
+            </div>
+          </>
         )}
       </div>
-      {!!state.notice ? <>
-        <Card>
-          {!!CardComponent && <CardComponent
-            notice={state.notice} // Remove after forms refactor
-            defaultValues={state.notice}
-            editMode
-            query={editNotice(noticeId, urlToken, state.smsToken)}
-            onSuccess={() => updateSuccess(t('success.saved'))}
-          />}
-        </Card>
-      </> : <>
-        <p className="mb-4 ml-2 text-gray-500">{t("formDescription.editNotice")}</p>
-        <div className="bg-white rounded-2xl flex flex-col justify-between leading-normal p-5">
-          <div className="justify-start content-start text-left">
-            <FormProvider {...methods}>
-              <form onSubmit={getNoticeMutation.mutate}>
-                <HookFormError/>
-                {!!state.error && <div className="">{state.error}</div>}
-                <div>
-                  <InputText
-                    name="smsToken"
-                    label={t('form.pin')}
-                    type="number"
-                    icon={MdPassword}
-                  />
-                </div>
-                <div className="flex justify-end pt-5">
-                  <InputSubmit
-                    icon={<FaPen/>}
-                    value={t('form.editNotice')}
-                  />
-                </div>
-              </form>
-            </FormProvider>
-          </div>
-        </div>
-      </>}
-    </div>
     </>
   )
 }

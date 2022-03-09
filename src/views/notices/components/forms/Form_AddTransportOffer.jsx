@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo } from 'react'
 import { InputVoluntary } from '@/components/form/Input_Voluntary'
-import { LanguageBlock } from '../../../../ua/LanguageBlock'
+import { LanguageBlock } from '../common/Form_Sections/LanguageBlock'
 import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
 const FormAddTransportOffer = ({ defaultValues, query, onSuccess, editMode = false }) => {
