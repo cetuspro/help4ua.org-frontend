@@ -24,8 +24,7 @@ const ViewMap = () => {
             zoom={14}
             maxZoom={18}
             scrollWheelZoom={true}
-            className={`bg-white dark:bg-gray-900 relative z-0 threat-map`}
-            style={{ height: '100vh' }}>
+            className={`bg-white dark:bg-gray-900 relative z-0 threat-map h-full`}>
             {/* <Sidebar /> */}
             <MapLayers />
             <TileLayer
