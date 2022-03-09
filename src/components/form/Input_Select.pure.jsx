@@ -37,13 +37,11 @@ export const InputSelectPure = ({
           styles={customStyles({ hasIcon: !!Icon })}
           defaultValue
           value={findOption(value?.toString(), options)}
-          // value={value}
           options={options}
           formatOptionLabel={optionFormat}
           placeholder={placeholder}
           onChange={onChange}
           isDisabled={disabled}
-          // menuIsOpen
           {...props}
           classNamePrefix="react-select"
         />
