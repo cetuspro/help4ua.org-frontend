@@ -25,7 +25,10 @@ const PhoneItem = ({label, value}) => {
 }
 const ShelterSearchCard = () => {
   const { data: {
-    description,
+    descriptionPL,
+    descriptionUA,
+    descriptionEN,
+      description,
     cityName,
     region,
     address,
@@ -55,7 +58,9 @@ const ShelterSearchCard = () => {
     <Card>
       <div className="flex flex-col md:flex-row">
         <div className="flex-1">
-          {!!description && <Item label="Opis:" value={description}/>}
+        {!!description && <Item label={t('common.opis')} value={descriptionPL} />}
+          {!!description && <Item label={t('common.opisUA')} value={descriptionUA} />}
+          {!!description && <Item label={t('common.opisEN')} value={descriptionEN} />}
           <Item label="Adres:" value={(cityName || getRegion(region) || address) ? (
             <a
               href={href}

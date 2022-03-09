@@ -29,6 +29,9 @@ const PhoneItem = ({ label, value }) => {
 const TransportOfferCard = () => {
   const {
     data: {
+      descriptionPL,
+    descriptionUA,
+    descriptionEN,
       description,
       id,
       name,
@@ -49,7 +52,9 @@ const TransportOfferCard = () => {
     <Card>
       <div className="flex flex-col md:flex-row">
         <div className="flex-1">
-          {!!description && <Item label={t('form.description')} value={description} />}
+        {!!description && <Item label={t('common.opis')} value={descriptionPL} />}
+          {!!description && <Item label={t('common.opisUA')} value={descriptionUA} />}
+          {!!description && <Item label={t('common.opisEN')} value={descriptionEN} />}
           {!!name && <Item label={t('common.imie')} value={name} />}
           {!!phoneNumber && <PhoneItem label={t('form.phoneNumber')} value={phoneNumber} />}
           {!!transportFromStr && (

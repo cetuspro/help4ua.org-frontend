@@ -239,6 +239,8 @@
     "telefon": "Phone",
     "opis": "Description",
     "opisUA": "Description UA",
+    "opisEN": "Description EN",
+    "showmore": "Expand",    
     "okres": "Duration of stay",
     "id": "ID",
     "lozka": "Number of beds",

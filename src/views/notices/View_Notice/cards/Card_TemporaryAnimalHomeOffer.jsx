@@ -35,7 +35,10 @@ const PhoneItem = ({ label, value }) => {
 const TemporaryAnimalHomeOfferCard = () => {
   const {
     data: {
-      description,
+      descriptionPL,
+      descriptionUA,
+      descriptionEN,
+        description,
       cityName,
       region,
       address,
@@ -71,7 +74,9 @@ const TemporaryAnimalHomeOfferCard = () => {
         <div className="flex-1">
           {!!name && <Item label={t('common.imie')} value={name} />}
           {!!phoneNumber && <PhoneItem label={t('common.telefon')} value={phoneNumber} />}
-          {!!description && <Item label={t('common.opis')} value={description} />}
+          {!!description && <Item label={t('common.opis')} value={descriptionPL} />}
+          {!!description && <Item label={t('common.opisUA')} value={descriptionUA} />}
+          {!!description && <Item label={t('common.opisEN')} value={descriptionEN} />}
           <Item
             label={t('common.adres')}
             value={

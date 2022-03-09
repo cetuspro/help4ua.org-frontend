@@ -3,17 +3,36 @@ import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '../NoticeDetailsItem'
 import Icon, { iconConfig } from '@/assets/img/icons'
 
-const Description = ({ description, descriptionUA }) => {
+
+const Description = ({ descriptionPL, descriptionUA, descriptionEN }) => {
   const { t } = useTranslation()
 
   return (
-    <NoticeDetailsItem
-      label={description ? t('common.opis') : t('common.opisUA')}
-      className="flex-col"
-      icon={<Icon.MdOutlineTextSnippet {...iconConfig} />}
-      value={description || descriptionUA}
-      valueClassName="text-gray-800 font-normal"
-    />
+    <>
+      <NoticeDetailsItem
+        label={descriptionPL && t('common.opis')}
+        className="flex-col"
+        icon={<Icon.MdOutlineTextSnippet {...iconConfig} />}
+        value={descriptionPL}
+        valueClassName={`text-gray-800 font-normal `}
+      />
+
+      <NoticeDetailsItem
+        label={descriptionUA && t('common.opisUA')}
+        className="flex-col"
+        icon={<Icon.MdOutlineTextSnippet {...iconConfig} />}
+        value={descriptionUA}
+        valueClassName={`text-gray-800 font-normal `}
+      />
+
+      <NoticeDetailsItem
+        label={descriptionEN && t('common.opisEN')}
+        className="flex-col"
+        icon={<Icon.MdOutlineTextSnippet {...iconConfig} />}
+        value={descriptionEN}
+        valueClassName={`text-gray-800 font-normal `}
+      />
+    </>
   )
 }
 

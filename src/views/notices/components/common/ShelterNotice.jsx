@@ -26,8 +26,10 @@ import Email from '@/views/notices/components/common/Fields/Email'
 
 const ShelterNotice = ({
   data: {
-    description,
+    descriptionPL,
     descriptionUA,
+    descriptionEN,
+    description,
     cityName,
     region,
     address,
@@ -65,8 +67,8 @@ const ShelterNotice = ({
         </ChildrenLayout>
 
         <ChildrenLayout side="right">
-          {!!description && <Description description={description} />}
-          {!!descriptionUA && <Description descriptionUA={descriptionUA} />}
+          {!!description && <Description descriptionUA={descriptionUA} descriptionPL={descriptionPL} descriptionEN={descriptionEN}/>}
+          
         </ChildrenLayout>
       </ParentRowLayout>
 

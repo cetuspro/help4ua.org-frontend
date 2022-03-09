@@ -19,8 +19,10 @@ import CarNumber from '@/views/notices/components/common/Fields/CarNumber'
 
 const TransportNotice = ({
   data: {
-    description,
+    descriptionPL,
     descriptionUA,
+    descriptionEN,
+    description,
     cityName,
     region,
     address,
@@ -50,8 +52,7 @@ const TransportNotice = ({
         </ChildrenLayout>
 
         <ChildrenLayout side="right">
-          {!!description && <Description description={description} />}
-          {!!descriptionUA && <Description descriptionUA={descriptionUA} />}
+        {!!description && <Description descriptionUA={descriptionUA} descriptionPL={descriptionPL} descriptionEN={descriptionEN}/>}
         </ChildrenLayout>
       </ParentRowLayout>
 

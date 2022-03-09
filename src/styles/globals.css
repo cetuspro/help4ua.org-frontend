@@ -180,3 +180,12 @@ html {
     transform: translateX(200%);
   }
 }
+
+.expand{
+  max-height: 3.5em;
+  overflow: hidden;  
+}
+.expanded,.expanded2,.expanded3{
+  max-height: auto;
+  overflow: hidden;  
+}

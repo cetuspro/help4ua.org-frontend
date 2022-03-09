@@ -34,6 +34,9 @@ const PhoneItem = ({ label, value }) => {
 const TemporartyAnimalHomeOfferSearchCard = () => {
   const {
     data: {
+      descriptionPL,
+    descriptionUA,
+    descriptionEN,
       description,
       name,
       region,
@@ -106,7 +109,9 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
           {!!period && <Item label={t('form.period')} value={getPeriod(t, Number(period))} />}
 
           {!!arrivalDateStr && <Item label={t('common.arrival')} value={arrivalDateStr} />}
-          {!!description && <Item label={t('common.opis')} value={description} />}
+          {!!description && <Item label={t('common.opis')} value={descriptionPL} />}
+          {!!description && <Item label={t('common.opisUA')} value={descriptionUA} />}
+          {!!description && <Item label={t('common.opisEN')} value={descriptionEN} />}
 
           {!!createdAt && (
             <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
