@@ -2,18 +2,17 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '../NoticeDetailsItem'
 import Icon, { iconConfig } from '@/assets/img/icons'
-import { getValue } from '../../../View_Notices/models/tableList'
 
-const Food = ({ isCatering }) => {
+const ArrivedDate = ({ arrivalDateStr }) => {
   const { t } = useTranslation()
 
   return (
     <NoticeDetailsItem
-      label={t('common.jedzenie')}
-      icon={<Icon.MdFoodBank {...iconConfig} />}
-      value={getValue(isCatering)}
+      icon={<Icon.MdOutlineDateRange {...iconConfig} />}
+      label={t('common.arrival')}
+      value={arrivalDateStr}
     />
   )
 }
 
-export default memo(Food)
+export default memo(ArrivedDate)

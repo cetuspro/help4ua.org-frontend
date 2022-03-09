@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '../NoticeDetailsItem'
-import Icon from '@/assets/img/icons'
+import Icon, { iconConfig } from '@/assets/img/icons'
 import { getPeriod } from '../../../View_Notices/models/tableList'
 
 const Period = ({ period }) => {
@@ -10,7 +10,7 @@ const Period = ({ period }) => {
   return (
     <NoticeDetailsItem
       label={t('common.okres')}
-      icon={<Icon.MdCalendarToday />}
+      icon={<Icon.MdCalendarToday {...iconConfig} />}
       value={getPeriod(t, parseInt(period))}
     />
   )

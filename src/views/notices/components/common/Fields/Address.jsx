@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import NoticeDetailsItem from '../NoticeDetailsItem'
-import Icon from '@/assets/img/icons'
+import Icon, { iconConfig } from '@/assets/img/icons'
 import { getRegion } from '../../../View_Notices/models/tableList'
 
 const Address = ({ cityName, region, address, location }) => {
@@ -17,7 +17,7 @@ const Address = ({ cityName, region, address, location }) => {
   return (
     <NoticeDetailsItem
       label={t('common.adres')}
-      icon={<Icon.MdHouse />}
+      icon={<Icon.MdHouse {...iconConfig} />}
       value={
         <a
           href={href}
