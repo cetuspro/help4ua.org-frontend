@@ -17,6 +17,9 @@ const ActionDetailsItem = ({ label, labelClassName, value, valueClassName, icon,
       <Button
         className="font-normal text-xs mb-1 left-48 ring-transparent bg-blue-600 active:bg-blue-700 hover:bg-blue-700 px-5 py-1"
         size="small"
+        style={{          
+          color:'white',
+        }}
         onClick={handleClick}>
         {t('common.show')}
       </Button>
