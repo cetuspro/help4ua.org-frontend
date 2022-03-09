@@ -8,12 +8,17 @@ import { InputText } from '@/components/form/Input_Text'
 import { InputSelect } from '@/components/form/Input_Select'
 import { ImSortNumbericDesc } from 'react-icons/im'
 import { FormProvider } from 'react-hook-form'
-import { FaSearch } from 'react-icons/fa'
+import { FaSearch, FaFlag } from 'react-icons/fa'
 import { getRegionsHelper } from '@/app/CRUD/region/getRegions'
+import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { BiMapPin } from 'react-icons/bi'
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
 const ACCOMODATION_COUNT = 10
+export const ALL_COUNTRIES_ITEM = {
+  value: null,
+  label: <Trans i18nKey={"common.allCountries"} />
+}
 
 const pluck = (prop, obj) =>
   Object.keys(obj).reduce((acc, key) => ({ ...acc, [key]: obj[key]?.[prop] }), {})
@@ -26,7 +31,7 @@ const accommodationOptions = Array.from(
 const BaseFilter = ({ types = [], config }) => {
   const [filters, setFilters] = useState(null)
   const { methods, handleSubmit } = useFilterForm({
-    schema: yup.object().shape(pluck('validator', config)),
+    schema: yup.object().shape(pluck('validator', config)).default(pluck('default', config)),
   })
   const { t } = useTranslation()
 
@@ -60,6 +65,7 @@ export const FilterType = {
   CITY: 'city',
   REGION: 'region',
   ACCOMODATION: 'accommodationPlacesCount',
+  COUNTRY: 'CountryId'
 } as const
 
 export const config = {
@@ -87,6 +93,25 @@ export const config = {
         isLabelVisible={false}
         transform={({ id, name }) => ({
           value: id,
+          label: name,
+        })}
+      />
+    ),
+  },
+  [FilterType.COUNTRY]: {
+    validator: yup.string().nullable(),
+    default: ALL_COUNTRIES_ITEM.value,
+    render: ({ t }) => (
+      <InputAsyncSelect
+        {...getCountriesHelper}
+        key="country"
+        name="CountryId"
+        icon={FaFlag}
+        label={t('form.country')}
+        isLabelVisible={false}
+        additionalOptions={[ALL_COUNTRIES_ITEM]}
+        transform={({ value, name }) => ({
+          value: value,
           label: name,
         })}
       />

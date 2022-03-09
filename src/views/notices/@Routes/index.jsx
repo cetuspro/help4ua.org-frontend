@@ -156,7 +156,7 @@ const NoticeRoutes = () => {
             title={t('form.lfMedicalAssistance')}
             expandableRowsComponent={DefaultNotice}
             noticeType={72}
-            filters={MedicalAssistanceFilter}
+            filters={BasicFilter}
           />
         }
       />
@@ -167,7 +167,7 @@ const NoticeRoutes = () => {
             title={t('form.offerMedicalAssistance')}
             expandableRowsComponent={withPriceFree(DefaultNotice)}
             noticeType={70}
-            filters={MedicalAssistanceFilter}
+            filters={BasicFilter}
           />
         }
       />

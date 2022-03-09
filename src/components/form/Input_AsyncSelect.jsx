@@ -13,6 +13,7 @@ export const InputAsyncSelect = ({
   icon,
   transform = ({ id, name }) => ({ value: id, label: name }),
   optionFormat,
+  additionalOptions = [],
   ...props
 }) => {
   const { isLoading, data, isSuccess } = useQuery2({
@@ -21,7 +22,7 @@ export const InputAsyncSelect = ({
   })
 
   const options = useMemo(
-    () => (data && isSuccess ? data.map(transform) : []),
+    () => (data && isSuccess ? [...additionalOptions, ...data.map(transform)] : []),
     [isSuccess, transform],
   )
 

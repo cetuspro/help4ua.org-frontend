@@ -36,7 +36,7 @@ export const InputSelectPure = ({
           menuPortalTarget={document.body}
           styles={customStyles({ hasIcon: !!Icon })}
           defaultValue
-          value={value === null ? null : findOption(value?.toString(), options)}
+          value={findOption(value?.toString(), options)}
           // value={value}
           options={options}
           formatOptionLabel={optionFormat}
