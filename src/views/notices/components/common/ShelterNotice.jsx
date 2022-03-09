@@ -51,6 +51,7 @@ const ShelterNotice = ({
     polishLang,
   },
   withPriceFree,
+  hasLink = true,
 }) => {
   return (
     <NoticeLayout>
@@ -77,7 +78,7 @@ const ShelterNotice = ({
             <AccommodationPlaces accommodationPlacesCount={accommodationPlacesCount} />
           )}
           {!!bedCount && <BedCount bedCount={bedCount} />}
-          <UniqueLink id={id} />
+          {hasLink && <UniqueLink id={id} />}
         </ChildrenLayout>
 
         <ChildrenLayout side="right">
