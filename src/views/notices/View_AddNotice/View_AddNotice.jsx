@@ -2,7 +2,7 @@ import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
-import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import { DEFAULT_COUNTRY } from '@/app/config/countryConfig'
 import { addNotice } from '@/app/CRUD/notices/addNotice'
 
 const ViewAddNotice = ({ title, description, formComponent: FormComponent, type }) => {

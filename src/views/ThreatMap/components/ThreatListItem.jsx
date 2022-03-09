@@ -1,7 +1,7 @@
 import Card from '@/components/common/Card'
 import { FaRegCommentDots } from 'react-icons/fa'
 import { AiOutlineLike } from 'react-icons/ai'
-import { truncateText } from '@/app/utils/truncateText'
+import { truncateText } from '@/app/utils/textTransform'
 import { useMap } from 'react-leaflet'
 import { useMapContext } from '@/app/context/MapContext'
 import { useNavigate } from 'react-router-dom'

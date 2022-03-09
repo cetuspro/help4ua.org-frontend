@@ -30,7 +30,7 @@ import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
 import { LanguageBlock } from '../../../../ua/LanguageBlock'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
-import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import { DEFAULT_COUNTRY } from '@/app/config/countryConfig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
