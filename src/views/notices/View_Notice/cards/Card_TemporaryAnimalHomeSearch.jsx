@@ -5,8 +5,12 @@ import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
-import { getBoolValue } from '../../View_Notices/dataTable/temporaryAnimalHomeOffer'
-import { getAnimal, getLanguagesValue, getPeriod } from '../../View_Notices/models/tableList'
+import {
+  getAnimal,
+  getLanguagesValue,
+  getPeriod,
+  getValue,
+} from '../../View_Notices/models/tableList'
 
 const Item = ({ label, value }) => {
   return (
@@ -16,11 +20,13 @@ const Item = ({ label, value }) => {
     </div>
   )
 }
-const PhoneItem = ({label, value}) => {
+const PhoneItem = ({ label, value }) => {
   return (
     <div className="py-2 flex gap-2">
       <span className="">{label}</span>
-      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">{value}</a>
+      <a href={`tel:${value}`} className="font-bold text-blue-700 hover:text-blue-500">
+        {value}
+      </a>
     </div>
   )
 }
@@ -94,7 +100,7 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
           )}
 
           {!!isDelivery && (
-            <Item label={t('form.offerTransport')} value={getBoolValue(t, isDelivery)} />
+            <Item label={t('form.offerTransport')} value={getValue(t, isDelivery)} />
           )}
 
           {!!period && <Item label={t('form.period')} value={getPeriod(t, Number(period))} />}
@@ -106,11 +112,12 @@ const TemporartyAnimalHomeOfferSearchCard = () => {
             <Item label={t('common.data')} value={dayjs(createdAt).format('DD.MM.YYYY HH:mm')} />
           )}
           {!!id && <Item label={t('common.id')} value={id} />}
-          { (ukraineLang || englishLang || germanyLang || polishLang) &&
-          <Item label={`${t("form.language")}:`}
-                value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
-          />
-          }
+          {(ukraineLang || englishLang || germanyLang || polishLang) && (
+            <Item
+              label={`${t('form.language')}:`}
+              value={getLanguagesValue(t, { ukraineLang, englishLang, germanyLang, polishLang })}
+            />
+          )}
         </div>
       </div>
       <Button to={route['notices.list11']} className="mt-10 mx-auto w-fit" size="small">

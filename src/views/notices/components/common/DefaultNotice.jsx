@@ -14,6 +14,7 @@ import Language from '@/views/notices/components/common/Fields/Language'
 import FreePrice from '@/views/notices/components/common/Fields/FreePrice'
 import CreatedAt from '@/views/notices/components/common/Fields/CreatedAt'
 import NoticeId from '@/views/notices/components/common/Fields/NoticeId'
+import UniqueLink from '@/views/notices/components/common/Fields/UniqueLink'
 
 const DefaultNotice = ({
   data: {
@@ -54,6 +55,7 @@ const DefaultNotice = ({
             />
           )}
           {withPriceFree && <FreePrice />}
+          <UniqueLink id={id} />
         </ChildrenLayout>
 
         <ChildrenLayout side="right">
