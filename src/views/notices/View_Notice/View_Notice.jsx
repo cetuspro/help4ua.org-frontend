@@ -8,6 +8,7 @@ import { route } from '@/app/router/urls/routes'
 import { Breadcrumb } from '@/components/common/Breadcrumb'
 import { useGetNotice } from '@/app/CRUD/notices/getNotice'
 import { NOTICE_COMPONENT, NOTICE_TYPE } from '@/views/notices/config'
+import SingleNoticeMap from '@/views/notices/components/SingleNoticeMap'
 
 const ViewNotice = () => {
   const { noticeId } = useParams()
@@ -22,6 +23,10 @@ const ViewNotice = () => {
     query?.data?.type in NOTICE_COMPONENT
       ? NOTICE_COMPONENT[query?.data?.type]
       : NOTICE_COMPONENT[NOTICE_TYPE.offerShelter]
+  const marker =
+    query?.data?.latitude && query?.data?.longitude
+      ? [query.data.latitude, query.data.longitude]
+      : null
 
   return (
     <>
@@ -43,6 +48,8 @@ const ViewNotice = () => {
           )}
         </QueryIsSuccess>
       </QueryProvider>
+
+      {marker && <SingleNoticeMap marker={marker} />}
     </>
   )
 }
