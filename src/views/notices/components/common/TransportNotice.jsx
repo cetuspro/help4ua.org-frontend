@@ -39,6 +39,7 @@ const TransportNotice = ({
     carRegoNo,
   },
   withPriceFree,
+  hasLink = true,
 }) => {
   return (
     <NoticeLayout>
@@ -61,7 +62,7 @@ const TransportNotice = ({
           {!!transportFromStr && <Transport transportFromStr={transportFromStr} />}
           {!!transportToStr && <Transport transportFromStr={transportToStr} />}
           {!!carRegoNo && <CarNumber carRegoNo={carRegoNo} />}
-          <UniqueLink id={id} />
+          {hasLink && <UniqueLink id={id} />}
         </ChildrenLayout>
 
         <ChildrenLayout side="right">

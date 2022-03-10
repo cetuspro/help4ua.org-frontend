@@ -16,13 +16,14 @@ const noticeTypes = {
 }
 
 const NoticePopup = (props) => {
+  const maxPopupHeight = useMemo(() => window.innerHeight - document.querySelector("#root header").clientHeight * 2, [window.innerHeight])
   const PopupComponent = useMemo(
     () => (props.type in noticeTypes ? noticeTypes[props.type] : noticeTypes[1]),
     [props.type],
   )
 
   return (
-    <Popup>
+    <Popup maxHeight={maxPopupHeight}>
       <PopupComponent {...props} />
     </Popup>
   )

@@ -37,6 +37,7 @@ const DefaultNotice = ({
     polishLang,
   },
   withPriceFree,
+  hasLink = true,
 }) => {
   return (
     <NoticeLayout>
@@ -57,7 +58,7 @@ const DefaultNotice = ({
             />
           )}
           {withPriceFree && <FreePrice />}
-          <UniqueLink id={id} />
+          {hasLink && <UniqueLink id={id} />}
         </ChildrenLayout>
 
         <ChildrenLayout side="right">
