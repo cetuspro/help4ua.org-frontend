@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { API_URL } from '../../config/env'
 import { usePaginatedQuery2 } from '@/app/hooks/usePaginatedQuery2'
+import { API_URL } from '@/app/config/env'
 
 const getHelpPoints = (params) => (key, pagination) =>
   axios({
@@ -8,7 +8,7 @@ const getHelpPoints = (params) => (key, pagination) =>
     url: `${API_URL}/help-points`,
     params: {
       ...pagination,
-      ...params
+      ...params,
     },
   }).then(({ data }) => data)
 

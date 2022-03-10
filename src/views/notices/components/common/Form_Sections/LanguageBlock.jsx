@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { InputCheckbox } from '../../../../../components/form/Input_Checkbox'
+import { InputCheckbox } from '@/components/form/Input_Checkbox'
 import { FormSectionHeader } from './FormSectionHeader'
 
 export const LanguageBlock = () => {

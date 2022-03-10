@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { FaCheck } from 'react-icons/fa'
 
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useHookFormMutation } from '../../../../app/hooks/useHookFormMutation'
+import { useHookFormMutation } from '@/hooks/useHookFormMutation'
 
 import { InputSubmit } from '@/components/form/Input_Submit'
 import { HookFormError } from '@/components/form/HookFormError'
