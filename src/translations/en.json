@@ -137,7 +137,8 @@
     "offerVolunteerHelp": "Do you offer help as a volunteer?",
     "lfVolunteerHelp": "Are you looking for volunteers help?",
     "lfWork": "Looking for work?",
-    "offerWork": "Offer work?"
+    "offerWork": "Offer work?",
+    "lfFamily": "Looking for family or friends?"
   },
   "formDescription": {
     "offerShelter": "This is the place where you can place your ad for those in need of assistance to stay with you. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible! Be aware that helping is also a responsibility.",
@@ -160,7 +161,8 @@
     "lfVolunteerHelp": "Here you can post your announcement that you need volunteers help. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
     "lfWork": "This is where you can place your announcement that you are looking for work. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!",
     "offerWork": "Here you can post your announcement that you are offering work. Remember the announcement is voluntary and will be publicly visible. Please give as much information as possible!",
-    "lfCheckBeforeAdd": "Before publishing a new offer, check out the database of existing offers. Maybe there is something that fits Your needs"
+    "lfCheckBeforeAdd": "Before publishing a new offer, check out the database of existing offers. Maybe there is something that fits Your needs",
+    "lfFamily": "This is where you can place your announcement that you are looking for your family or friends. Remember the announcement is voluntary and will be publicly visible. Please provide as much information as possible!"
   },
   "frontpage": {
     "help": "Help for Ukraine",
@@ -186,7 +188,8 @@
     "medicalAssistance": "Medical Assistance",
     "jobOffers": "Job offers",
     "volunteering": "Volunteering",
-    "helpPointss": "Help Pointss"
+    "helpPointss": "Help Points",
+    "family": "Family & Friends"
   },
   "notice": {
     "markActive": "Mark as active",

@@ -18,6 +18,7 @@ export const noticesRoutes = {
   'notices.list15': `${BASE_URL}/ogloszenia/offer-medical-assistance`,
   'notices.list16': `${BASE_URL}/ogloszenia/offer-volunteers-help`,
   'notices.list17': `${BASE_URL}/ogloszenia/find-volunteers-help`,
+  'notices.list18': `${BASE_URL}/ogloszenia/find-family`,
   'notices.list110': `${BASE_URL}/ogloszenia/offer-work`,
   'notices.list112': `${BASE_URL}/ogloszenia/lf-work`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
@@ -40,6 +41,7 @@ export const noticesRoutes = {
   'notices.addFindVolunteersHelp': `${BASE_URL}/dodaj-ogloszenie/find-volunteers-help`,
   'notices.addOfferWork': `${BASE_URL}/dodaj-ogloszenie/offer-work`,
   'notices.addFindWork': `${BASE_URL}/dodaj-ogloszenie/find-work`,
+  'notices.addFamily': `${BASE_URL}/dodaj-ogloszenie/find-family`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
   'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
   'notices.edit2': (id = ':id', token = ':token', pin = ':pin') =>

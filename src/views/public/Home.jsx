@@ -1,14 +1,17 @@
-import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { FiHome, FiEdit, FiTruck, FiGift, FiBriefcase } from 'react-icons/fi'
+import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical, FaUserTie } from 'react-icons/fa'
+import { MdOutlineFamilyRestroom, MdOutlineVolunteerActivism } from 'react-icons/md'
+
+import { route } from '@/app/router/urls/routes'
+
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import heroImg from '../../assets/img/hero.png'
+
 import NoticeCard from '../notices/Notice_Card/Notice_Card'
 import NoticeCardsWrapper from '../notices/Notice_CardsWrapper/Notice_CardsWrapper'
 import { getNoticeVerifiedAmount } from '@/app/models/notice'
-import { FiHome, FiEdit, FiTruck, FiGift, FiBriefcase } from 'react-icons/fi'
-import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical, FaUserTie } from 'react-icons/fa'
-import { MdOutlineVolunteerActivism } from 'react-icons/md'
 
 export default function Home() {
   const { t } = useTranslation()
@@ -318,6 +321,20 @@ export default function Home() {
               additionalNotes={'formDescription.lfCheckBeforeAdd'}
               toAdd={route['notices.addFindHelp']}
               toView={route['notices.list8']}
+            />
+          </NoticeCardsWrapper>
+
+          <NoticeCardsWrapper
+            icon={MdOutlineFamilyRestroom}
+            title={t('frontpage.family')}
+            hashId={'find-family'}>
+            <NoticeCard
+              title={'tiles.lfFamily'}
+              isFetching={isFetching}
+              // verifiedAmount={getNoticeVerifiedAmount(data, 'OfferHelp')}
+              description={'formDescription.lfFamily'}
+              toAdd={route['notices.addFamily']}
+              toView={route['notices.list18']}
             />
           </NoticeCardsWrapper>
 
