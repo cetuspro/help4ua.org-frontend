@@ -18,8 +18,10 @@ import UniqueLink from '@/views/notices/components/common/Fields/UniqueLink'
 
 const DefaultNotice = ({
   data: {
-    description,
+    descriptionPL,
     descriptionUA,
+    descriptionEN,
+    description,
     cityName,
     region,
     address,
@@ -60,8 +62,7 @@ const DefaultNotice = ({
         </ChildrenLayout>
 
         <ChildrenLayout side="right">
-          {!!description && <Description description={description} />}
-          {!!descriptionUA && <Description descriptionUA={descriptionUA} />}
+        {!!description && <Description descriptionUA={descriptionUA} descriptionPL={descriptionPL} descriptionEN={descriptionEN}/>}
         </ChildrenLayout>
       </ParentRowLayout>
 
