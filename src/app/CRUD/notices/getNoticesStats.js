@@ -1,13 +1,14 @@
-import { normalizeNoticeData } from '@/app/models/notice'
 import axios from 'axios'
-import { API_URL } from '../../config/env'
-import useQuery2 from '../../hooks/useQuery2'
+
+import { normalizeNoticeData } from '@/app/models/notice'
+import { API_URL } from '@/app/config/env'
+import useQuery2 from '@/hooks/useQuery2'
 
 const getNoticesStats = () =>
   axios({
     method: 'GET',
-    url: `${API_URL}/notices/stats`
-  }).then(({ data }) => data.length && normalizeNoticeData(data) || {})
+    url: `${API_URL}/notices/stats`,
+  }).then(({ data }) => (data.length && normalizeNoticeData(data)) || {})
 
 export const useGetNoticesStats = () =>
   useQuery2({
@@ -15,5 +16,5 @@ export const useGetNoticesStats = () =>
     queryFn: getNoticesStats,
     config: {
       refetchOnWindowFocus: false,
-    }
+    },
   })

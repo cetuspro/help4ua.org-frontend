@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { API_URL } from '../../config/env'
+
 import { usePaginatedQuery2 } from '@/app/hooks/usePaginatedQuery2'
+import { API_URL } from '@/app/config/env'
 
 const getNotices = (params) => (key, pagination) =>
   axios({

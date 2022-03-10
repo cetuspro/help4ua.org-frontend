@@ -1,15 +1,15 @@
-import axios from "axios";
-import { API_URL } from "../../config/env";
-import useQuery2 from "../../hooks/useQuery2";
+import axios from 'axios'
+import { API_URL } from '@/app/config/env'
+import useQuery2 from '@/hooks/useQuery2'
 
 const getInstitutions = () =>
   axios({
-    method: "GET",
+    method: 'GET',
     url: `${API_URL}/institutions`,
-  }).then(({ data }) => data.items);
+  }).then(({ data }) => data.items)
 
 export const useGetInstitutions = () =>
   useQuery2({
-    queryKey: ["app.institutions"],
+    queryKey: ['app.institutions'],
     queryFn: getInstitutions,
-  });
+  })

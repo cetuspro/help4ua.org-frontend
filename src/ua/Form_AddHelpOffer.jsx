@@ -16,11 +16,11 @@ import { useTranslation } from 'react-i18next'
 import { InputRodo } from '../components/form/Input_RODO'
 import { useSelector } from 'react-redux'
 import { InputVoluntary } from '../components/form/Input_Voluntary'
-import { LanguageBlock } from './LanguageBlock'
+import { LanguageBlock } from '../views/notices/components/common/Form_Sections/LanguageBlock'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
-import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import { DEFAULT_COUNTRY } from '@/app/config/countryConfig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import { addNotice } from '@/app/CRUD/notices/addNotice'
 import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
@@ -135,7 +135,11 @@ const FormAddHelpOffer = () => {
                 <div>
                   <InputText
                     name="email"
-                    label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+                    label={
+                      <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                        {t('form.email')}
+                      </span>
+                    }
                     placeholder={t('form.email')}
                     icon={FaEnvelope}
                   />

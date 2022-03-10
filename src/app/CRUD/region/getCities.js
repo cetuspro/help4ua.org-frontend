@@ -1,5 +1,5 @@
-import { API_URL } from '../../config/env'
-import useQuery2 from '../../hooks/useQuery2'
+import { API_URL } from '@/app/config/env'
+import useQuery2 from '@/hooks/useQuery2'
 import axios from 'axios'
 
 const getCities = () =>

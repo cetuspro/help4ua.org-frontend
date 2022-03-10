@@ -137,7 +137,8 @@
     "offerVolunteerHelp": "Oferujesz pomoc jako wolontariusz?",
     "lfVolunteerHelp": "Szukasz wolontariuszy?",
     "lfWork": "Szukasz pracy?",
-    "offerWork": "Oferujesz pracę?"
+    "offerWork": "Oferujesz pracę?",
+    "lfFamily": "Szukasz rodziny lub przyjaciół?"
   },
   "formDescription": {
     "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
@@ -160,7 +161,8 @@
     "lfVolunteerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy wolontariuszy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "lfWork": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz pracy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
     "offerWork": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz oferujesz pracę. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "lfCheckBeforeAdd": "UWAGA! Zanim dodasz ogłoszenie sprawdź bazę danych ogłoszeń - ofert, czy nie ma ogłoszenia spełniającego Twoje potrzeby."
+    "lfCheckBeforeAdd": "UWAGA! Zanim dodasz ogłoszenie sprawdź bazę danych ogłoszeń - ofert, czy nie ma ogłoszenia spełniającego Twoje potrzeby.",
+    "lfFamily": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz rodziny lub przyjaciół. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",

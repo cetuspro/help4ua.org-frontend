@@ -3,7 +3,7 @@ import { useMutation } from 'react-query'
 export const useHookFormMutation = (methods, mutationFn, passedConfig) => {
   const { onError, onSuccess, handleError, handleSuccess, ...config } = passedConfig || {}
 
-  const handleInnerSuccess = (data) => {
+  const handleInnerSuccess = () => {
     methods.reset()
   }
 

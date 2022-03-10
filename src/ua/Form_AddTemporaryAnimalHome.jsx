@@ -27,10 +27,10 @@ import { InputSubmit } from '../components/form/Input_Submit'
 import { InputText } from '../components/form/Input_Text'
 import { InputTextarea } from '../components/form/Input_Textarea'
 import { InputVoluntary } from '../components/form/Input_Voluntary'
-import { LanguageBlock } from './LanguageBlock'
+import { LanguageBlock } from '../views/notices/components/common/Form_Sections/LanguageBlock'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
-import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import { DEFAULT_COUNTRY } from '@/app/config/countryConfig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import { addNotice } from '@/app/CRUD/notices/addNotice'
 import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
@@ -148,7 +148,11 @@ const FormAddTemporaryAnimalHome = () => {
                 <div>
                   <InputText
                     name="email"
-                    label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+                    label={
+                      <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                        {t('form.email')}
+                      </span>
+                    }
                     placeholder={t('form.email')}
                     icon={FaEnvelope}
                   />

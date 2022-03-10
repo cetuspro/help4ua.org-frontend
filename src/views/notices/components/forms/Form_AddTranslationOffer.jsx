@@ -5,19 +5,19 @@ import { FormProvider } from 'react-hook-form'
 import { FaUser, FaComment, FaEnvelope, FaMapPin, FaCheck, FaFlag } from 'react-icons/fa'
 import { InputText } from '@/components/form/Input_Text'
 import { InputTextarea } from '@/components/form/Input_Textarea'
-import { useHookFormMutation } from '../../../../app/hooks/useHookFormMutation'
+import { useHookFormMutation } from '@/hooks/useHookFormMutation'
 import { InputSubmit } from '@/components/form/Input_Submit'
 import { HookFormError } from '@/components/form/HookFormError'
 import { useTranslation } from 'react-i18next'
 import { InputRodo } from '@/components/form/Input_RODO'
 import { useEffect, useMemo, useState } from 'react'
-import { InputVoluntary } from '../../../../components/form/Input_Voluntary'
-import { LanguageBlock } from '../../../../ua/LanguageBlock'
+import { InputVoluntary } from '@/components/form/Input_Voluntary'
+import { LanguageBlock } from '../common/Form_Sections/LanguageBlock'
 import { InputSelect } from '@/components/form/Input_Select'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
 import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
-import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import { DEFAULT_COUNTRY } from '@/app/config/countryConfig'
 import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
 import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
@@ -110,7 +110,11 @@ const FormAddTranslationOffer = ({ defaultValues, query, onSuccess, editMode = f
           <div>
             <InputText
               name="email"
-              label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+              label={
+                <span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
+                  {t('form.email')}
+                </span>
+              }
               placeholder={t('form.email')}
               icon={FaEnvelope}
             />
@@ -124,7 +128,7 @@ const FormAddTranslationOffer = ({ defaultValues, query, onSuccess, editMode = f
               icon={FaMapPin}
               components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
             />
-          </div>        
+          </div>
           <div>
             <InputSelect
               name="region"
