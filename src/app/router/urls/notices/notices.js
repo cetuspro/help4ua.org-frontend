@@ -41,7 +41,7 @@ export const noticesRoutes = {
   'notices.addOfferWork': `${BASE_URL}/dodaj-ogloszenie/offer-work`,
   'notices.addFindWork': `${BASE_URL}/dodaj-ogloszenie/find-work`,
   'notices.success': `${BASE_URL}/dodaj-ogloszenie/sukces`,
-  'notices.edit': (id = ':id', token = ':token') => `${BASE_URL}/e/${id}/${token}`,
+  'notices.edit': (id = ':id', token = ':token', smsToken = ':smsToken') => `${BASE_URL}/e/${id}/${token}/${smsToken}`,
   'notices.edit2': (id = ':id', token = ':token', pin = ':pin') =>
     `${BASE_URL}/e/${id}/${token}/${pin}`,
 }
