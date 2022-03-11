@@ -362,7 +362,7 @@ const Button3 = ({ icon: Icon, label, hashLink }) => (
   <div className="flex flex-col mt-6 sm:justify-center lg:justify-start gap-2.5 ">
     <a
       href={hashLink}
-      className="flex flex-wrap items-end gap-x-2 gap-y-4 text-center bg-white hover:bg-gray-50 focus-visible:ring ring-yellow-300 text-gray-600 text-sm font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+      className="flex  items-end gap-x-2 gap-y-4 text-center bg-white hover:bg-gray-50 focus-visible:ring ring-yellow-300 text-gray-600 text-sm font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
       <Icon className="text-primary min-h-[30px] min-w-[30px]" />
       {label}
     </a>
