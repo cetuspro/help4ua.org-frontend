@@ -97,7 +97,7 @@ const CommonNotice = ({
           )}
           {!!bedCount && <BedCount bedCount={bedCount} />}
           {!!transportFromStr && <Transport transportFromStr={transportFromStr} />}
-          {!!transportToStr && <Transport transportFromStr={transportToStr} />}
+          {!!transportToStr && <Transport transportToStr={transportToStr} />}
           {!!carRegoNo && <CarNumber carRegoNo={carRegoNo} />}
           {hasLink && <UniqueLink id={id} />}
         </ChildrenLayout>
