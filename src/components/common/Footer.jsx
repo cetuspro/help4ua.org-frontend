@@ -5,9 +5,10 @@ import { FaHeart } from 'react-icons/all'
 import li from "../../assets/img/social/li.png"
 import ig from "../../assets/img/social/ig.png"
 import fb from "../../assets/img/social/fb.png"
+import gh from "../../assets/img/social/gh.png"
 
 const Footer = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <footer id="main-footer" className="max-w-screen-2xl px-4 md:px-8 mx-auto w-full mb-2">
       <div className="container mx-auto">
@@ -16,11 +17,14 @@ const Footer = () => {
           {/* <a href='https://www.instagram.com/uapomoc.pl' target={"_blank"} rel={'noreferrer'}> 
             <img src={li} alt={'UApomoc Linkedin'}></img>
           </a> */}
-          <a href='https://www.instagram.com/uapomoc.pl' target={"_blank"} rel={'noreferrer'}> 
+          <a href='https://www.instagram.com/uapomoc.pl' target={"_blank"} rel={'noreferrer'}>
             <img src={ig} alt={'UApomoc Instagram'}></img>
           </a>
-          <a href='https://www.facebook.com/help4uaorg' target={"_blank"} rel={'noreferrer'}> 
+          <a href='https://www.facebook.com/help4uaorg' target={"_blank"} rel={'noreferrer'}>
             <img src={fb} alt={'UApomoc Facebook'}></img>
+          </a>
+          <a href='https://github.com/cetuspro/help4ua.org-frontend' target={"_blank"} rel={'noreferrer'}>
+            <img src={gh} alt={'UApomoc GitHub'}></img>
           </a>
         </div>
 
@@ -43,7 +47,7 @@ const Footer = () => {
             Started by
             <a className="mx-1" href="https://cetuspro.com" target="_blank" rel='noreferrer'>cetuspro.com</a>
             and made with
-            <FaHeart className="mx-1 mt-0.5 text-sm"/>
+            <FaHeart className="mx-1 mt-0.5 text-sm" />
             from people to people.
           </div>
         </div>
