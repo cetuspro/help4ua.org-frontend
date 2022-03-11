@@ -184,7 +184,8 @@
     "medicalAssistance": "Медична допомога",
     "jobOffers": "Пропозиції роботи",
     "volunteering": "Волонтерство",
-    "helpPointss": "Пункти допомоги"
+    "helpPointss": "Пункти допомоги",
+    "allNotices": "Всі оголошення"
   },
   "notice": {
     "markInactive": "Позначити як неактивний",
@@ -274,6 +275,7 @@
     "price": "Ціна",
     "priceFree": "Допомога на цьому веб-сайті завжди безкоштовна",
     "backToOffer": "Повернутись до списку пропозицій",
-    "allCountries": "Всі країни"
+    "allCountries": "Всі країни",
+    "noticeType": "Тип оголошення"
   }
 }

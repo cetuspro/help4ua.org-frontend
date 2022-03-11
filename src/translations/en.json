@@ -186,7 +186,8 @@
     "medicalAssistance": "Medical Assistance",
     "jobOffers": "Job offers",
     "volunteering": "Volunteering",
-    "helpPointss": "Help Pointss"
+    "helpPointss": "Help Pointss",
+    "allNotices": "All notices"
   },
   "notice": {
     "markActive": "Mark as active",
@@ -275,6 +276,7 @@
     "price": "Price",
     "priceFree": "The help offered on this website is always free",
     "backToOffer": "Back to offer list",
-    "allCountries": "All countries"
+    "allCountries": "All countries",
+    "noticeType": "Notice type"
   }
 }

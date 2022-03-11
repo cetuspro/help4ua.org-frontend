@@ -186,7 +186,8 @@
     "medicalAssistance": "Pomoc medyczna",
     "jobOffers": "Oferty pracy",
     "volunteering": "Wolontariat",
-    "helpPointss": "Punkty pomocy"
+    "helpPointss": "Punkty pomocy",
+    "allNotices": "Wszystko ogłoszenia"
   },
   "notice": {
     "markActive": "Oznacz jako aktualne",
@@ -281,6 +282,7 @@
     "price": "Cena",
     "priceFree": "Pomoc oferowana na tej stronie jest zawsze darmowa",
     "backToOffer": "Wróć do listy ogłoszeń",
-    "allCountries": "Wszystkie kraje"
+    "allCountries": "Wszystkie kraje",
+    "noticeType": "Typ ogłoszenia"
   }
 }

@@ -13,6 +13,7 @@ import { getRegionsHelper } from '@/app/CRUD/region/getRegions'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { BiMapPin } from 'react-icons/bi'
 import { useTranslation, Trans } from 'react-i18next'
+import { NoticeTypeSelect } from "./Filter_NoticeTypeSelect"
 
 const ACCOMODATION_COUNT = 10
 export const ALL_COUNTRIES_ITEM = {
@@ -65,7 +66,8 @@ export const FilterType = {
   CITY: 'city',
   REGION: 'region',
   ACCOMODATION: 'accommodationPlacesCount',
-  COUNTRY: 'CountryId'
+  COUNTRY: 'CountryId',
+  NOTICE_TYPE: 'noticeType'
 } as const
 
 export const config = {
@@ -80,6 +82,10 @@ export const config = {
         isLabelVisible={false}
       />
     ),
+  },
+  [FilterType.NOTICE_TYPE]: {
+    validator: yup.string().nullable(),
+    render: () => <NoticeTypeSelect />,
   },
   [FilterType.REGION]: {
     validator: yup.string().nullable(),
