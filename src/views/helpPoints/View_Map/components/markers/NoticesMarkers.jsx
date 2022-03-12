@@ -23,6 +23,8 @@ const NoticesMarkers = () => {
               }
             })
             .filter((item) => item.position.lat !== null && item.position.lng !== null)
+            // don't need shelters without beds and accommodation
+            .filter((item) => !(item.type === 1 && (item.accommodationPlacesCount === 0 || item.bedCount === 0)))
         : [],
     [isSuccess],
   )

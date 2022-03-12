@@ -1,11 +1,14 @@
-import { FiHome, FiEdit, FiTruck, FiGift, FiBriefcase } from 'react-icons/fi'
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
-import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
 import heroImg from '../../assets/img/hero.png'
-import FAQ from '../../components/common/FAQ'
+import NoticeCard from '../notices/Notice_Card/Notice_Card'
+import NoticeCardsWrapper from '../notices/Notice_CardsWrapper/Notice_CardsWrapper'
+import { getNoticeVerifiedAmount } from '@/app/models/notice'
+import { FiHome, FiEdit, FiTruck, FiGift, FiBriefcase } from 'react-icons/fi'
+import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical, FaUserTie } from 'react-icons/fa'
+import { MdOutlineVolunteerActivism } from 'react-icons/md'
 
 export default function Home() {
   const { t } = useTranslation()
@@ -14,8 +17,9 @@ export default function Home() {
     <>
       <div className="bg-gray-100 dark:bg-gray-900 pb-6 sm:pb-8 lg:pb-12 my-10">
         <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
+          {/* HERO SECTION */}
           <section className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
-            <div className="xl:w-4/12 flex flex-col justify-center">
+            <div className="lg:w-4/12 flex flex-col justify-center">
               <div className="sm:text-center lg:text-left lg:py-12 xl:py-24">
                 <p className="text-yellow-400 text-xl xl:text-xl font-semibold mb-4 md:mb-6">
                   {t('frontpage.help')}
@@ -25,17 +29,19 @@ export default function Home() {
                   {t('frontpage.title')}
                 </h1>
 
-                <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <p className="text-xs sm:text-sm">{t('frontpage.briefInfo')}</p>
+
+                <div className="flex flex-col mt-8 sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                   <a
-                    href="#zgloszenia"
-                    className="inline-block bg-yellow-400 hover:bg-yellow-600 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+                    href="#rodzaje-ogloszen"
+                    className="inline-block bg-yellow-400 hover:bg-yellow-600 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-dazzling-blue text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
                     {t('header.notices')}
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="xl:w-7/12 h-48 h-auto bg-gray-100 flex items-center overflow-hidden">
+            <div className="lg:w-7/12 h-48 h-auto bg-gray-100 flex items-center overflow-hidden">
               <img
                 src={heroImg}
                 loading="lazy"
@@ -47,437 +53,279 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gray-100 dark:bg-gray-900 pb-6 sm:pb-8 lg:pb-12">
-        <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-          <div className="mb-10 md:mb-16">
-            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto ">
-              {t('frontpage.info-1')}
-            </p>
-            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
-              {t('frontpage.info-2')}
-            </p>
-            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
-              {t('frontpage.info-3')}
-            </p>
-            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
-              {t('frontpage.info-4')}
-            </p>
-            <p className="max-w-screen-md text-gray-600 mb-2 text-xl text-center mx-auto">
-              {t('frontpage.info-5')}
-            </p>
+      {/* TYPES OF NOTICES GRID */}
+      <section>
+        <div
+          id={'rodzaje-ogloszen'}
+          className="max-w-screen-xl px-4 md:px-8 mx-auto mt-4 mb-40 scroll-mt-10">
+          <h2 className="text-xl font-semibold">{t('frontpage.noticesTypesQuestion')}</h2>
+          <div className="grid w-11/12 max-w-[300px] m-auto sm:max-w-none sm:w-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 sm:px-10 md:px-0 py-2">
+            <Button3 icon={FiHome} label={t('frontpage.shelter')} hashLink={'#schronienie'} />
+
+            <Button3 icon={FiTruck} label={t('frontpage.transport')} hashLink={'#transport'} />
+
+            <Button3
+              icon={MdOutlineVolunteerActivism}
+              label={t('frontpage.volunteering')}
+              hashLink={'#wolontariat'}
+            />
+
+            <Button3 icon={FiEdit} label={t('frontpage.translations')} hashLink={'#tlumaczenia'} />
+
+            <Button3
+              icon={FiBriefcase}
+              label={t('frontpage.legalHelp')}
+              hashLink={'#pomoc-prawna'}
+            />
+
+            <Button3
+              icon={FaBriefcaseMedical}
+              label={t('frontpage.medicalAssistance')}
+              hashLink={'#pomoc-medyczna'}
+            />
+
+            <Button3
+              icon={FaPaw}
+              label={t('frontpage.animalHome')}
+              hashLink={'#dom-dla-zwierzat'}
+            />
+
+            <Button3 icon={FaUserTie} label={t('frontpage.jobOffers')} hashLink={'#oferty-pracy'} />
+
+            <Button3 icon={FiGift} label={t('frontpage.otherHelp')} hashLink={'#inna-pomoc'} />
+
+            <Button3
+              icon={FaMapMarkerAlt}
+              label={t('frontpage.helpPointss')}
+              hashLink={'#punkty-pomocy'}
+            />
           </div>
-          {/* FEATURES */}
-          <div
-            id="zgloszenia"
-            className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 xl:gap-16 md:px-10 py-2">
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiHome size={100} color="currentColor" />
-              </div>
+        </div>
+      </section>
 
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.shelter')}
-              </h3>
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[1]?.statusAndAmount[2]?.amount}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addShelterOffer']}
-                  label={`${t('frontpage.addNotice')}`}
-                />
-                <Button2
-                  to={route['notices.list3']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[1]?.statusAndAmount[2]?.amount
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.offerShelter')}
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiHome size={100} color="currentColor" />
-              </div>
+      {/* NOTICES CARDS */}
+      <div className="bg-gray-100 dark:bg-gray-900 pb-6 sm:pb-8 lg:pb-12">
+        <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
+          <NoticeCardsWrapper icon={FiHome} title={t('frontpage.shelter')} hashId={'schronienie'}>
+            <NoticeCard
+              title={'tiles.shelter'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferAccommodation')}
+              description={'formDescription.offerShelter'}
+              toAdd={route['notices.addShelterOffer']}
+              toView={route['notices.list3']}
+            />
+            <NoticeCard
+              icon={FiHome}
+              title={'tiles.lfShelter'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchAccommodation')}
+              description={'formDescription.findShelter'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindShelter']}
+              toView={route['notices.list2']}
+            />
+          </NoticeCardsWrapper>
 
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.lfShelter')}
-              </h3>
+          <NoticeCardsWrapper icon={FiTruck} title={t('frontpage.transport')} hashId={'transport'}>
+            <NoticeCard
+              icon={FiTruck}
+              title={'tiles.transport'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferTransportHelp')}
+              description={'formDescription.offerTransport'}
+              toAdd={route['notices.addTransportOffer']}
+              toView={route['notices.list4']}
+            />
+            <NoticeCard
+              icon={FiTruck}
+              title={'tiles.lfTransport'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchTransportHelp')}
+              description={'formDescription.findTransport'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindTransportOffer']}
+              toView={route['notices.list6']}
+            />
+          </NoticeCardsWrapper>
 
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[2]?.statusAndAmount?.[2]?.amount}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addFindShelter']}
-                  label={`${t('frontpage.addNotice')}`}
-                />
-                <Button2
-                  to={route['notices.list2']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[2]?.statusAndAmount?.[2]?.amount
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.findShelter')}
-              </p>
-            </div>
+          <NoticeCardsWrapper
+            icon={MdOutlineVolunteerActivism}
+            title={t('frontpage.volunteering')}
+            hashId={'wolontariat'}>
+            <NoticeCard
+              icon={MdOutlineVolunteerActivism}
+              title={'tiles.offerVolunteerHelp'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferVolunteerHelp')}
+              description={'formDescription.offerVolunteerHelp'}
+              toAdd={route['notices.addVolunteersOfferingHelp']}
+              toView={route['notices.list16']}
+            />
+            <NoticeCard
+              icon={MdOutlineVolunteerActivism}
+              title={'tiles.lfVolunteerHelp'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchVolunteerHelp')}
+              description={'formDescription.lfVolunteerHelp'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindVolunteersHelp']}
+              toView={route['notices.list17']}
+            />
+          </NoticeCardsWrapper>
 
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiTruck size={100} color="currentColor" />
-              </div>
+          <NoticeCardsWrapper
+            icon={FiEdit}
+            title={t('frontpage.translations')}
+            hashId={'tlumaczenia'}>
+            <NoticeCard
+              icon={FiEdit}
+              title={'tiles.translations'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferTranslationHelp')}
+              description={'formDescription.translations'}
+              toAdd={route['notices.addTranslationOffer']}
+              toView={route['notices.list7']}
+            />
+            <NoticeCard
+              icon={FiEdit}
+              title={'tiles.lfTranslations'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchTranslationHelp')}
+              description={'formDescription.lfTranslations'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindTranslationOffer']}
+              toView={route['notices.list9']}
+            />
+          </NoticeCardsWrapper>
 
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.transport')}
-              </h3>
+          <NoticeCardsWrapper
+            icon={FiBriefcase}
+            title={t('frontpage.legalHelp')}
+            hashId={'pomoc-prawna'}>
+            <NoticeCard
+              icon={FiBriefcase}
+              title={'tiles.legalHelp'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferLegalAssistance')}
+              description={'formDescription.offerLegalHelp'}
+              toAdd={route['notices.addlegalHelpOffer']}
+              toView={route['notices.list13']}
+            />
+            <NoticeCard
+              icon={FiBriefcase}
+              title={'tiles.lfLegalHelp'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchLegalAssistance')}
+              description={'formDescription.findLegalHelp'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addfindLegalHelp']}
+              toView={route['notices.list14']}
+            />
+          </NoticeCardsWrapper>
 
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[3]?.statusAndAmount?.[2]?.amount}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1 to={route['notices.addTransportOffer']} label={t('frontpage.addNotice')} />
-                <Button2
-                  to={route['notices.list4']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[3]?.statusAndAmount?.[2]?.amount
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.offerTransport')}
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiTruck size={100} color="currentColor" />
-              </div>
+          <NoticeCardsWrapper
+            icon={FaBriefcaseMedical}
+            title={t('frontpage.medicalAssistance')}
+            hashId={'pomoc-medyczna'}>
+            <NoticeCard
+              icon={FaBriefcaseMedical}
+              title={'tiles.offerMedicalAssistance'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferMedicalHelp')}
+              description={'formDescription.offerMedicalAssistance'}
+              toAdd={route['notices.addOfferMedicalAssistance']}
+              toView={route['notices.list15']}
+            />
+            <NoticeCard
+              icon={FaBriefcaseMedical}
+              title={'tiles.lfMedicalAssistance'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchMedicalHelp')}
+              description={'formDescription.medicalAssistance'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindMedicalAssistance']}
+              toView={route['notices.list12']}
+            />
+          </NoticeCardsWrapper>
 
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.lfTransport')}
-              </h3>
+          <NoticeCardsWrapper
+            icon={FaPaw}
+            title={t('frontpage.animalHome')}
+            hashId={'dom-dla-zwierzat'}>
+            <NoticeCard
+              icon={FaPaw}
+              title={'tiles.temporaryAnimalHome'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferHelpForAnimal')}
+              description={'formDescription.temporaryAnimalHome'}
+              toAdd={route['notices.addTemporaryAnimalHome']}
+              toView={route['notices.list10']}
+            />
+            <NoticeCard
+              icon={FaPaw}
+              title={'tiles.lfTemporaryAnimalHome'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchHelpForAnimal')}
+              description={'formDescription.lfTemporaryAnimalHome'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindTemporaryAnimalHome']}
+              toView={route['notices.list11']}
+            />
+          </NoticeCardsWrapper>
 
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[4]?.statusAndAmount?.[2]?.amount}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addFindTransportOffer']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list6']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[4]?.statusAndAmount?.[2]?.amount
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.findTransport')}
-              </p>
-            </div>
+          <NoticeCardsWrapper
+            icon={FaUserTie}
+            title={t('frontpage.jobOffers')}
+            hashId={'oferty-pracy'}>
+            <NoticeCard
+              icon={FaUserTie}
+              title={'tiles.offerWork'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferingWork')}
+              description={'formDescription.offerWork'}
+              toAdd={route['notices.addOfferWork']}
+              toView={route['notices.list110']}
+            />
+            <NoticeCard
+              icon={FaUserTie}
+              title={'tiles.lfWork'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchWork')}
+              description={'formDescription.lfWork'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindWork']}
+              toView={route['notices.list112']}
+            />
+          </NoticeCardsWrapper>
 
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiGift size={100} color="currentColor" />
-              </div>
+          <NoticeCardsWrapper icon={FiGift} title={t('frontpage.otherHelp')} hashId={'inna-pomoc'}>
+            <NoticeCard
+              icon={FiGift}
+              title={'tiles.help'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'OfferHelp')}
+              description={'formDescription.offerHelp'}
+              toAdd={route['notices.addHelpOffer']}
+              toView={route['notices.list5']}
+            />
+            <NoticeCard
+              icon={FiGift}
+              title={'tiles.lfHelp'}
+              isFetching={isFetching}
+              verifiedAmount={getNoticeVerifiedAmount(data, 'SearchHelp')}
+              description={'formDescription.findHelp'}
+              additionalNotes={'formDescription.lfCheckBeforeAdd'}
+              toAdd={route['notices.addFindHelp']}
+              toView={route['notices.list8']}
+            />
+          </NoticeCardsWrapper>
 
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.help')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}: {!isFetching && data?.[7]?.statusAndAmount?.[2]?.amount}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1 to={route['notices.addHelpOffer']} label={t('frontpage.addNotice')} />
-                <Button2
-                  to={route['notices.list5']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[7]?.statusAndAmount?.[2]?.amount
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.offerHelp')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiGift size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.lfHelp')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1 to={route['notices.addFindHelp']} label={t('frontpage.addNotice')} />
-                <Button2
-                  to={route['notices.list8']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[8]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.findHelp')}
-              </p>
-            </div>
-
-            {/* LEGAL HELP */}
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiBriefcase size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.legalHelp')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && data?.[13]?.statusAndAmount?.[2]?.amount}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1 to={route['notices.addlegalHelpOffer']} label={t('frontpage.addNotice')} />
-                <Button2
-                  to={route['notices.list13']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && data?.[13]?.statusAndAmount?.[2]?.amount
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.offerLegalHelp')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiBriefcase size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.lfLegalHelp')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[14]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1 to={route['notices.addfindLegalHelp']} label={t('frontpage.addNotice')} />
-                <Button2
-                  to={route['notices.list14']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[14]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.findLegalHelp')}
-              </p>
-            </div>
-            {/* END LEGAL HELP */}
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiEdit size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.translations')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[5]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addTranslationOffer']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list7']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[5]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.translations')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FiEdit size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.lfTranslations')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addFindTranslationOffer']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list9']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[6]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.lfTranslations')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FaPaw size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.temporaryAnimalHome')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[9]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addTemporaryAnimalHome']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list10']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[9]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.temporaryAnimalHome')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FaPaw size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.lfTemporaryAnimalHome')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[10]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addFindTemporaryAnimalHome']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list11']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[10]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.lfTemporaryAnimalHome')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FaBriefcaseMedical size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.offerMedicalAssistance')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[11]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addOfferMedicalAssistance']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list15']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[11]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.offerMedicalAssistance')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FaBriefcaseMedical size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.lfMedicalAssistance')}
-              </h3>
-
-              <p className={'italic mb-4'}>
-                {t('frontpage.activeAds')}:{' '}
-                {!isFetching && (data?.[12]?.statusAndAmount?.[2]?.amount ?? '-')}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-                <Button1
-                  to={route['notices.addFindMedicalAssistance']}
-                  label={t('frontpage.addNotice')}
-                />
-                <Button2
-                  to={route['notices.list12']}
-                  label={`${t('frontpage.seeNotices')} (${
-                    !isFetching && (data?.[12]?.statusAndAmount?.[2]?.amount ?? '-')
-                  })`}
-                />
-              </div>
-              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
-                {t('formDescription.medicalAssistance')}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-8 shadow-md rounded-3xl">
-              <div className="w-16 h-16 md:h-24 md:w-24 flex justify-center items-center text-yellow-400 mb-2 sm:mb-4">
-                <FaMapMarkerAlt size={100} color="currentColor" />
-              </div>
-
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                {t('tiles.helpPoints')}
-              </h3>
-
+          <NoticeCardsWrapper
+            icon={FaMapMarkerAlt}
+            title={t('tiles.helpPoints')}
+            hashId={'punkty-pomocy'}>
+            <div className="flex flex-col items-center justify-center py-4">
               <div className="flex flex-col flex-wrap lg:flex-nowrap sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <Button1 to={route['helpPoints.add']} label={t('frontpage.addHelpPoint')} />
                 <Button2 to={route['helpPoints']} label={t('frontpage.helpPoints')} />
@@ -487,11 +335,9 @@ export default function Home() {
                 {t('formDescription.helpPoints')}
               </p>
             </div>
-          </div>
+          </NoticeCardsWrapper>
         </div>
       </div>
-
-      <FAQ />
     </>
   )
 }
@@ -507,7 +353,18 @@ const Button1 = ({ to, label }) => (
 const Button2 = ({ to, label }) => (
   <Link
     to={to}
-    className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+    className="inline-block bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-700 focus-visible:ring ring-yellow-300 text-dazzling-blue text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
     {label}
   </Link>
+)
+
+const Button3 = ({ icon: Icon, label, hashLink }) => (
+  <div className="flex flex-col mt-6 sm:justify-center lg:justify-start gap-2.5 ">
+    <a
+      href={hashLink}
+      className="flex  items-end gap-x-2 gap-y-4 text-center bg-white hover:bg-gray-50 focus-visible:ring ring-yellow-300 text-gray-600 text-sm font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">
+      <Icon className="text-primary min-h-[30px] min-w-[30px]" />
+      {label}
+    </a>
+  </div>
 )

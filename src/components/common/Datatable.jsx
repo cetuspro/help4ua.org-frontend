@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import DataTable from 'react-data-table-component'
 
-const customStyles = {
+const defaultStyles = {
   headCells: {
     style: {
       textTransform: 'uppercase',
@@ -18,7 +18,8 @@ const customStyles = {
   },
 }
 
-const Datatable = ({pagination, ...rest}) => {
+const DataTableList = ({pagination, styles, ...rest}) => {
+  const customStyles = useMemo(() => ({ ...defaultStyles, ...styles }), [styles])
   const paginationProps = useMemo(() => pagination ? {
     pagination: true,
     paginationServer: true,
@@ -39,4 +40,4 @@ const Datatable = ({pagination, ...rest}) => {
   )
 }
 
-export default Datatable
+export default DataTableList

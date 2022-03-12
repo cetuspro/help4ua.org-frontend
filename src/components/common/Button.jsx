@@ -3,18 +3,18 @@ import { forwardRef } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
 const Button = forwardRef(
-  ({ color = 'primary', size = 'normal', to, children, className, onClick, ...rest }, ref) => {
+  ({ color = 'primary', size = 'normal', to, children, className = '', onClick, ...rest }, ref) => {
     const buttonStyles = `${
       color === 'primary'
-        ? `bg-primary hover:bg-primary-dark active:bg-primary-dark text-white`
+        ? `bg-primary hover:bg-primary-dark active:bg-primary-dark text-dazzling-blue`
         : color === 'secondary'
         ? `bg-gray-200 hover:bg-gray-300 text-gray-500 active:text-gray-700`
         : color === 'outline'
         ? `bg-transparent hover:bg-[rgba(0,0,0,.1)] border border-gray-400 text-gray-600 active:text-gray-700`
         : color === 'success'
-        ? `bg-emerald-400 hover:bg-emerald-600 active:bg-primary-dark text-white`
+        ? `bg-emerald-400 hover:bg-emerald-600 active:bg-primary-dark text-dazzling-blue`
         : color === 'danger'
-        ? `bg-red-400 hover:bg-red-500 active:bg-primary-dark text-white`
+        ? `bg-red-400 hover:bg-red-500 active:bg-primary-dark text-dazzling-blue`
         : ``
     }
     ${size === 'normal' ? `md:text-base px-8 py-3` : size === 'small' ? `md:text-sm px-4 py-2` : ``}
@@ -22,13 +22,13 @@ const Button = forwardRef(
 
     if (to)
       return (
-        <HashLink ref={ref} {...rest} to={to} className={buttonStyles}>
+        <HashLink ref={ref} {...rest} to={to} className={`${buttonStyles} ${className}`}>
           {children}
         </HashLink>
       )
     else
       return (
-        <button ref={ref} {...rest} onClick={onClick} className={buttonStyles}>
+        <button ref={ref} {...rest} onClick={onClick} className={`${buttonStyles} ${className}`}>
           {children}
         </button>
       )

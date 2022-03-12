@@ -4,7 +4,8 @@
     "notices": "Ogłoszenia",
     "account": "Twoje konto",
     "contact": "Kontakt",
-    "rodo": "Rodo"
+    "rodo": "Rodo",
+    "supportUs": "Wesprzyj nas na"
   },
   "periods": {
     "negotiable": "Do ustalenia",
@@ -29,9 +30,13 @@
     "offerTranslations": "Oferuję pomoc w tłumaczeniach",
     "personalInfo": "Dane osobowe",
     "name": "Imię",
+    "nameLabel": "Nie podawaj nazwiska! Podaj tylko imię.",
     "phoneNumber": "Numer telefonu",
     "email": "Adres email",
     "cityName": "Miejscowość",
+    "location": "Lokalizacja",
+    "locationLabel": "Nie podawaj dokładnej lokalizacji twojego domu! Wpisz kod pocztowy lub nazwę miasta.",
+    "country": "Kraj",
     "accommodation": "Zakwaterowanie",
     "accommodationPlacesCount": "Liczba osób",
     "period": "Na jak długo",
@@ -64,7 +69,7 @@
     "carRegoNo": "Numer rejestracyjny pojazdu",
     "helpPointInfo": "Informacje o punkcie",
     "type": "Typ",
-    "findLegalHelp": "Szukam pomocy prawnej",    
+    "findLegalHelp": "Szukam pomocy prawnej",
     "temporaryAnimalHome": "Oferuję dom tymczasowy dla zwierząt",
     "lfTemporaryAnimalHome": "Poszukuję domu tymczasowego dla zwierząt",
     "whatAnimalType": "Jakie zwierzęta ?",
@@ -82,7 +87,16 @@
     "collectionPoint": "Punkt zbiórki",
     "receptionPoint": "Punkt recepcyjny",
     "lfMedicalAssistance": "Potrzebuję pomocy medycznej",
-    "offerMedicalAssistance": "Oferta pomoc medyczną"
+    "offerMedicalAssistance": "Oferta pomoc medyczną",
+    "offerVolunteerHelp": "Oferujesz pomoc jako wolontariusz?",
+    "lfVolunteerHelp": "Potrzebuję pomocy od wolontariuszy",
+    "language": "Język",
+    "speakUkrainian": "Mówię po ukraińsku",
+    "speakEnglish": "Mówię po angielsku",
+    "speakPolish": "Mówię po polsku",
+    "speakGerman": "Mówię po niemiecku",
+    "lfWork": "Szukasz pracy",
+    "offerWork": "Oferujesz pracę"
   },
   "success": {
     "title": "Udało się!",
@@ -119,7 +133,12 @@
     "lfTemporaryAnimalHome": "Szukasz domu tymczasowego dla zwierząt?",
     "temporaryAnimalHome": "Oferujesz dom tymczasowy dla zwierząt?",
     "lfMedicalAssistance": "Szukasz pomocy medycznej?",
-    "offerMedicalAssistance": "Oferujesz pomoc medyczną?"
+    "offerMedicalAssistance": "Oferujesz pomoc medyczną?",
+    "offerVolunteerHelp": "Oferujesz pomoc jako wolontariusz?",
+    "lfVolunteerHelp": "Szukasz wolontariuszy?",
+    "lfWork": "Szukasz pracy?",
+    "offerWork": "Oferujesz pracę?",
+    "faq": "FAQ"
   },
   "formDescription": {
     "offerShelter": "W tym miejscu możesz umieścić swoje ogłoszenie o możliwości zatrzymania się u ciebie potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji! Bądź świadom tego, że pomoc to też odpowiedzialność.",
@@ -137,7 +156,12 @@
     "lfTemporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz domu tymczasowego dla swoich zwierząt. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! ",
     "temporaryAnimalHome": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz dom tymczasowy dla zwierząt osób potrzebujących pomocy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widoczne. Proszę podaj jak najwięcej informacji! ",
     "medicalAssistance": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy medycznej. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
-    "offerMedicalAssistance": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz pomoc medyczną. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!"
+    "offerMedicalAssistance": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz pomoc medyczną. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "offerVolunteerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz pomoc jako wolontariusz. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "lfVolunteerHelp": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że potrzebujesz pomocy wolontariuszy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "lfWork": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że szukasz pracy. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "offerWork": "W tym miejscu możesz umieścić swoje ogłoszenie o tym, że oferujesz oferujesz pracę. Pamiętaj ogłoszenie ma charakter dobrowolny i będzie publicznie widocznie. Proszę podaj jak najwięcej informacji!",
+    "lfCheckBeforeAdd": "UWAGA! Zanim dodasz ogłoszenie sprawdź bazę danych ogłoszeń - ofert, czy nie ma ogłoszenia spełniającego Twoje potrzeby."
   },
   "frontpage": {
     "help": "Pomoc dla Ukrainy",
@@ -150,13 +174,31 @@
     "info-3": "Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się!",
     "info-4": "Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych!",
     "info-5": "Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!",
+    "briefInfo": "To strona oddolnej akcji społecznej dla tych którzy chcą pomóc i dla tych którzy szukają pomocy! Łączymy ludzi dobrego serca z tymi którzy potrzebują pomocy! Jeśli masz miejsce i jesteś gotów przyjąć mieszkańców Ukrainy szukających bezpiecznego domu zgłoś się! Jeśli przybyłeś z Ukrainy i szukasz miejsca, gdzie mógłyś się zatrzymać z rodziną przeszukaj naszą bazę danych! Jeśli chciałbyś pomóc, zostać wolontariuszem itp. każdy może pomóc!",
     "helpPoints": "Zobacz listę",
-    "addHelpPoint": "Dodaj punkt"
+    "addHelpPoint": "Dodaj punkt",
+    "noticesTypesQuestion": "Jakie ogłoszenia znajdziesz?",
+    "shelter": "Schronienie",
+    "transport": "Transport",
+    "otherHelp": "Inna pomoc",
+    "legalHelp": "Pomoc prawna",
+    "translations": "Pomoc w tłumaczeniach",
+    "animalHome": "Dom dla zwierząt",
+    "medicalAssistance": "Pomoc medyczna",
+    "jobOffers": "Oferty pracy",
+    "volunteering": "Wolontariat",
+    "helpPointss": "Punkty pomocy"
   },
   "notice": {
     "markActive": "Oznacz jako aktualne",
     "markInactive": "Oznacz jako nieaktualne",
     "waitingForApproval": "Ogłoszenie oczekuje na akceptację"
+  },
+  "language": {
+    "ukrainian": "Ukraiński",
+    "english": "Angielski",
+    "germany": "Niemiecki",
+    "polish": "Polski"
   },
   "RODO": {
     "label": "Wyrażam zgodę na przetwarzanie moich danych przez Cetuspro Sp. z o.o. z siedzibą w Rzeszowie w celu opublikowania moich danych w ogłoszeniu umieszczonym na portalu uapomoc.pl, skierowanym do osób potrzebujących i udzielającym pomocy Ukrainie. <1>Klauzula</1>\n",
@@ -203,7 +245,7 @@
     "data": "Data dodania",
     "tak": "Tak",
     "nie": "Nie",
-    "brakDanych": "Brak danych",
+    "noData": "Brak danych",
     "miasto": "Miasto",
     "szukaj": "Wyszukaj...",
     "wojewodztwo": "Wybierz województwo",
@@ -214,6 +256,8 @@
     "telefon": "Telefon",
     "opis": "Opis",
     "opisUA": "Opis UA",
+    "opisEN": "Opis EN",
+    "showmore": "Rozwiń",
     "okres": "Okres",
     "id": "Identyfikator",
     "lozka": "Ilość łóżek",
@@ -229,6 +273,15 @@
     "arrival": "Data przyjazdu",
     "discordDescription": "Chcesz pomóc? Dołącz do naszego Discorda!",
     "discordDescription2": "Każda para rąk się przyda!",
-    "email": "Email"
+    "email": "Email",
+    "onMap": "Zobacz na mapie",
+    "back": "Wróć",
+    "voluntaryHelp": "Pomoc ma charakter dobrowolny i zobowiązuje się nie pobierać żadnych odpłatności związanych z świadczoną pomocą",
+    "uniqueLink": "Unikalny link",
+    "show": "Odkryj",
+    "price": "Cena",
+    "priceFree": "Pomoc oferowana na tej stronie jest zawsze darmowa",
+    "backToList": "Wróć do listy ogłoszeń",
+    "allCountries": "Wszystkie kraje"
   }
 }

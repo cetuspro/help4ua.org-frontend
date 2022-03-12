@@ -1,11 +1,10 @@
+import { useState, useMemo, useEffect } from 'react'
 import { animalsEnum } from '@/app/config/enum/animals'
 import { periodsEnum } from '@/app/config/enum/periods'
 import { voivodeshipsEnum } from '@/app/config/enum/voivodeships'
-import { API_URL } from '@/app/config/env'
 import { route } from '@/app/router/urls/routes'
 import { yupResolver } from '@hookform/resolvers/yup'
-import axios from 'axios'
-import { FormProvider, useForm } from 'react-hook-form'
+import { FormProvider, useForm, useWatch } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import {
   FaCheck,
@@ -14,8 +13,8 @@ import {
   FaEnvelope,
   FaMapPin,
   FaPaw,
-  FaPhone,
   FaUser,
+  FaFlag,
 } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
@@ -27,51 +26,74 @@ import { InputSelect } from '../components/form/Input_Select'
 import { InputSubmit } from '../components/form/Input_Submit'
 import { InputText } from '../components/form/Input_Text'
 import { InputTextarea } from '../components/form/Input_Textarea'
-
-const schema = yup.object().shape({
-  name: yup.string().required(),
-  description: yup.string(),
-  region: yup.number().required(),
-  cityName: yup.string().required(),
-  phoneNumber: yup.string().required(),
-  email: yup.string().email().nullable(),
-
-  shouldRefund: yup.boolean(),
-  animalType: yup.string().required(),
-  accommodationPlacesCount: yup.number().required(),
-  hasExperience: yup.boolean(),
-
-  isDelivery: yup.string(),
-  type: yup.number().default(60),
-  acceptTerms: yup.string().required(),
-
-  period: yup.string().required(),
-})
-
-const query = (data) => {
-  return axios({
-    method: 'POST',
-    url: `${API_URL}/notices/create`,
-    data,
-  })
-}
-const mt = (a) => a
+import { InputVoluntary } from '../components/form/Input_Voluntary'
+import { LanguageBlock } from './LanguageBlock'
+import { InputAsyncSelect } from '@/components/form/Input_AsyncSelect'
+import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
+import { DEFAULT_COUNTRY } from '@/app/config/countryCofig'
+import InputLocationAutocomplete from '@/components/form/InputLocationAutocomplete'
+import { addNotice } from '@/app/CRUD/notices/addNotice'
+import InputPhoneNumber from '@/components/form/Input_PhoneNumber'
 
 const FormAddTemporaryAnimalHome = () => {
+  const [showRegion, setShowRegion] = useState(false)
+  const schema = useMemo(
+    () =>
+      yup.object().shape({
+        name: yup.string().required(),
+        description: yup.string(),
+        cityId: yup.number().nullable(),
+        cityName: yup.string(),
+        postalCodeId: yup.number().nullable(),
+        latitude: yup.number(),
+        longitude: yup.number(),
+        location: yup.object().required(),
+        countryId: yup.number().required(),
+        region: showRegion ? yup.number().required() : yup.string().nullable(),
+        phoneNumber: yup.string().required(),
+        email: yup.string().email().nullable(),
+        shouldRefund: yup.boolean(),
+        animalType: yup.string().required(),
+        accommodationPlacesCount: yup.number().required(),
+        hasExperience: yup.boolean(),
+        isDelivery: yup.string(),
+        type: yup.number().default(60),
+        acceptTerms: yup.string().required(),
+        period: yup.string().required(),
+        isOfferFreeFlag: yup.bool().oneOf([true], 'isOfferFreeFlag is a required field').required(),
+        ukraineLang: yup.bool(),
+        englishLang: yup.bool(),
+        germanyLang: yup.bool(),
+        polishLang: yup.bool(),
+      }),
+    [showRegion],
+  )
   const methods = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      countryId: DEFAULT_COUNTRY,
+      phoneNumber: '+48',
+    },
   })
+
+  const watched = useWatch({
+    control: methods.control,
+    name: 'countryId',
+  })
+
+  useEffect(() => {
+    const countryId = methods.getValues()?.countryId
+    setShowRegion(countryId === DEFAULT_COUNTRY)
+  }, [watched])
+
   let navigate = useNavigate()
 
-  // console.log(methods.formState.errors)
-  const handleSuccess = ({ data }) => {
-    // data = id
+  const handleSuccess = () => {
     navigate(route['notices.success'])
   }
 
   const { t } = useTranslation()
-
-  const mutation = useHookFormMutation(methods, query, { handleSuccess })
+  const mutation = useHookFormMutation(methods, addNotice, { handleSuccess })
 
   return (
     <div className="container mx-auto py-8">
@@ -94,29 +116,62 @@ const FormAddTemporaryAnimalHome = () => {
               <div className="flex-grow border-t border-gray-300 mb-4" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                 <div>
-                  <InputText name="name" label={t('form.name')} icon={FaUser} required />
-                </div>
-                <div>
                   <InputText
-                    name="phoneNumber"
-                    label={t('form.phoneNumber')}
-                    icon={FaPhone}
+                    name="name"
+                    label={t('form.nameLabel')}
+                    placeholder={t('form.name')}
+                    icon={FaUser}
                     required
                   />
                 </div>
                 <div>
-                  <InputText name="email" label={t('form.email')} icon={FaEnvelope} />
+                  <InputPhoneNumber
+                    label={t('form.phoneNumber')}
+                    name="phoneNumber"
+                    required={true}
+                  />
+                </div>
+                <div>
+                  <InputAsyncSelect
+                    {...getCountriesHelper}
+                    name="countryId"
+                    icon={FaFlag}
+                    label={t('form.country')}
+                    isLabelVisible
+                    transform={({ name, value }) => ({
+                      value: value,
+                      label: name,
+                    })}
+                    required
+                  />
+                </div>
+                <div>
+                  <InputText
+                    name="email"
+                    label={<span className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm">{t('form.email')}</span>}
+                    placeholder={t('form.email')}
+                    icon={FaEnvelope}
+                  />
+                </div>
+                <div>
+                  <InputLocationAutocomplete
+                    name="location"
+                    label={t('form.locationLabel')}
+                    placeholder={t('form.location')}
+                    required
+                    icon={FaMapPin}
+                    components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+                  />
                 </div>
                 <div>
                   <InputSelect
                     name="region"
                     label={t('form.voivodeship')}
-                    options={voivodeshipsEnum(mt)}
-                    required
+                    options={voivodeshipsEnum((a) => a)}
+                    hidden={!showRegion}
+                    disabled={!showRegion}
+                    required={showRegion}
                   />
-                </div>
-                <div>
-                  <InputText name="cityName" label={t('form.cityName')} icon={FaMapPin} required />
                 </div>
               </div>
               <h4 className="font-bold mt-8">{t('form.accommodation')}</h4>
@@ -167,13 +222,15 @@ const FormAddTemporaryAnimalHome = () => {
                   <InputCheckbox name="hasExperience" label={t('form.hasExperienceWithAnimals')} />
                 </div>
               </div>
+              <LanguageBlock />
               <h4 className="font-bold mt-8">{t('form.extraInfo')}</h4>
               <div className="flex-grow border-t border-gray-300 mb-4" />
               <div>
                 <InputTextarea name="description" label={t('form.description')} icon={FaComment} />
               </div>
-              <div className="flex justify-end">
-                <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+              <div className="flex ">
+                <div className="w-full md:w-1/1 lg:w-1/1 xl:w-1/1 mt-8">
+                  <InputVoluntary />
                   <InputRodo />
                 </div>
               </div>

@@ -17,13 +17,14 @@ export const InputSelectPure = ({
   options,
   error,
   className = '',
+  hidden,
   disableDefaultStyles,
   ...props
 }) => {
   const placeholder = `${passedPlaceholder ?? label ?? ''}${required ? '*' : ''}`
 
   return (
-    <div className={`relative my-1 text-left custom-select ${className}`}>
+    <div className={`relative my-1 text-left custom-select ${className} ${hidden ? 'hidden' : ''}`}>
       {(label || required) && isLabelVisible && (
         <label className="inline-block text-gray-800 dark:text-gray-100 text-xs sm:text-sm mb-2">
           {label}
@@ -34,14 +35,13 @@ export const InputSelectPure = ({
         <Select
           menuPortalTarget={document.body}
           styles={customStyles({ hasIcon: !!Icon })}
-          value={value === null ? null : findOption(value?.toString(), options)}
-          // value={value}
+          defaultValue
+          value={findOption(value?.toString(), options)}
           options={options}
           formatOptionLabel={optionFormat}
           placeholder={placeholder}
           onChange={onChange}
           isDisabled={disabled}
-          // menuIsOpen
           {...props}
           classNamePrefix="react-select"
         />

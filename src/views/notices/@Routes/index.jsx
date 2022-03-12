@@ -1,53 +1,16 @@
-import { route } from '@/app/router/urls/routes'
-import UserLayout from '@/layouts/UserLayout'
-import {
-  helpOfferColumnsColumns,
-  HelpOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/helpOffer'
-import {
-  shelterOfferColumns,
-  ShelterOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/shelterOffer'
-import {
-  shelterSearchColumns,
-  ShelterSearchExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/shelterSearch'
-import {
-  transportOfferColumns,
-  TransportOfferExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/transportOffer'
-import {
-  transportSearchColumns,
-  TransportSearchExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/transportSearch'
-import NoticesFilter from '@/views/notices/View_Notices/filters/Filters_Notices'
-import NoticesNoAcommodationsFilter from '@/views/notices/View_Notices/filters/Filters_NoticesNoAccomodations'
 import { lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route } from 'react-router-dom'
+import { route } from '@/app/router/urls/routes'
+import UserLayout from '@/layouts/UserLayout'
 import FormAddFindShelter from '../components/forms/Form_AddFindShelter'
 import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransportOffer'
 import FormAddShelterOffer from '../components/forms/Form_AddShelterOffer'
 import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
 import FormAddTransportOffer from '../components/forms/Form_AddTransportOffer'
-import {
-  temporaryAnimalHomeOfferColumns,
-  TemporaryAnimalHomeOfferExpandedComponent,
-} from '../View_Notices/dataTable/temporaryAnimalHomeOffer'
-import {
-  temporaryAnimalHomeSearch,
-  TemporaryAnimalHomeSearchExpandedComponent,
-} from '../View_Notices/dataTable/temporaryAnimalHomeSearch'
-import {
-  translationOfferColumns,
-  TranslationOfferExpandedComponent,
-} from '../View_Notices/dataTable/translationOffer'
-import AnimalOffersFilter from '../View_Notices/filters/Filters_AnimalsOffer'
-import MedicalAssistanceFilter from '../View_Notices/filters/Filters_MedicalAssistance'
-import {
-  medicalAssistanceSearch,
-  MedicalAssistanceSearchExpandedComponent,
-} from '@/views/notices/View_Notices/dataTable/medicalAssistanceSearch'
+import FormAddVolunteerOffer from '../components/forms/Form_AddVolunteerOffer'
+import { NOTICE_TYPE } from '@/views/notices/config'
+
 const LazyNotices = lazy(() => import('@/views/notices/View_Notices/View_Notices'))
 const LazyNotice = lazy(() => import('@/views/notices/View_Notice/View_Notice'))
 const LazyAddNotice = lazy(() => import('../View_AddNotice/View_AddNotice'))
@@ -62,7 +25,8 @@ const LazyAddFindTemporaryAnimalHome = lazy(() =>
 )
 const LazyAddlegalHelpOffer = lazy(() => import('../../../ua/Form_AddLegalHelpOffer'))
 const LazyAddfindLegalHelp = lazy(() => import('../../../ua/Form_AddFindLegalHelp'))
-const LazyAddFindMedicalAssistance= lazy(() => import('../../../ua/Form_AddFindMedicalAssistance'))
+const LazyAddFindMedicalAssistance = lazy(() => import('../../../ua/Form_AddFindMedicalAssistance'))
+const LazyFormAddOfferWork = lazy(() => import('../../../ua/Form_AddFindAndOfferWork'))
 
 const NoticeRoutes = () => {
   const { t } = useTranslation()
@@ -70,170 +34,79 @@ const NoticeRoutes = () => {
     <Route key={route['notices.list']} path={route['notices.list']} element={<UserLayout />}>
       <Route index element={<Navigate to={route['index']} />} />
       <Route
-        path={route['notices.list2']}
-        element={
-          <LazyNotices
-            title={t('tiles.shelter2')}
-            columns={shelterSearchColumns()}
-            expandableRowsComponent={ShelterSearchExpandedComponent}
-            noticeType={10}
-            filters={NoticesFilter}
-          />
-        }
+        path={route['notices.list3']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerShelter} />}
       />
       <Route
-        path={route['notices.list3']}
-        element={
-          <LazyNotices
-            title={t('tiles.shelter3')}
-            columns={shelterOfferColumns()}
-            expandableRowsComponent={ShelterOfferExpandedComponent}
-            noticeType={1}
-            filters={NoticesFilter}
-          />
-        }
+        path={route['notices.list2']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForShelter} />}
       />
       <Route
         path={route['notices.list4']}
-        element={
-          <LazyNotices
-            title={t('tiles.transport2')}
-            columns={transportOfferColumns()}
-            expandableRowsComponent={TransportOfferExpandedComponent}
-            // itemComponent={TransportOfferItem}
-            noticeType={20}
-            filters={NoticesFilter}
-          />
-        }
-      />
-      <Route
-        path={route['notices.list5']}
-        element={
-          <LazyNotices
-            title={t('tiles.help2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
-            noticeType={50}
-            filters={NoticesNoAcommodationsFilter}
-          />
-        }
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerTransport} />}
       />
       <Route
         path={route['notices.list6']}
-        element={
-          <LazyNotices
-            title={t('tiles.transport3')}
-            columns={transportSearchColumns()}
-            expandableRowsComponent={TransportSearchExpandedComponent}
-            noticeType={22}
-            filters={NoticesFilter}
-          />
-        }
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForTransport} />}
       />
       <Route
         path={route['notices.list7']}
-        element={
-          <LazyNotices
-            title={t('tiles.translations2')}
-            columns={translationOfferColumns()}
-            expandableRowsComponent={TranslationOfferExpandedComponent}
-            noticeType={30}
-            filters={NoticesNoAcommodationsFilter}
-          />
-        }
-      />
-      <Route
-        path={route['notices.list8']}
-        element={
-          <LazyNotices
-            title={t('tiles.lfHelp2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
-            noticeType={52}
-            filters={NoticesNoAcommodationsFilter}
-          />
-        }
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerTranslation} />}
       />
       <Route
         path={route['notices.list9']}
-        element={
-          <LazyNotices
-            title={t('tiles.lfTranslations2')}
-            columns={translationOfferColumns()}
-            expandableRowsComponent={TranslationOfferExpandedComponent}
-            noticeType={32}
-            filters={NoticesNoAcommodationsFilter}
-          />
-        }
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForTranslation} />}
       />
       <Route
+        path={route['notices.list5']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerHelp} />}
+      />
+
+      <Route
+        path={route['notices.list8']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForHelp} />}
+      />
+
+      <Route
         path={route['notices.list10']}
-        element={
-          <LazyNotices
-            title={t('form.temporaryAnimalHome')}
-            columns={temporaryAnimalHomeOfferColumns()}
-            expandableRowsComponent={TemporaryAnimalHomeOfferExpandedComponent}
-            noticeType={60}
-            filters={AnimalOffersFilter}
-          />
-        }
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerAnimalHome} />}
       />
       <Route
         path={route['notices.list11']}
-        element={
-          <LazyNotices
-            title={t('form.lfTemporaryAnimalHome')}
-            columns={temporaryAnimalHomeSearch()}
-            expandableRowsComponent={TemporaryAnimalHomeSearchExpandedComponent}
-            noticeType={62}
-            filters={AnimalOffersFilter}
-          />
-        }
-      />
-      <Route
-        path={route['notices.list12']}
-        element={
-          <LazyNotices
-            title={t('form.lfMedicalAssistance')}
-            columns={medicalAssistanceSearch()}
-            expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
-            noticeType={72}
-            filters={MedicalAssistanceFilter}
-          />
-        }
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForAnimalHome} />}
       />
       <Route
         path={route['notices.list15']}
-        element={
-          <LazyNotices
-            title={t('form.offerMedicalAssistance')}
-            columns={medicalAssistanceSearch()}
-            expandableRowsComponent={MedicalAssistanceSearchExpandedComponent}
-            noticeType={70}
-            filters={MedicalAssistanceFilter}
-          />
-        }
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerMedical} />}
       />
       <Route
-          path={route['notices.list13']}
-          element={<LazyNotices
-            title={t('tiles.legalHelp2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
-            noticeType={80}
-            filters={NoticesNoAcommodationsFilter}
-          />}
-        />
-        <Route
-          path={route['notices.list14']}
-          element={<LazyNotices
-            title={t('tiles.lfLegalHelp2')}
-            columns={helpOfferColumnsColumns()}
-            expandableRowsComponent={HelpOfferExpandedComponent}
-            noticeType={82}
-            filters={NoticesNoAcommodationsFilter}
-          />}
-        />
+        path={route['notices.list12']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForMedical} />}
+      />
+      <Route
+        path={route['notices.list13']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerLegalAssistance} />}
+      />
+      <Route
+        path={route['notices.list14']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForLegalAssistance} />}
+      />
+      <Route
+        path={route['notices.list16']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerVolunteerHelp} />}
+      />
+      <Route
+        path={route['notices.list17']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForVolunteerHelp} />}
+      />
+      <Route
+        path={route['notices.list110']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.offerWork} />}
+      />
+      <Route
+        path={route['notices.list112']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.lookingForWork} />}
+      />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
     </Route>,
     <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>
@@ -309,19 +182,65 @@ const NoticeRoutes = () => {
       <Route path={route['notices.addfindLegalHelp']} element={<LazyAddfindLegalHelp />} />
       <Route
         path={route['notices.addFindMedicalAssistance']}
-        element={<LazyAddFindMedicalAssistance
-          type={72}
-          title={t("form.lfMedicalAssistance")}
-          description={t("formDescription.medicalAssistance")}
-        />}
+        element={
+          <LazyAddFindMedicalAssistance
+            type={72}
+            title={t('form.lfMedicalAssistance')}
+            description={t('formDescription.medicalAssistance')}
+          />
+        }
+      />
+      <Route
+        path={route['notices.addOfferWork']}
+        element={
+          <LazyFormAddOfferWork
+            type={110}
+            title={t('form.offerWork')}
+            description={t('formDescription.offerWork')}
+          />
+        }
+      />
+      <Route
+        path={route['notices.addFindWork']}
+        element={
+          <LazyFormAddOfferWork
+            type={112}
+            title={t('form.lfWork')}
+            description={t('formDescription.lfWork')}
+          />
+        }
       />
       <Route
         path={route['notices.addOfferMedicalAssistance']}
-        element={<LazyAddFindMedicalAssistance 
-          type={70}
-          title={t("form.offerMedicalAssistance")}
-          description={t("formDescription.offerMedicalAssistance")}
-        />}
+        element={
+          <LazyAddFindMedicalAssistance
+            type={70}
+            title={t('form.offerMedicalAssistance')}
+            description={t('formDescription.offerMedicalAssistance')}
+          />
+        }
+      />
+      <Route
+        path={route['notices.addVolunteersOfferingHelp']}
+        element={
+          <LazyAddNotice
+            title={t('form.offerVolunteerHelp')}
+            description={t('formDescription.offerVolunteerHelp')}
+            formComponent={FormAddVolunteerOffer}
+            type={100}
+          />
+        }
+      />
+      <Route
+        path={route['notices.addFindVolunteersHelp']}
+        element={
+          <LazyAddNotice
+            title={t('form.lfVolunteerHelp')}
+            description={t('formDescription.lfVolunteerHelp')}
+            formComponent={FormAddVolunteerOffer}
+            type={102}
+          />
+        }
       />
     </Route>,
     <Route key={route['index']} path={route['index']} element={<UserLayout />}>

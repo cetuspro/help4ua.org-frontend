@@ -27,6 +27,7 @@ import FormAddFindTransportOffer from '../components/forms/Form_AddFindTransport
 import FormAddTranslationOffer from '../components/forms/Form_AddTranslationOffer'
 import toast from 'react-hot-toast'
 import { useSelector } from 'react-redux'
+import FormAddVolunteerOffer from '../components/forms/Form_AddVolunteerOffer'
 
 const noticeTypes = {
   1: FormAddShelterOffer,
@@ -37,6 +38,7 @@ const noticeTypes = {
   32: HelpOfferForm,
   50: HelpOfferForm,
   52: HelpOfferForm,
+  100: FormAddVolunteerOffer
 }
 
 const breadcrumbItems = (t, title) => [

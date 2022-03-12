@@ -17,7 +17,6 @@ import { useTranslation } from 'react-i18next'
 const schema = yup.object().shape({
   searchPhrase: yup.string().nullable(),
   city: yup.string().nullable(),
-  region: yup.string().nullable(),
   accommodationPlacesCount: yup.string().nullable(),
 })
 
@@ -44,17 +43,7 @@ const NoticesFilter = () => {
           {/*    label: name,*/}
           {/*  })}*/}
           {/*/>*/}
-          <InputAsyncSelect
-            {...getRegionsHelper}
-            name="Region"
-            icon={BiMapPin}
-            label={t('common.wojewodztwo')}
-            isLabelVisible={false}
-            transform={({ id, name }) => ({
-              value: id,
-              label: name,
-            })}
-          />
+         
           <InputSelect
             options={accommodationPlacesCountOptions}
             name="AccommodationPlacesCount"

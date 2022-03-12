@@ -1,9 +1,10 @@
 import { memo, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Disclosure } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
+import { Disclosure, Transition } from '@headlessui/react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 
-import { getFAQ } from '../../app/CRUD/faq/getFAQ'
+import { getFAQ } from '@/app/CRUD/faq/getFAQ'
 
 const mock = [
   {
@@ -39,6 +40,7 @@ const mock = [
 const FAQ = () => {
   const [faq, setFAQ] = useState(mock)
   const { language = 'pl' } = useSelector((state) => state?.language)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const { data } = getFAQ(language)
@@ -50,7 +52,7 @@ const FAQ = () => {
 
   return (
     <div className="my-10 sm:px-2 md:px-10">
-      <h2 className="mb-5 text-3xl text-center font-semibold">FAQ</h2>
+      <h2 className="mb-5 text-3xl text-center font-semibold">{t('tiles.faq')}</h2>
 
       <div className="w-full p-2 mx-auto border-solid">
         {faq.map(({ title, text }) => (
@@ -61,9 +63,18 @@ const FAQ = () => {
                   {title}
                   <MdKeyboardArrowDown className={`${open ? 'transform rotate-180' : ''}`} />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-600">
-                  {text}
-                </Disclosure.Panel>
+                <Transition
+                  show={open}
+                  enter="transition duration-100 ease-out"
+                  enterFrom="transform scale-95 opacity-0"
+                  enterTo="transform scale-100 opacity-100"
+                  leave="transition duration-75 ease-out"
+                  leaveFrom="transform scale-100 opacity-100"
+                  leaveTo="transform scale-95 opacity-0">
+                  <Disclosure.Panel static className="px-4 pt-4 pb-2 text-sm text-gray-600">
+                    {text}
+                  </Disclosure.Panel>
+                </Transition>
               </>
             )}
           </Disclosure>
