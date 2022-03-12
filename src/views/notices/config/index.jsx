@@ -8,7 +8,6 @@ import {
   BasicFilter,
   ShelterFilter,
   AnimalOffersFilter,
-  MedicalAssistanceFilter,
 } from '@/views/notices/View_Notices/filters'
 
 export const NOTICE_TYPE = {

@@ -9,6 +9,7 @@ import { noticesRoutes } from './notices/notices'
 import { reportsRoutes } from './reports'
 import { threatMapRoutes } from './threatMap'
 import { userRoutes } from './user'
+import { helpActionsRoutes } from './helpActions'
 
 export const route = {
   index: `${BASE_URL}/`,
@@ -24,4 +25,5 @@ export const route = {
   ...contactRoutes,
   ...helpPointsRoutes,
   ...actionsRoutes,
+  ...helpActionsRoutes,
 }

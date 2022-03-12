@@ -1,13 +1,19 @@
 import { route } from '@/app/router/urls/routes'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { useGetNoticesStats } from '../../app/CRUD/notices/getNoticesStats'
+import { useGetNoticesStats } from '@/app/CRUD/notices/getNoticesStats'
 import heroImg from '../../assets/img/hero.png'
 import NoticeCard from '../notices/Notice_Card/Notice_Card'
 import NoticeCardsWrapper from '../notices/Notice_CardsWrapper/Notice_CardsWrapper'
 import { getNoticeVerifiedAmount } from '@/app/models/notice'
 import { FiHome, FiEdit, FiTruck, FiGift, FiBriefcase } from 'react-icons/fi'
-import { FaMapMarkerAlt, FaPaw, FaBriefcaseMedical, FaUserTie } from 'react-icons/fa'
+import {
+  FaMapMarkerAlt,
+  FaPaw,
+  FaBriefcaseMedical,
+  FaUserTie,
+  FaHandsHelping,
+} from 'react-icons/fa'
 import { MdOutlineVolunteerActivism } from 'react-icons/md'
 
 export default function Home() {
@@ -99,6 +105,13 @@ export default function Home() {
               label={t('frontpage.helpPointss')}
               hashLink={'#punkty-pomocy'}
             />
+
+            {/* ToDo: uncomment after 'help-actions' route will be ready on BE side
+             <Button3
+              icon={FaHandsHelping}
+              label={t('tiles.helpActions')}
+              hashLink={'#help-actions'}
+            /> */}
           </div>
         </div>
       </section>
@@ -336,6 +349,21 @@ export default function Home() {
               </p>
             </div>
           </NoticeCardsWrapper>
+
+          {/* ToDo: uncomment after 'help-actions' route will be ready on BE side
+          <NoticeCardsWrapper
+            icon={FaHandsHelping}
+            title={t('tiles.helpActions')}
+            hashId={'help-actions'}>
+            <div className="flex flex-col items-center justify-center py-4">
+              <div className="flex flex-col flex-wrap lg:flex-nowrap sm:flex-row sm:justify-center lg:justify-start gap-2.5">
+                <Button2 to={route['helpActions']} label={t('frontpage.helpActions')} />
+              </div>
+              <p className="max-w-screen-md text-gray-600 mb-2 text-sm mt-6 text-center mx-auto">
+                {t('formDescription.helpActions')}
+              </p>
+            </div>
+          </NoticeCardsWrapper> */}
         </div>
       </div>
     </>
