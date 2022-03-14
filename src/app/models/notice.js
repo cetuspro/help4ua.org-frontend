@@ -8,7 +8,6 @@ const normalizeBy = (key) => {
 export const normalizeNoticeData = (data) =>
   data
     .map((item) => ({
-      noticeTypeLabel: item.noticeType?.split(/(?=[A-Z])/)?.join(' '),
       ...item,
       statusAndAmount: item.statusAndAmount.reduce(normalizeBy('noticeStatus'), {}),
     }))

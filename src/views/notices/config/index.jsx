@@ -32,7 +32,7 @@ export const NOTICE_TYPE = {
   lookingForVolunteerHelp: 102,
   offerWork: 110,
   lookingForWork: 112,
-  all: null
+  all: 'all'
 }
 
 export const NOTICE_COMPONENT = {

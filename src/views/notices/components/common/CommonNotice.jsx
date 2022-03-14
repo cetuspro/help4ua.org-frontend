@@ -27,7 +27,8 @@ import CarNumber from '@/views/notices/components/common/Fields/CarNumber'
 import Experience from '@/views/notices/components/common/Fields/Experience'
 import CostRefund from '@/views/notices/components/common/Fields/CostRefund'
 import AnimalType from '@/views/notices/components/common/Fields/AnimalType'
-import { useGetNoticesStats } from '../../../../app/CRUD/notices/getNoticesStats'
+import { noticeTypesEnum } from '@/app/config/enum/noticeTypesEnum'
+import { useTranslation } from 'react-i18next'
 
 const CommonNotice = ({
   data: {
@@ -67,8 +68,8 @@ const CommonNotice = ({
   withPriceFree,
   hasLink = true,
 }) => {
-  const { data } = useGetNoticesStats()
-  const noticeTypeLabel = data && Object.values(data).find((item) => item.noticeTypeId === type)?.noticeTypeLabel
+  const { t } = useTranslation()
+  const noticeTypeLabel = noticeTypesEnum(t).find((notice) => notice.value === type)?.label
 
   return (
     <NoticeLayout>

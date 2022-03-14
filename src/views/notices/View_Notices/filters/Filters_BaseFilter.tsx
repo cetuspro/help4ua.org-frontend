@@ -85,7 +85,7 @@ export const config = {
   },
   [FilterType.NOTICE_TYPE]: {
     validator: yup.string().nullable(),
-    render: () => <NoticeTypeSelect />,
+    render: () => <NoticeTypeSelect key="noticeType" />,
   },
   [FilterType.REGION]: {
     validator: yup.string().nullable(),
