@@ -8,9 +8,9 @@ The project was created to connect people who help with those in need.
 - On 05.03 the project was published as OpenSource.
 
 Production is running on:
-- [help4ua.org](www.help4ua.org)
-- [help4ua.com](www.help4ua.com)
-- [uapomoc.pl](www.uapomoc.pl)
+- [help4ua.org](https://www.help4ua.org)
+- [help4ua.com](https://www.help4ua.com)
+- [uapomoc.pl](https://www.uapomoc.pl)
 
 Join our Discord on: [help4ua.org discord](https://discord.com/invite/QfYgU75Mcw)
 We have all communication there.
