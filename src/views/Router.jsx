@@ -10,6 +10,7 @@ import UserRoutes from './user/@Routes'
 import AccountRoutes from './account/@Routes'
 import NoticesRoutes from './notices/@Routes'
 import HelpPointsRoutes from './helpPoints/@Routes'
+import HelpActionsRoutes from '@/views/helpActions/@Routes'
 
 const AppRouter = () => {
   return (
@@ -25,6 +26,8 @@ const AppRouter = () => {
         {HelpPointsRoutes()}
 
         {NoticesRoutes()}
+
+        {HelpActionsRoutes()}
 
         {/*{AccountRoutes}*/}
 
