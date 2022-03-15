@@ -20,6 +20,29 @@
     "threeMonths": "3 miesiące",
     "over3Months": "Dłużej niż 3 miesiące"
   },
+  "noticeType": {
+    "all": "Wszystkie ogłoszenia",
+    "offerAccommodation": "Oferty azylowe",
+    "searchAccommodation": "Wyszukiwanie azylu",
+    "offerTransportHelp": "Oferty pomocy transportowej",
+    "searchTransportHelp": "Szukaj pomocy transportowej",
+    "offerTranslationHelp": "Oferuje pomoc w tłumaczeniu",
+    "searchTranslationHelp": "Wyszukaj pomoc w tłumaczeniu",
+    "offerHelp": "Oferty pomocy",
+    "searchHelp": "Szukaj pomocy",
+    "offerHelpForAnimal": "Propozycje pomocy dla zwierząt",
+    "searchHelpForAnimal": "Szukaj pomocy dla zwierząt",
+    "offerMedicalHelp": "Oferuj opiekę medyczną",
+    "searchMedicalHelp": "Szukaj opieki medycznej",
+    "offerLegalAssistance": "Propozycje pomocy prawnej",
+    "searchLegalAssistance": "Wyszukaj pomoc prawną",
+    "offerPsychologicalHelp": "Propozycje pomocy psychologicznej",
+    "searchPsychologicalHelp": "Szukaj pomocy psychologicznej",
+    "offerVolunteerHelp": "Propozycje pomocy wolontariuszy",
+    "searchVolunteerHelp": "Wyszukaj pomocy wolontariuszy",
+    "offeringWork": "Oferty pracy",
+    "searchWork": "Poszukiwanie pracy"
+  },
   "form": {
     "findShelter": "Szukam schronienia",
     "findTransport": "Szukam transportu",
@@ -186,7 +209,8 @@
     "medicalAssistance": "Pomoc medyczna",
     "jobOffers": "Oferty pracy",
     "volunteering": "Wolontariat",
-    "helpPointss": "Punkty pomocy"
+    "helpPointss": "Punkty pomocy",
+    "allNotices": "Wszystko ogłoszenia"
   },
   "notice": {
     "markActive": "Oznacz jako aktualne",
@@ -281,6 +305,8 @@
     "price": "Cena",
     "priceFree": "Pomoc oferowana na tej stronie jest zawsze darmowa",
     "backToList": "Wróć do listy ogłoszeń",
-    "allCountries": "Wszystkie kraje"
+    "backToOffer": "Wróć do listy ogłoszeń",
+    "allCountries": "Wszystkie kraje",
+    "noticeType": "Typ ogłoszenia"
   }
 }

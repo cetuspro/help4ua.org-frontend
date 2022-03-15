@@ -20,6 +20,7 @@ export const noticesRoutes = {
   'notices.list17': `${BASE_URL}/ogloszenia/find-volunteers-help`,
   'notices.list110': `${BASE_URL}/ogloszenia/offer-work`,
   'notices.list112': `${BASE_URL}/ogloszenia/lf-work`,
+  'notices.all':`${BASE_URL}/ogloszenia/all-notices`,
   'notices.view': (noticeId = ':noticeId') => `${BASE_URL}/ogloszenia/${noticeId}`,
   'notices.add': `${BASE_URL}/dodaj-ogloszenie`,
   'notices.addShelterOffer': `${BASE_URL}/dodaj-ogloszenie/oferuje-schronienie`,

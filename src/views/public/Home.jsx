@@ -99,6 +99,12 @@ export default function Home() {
               label={t('frontpage.helpPointss')}
               hashLink={'#punkty-pomocy'}
             />
+            <div className="flex flex-col mt-6 sm:justify-center lg:justify-start gap-2.5 ">
+              <Button2 
+                to={route['notices.all']} 
+                label={t('frontpage.allNotices')} 
+              />
+            </div>
           </div>
         </div>
       </section>

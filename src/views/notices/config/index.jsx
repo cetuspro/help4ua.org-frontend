@@ -10,6 +10,8 @@ import {
   AnimalOffersFilter,
   MedicalAssistanceFilter,
 } from '@/views/notices/View_Notices/filters'
+import CommonNotice from '@/views/notices/components/common/CommonNotice'
+import AllNoticesFilter from '@/views/notices/View_Notices/filters/Filters_AllNotices'
 
 export const NOTICE_TYPE = {
   offerShelter: 1,
@@ -30,6 +32,7 @@ export const NOTICE_TYPE = {
   lookingForVolunteerHelp: 102,
   offerWork: 110,
   lookingForWork: 112,
+  all: 'all'
 }
 
 export const NOTICE_COMPONENT = {
@@ -51,6 +54,7 @@ export const NOTICE_COMPONENT = {
   [NOTICE_TYPE.lookingForVolunteerHelp]: DefaultNotice,
   [NOTICE_TYPE.offerWork]: withPriceFree(DefaultNotice),
   [NOTICE_TYPE.lookingForWork]: DefaultNotice,
+  [NOTICE_TYPE.all]: CommonNotice
 }
 
 export const NOTICE_TITLE = {
@@ -72,6 +76,7 @@ export const NOTICE_TITLE = {
   [NOTICE_TYPE.lookingForVolunteerHelp]: 'form.lfVolunteerHelp',
   [NOTICE_TYPE.offerWork]: 'form.offerWork',
   [NOTICE_TYPE.lookingForWork]: 'form.lfWork',
+  [NOTICE_TYPE.all]: 'frontpage.allNotices'
 }
 
 export const NOTICE_FILTER = {
@@ -93,4 +98,5 @@ export const NOTICE_FILTER = {
   [NOTICE_TYPE.lookingForVolunteerHelp]: BasicFilter,
   [NOTICE_TYPE.offerWork]: BasicFilter,
   [NOTICE_TYPE.lookingForWork]: BasicFilter,
+  [NOTICE_TYPE.all]: AllNoticesFilter,
 }

@@ -107,6 +107,10 @@ const NoticeRoutes = () => {
         path={route['notices.list112']}
         element={<LazyNotices noticeType={NOTICE_TYPE.lookingForWork} />}
       />
+      <Route
+        path={route['notices.all']}
+        element={<LazyNotices noticeType={NOTICE_TYPE.all} />}
+      />
       <Route path={route['notices.view']()} element={<LazyNotice />} />
     </Route>,
     <Route key={route['notices.add']} path={route['notices.add']} element={<UserLayout />}>

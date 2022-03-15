@@ -13,12 +13,13 @@ import { getRegionsHelper } from '@/app/CRUD/region/getRegions'
 import { getCountriesHelper } from '@/app/CRUD/region/getCountries'
 import { BiMapPin } from 'react-icons/bi'
 import { useTranslation, Trans } from 'react-i18next'
+import { NoticeTypeSelect } from "./Filter_NoticeTypeSelect"
 
 const ACCOMODATION_COUNT = 10
-export const ALL_COUNTRIES_ITEM = {
+export const getAllCountriesItem = () => ({
   value: null,
   label: <Trans i18nKey={"common.allCountries"} />
-}
+})
 
 const pluck = (prop, obj) =>
   Object.keys(obj).reduce((acc, key) => ({ ...acc, [key]: obj[key]?.[prop] }), {})
@@ -65,7 +66,8 @@ export const FilterType = {
   CITY: 'city',
   REGION: 'region',
   ACCOMODATION: 'accommodationPlacesCount',
-  COUNTRY: 'CountryId'
+  COUNTRY: 'CountryId',
+  NOTICE_TYPE: 'noticeType'
 } as const
 
 export const config = {
@@ -80,6 +82,10 @@ export const config = {
         isLabelVisible={false}
       />
     ),
+  },
+  [FilterType.NOTICE_TYPE]: {
+    validator: yup.string().nullable(),
+    render: () => <NoticeTypeSelect key="noticeType" />,
   },
   [FilterType.REGION]: {
     validator: yup.string().nullable(),
@@ -100,7 +106,7 @@ export const config = {
   },
   [FilterType.COUNTRY]: {
     validator: yup.string().nullable(),
-    default: ALL_COUNTRIES_ITEM.value,
+    default: null,
     render: ({ t }) => (
       <InputAsyncSelect
         {...getCountriesHelper}
@@ -109,7 +115,7 @@ export const config = {
         icon={FaFlag}
         label={t('form.country')}
         isLabelVisible={false}
-        additionalOptions={[ALL_COUNTRIES_ITEM]}
+        additionalOptions={[getAllCountriesItem()]}
         transform={({ value, name }) => ({
           value: value,
           label: name,

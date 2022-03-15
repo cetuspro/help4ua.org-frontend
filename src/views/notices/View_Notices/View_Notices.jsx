@@ -13,7 +13,7 @@ import { listConfig, listStyles } from '@/app/config/noticeList'
 import { NOTICE_COMPONENT, NOTICE_FILTER, NOTICE_TITLE } from '@/views/notices/config'
 
 const ViewNotices = ({ styles = listStyles, config = listConfig, noticeType }) => {
-  const query = useGetNotices({ noticeType })
+  const query = useGetNotices({ noticeType: noticeType === 'all' ? null : noticeType })
   const { t } = useTranslation()
   const breadcrumbItems = [{ label: t('common.ogloszenia') }]
   const FiltersComponent = NOTICE_FILTER[noticeType]

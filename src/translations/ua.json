@@ -20,6 +20,29 @@
     "threeMonths": "3 місяці",
     "over3Months": "Більше 3 місяців"
   },
+  "noticeType": {
+    "all": "Всі оголошення",
+    "offerAccommodation": "Пропозиції притулку",
+    "searchAccommodation": "Пошук притулку",
+    "offerTransportHelp": "Пропозиції транспортної допомоги",
+    "searchTransportHelp": "Пошук транспортної допомоги",
+    "offerTranslationHelp": "Пропозиції допомоги з перекладу",
+    "searchTranslationHelp": "Пошук допомоги з передкладу",
+    "offerHelp": "Пропозиції допомоги",
+    "searchHelp": "Пошук допомоги",
+    "offerHelpForAnimal": "Пропозиції допомоги для тварин",
+    "searchHelpForAnimal": "Пошук допомоги для тварин",
+    "offerMedicalHelp": "Пропозиції медичної допомоги",
+    "searchMedicalHelp": "Пошук медичної допомоги",
+    "offerLegalAssistance": "Пропозиції юридичної допомоги",
+    "searchLegalAssistance": "Пошук юридичної допомоги",
+    "offerPsychologicalHelp": "Пропозиції психологічної допомоги",
+    "searchPsychologicalHelp": "Пошук психологічної допомоги",
+    "offerVolunteerHelp": "Пропозиції волонтерської допомоги",
+    "searchVolunteerHelp": "Пошук волонтерської допомоги",
+    "offeringWork": "Пропозиції роботи",
+    "searchWork": "Пошук роботи"
+  },
   "form": {
     "findShelter": "Шукаю притулок",
     "findTransport": "Шукаю транспорт",
@@ -184,7 +207,8 @@
     "medicalAssistance": "Медична допомога",
     "jobOffers": "Пропозиції роботи",
     "volunteering": "Волонтерство",
-    "helpPointss": "Пункти допомоги"
+    "helpPointss": "Пункти допомоги",
+    "allNotices": "Всі оголошення"
   },
   "notice": {
     "markInactive": "Позначити як неактивний",
@@ -273,7 +297,9 @@
     "show": "показати",
     "price": "Ціна",
     "priceFree": "Допомога на цьому веб-сайті завжди безкоштовна",
-    "backToList": "Повернутись до списку пропозицій",
-    "allCountries": "Всі країни"
+    "backToOffer": "Повернутись до списку пропозицій",
+    "allCountries": "Всі країни",
+    "noticeType": "Тип оголошення",
+    "backToList": "Повернутись до списку пропозицій"
   }
 }
