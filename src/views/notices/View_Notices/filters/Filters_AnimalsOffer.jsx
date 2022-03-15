@@ -10,12 +10,12 @@ import { FaSearch, FaFlag } from 'react-icons/fa'
 import * as yup from 'yup'
 import { getRegionsHelper } from '../../../../app/CRUD/region/getRegions'
 import { getCountriesHelper } from '../../../../app/CRUD/region/getCountries'
-import { ALL_COUNTRIES_ITEM } from '../filters/Filters_BaseFilter'
+import { getAllCountriesItem } from '../filters/Filters_BaseFilter'
 
 const schema = yup.object().shape({
   searchPhrase: yup.string().nullable(),
   region: yup.string().nullable(),
-  countryId: yup.string().default(ALL_COUNTRIES_ITEM.value)
+  countryId: yup.string().default(null)
 })
 
 const accommodationPlacesCountOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => ({
@@ -57,7 +57,7 @@ const AnimalOffersFilter = () => {
             icon={FaFlag}
             label={t('form.country')}
             isLabelVisible={false}
-            additionalOptions={[ALL_COUNTRIES_ITEM]}
+            additionalOptions={[getAllCountriesItem()]}
             transform={({ value, name }) => ({
               value: value,
               label: name,
